@@ -1,0 +1,47 @@
+{
+  "name" : "io.debezium.transforms.ExtractNewRecordState",
+  "type" : "transformation",
+  "version" : "3.5.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "Captures changes from a io.debezium.transforms.ExtractNewRecordState"
+  },
+  "properties" : [ {
+    "name" : "drop.fields.header.name",
+    "type" : "string",
+    "display" : {
+      "label" : "Specifies a header that contains a list of field names to be removed",
+      "description" : "Specifies the name of a header that contains a list of fields to be removed from the event value.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "drop.fields.from.key",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Specifies whether the fields to be dropped should also be omitted from the key",
+      "description" : "Specifies whether to apply the drop fields behavior to the event key as well as the value. Default behavior is to only remove fields from the event value, not the key.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "drop.fields.keep.schema.compatible",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Specifies if fields are dropped, will the event's schemas be compatible",
+      "description" : "Controls the output event's schema compatibility when using the drop fields feature. `true`: dropped fields are removed if the schema indicates its optional leaving the schemas unchanged, `false`: dropped fields are removed from the key/value schemas, regardless of optionality.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    }
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

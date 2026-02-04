@@ -1,0 +1,44 @@
+{
+  "name" : "io.debezium.connector.jdbc.transforms.CollectionNameTransformation",
+  "type" : "transformation",
+  "version" : "3.5.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "Captures changes from a io.debezium.connector.jdbc.transforms.CollectionNameTransformation"
+  },
+  "properties" : [ {
+    "name" : "collection.naming.prefix",
+    "type" : "string",
+    "display" : {
+      "label" : "Collection Name Prefix",
+      "description" : "Optional prefix to add to collection names.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    }
+  }, {
+    "name" : "collection.naming.suffix",
+    "type" : "string",
+    "display" : {
+      "label" : "Collection Name Suffix",
+      "description" : "Optional suffix to add to collection names.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    }
+  }, {
+    "name" : "collection.naming.style",
+    "type" : "string",
+    "display" : {
+      "label" : "Collection Naming Style",
+      "description" : "The style of collection naming: UPPER_CASE, lower_case, snake_case, camelCase, kebab-case.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    }
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

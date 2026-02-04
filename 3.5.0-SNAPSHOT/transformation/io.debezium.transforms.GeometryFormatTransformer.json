@@ -1,0 +1,29 @@
+{
+  "name" : "io.debezium.transforms.GeometryFormatTransformer",
+  "type" : "transformation",
+  "version" : "3.5.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "Captures changes from a io.debezium.transforms.GeometryFormatTransformer"
+  },
+  "properties" : [ {
+    "name" : "format",
+    "type" : "string",
+    "display" : {
+      "label" : "Target Format",
+      "description" : "The target Geometry format to convert to. Options are 'wkb' and 'ewkb'",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "ewkb", "wkb" ]
+    } ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

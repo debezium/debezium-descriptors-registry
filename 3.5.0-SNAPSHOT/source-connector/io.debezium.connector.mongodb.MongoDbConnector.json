@@ -1,0 +1,841 @@
+{
+  "name" : "Debezium MongoDB Connector",
+  "type" : "source-connector",
+  "version" : "3.5.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "Captures changes from a Debezium MongoDB Connector"
+  },
+  "properties" : [ {
+    "name" : "topic.prefix",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Topic prefix",
+      "description" : "Topic prefix that identifies and provides a namespace for the particular database server/cluster is capturing changes. The topic prefix should be unique across all other connectors, since it is used as a prefix for all Kafka topic names that receive events emitted by this connector. Only alphanumeric characters, hyphens, dots and underscores must be accepted.",
+      "group" : "Connection",
+      "groupOrder" : 0,
+      "width" : "medium",
+      "importance" : "high"
+    }
+  }, {
+    "name" : "mongodb.connection.string",
+    "type" : "string",
+    "display" : {
+      "label" : "Connection String",
+      "description" : "Database connection string.",
+      "group" : "Connection",
+      "groupOrder" : 1,
+      "width" : "medium",
+      "importance" : "high"
+    }
+  }, {
+    "name" : "mongodb.user",
+    "type" : "string",
+    "display" : {
+      "label" : "User",
+      "description" : "Database user for connecting to MongoDB, if necessary.",
+      "group" : "Connection",
+      "groupOrder" : 3,
+      "width" : "short",
+      "importance" : "high"
+    }
+  }, {
+    "name" : "mongodb.password",
+    "type" : "string",
+    "display" : {
+      "label" : "Password",
+      "description" : "Password to be used when connecting to MongoDB, if necessary.",
+      "group" : "Connection",
+      "groupOrder" : 4,
+      "width" : "short",
+      "importance" : "high"
+    }
+  }, {
+    "name" : "mongodb.authsource",
+    "type" : "string",
+    "display" : {
+      "label" : "Credentials Database",
+      "description" : "Database containing user credentials.",
+      "group" : "Connection Advanced",
+      "groupOrder" : 1,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "mongodb.connect.timeout.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Connect Timeout MS",
+      "description" : "The connection timeout, given in milliseconds. Defaults to 10 seconds (10,000 ms).",
+      "group" : "Connection Advanced",
+      "groupOrder" : 0,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "mongodb.heartbeat.frequency.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Heartbeat frequency ms",
+      "description" : "The frequency that the cluster monitor attempts to reach each server. Defaults to 10 seconds (10,000 ms).",
+      "group" : "Connection Advanced",
+      "groupOrder" : 4,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "mongodb.socket.timeout.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Socket timeout MS",
+      "description" : "The socket timeout, given in milliseconds. Defaults to 0 ms.",
+      "group" : "Connection Advanced",
+      "groupOrder" : 3,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "mongodb.server.selection.timeout.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Server selection timeout MS",
+      "description" : "The server selection timeout, given in milliseconds. Defaults to 10 seconds (10,000 ms).",
+      "group" : "Connection Advanced",
+      "groupOrder" : 2,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "mongodb.poll.interval.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Replica membership poll interval (ms)",
+      "description" : "Interval for looking for new, removed, or changed replica sets, given in milliseconds. Defaults to 30 seconds (30,000 ms).",
+      "group" : "Connection",
+      "groupOrder" : 5,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "mongodb.ssl.enabled",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Enable SSL connection to MongoDB",
+      "description" : "Should connector use SSL to connect to MongoDB instances",
+      "group" : "Connection Advanced Ssl",
+      "groupOrder" : 0,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "mongodb.ssl.invalid.hostname.allowed",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Allow invalid hostnames for SSL connection",
+      "description" : "Whether invalid host names are allowed when using SSL. If true the connection will not prevent man-in-the-middle attacks",
+      "group" : "Connection Advanced Ssl",
+      "groupOrder" : 1,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "cursor.max.await.time.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Server's oplog streaming cursor max await time",
+      "description" : "The maximum processing time in milliseconds to wait for the oplog cursor to process a single poll request",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "event.processing.failure.handling.mode",
+    "type" : "string",
+    "display" : {
+      "label" : "Event deserialization failure handling",
+      "description" : "Specify how failures during processing of events (i.e. when encountering a corrupted event) should be handled, including: 'fail' (the default) an exception indicating the problematic event and its position is raised, causing the connector to be stopped; 'warn' the problematic event and its position will be logged and the event will be skipped; 'ignore' the problematic event will be skipped.",
+      "group" : "Advanced",
+      "groupOrder" : 12,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "warn", "fail", "ignore", "skip" ]
+    } ]
+  }, {
+    "name" : "max.batch.size",
+    "type" : "number",
+    "display" : {
+      "label" : "Change event batch size",
+      "description" : "Maximum size of each batch of source records. Defaults to 2048.",
+      "group" : "Advanced",
+      "groupOrder" : 14,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "max.queue.size",
+    "type" : "number",
+    "display" : {
+      "label" : "Change event buffer size",
+      "description" : "Maximum size of the queue for change events read from the database log but not yet recorded or forwarded. Defaults to 8192, and should always be larger than the maximum batch size.",
+      "group" : "Advanced",
+      "groupOrder" : 15,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "poll.interval.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Poll interval (ms)",
+      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms.",
+      "group" : "Advanced",
+      "groupOrder" : 17,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "max.queue.size.in.bytes",
+    "type" : "number",
+    "display" : {
+      "label" : "Change event buffer size in bytes",
+      "description" : "Maximum size of the queue in bytes for change events read from the database log but not yet recorded or forwarded. Defaults to 0. Mean the feature is not enabled",
+      "group" : "Advanced",
+      "groupOrder" : 16,
+      "width" : "long",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "provide.transaction.metadata",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Store transaction metadata information in a dedicated topic.",
+      "description" : "Enables transaction metadata extraction together with event counting",
+      "group" : "Connector Advanced",
+      "groupOrder" : 17,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "skipped.operations",
+    "type" : "list",
+    "display" : {
+      "label" : "Skipped Operations",
+      "description" : "The comma-separated list of operations to skip during streaming, defined as: 'c' for inserts/create; 'u' for updates; 'd' for deletes, 't' for truncates, and 'none' to indicate nothing skipped. By default, only truncate operations will be skipped.",
+      "group" : "Advanced",
+      "groupOrder" : 11,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "snapshot.delay.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Snapshot Delay (milliseconds)",
+      "description" : "A delay period before a snapshot will begin, given in milliseconds. Defaults to 0 ms.",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 5,
+      "width" : "medium",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "streaming.delay.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Streaming Delay (milliseconds)",
+      "description" : "A delay period after the snapshot is completed and the streaming begins, given in milliseconds. Defaults to 0 ms.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 27,
+      "width" : "medium",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "snapshot.include.collection.list",
+    "type" : "list",
+    "display" : {
+      "label" : "Snapshot mode include data collection",
+      "description" : "This setting must be set to specify a list of tables/collections whose snapshot must be taken on creating or restarting the connector.",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 2,
+      "width" : "long",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "snapshot.fetch.size",
+    "type" : "number",
+    "display" : {
+      "label" : "Snapshot fetch size",
+      "description" : "The maximum number of records that should be loaded into memory while performing a snapshot.",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 3,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "snapshot.max.threads",
+    "type" : "number",
+    "display" : {
+      "label" : "Snapshot maximum threads",
+      "description" : "The maximum number of threads used to perform the snapshot. Defaults to 1.",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 7,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "snapshot.mode.custom.name",
+    "type" : "string",
+    "display" : {
+      "label" : "Snapshot Mode Custom Name",
+      "description" : "When 'snapshot.mode' is set as custom, this setting must be set to specify a the name of the custom implementation provided in the 'name()' method. The implementations must implement the 'Snapshotter' interface and is called on each app boot to determine whether to do a snapshot.",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 12,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "snapshot.mode.configuration.based.snapshot.data",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Snapshot mode property based snapshot data",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the data should be snapshotted or not.",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 17,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "snapshot.mode.configuration.based.snapshot.schema",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Snapshot mode property based snapshot schema",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the schema should be snapshotted or not.",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 18,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "snapshot.mode.configuration.based.start.stream",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Snapshot mode property based start stream",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the stream should start or not after snapshot.",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 19,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "snapshot.mode.configuration.based.snapshot.on.schema.error",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Snapshot mode property based snapshot on schema error",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the schema should be snapshotted or not in case of error.",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 20,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "snapshot.mode.configuration.based.snapshot.on.data.error",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Snapshot mode property based snapshot on data error",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the data should be snapshotted or not in case of error.",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 21,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "retriable.restart.connector.wait.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Retriable restart wait (ms)",
+      "description" : "Time to wait before restarting connector after retriable exception occurs. Defaults to 10000ms.",
+      "group" : "Advanced",
+      "groupOrder" : 18,
+      "width" : "medium",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "query.fetch.size",
+    "type" : "number",
+    "display" : {
+      "label" : "Query fetch size",
+      "description" : "The maximum number of records that should be loaded into memory while streaming. A value of '0' uses the default JDBC fetch size.",
+      "group" : "Advanced",
+      "groupOrder" : 13,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "errors.max.retries",
+    "type" : "number",
+    "display" : {
+      "label" : "The maximum number of retries",
+      "description" : "The maximum number of retries on connection errors before failing (-1 = no limit, 0 = disabled, > 0 = num of retries).",
+      "group" : "Connector Advanced",
+      "groupOrder" : 24,
+      "width" : "medium",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "incremental.snapshot.watermarking.strategy",
+    "type" : "string",
+    "display" : {
+      "label" : "Incremental snapshot watermarking strategy",
+      "description" : "Specify the strategy used for watermarking during an incremental snapshot: 'insert_insert' both open and close signal is written into signal data collection (default); 'insert_delete' only open signal is written on signal data collection, the close will delete the relative open signal;",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "INSERT_DELETE", "INSERT_INSERT" ]
+    } ]
+  }, {
+    "name" : "connection.validation.timeout.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Connection validation timeout (ms)",
+      "description" : "The maximum time in milliseconds to wait for connection validation to complete. Defaults to 60 seconds.",
+      "group" : "Connection",
+      "groupOrder" : 13,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "executor.shutdown.timeout.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Executor shutdown timeout (ms)",
+      "description" : "The maximum time in milliseconds to wait for task executor to shut down.",
+      "group" : "Advanced",
+      "groupOrder" : 19,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "openlineage.integration.enabled",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Enables OpenLineage integration",
+      "description" : "Enable Debezium to emit data lineage metadata through OpenLineage API",
+      "group" : "Advanced",
+      "groupOrder" : 40,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "openlineage.integration.config.file.path",
+    "type" : "string",
+    "display" : {
+      "label" : "Path to OpenLineage file configuration",
+      "description" : "Path to OpenLineage file configuration. See https://openlineage.io/docs/client/java/configuration",
+      "group" : "Advanced",
+      "groupOrder" : 41,
+      "width" : "long",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "openlineage.integration.job.namespace",
+    "type" : "string",
+    "display" : {
+      "label" : "Namespace used for Debezium job",
+      "description" : "The job's namespace emitted by Debezium",
+      "group" : "Advanced",
+      "groupOrder" : 42,
+      "width" : "long",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "openlineage.integration.job.description",
+    "type" : "string",
+    "display" : {
+      "label" : "Description used for Debezium job",
+      "description" : "The job's description emitted by Debezium",
+      "group" : "Advanced",
+      "groupOrder" : 43,
+      "width" : "long",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "openlineage.integration.job.tags",
+    "type" : "list",
+    "display" : {
+      "label" : "Debezium job tags",
+      "description" : "The job's tags emitted by Debezium. A comma-separated list of key-value pairs.For example: k1=v1,k2=v2",
+      "group" : "Advanced",
+      "groupOrder" : 44,
+      "width" : "long",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "openlineage.integration.job.owners",
+    "type" : "list",
+    "display" : {
+      "label" : "Debezium job owners",
+      "description" : "The job's owners emitted by Debezium. A comma-separated list of key-value pairs.For example: k1=v1,k2=v2",
+      "group" : "Advanced",
+      "groupOrder" : 45,
+      "width" : "long",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "openlineage.integration.dataset.kafka.bootstrap.servers",
+    "type" : "string",
+    "display" : {
+      "label" : "Kafka bootstrap server used in Kafka Connect deployment",
+      "description" : "The Kafka bootstrap server address used as input/output namespace/",
+      "group" : "Advanced",
+      "groupOrder" : 47,
+      "width" : "long",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "extended.headers.enabled",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Enable/Disable extended headers",
+      "description" : "Enable/Disable Debezium context headers that provides essential metadata for tracking and identifying the source of CDC events in downstream processing systems.",
+      "group" : "Advanced",
+      "groupOrder" : 46,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "guardrail.collections.max",
+    "type" : "number",
+    "display" : {
+      "label" : "Maximum number of collections or tables",
+      "description" : "The maximum number of collections or tables that can be captured by the connector. When this limit is exceeded, the action specified by 'guardrail.collections.limit.action' will be taken. Set to 0 to disable this guardrail.",
+      "group" : "Advanced",
+      "groupOrder" : 33,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "guardrail.collections.limit.action",
+    "type" : "string",
+    "display" : {
+      "label" : "Guardrail collections limit action",
+      "description" : "Specify the action to take when a guardrail collections limit is exceeded: 'warn' (the default) logs a warning message and continues processing; 'fail' stops the connector with an error.",
+      "group" : "Advanced",
+      "groupOrder" : 34,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "warn", "fail" ]
+    } ]
+  }, {
+    "name" : "custom.sanitize.pattern",
+    "type" : "string",
+    "display" : {
+      "label" : "Custom pattern for masking sensitive configuration",
+      "description" : "Regular expression identifying configuration keys whose values should be masked. When set, this custom pattern replaces Debezium’s default password masking pattern.",
+      "group" : "Advanced",
+      "groupOrder" : 48,
+      "width" : "long",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "snapshot.mode",
+    "type" : "string",
+    "display" : {
+      "label" : "Snapshot mode",
+      "description" : "The criteria for running a snapshot upon startup of the connector. Select one of the following snapshot options: 'initial' (default):  If the connector does not detect any offsets for the logical server name, it runs a snapshot that captures the current full state of the configured tables. After the snapshot completes, the connector begins to stream changes from the oplog. 'never': The connector does not run a snapshot. Upon first startup, the connector immediately begins reading from the beginning of the oplog.",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 0,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "always", "initial_only", "configuration_based", "when_needed", "initial", "custom", "no_data" ]
+    } ]
+  }, {
+    "name" : "capture.mode",
+    "type" : "string",
+    "display" : {
+      "label" : "Capture mode",
+      "description" : "The method used to capture changes from MongoDB server. Options include: 'change_streams' to capture changes via MongoDB Change Streams, update events do not contain full documents; 'change_streams_update_full' (the default) to capture changes via MongoDB Change Streams, update events contain full documents",
+      "group" : "Connector Advanced",
+      "groupOrder" : 1,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "change_streams", "change_streams_update_full", "change_streams_with_pre_image", "change_streams_update_full_with_pre_image" ]
+    } ]
+  }, {
+    "name" : "schema.name.adjustment.mode",
+    "type" : "string",
+    "display" : {
+      "label" : "Schema Name Adjustment",
+      "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default)",
+      "group" : "Connector",
+      "groupOrder" : 7,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "none", "avro_unicode", "avro" ]
+    } ]
+  }, {
+    "name" : "converters",
+    "type" : "string",
+    "display" : {
+      "label" : "List of prefixes defining custom values converters.",
+      "description" : "Optional list of custom converters that would be used instead of default ones. The converters are defined using '<converter.prefix>.type' config option and configured using options '<converter.prefix>.<option>'",
+      "group" : "Connector Advanced",
+      "groupOrder" : 10,
+      "width" : "medium",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "post.processors",
+    "type" : "string",
+    "display" : {
+      "label" : "List of change event post processors.",
+      "description" : "Optional list of post processors. The processors are defined using '<post.processor.prefix>.type' config option and configured using options '<post.processor.prefix.<option>'",
+      "group" : "Connector Advanced",
+      "groupOrder" : 998,
+      "width" : "medium",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "tombstones.on.delete",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Change the behaviour of Debezium with regards to delete operations",
+      "description" : "Whether delete operations should be represented by a delete event and a subsequent tombstone event (true) or only by a delete event (false). Emitting the tombstone event (the default behavior) allows Kafka to completely delete all events pertaining to the given key once the source record got deleted.",
+      "group" : "Connector",
+      "groupOrder" : 1,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "heartbeat.interval.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Connector heartbeat interval (milli-seconds)",
+      "description" : "Length of an interval in milli-seconds in in which the connector periodically sends heartbeat messages to a heartbeat topic. Use 0 to disable heartbeat messages. Disabled by default.",
+      "group" : "Advanced Heartbeat",
+      "groupOrder" : 0,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "heartbeat.topics.prefix",
+    "type" : "string",
+    "display" : {
+      "label" : "A prefix used for naming of heartbeat topics",
+      "description" : "The prefix that is used to name heartbeat topics.Defaults to __debezium-heartbeat.",
+      "group" : "Advanced Heartbeat",
+      "groupOrder" : 1,
+      "width" : "medium",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "signal.data.collection",
+    "type" : "list",
+    "display" : {
+      "label" : "Signaling data collection",
+      "description" : "The name of the data collection that is used to send signals/commands to Debezium. For multi-partition mode connectors, multiple signal data collections can be specified as a comma-separated list. Signaling is disabled when not set.",
+      "group" : "Advanced",
+      "groupOrder" : 20,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "signal.poll.interval.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Signal processor poll interval",
+      "description" : "Interval for looking for new signals in registered channels, given in milliseconds. Defaults to 5 seconds.",
+      "group" : "Advanced",
+      "groupOrder" : 21,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "signal.enabled.channels",
+    "type" : "list",
+    "display" : {
+      "label" : "Enabled channels names",
+      "description" : "List of channels names that are enabled. Source channel is enabled by default",
+      "group" : "Advanced",
+      "groupOrder" : 22,
+      "width" : "long",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "topic.naming.strategy",
+    "type" : "string",
+    "display" : {
+      "label" : "Topic naming strategy class",
+      "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc.",
+      "group" : "Advanced",
+      "groupOrder" : 23,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "notification.enabled.channels",
+    "type" : "list",
+    "display" : {
+      "label" : "Enabled notification channels names",
+      "description" : "List of notification channels names that are enabled.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "notification.sink.topic.name",
+    "type" : "string",
+    "display" : {
+      "label" : "Notification topic name",
+      "description" : "The name of the topic for the notifications. This is required in case 'sink' is in the list of enabled channels",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    }
+  }, {
+    "name" : "transaction.metadata.factory",
+    "type" : "string",
+    "display" : {
+      "label" : "Factory class to create transaction context & transaction struct maker classes",
+      "description" : "Class to make transaction context & transaction struct/schemas",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "custom.metric.tags",
+    "type" : "list",
+    "display" : {
+      "label" : "Customize metric tags",
+      "description" : "The custom metric tags will accept key-value pairs to customize the MBean object name which should be appended the end of regular name, each key would represent a tag for the MBean object name, and the corresponding value would be the value of that tag the key is. For example: k1=v1,k2=v2",
+      "group" : "Connector Advanced",
+      "groupOrder" : 25,
+      "width" : "medium",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "database.include.list",
+    "type" : "list",
+    "display" : {
+      "label" : "Include Databases",
+      "description" : "A comma-separated list of regular expressions or literals that match the database names for which changes are to be captured",
+      "group" : "Filters",
+      "groupOrder" : 0,
+      "width" : "long",
+      "importance" : "high"
+    }
+  }, {
+    "name" : "database.exclude.list",
+    "type" : "list",
+    "display" : {
+      "label" : "Exclude Databases",
+      "description" : "A comma-separated list of regular expressions or literals that match the database names for which changes are to be excluded",
+      "group" : "Filters",
+      "groupOrder" : 1,
+      "width" : "long",
+      "importance" : "high"
+    }
+  }, {
+    "name" : "collection.include.list",
+    "type" : "list",
+    "display" : {
+      "label" : "Include Collections",
+      "description" : "A comma-separated list of regular expressions or literals that match the collection names for which changes are to be captured",
+      "group" : "Filters",
+      "groupOrder" : 2,
+      "width" : "long",
+      "importance" : "high"
+    }
+  }, {
+    "name" : "collection.exclude.list",
+    "type" : "string",
+    "display" : {
+      "description" : "A comma-separated list of regular expressions or literals that match the collection names for which changes are to be excluded",
+      "group" : "Filters",
+      "groupOrder" : 3,
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "field.exclude.list",
+    "type" : "string",
+    "display" : {
+      "label" : "Exclude Fields",
+      "description" : "A comma-separated list of the fully-qualified names of fields that should be excluded from change event message values",
+      "group" : "Filters",
+      "groupOrder" : 5,
+      "width" : "long",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "field.renames",
+    "type" : "string",
+    "display" : {
+      "label" : "Rename Fields",
+      "description" : "A comma-separated list of the fully-qualified replacements of fields that should be used to rename fields in change event message values. Fully-qualified replacements for fields are of the form databaseName.collectionName.fieldName.nestedFieldName:newNestedFieldName, where databaseName and collectionName may contain the wildcard (*) which matches any characters, the colon character (:) is used to determine rename mapping of field.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 0,
+      "width" : "long",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "snapshot.collection.filter.overrides",
+    "type" : "string",
+    "display" : {
+      "label" : "Snapshot collection filter overrides",
+      "description" : "This property contains a comma-separated list of <dbName>.<collectionName>, for which  the initial snapshot may be a subset of data present in the data source. The subset would be defined by mongodb filter query specified as value for property snapshot.collection.filter.override.<dbname>.<collectionName>",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 1,
+      "width" : "long",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "sourceinfo.struct.maker",
+    "type" : "string",
+    "display" : {
+      "label" : "Source info struct maker class",
+      "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    }
+  } ],
+  "groups" : [ {
+    "name" : "Connection",
+    "order" : 0,
+    "description" : "Connection configuration"
+  }, {
+    "name" : "Filters",
+    "order" : 5,
+    "description" : "Filtering options for tables and changes"
+  }, {
+    "name" : "Connector",
+    "order" : 7,
+    "description" : "Connector configuration"
+  }, {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

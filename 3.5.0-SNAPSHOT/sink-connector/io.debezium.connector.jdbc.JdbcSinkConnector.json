@@ -1,0 +1,344 @@
+{
+  "name" : "io.debezium.connector.jdbc.JdbcSinkConnector",
+  "type" : "sink-connector",
+  "version" : "3.5.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "Captures changes from a io.debezium.connector.jdbc.JdbcSinkConnector"
+  },
+  "properties" : [ {
+    "name" : "connection.url",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Hostname",
+      "description" : "Valid JDBC URL",
+      "group" : "Connection",
+      "groupOrder" : 1,
+      "width" : "long",
+      "importance" : "high"
+    }
+  }, {
+    "name" : "connection.username",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "User",
+      "description" : "Name of the database user to be used when connecting to the connection.",
+      "group" : "Connection",
+      "groupOrder" : 2,
+      "width" : "short",
+      "importance" : "high"
+    }
+  }, {
+    "name" : "connection.password",
+    "type" : "string",
+    "display" : {
+      "label" : "Password",
+      "description" : "Password of the database user to be used when connecting to the connection.",
+      "group" : "Connection",
+      "groupOrder" : 3,
+      "width" : "short",
+      "importance" : "high"
+    }
+  }, {
+    "name" : "connection.pool.min_size",
+    "type" : "number",
+    "display" : {
+      "label" : "Connection pool minimum size",
+      "description" : "Minimum number of connection in the connection pool",
+      "group" : "Connection",
+      "groupOrder" : 4,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "connection.pool.max_size",
+    "type" : "number",
+    "display" : {
+      "label" : "Connection pool maximum size",
+      "description" : "Maximum number of connection in the connection pool",
+      "group" : "Connection",
+      "groupOrder" : 5,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "connection.pool.acquire_increment",
+    "type" : "number",
+    "display" : {
+      "label" : "Connection pool acquire increment",
+      "description" : "Connection pool acquire increment",
+      "group" : "Connection",
+      "groupOrder" : 6,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "connection.pool.timeout",
+    "type" : "number",
+    "display" : {
+      "label" : "Connection pool timeout",
+      "description" : "Connection pool timeout",
+      "group" : "Connection",
+      "groupOrder" : 7,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "insert.mode",
+    "type" : "string",
+    "display" : {
+      "label" : "The insertion mode to use",
+      "description" : "The insertion mode to use. 'insert' - the default mode, uses standard SQL insert statements; 'upsert' - uses upsert semantics for the database if its supported and requires setting primary.key.mode and primary.key.fields;'update' - uses update semantics for the database if its supported.",
+      "group" : "Connector",
+      "groupOrder" : 1,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "upsert", "insert", "update" ]
+    } ]
+  }, {
+    "name" : "delete.enabled",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Controls whether records can be deleted by the connector",
+      "description" : "Whether to treat `null` record values as deletes. Requires primary.key.mode to be `record.key`.",
+      "group" : "Connector",
+      "groupOrder" : 2,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "truncate.enabled",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Controls whether tables can be truncated by the connector",
+      "description" : "Whether to process debezium event `t` as truncate statement.",
+      "group" : "Connector",
+      "groupOrder" : 2,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "collection.name.format",
+    "type" : "string",
+    "display" : {
+      "label" : "A format string for the collection name",
+      "description" : "A format string for the table, which may contain '${topic}' as a placeholder for the original topic name.",
+      "group" : "Connector",
+      "groupOrder" : 3,
+      "width" : "medium",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "primary.key.mode",
+    "type" : "string",
+    "display" : {
+      "label" : "Primary key mode",
+      "description" : "The primary key mode.",
+      "group" : "Connector",
+      "groupOrder" : 4,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "record_key", "record_value", "kafka", "record_header", "none" ]
+    } ]
+  }, {
+    "name" : "primary.key.fields",
+    "type" : "string",
+    "display" : {
+      "label" : "Comma-separated list of primary key field names",
+      "description" : "A comma-separated list of primary key field names. This is interpreted differently depending on primary.key.mode.",
+      "group" : "Connector",
+      "groupOrder" : 5,
+      "width" : "medium",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "schema.evolution",
+    "type" : "string",
+    "display" : {
+      "label" : "Controls how schema evolution is handled by the sink connector",
+      "description" : "Controls how schema evolution is handled by the sink connector",
+      "group" : "Connector",
+      "groupOrder" : 7,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "none", "basic" ]
+    } ]
+  }, {
+    "name" : "quote.identifiers",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Controls whether table, column, or other identifiers are quoted",
+      "description" : "When enabled, table, column, and other identifiers are quoted based on the database dialect. When disabled, only explicit cases where the dialect requires quoting will be used, such as names starting with an underscore.",
+      "group" : "Connector",
+      "groupOrder" : 8,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "collection.naming.strategy",
+    "type" : "string",
+    "display" : {
+      "label" : "CollectionNamingStrategy class",
+      "description" : "Name of the strategy class that defines the collection name from the topic name. It implements the CollectionNamingStrategy interface.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 2,
+      "width" : "long",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "column.naming.strategy",
+    "type" : "string",
+    "display" : {
+      "label" : "Name of the strategy class that implements the ColumnNamingStrategy interface",
+      "description" : "Name of the strategy class that implements the ColumnNamingStrategy interface.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 2,
+      "width" : "long",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "collection.table.format",
+    "type" : "string",
+    "display" : {
+      "label" : "Format string using table name",
+      "description" : "Alternative format that uses table name instead of topic name. Use ${schema} for schema name and ${table} for table name.",
+      "group" : "Connector",
+      "groupOrder" : 3,
+      "width" : "long",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "use.time.zone",
+    "type" : "string",
+    "display" : {
+      "label" : "The timezone used when inserting temporal values.",
+      "description" : "The timezone used when inserting temporal values. Defaults to UTC.",
+      "group" : "Connector",
+      "groupOrder" : 6,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "dialect.postgres.postgis.schema",
+    "type" : "string",
+    "display" : {
+      "label" : "Name of the schema where postgis extension is installed",
+      "description" : "Name of the schema where postgis extension is installed. Default is public",
+      "group" : "Connector Advanced",
+      "groupOrder" : 3,
+      "width" : "long",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "dialect.sqlserver.identity.insert",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Allowing to insert explicit value for identity column in table for SQLSERVER.",
+      "description" : "Allowing to insert explicit value for identity column in table for SQLSERVER.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 4,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "batch.size",
+    "type" : "number",
+    "display" : {
+      "label" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration.",
+      "description" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 4,
+      "width" : "short",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "field.include.list",
+    "type" : "list",
+    "display" : {
+      "label" : "Include Fields",
+      "description" : "A comma-separated list of regular expressions matching fully-qualified names of fields that should be included in change events. The field names must be delimited by the format <topic>:<field> ",
+      "group" : "Filters",
+      "groupOrder" : 1,
+      "width" : "long",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "field.exclude.list",
+    "type" : "list",
+    "display" : {
+      "label" : "Exclude Fields",
+      "description" : "A comma-separated list of regular expressions matching fully-qualified names of fields that should be excluded from change events. The field names must be delimited by the format <topic>:<field> ",
+      "group" : "Filters",
+      "groupOrder" : 2,
+      "width" : "long",
+      "importance" : "medium"
+    }
+  }, {
+    "name" : "flush.max.retries",
+    "type" : "number",
+    "display" : {
+      "label" : "Max retry count",
+      "description" : "Max retry count when fail to flush. In case of retriable exceptions, the flush will be retried for the defined max retry count. Default is 5.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 5,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "flush.retry.delay.ms",
+    "type" : "number",
+    "display" : {
+      "label" : "Delay to retry flush",
+      "description" : "Delay to retry when fail to flush",
+      "group" : "Connector Advanced",
+      "groupOrder" : 6,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "connection.restart.on.errors",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Restart connection on errors",
+      "description" : "Specifies whether the connector should attempt to restart the connection automatically upon connection-related errors. Defaults to false. In environments where the sink database uses asynchronous replication, enabling this option may risk data loss or inconsistencies during failover if the replica has not fully caught up with the primary.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 7,
+      "width" : "short",
+      "importance" : "low"
+    }
+  }, {
+    "name" : "cloud.events.schema.name.pattern",
+    "type" : "string",
+    "display" : {
+      "label" : "CloudEvents messages schema name pattern",
+      "description" : "Regular expression pattern to identify CloudEvents messages by this schema name pattern.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 8,
+      "width" : "long",
+      "importance" : "low"
+    }
+  } ],
+  "groups" : [ {
+    "name" : "Connection",
+    "order" : 0,
+    "description" : "Connection configuration"
+  }, {
+    "name" : "Filters",
+    "order" : 5,
+    "description" : "Filtering options for tables and changes"
+  }, {
+    "name" : "Connector",
+    "order" : 7,
+    "description" : "Connector configuration"
+  } ]
+}
