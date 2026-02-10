@@ -1,0 +1,158 @@
+name: Build and Push OCI Artifact (Release)
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  REGISTRY: quay.io
+  IMAGE_NAME: debezium/debezium-descriptors
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed/new version
+        id: detect-version
+        run: |
+          # Find all manifest.json files
+          ALL_MANIFESTS=$(find . -maxdepth 2 -name "manifest.json" -type f)
+
+          if [ -z "$ALL_MANIFESTS" ]; then
+            echo "Error: No manifest.json files found"
+            exit 1
+          fi
+
+          echo "All manifests found:"
+          echo "$ALL_MANIFESTS"
+
+          # Strategy 1: Detect from git diff (primary method)
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null || git diff --name-only HEAD || echo "")
+
+          if [ -n "$CHANGED_FILES" ]; then
+            echo ""
+            echo "Changed files in this push:"
+            echo "$CHANGED_FILES"
+
+            # Find changed manifest.json files
+            CHANGED_MANIFEST=$(echo "$CHANGED_FILES" | grep "manifest.json" | head -n 1)
+
+            if [ -n "$CHANGED_MANIFEST" ]; then
+              echo "Detected changed manifest: $CHANGED_MANIFEST"
+              echo "manifest_path=$CHANGED_MANIFEST" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+          fi
+
+          # Strategy 2: Fallback - find manifest with most recent build.timestamp
+          echo ""
+          echo "Warning: Could not detect from git diff, using build.timestamp fallback"
+
+          LATEST_MANIFEST=""
+          LATEST_TIMESTAMP=""
+
+          while IFS= read -r manifest; do
+            TIMESTAMP=$(jq -r '.build.timestamp // empty' "$manifest")
+
+            if [ -n "$TIMESTAMP" ]; then
+              echo "  $manifest -> timestamp: $TIMESTAMP"
+
+              if [ -z "$LATEST_TIMESTAMP" ] || [ "$TIMESTAMP" \> "$LATEST_TIMESTAMP" ]; then
+                LATEST_TIMESTAMP="$TIMESTAMP"
+                LATEST_MANIFEST="$manifest"
+              fi
+            fi
+          done <<< "$ALL_MANIFESTS"
+
+          if [ -z "$LATEST_MANIFEST" ]; then
+            echo "Error: Could not determine latest version from timestamps"
+            exit 1
+          fi
+
+          echo "Detected manifest: $LATEST_MANIFEST"
+          echo "manifest_path=$LATEST_MANIFEST" >> $GITHUB_OUTPUT
+
+      - name: Extract metadata
+        id: metadata
+        uses: ./.github/actions/extract-manifest-metadata
+        with:
+          manifest-path: ${{ steps.detect-version.outputs.manifest_path }}
+
+      - name: Get version directory
+        id: version-dir
+        run: |
+          VERSION_DIR=$(dirname "${{ steps.detect-version.outputs.manifest_path }}")
+
+          echo "version_dir=$VERSION_DIR" >> $GITHUB_OUTPUT
+          echo "New version directory: $VERSION_DIR"
+
+      - name: Setup ORAS
+        uses: ./.github/actions/setup-oras
+
+      - name: Login to registry
+        uses: ./.github/actions/login-registry
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.QUAY_IO_USERNAME }}
+          password: ${{ secrets.QUAY_IO_PASSWORD }}
+
+      - name: Create artifact bundle
+        run: |
+          mkdir -p /tmp/oci-artifact
+          cp -r . /tmp/oci-artifact/
+          rm -rf /tmp/oci-artifact/.git
+          rm -rf /tmp/oci-artifact/.github
+
+          echo "Artifact contents (all versions):"
+          ls -lah /tmp/oci-artifact/
+
+          echo ""
+          echo "Version directories included:"
+          find /tmp/oci-artifact -maxdepth 2 -name "manifest.json" -type f -exec dirname {} \; | sed 's:^/tmp/oci-artifact/::' | sort -V
+
+      - name: Push OCI artifact with version tag
+        uses: ./.github/actions/push-oci-artifact
+        with:
+          artifact-path: /tmp/oci-artifact
+          registry: ${{ env.REGISTRY }}
+          image-name: ${{ env.IMAGE_NAME }}
+          tag: ${{ steps.metadata.outputs.version }}
+          version: ${{ steps.metadata.outputs.version }}
+          source-repo: ${{ steps.metadata.outputs.source-repo }}
+          source-commit: ${{ steps.metadata.outputs.source-commit }}
+          build-timestamp: ${{ steps.metadata.outputs.build-timestamp }}
+          git-commit: ${{ steps.metadata.outputs.git-commit }}
+          oci-timestamp: ${{ steps.metadata.outputs.oci-timestamp }}
+          documentation-branch: main
+          version-dir: ${{ steps.version-dir.outputs.version_dir }}
+
+      - name: Push latest tag
+        run: |
+          VERSION="${{ steps.metadata.outputs.version }}"
+          VERSION_TAG="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${VERSION}"
+          LATEST_TAG="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest"
+
+          oras cp "$VERSION_TAG" "$LATEST_TAG"
+
+          echo "Successfully tagged as latest: $LATEST_TAG"
+
+      - name: Verify artifacts
+        run: |
+          VERSION="${{ steps.metadata.outputs.version }}"
+
+          echo "=== Version Tag Manifest ==="
+          oras manifest fetch "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${VERSION}"
+
+          echo ""
+          echo "=== Latest Tag Manifest ==="
+          oras manifest fetch "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest"

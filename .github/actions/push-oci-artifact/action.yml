@@ -1,0 +1,78 @@
+name: Push OCI Artifact
+description: Pushes an OCI artifact with metadata annotations
+
+inputs:
+  artifact-path:
+    description: Path to the artifact directory
+    required: true
+  registry:
+    description: Registry hostname (e.g., quay.io)
+    required: true
+  image-name:
+    description: Image name (e.g., debezium/debezium-descriptors)
+    required: true
+  tag:
+    description: Image tag
+    required: true
+  version:
+    description: Version for annotations
+    required: true
+  source-repo:
+    description: Source repository for annotations
+    required: true
+  source-commit:
+    description: Source commit for annotations
+    required: true
+  build-timestamp:
+    description: Build timestamp for annotations
+    required: true
+  git-commit:
+    description: Git commit for annotations
+    required: true
+  oci-timestamp:
+    description: OCI timestamp for annotations
+    required: true
+  documentation-branch:
+    description: Branch name for documentation link
+    required: false
+    default: main
+  version-dir:
+    description: Version directory name
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    - name: Push artifact
+      shell: bash
+      run: |
+        IMAGE_TAG="${{ inputs.registry }}/${{ inputs.image-name }}:${{ inputs.tag }}"
+
+        cd "${{ inputs.artifact-path }}"
+
+        # Build base annotations
+        ANNOTATIONS=(
+          "--artifact-type" "application/vnd.debezium.descriptors.v1+json"
+          "--annotation" "org.opencontainers.image.created=${{ inputs.oci-timestamp }}"
+          "--annotation" "org.opencontainers.image.version=${{ inputs.version }}"
+          "--annotation" "org.opencontainers.image.revision=${{ inputs.git-commit }}"
+          "--annotation" "org.opencontainers.image.source=https://github.com/debezium/debezium-descriptors-registry"
+          "--annotation" "org.opencontainers.image.url=https://github.com/debezium/debezium-descriptors-registry"
+          "--annotation" "org.opencontainers.image.documentation=https://github.com/debezium/debezium-descriptors-registry/blob/${{ inputs.documentation-branch }}/README.md"
+          "--annotation" "org.opencontainers.image.title=Debezium Descriptors Registry"
+          "--annotation" "org.opencontainers.image.description=Official registry of JSON configuration schemas for Debezium connectors, transformations, and sink connectors"
+          "--annotation" "io.debezium.source.repository=${{ inputs.source-repo }}"
+          "--annotation" "io.debezium.source.commit=${{ inputs.source-commit }}"
+          "--annotation" "io.debezium.build.timestamp=${{ inputs.build-timestamp }}"
+        )
+
+        # Add optional annotations if provided
+        if [ -n "${{ inputs.version-dir }}" ]; then
+          ANNOTATIONS+=("--annotation" "io.debezium.versions.new=${{ inputs.version-dir }}")
+        fi
+
+        # Push with all annotations
+        oras push "$IMAGE_TAG" "${ANNOTATIONS[@]}" .
+
+        echo "Successfully pushed OCI artifact with tag: $IMAGE_TAG"

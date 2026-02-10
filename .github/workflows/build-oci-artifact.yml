@@ -1,4 +1,4 @@
-name: Build and Push OCI Artifact
+name: Build and Push OCI Artifact (Snapshot)
 
 on:
   push:
@@ -20,76 +20,41 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Full history for accurate commit info
+          fetch-depth: 0
 
-      - name: Extract metadata from manifest
-        id: metadata
+      - name: Find manifest
+        id: find-manifest
         run: |
-          # Find the manifest.json (should be in version directory)
-          MANIFEST_PATH=$(find . -name "manifest.json" -type f | head -n 1)
+          MANIFEST_PATH=$(find . -maxdepth 2 -name "manifest.json" -type f | head -n 1)
 
           if [ -z "$MANIFEST_PATH" ]; then
             echo "Error: manifest.json not found"
             exit 1
           fi
 
+          echo "manifest_path=$MANIFEST_PATH" >> $GITHUB_OUTPUT
           echo "Found manifest at: $MANIFEST_PATH"
 
-          # Extract version from first component (they should all have same version)
-          VERSION=$(jq -r '.components | to_entries | .[0].value[0].version // "unknown"' "$MANIFEST_PATH")
+      - name: Extract metadata
+        id: metadata
+        uses: ./.github/actions/extract-manifest-metadata
+        with:
+          manifest-path: ${{ steps.find-manifest.outputs.manifest_path }}
 
-          # Extract build metadata if present
-          SOURCE_REPO=$(jq -r '.build.sourceRepository // "unknown"' "$MANIFEST_PATH")
-          SOURCE_COMMIT=$(jq -r '.build.sourceCommit // "unknown"' "$MANIFEST_PATH")
-          BUILD_TIMESTAMP=$(jq -r '.build.timestamp // "unknown"' "$MANIFEST_PATH")
+      - name: Setup ORAS
+        uses: ./.github/actions/setup-oras
 
-          # Get current git commit
-          GIT_COMMIT=$(git rev-parse --short HEAD)
-
-          # Generate timestamp for this OCI build
-          OCI_TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-
-          # Output all metadata
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "source_repo=$SOURCE_REPO" >> $GITHUB_OUTPUT
-          echo "source_commit=$SOURCE_COMMIT" >> $GITHUB_OUTPUT
-          echo "build_timestamp=$BUILD_TIMESTAMP" >> $GITHUB_OUTPUT
-          echo "git_commit=$GIT_COMMIT" >> $GITHUB_OUTPUT
-          echo "oci_timestamp=$OCI_TIMESTAMP" >> $GITHUB_OUTPUT
-
-          echo "Extracted metadata:"
-          echo "  Version: $VERSION"
-          echo "  Source Repository: $SOURCE_REPO"
-          echo "  Source Commit: $SOURCE_COMMIT"
-          echo "  Original Build Timestamp: $BUILD_TIMESTAMP"
-          echo "  Git Commit: $GIT_COMMIT"
-          echo "  OCI Build Timestamp: $OCI_TIMESTAMP"
-
-      - name: Install ORAS
-        run: |
-          VERSION="1.1.0"
-          curl -LO "https://github.com/oras-project/oras/releases/download/v${VERSION}/oras_${VERSION}_linux_amd64.tar.gz"
-          mkdir -p oras-install/
-          tar -zxf oras_${VERSION}_*.tar.gz -C oras-install/
-          sudo mv oras-install/oras /usr/local/bin/
-          rm -rf oras_${VERSION}_*.tar.gz oras-install/
-          oras version
-
-      - name: Log in to Quay.io
-        run: |
-          echo "${{ secrets.QUAY_IO_PASSWORD }}" | oras login ${{ env.REGISTRY }} \
-            --username ${{ secrets.QUAY_IO_USERNAME }} \
-            --password-stdin
+      - name: Login to registry
+        uses: ./.github/actions/login-registry
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.QUAY_IO_USERNAME }}
+          password: ${{ secrets.QUAY_IO_PASSWORD }}
 
       - name: Create artifact bundle
         run: |
-          # Create a temporary directory for the artifact
           mkdir -p /tmp/oci-artifact
-
-          # Copy entire repository content
           cp -r . /tmp/oci-artifact/
-
-          # Remove .git directory to reduce size
           rm -rf /tmp/oci-artifact/.git
           rm -rf /tmp/oci-artifact/.github
 
@@ -97,30 +62,19 @@ jobs:
           ls -lah /tmp/oci-artifact/
 
       - name: Push OCI artifact
-        run: |
-          # Generate tag
-          NIGHTLY_TAG="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:nightly"
-
-          # Change to artifact directory to use relative path
-          cd /tmp/oci-artifact
-
-          # Push with all metadata annotations
-          oras push "$NIGHTLY_TAG" \
-            --artifact-type application/vnd.debezium.descriptors.v1+json \
-            --annotation "org.opencontainers.image.created=${{ steps.metadata.outputs.oci_timestamp }}" \
-            --annotation "org.opencontainers.image.version=${{ steps.metadata.outputs.version }}" \
-            --annotation "org.opencontainers.image.revision=${{ steps.metadata.outputs.git_commit }}" \
-            --annotation "org.opencontainers.image.source=https://github.com/debezium/debezium-descriptors-registry" \
-            --annotation "org.opencontainers.image.url=https://github.com/debezium/debezium-descriptors-registry" \
-            --annotation "org.opencontainers.image.documentation=https://github.com/debezium/debezium-descriptors-registry/blob/snapshot/README.md" \
-            --annotation "org.opencontainers.image.title=Debezium Descriptors Registry" \
-            --annotation "org.opencontainers.image.description=Official registry of JSON configuration schemas for Debezium connectors, transformations, and sink connectors" \
-            --annotation "io.debezium.source.repository=${{ steps.metadata.outputs.source_repo }}" \
-            --annotation "io.debezium.source.commit=${{ steps.metadata.outputs.source_commit }}" \
-            --annotation "io.debezium.build.timestamp=${{ steps.metadata.outputs.build_timestamp }}" \
-            .
-
-          echo "Successfully pushed OCI artifact with tag: $NIGHTLY_TAG"
+        uses: ./.github/actions/push-oci-artifact
+        with:
+          artifact-path: /tmp/oci-artifact
+          registry: ${{ env.REGISTRY }}
+          image-name: ${{ env.IMAGE_NAME }}
+          tag: nightly
+          version: ${{ steps.metadata.outputs.version }}
+          source-repo: ${{ steps.metadata.outputs.source-repo }}
+          source-commit: ${{ steps.metadata.outputs.source-commit }}
+          build-timestamp: ${{ steps.metadata.outputs.build-timestamp }}
+          git-commit: ${{ steps.metadata.outputs.git-commit }}
+          oci-timestamp: ${{ steps.metadata.outputs.oci-timestamp }}
+          documentation-branch: snapshot
 
       - name: Verify artifact
         run: |

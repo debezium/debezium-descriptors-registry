@@ -1,0 +1,90 @@
+name: Extract Manifest Metadata
+description: Extracts metadata from a Debezium descriptor manifest.json file
+
+inputs:
+  manifest-path:
+    description: Path to the manifest.json file
+    required: true
+
+outputs:
+  version:
+    description: Version extracted from manifest
+    value: ${{ steps.extract.outputs.version }}
+  source-repo:
+    description: Source repository from manifest
+    value: ${{ steps.extract.outputs.source_repo }}
+  source-commit:
+    description: Source commit hash from manifest
+    value: ${{ steps.extract.outputs.source_commit }}
+  build-timestamp:
+    description: Build timestamp from manifest
+    value: ${{ steps.extract.outputs.build_timestamp }}
+  git-commit:
+    description: Current git commit hash
+    value: ${{ steps.extract.outputs.git_commit }}
+  oci-timestamp:
+    description: OCI build timestamp
+    value: ${{ steps.extract.outputs.oci_timestamp }}
+
+runs:
+  using: composite
+  steps:
+    - name: Extract metadata
+      id: extract
+      shell: bash
+      run: |
+        MANIFEST_PATH="${{ inputs.manifest-path }}"
+
+        if [ ! -f "$MANIFEST_PATH" ]; then
+          echo "Error: manifest.json not found at $MANIFEST_PATH"
+          exit 1
+        fi
+
+        echo "Found manifest at: $MANIFEST_PATH"
+
+        # Try to get version from build.version
+        VERSION=$(jq -r '.build.version // empty' "$MANIFEST_PATH")
+
+        # Fallback 1: Try to get from components[].version
+        if [ -z "$VERSION" ]; then
+          echo "Warning: No build.version found, trying components[].version"
+          VERSION=$(jq -r '.components | to_entries | .[0].value[0].version // empty' "$MANIFEST_PATH")
+        fi
+
+        # Fallback 2: Use directory name as version
+        if [ -z "$VERSION" ]; then
+          echo "Warning: No version in manifest, using directory name"
+          VERSION=$(basename $(dirname "$MANIFEST_PATH"))
+        fi
+
+        if [ -z "$VERSION" ]; then
+          echo "Error: Could not determine version from manifest"
+          exit 1
+        fi
+
+        # Extract build metadata
+        SOURCE_REPO=$(jq -r '.build.sourceRepository // "unknown"' "$MANIFEST_PATH")
+        SOURCE_COMMIT=$(jq -r '.build.sourceCommit // "unknown"' "$MANIFEST_PATH")
+        BUILD_TIMESTAMP=$(jq -r '.build.timestamp // "unknown"' "$MANIFEST_PATH")
+
+        # Get current git commit
+        GIT_COMMIT=$(git rev-parse --short HEAD)
+
+        # Generate timestamp for this OCI build
+        OCI_TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+        # Output all metadata
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+        echo "source_repo=$SOURCE_REPO" >> $GITHUB_OUTPUT
+        echo "source_commit=$SOURCE_COMMIT" >> $GITHUB_OUTPUT
+        echo "build_timestamp=$BUILD_TIMESTAMP" >> $GITHUB_OUTPUT
+        echo "git_commit=$GIT_COMMIT" >> $GITHUB_OUTPUT
+        echo "oci_timestamp=$OCI_TIMESTAMP" >> $GITHUB_OUTPUT
+
+        echo "Extracted metadata:"
+        echo "  Version: $VERSION"
+        echo "  Source Repository: $SOURCE_REPO"
+        echo "  Source Commit: $SOURCE_COMMIT"
+        echo "  Build Timestamp: $BUILD_TIMESTAMP"
+        echo "  Git Commit: $GIT_COMMIT"
+        echo "  OCI Timestamp: $OCI_TIMESTAMP"

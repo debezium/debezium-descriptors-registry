@@ -1,0 +1,23 @@
+name: Login to OCI Registry
+description: Authenticates to an OCI registry using ORAS
+
+inputs:
+  registry:
+    description: Registry hostname (e.g., quay.io)
+    required: true
+  username:
+    description: Registry username
+    required: true
+  password:
+    description: Registry password
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Login to registry
+      shell: bash
+      run: |
+        echo "${{ inputs.password }}" | oras login ${{ inputs.registry }} \
+          --username ${{ inputs.username }} \
+          --password-stdin
