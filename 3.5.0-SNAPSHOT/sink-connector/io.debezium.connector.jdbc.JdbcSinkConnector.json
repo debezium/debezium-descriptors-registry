@@ -3,7 +3,7 @@
   "type" : "sink-connector",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Captures changes from a io.debezium.connector.jdbc.JdbcSinkConnector"
+    "description" : "io.debezium.connector.jdbc.JdbcSinkConnector"
   },
   "properties" : [ {
     "name" : "connection.url",
@@ -16,7 +16,9 @@
       "groupOrder" : 1,
       "width" : "long",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "connection.username",
     "type" : "string",
@@ -28,7 +30,9 @@
       "groupOrder" : 2,
       "width" : "short",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "connection.password",
     "type" : "string",
@@ -39,7 +43,9 @@
       "groupOrder" : 3,
       "width" : "short",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "connection.pool.min_size",
     "type" : "number",
@@ -50,7 +56,9 @@
       "groupOrder" : 4,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "connection.pool.max_size",
     "type" : "number",
@@ -61,7 +69,9 @@
       "groupOrder" : 5,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "connection.pool.acquire_increment",
     "type" : "number",
@@ -72,7 +82,9 @@
       "groupOrder" : 6,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "connection.pool.timeout",
     "type" : "number",
@@ -83,7 +95,9 @@
       "groupOrder" : 7,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "insert.mode",
     "type" : "string",
@@ -98,7 +112,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "upsert", "insert", "update" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "delete.enabled",
     "type" : "boolean",
@@ -109,7 +124,9 @@
       "groupOrder" : 2,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "truncate.enabled",
     "type" : "boolean",
@@ -120,7 +137,9 @@
       "groupOrder" : 2,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "collection.name.format",
     "type" : "string",
@@ -131,7 +150,9 @@
       "groupOrder" : 3,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "primary.key.mode",
     "type" : "string",
@@ -146,7 +167,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "record_key", "record_value", "kafka", "record_header", "none" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "primary.key.fields",
     "type" : "string",
@@ -157,7 +179,9 @@
       "groupOrder" : 5,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "schema.evolution",
     "type" : "string",
@@ -172,7 +196,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "none", "basic" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "quote.identifiers",
     "type" : "boolean",
@@ -183,7 +208,9 @@
       "groupOrder" : 8,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "collection.naming.strategy",
     "type" : "string",
@@ -194,7 +221,9 @@
       "groupOrder" : 2,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "column.naming.strategy",
     "type" : "string",
@@ -205,7 +234,9 @@
       "groupOrder" : 2,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "collection.table.format",
     "type" : "string",
@@ -216,7 +247,9 @@
       "groupOrder" : 3,
       "width" : "long",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "use.time.zone",
     "type" : "string",
@@ -227,7 +260,9 @@
       "groupOrder" : 6,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "dialect.postgres.postgis.schema",
     "type" : "string",
@@ -238,7 +273,22 @@
       "groupOrder" : 3,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "dialect.postgres.unnest.insert.enabled",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Enable UNNEST-based batch inserts for PostgreSQL",
+      "description" : "When enabled, uses PostgreSQL UNNEST() for batch inserts which can significantly improve performance by reducing the number of SQL statements executed. This optimization is compatible with INSERT and UPSERT modes. Instead of executing multiple INSERT statements with JDBC batching, a single INSERT statement with UNNEST is used to insert all records at once. This can provide 5-10x performance improvement for high-throughput scenarios. Default is false.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 3,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "dialect.sqlserver.identity.insert",
     "type" : "boolean",
@@ -249,7 +299,9 @@
       "groupOrder" : 4,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "batch.size",
     "type" : "number",
@@ -260,7 +312,9 @@
       "groupOrder" : 4,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "field.include.list",
     "type" : "list",
@@ -271,7 +325,9 @@
       "groupOrder" : 1,
       "width" : "long",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "field.exclude.list",
     "type" : "list",
@@ -282,7 +338,9 @@
       "groupOrder" : 2,
       "width" : "long",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "flush.max.retries",
     "type" : "number",
@@ -293,7 +351,9 @@
       "groupOrder" : 5,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "flush.retry.delay.ms",
     "type" : "number",
@@ -304,7 +364,9 @@
       "groupOrder" : 6,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "connection.restart.on.errors",
     "type" : "boolean",
@@ -315,7 +377,9 @@
       "groupOrder" : 7,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "cloud.events.schema.name.pattern",
     "type" : "string",
@@ -326,7 +390,9 @@
       "groupOrder" : 8,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Connection",
@@ -340,5 +406,9 @@
     "name" : "Connector",
     "order" : 7,
     "description" : "Connector configuration"
+  }, {
+    "name" : "Connector Advanced",
+    "order" : 9,
+    "description" : "Advanced connector configuration"
   } ]
 }

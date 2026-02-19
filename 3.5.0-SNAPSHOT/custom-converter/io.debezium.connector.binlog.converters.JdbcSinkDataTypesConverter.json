@@ -1,0 +1,66 @@
+{
+  "name" : "io.debezium.connector.binlog.converters.JdbcSinkDataTypesConverter",
+  "type" : "custom-converter",
+  "version" : "3.5.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.connector.binlog.converters.JdbcSinkDataTypesConverter"
+  },
+  "properties" : [ {
+    "name" : "selector.boolean",
+    "type" : "string",
+    "display" : {
+      "label" : "Boolean column selector",
+      "description" : "Comma-separated list of column selectors for BOOLEAN columns. These will be emitted as INT16 (true=1, false=0).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "selector.real",
+    "type" : "string",
+    "display" : {
+      "label" : "Real column selector",
+      "description" : "Comma-separated list of column selectors for REAL columns. These will be emitted as FLOAT32 or FLOAT64 based on treat.real.as.double setting.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "selector.string",
+    "type" : "string",
+    "display" : {
+      "label" : "String column selector",
+      "description" : "Comma-separated list of column selectors for string columns. These will include character set information in the schema.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "treat.real.as.double",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Treat REAL as DOUBLE",
+      "description" : "If true (MySQL default), REAL columns are emitted as FLOAT64. If false, they are emitted as FLOAT32.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

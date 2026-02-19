@@ -3,7 +3,7 @@
   "type" : "transformation",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Captures changes from a io.debezium.transforms.ByLogicalTableRouter"
+    "description" : "io.debezium.transforms.ByLogicalTableRouter"
   },
   "properties" : [ {
     "name" : "topic.regex",
@@ -16,7 +16,9 @@
       "groupOrder" : 9999,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "topic.replacement",
     "type" : "string",
@@ -28,7 +30,9 @@
       "groupOrder" : 9999,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "key.enforce.uniqueness",
     "type" : "boolean",
@@ -39,7 +43,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "key.field.regex",
     "type" : "string",
@@ -50,7 +56,9 @@
       "groupOrder" : 9999,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "key.field.name",
     "type" : "string",
@@ -61,7 +69,9 @@
       "groupOrder" : 9999,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "key.field.replacement",
     "type" : "string",
@@ -72,7 +82,9 @@
       "groupOrder" : 9999,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "schema.name.adjustment.mode",
     "type" : "string",
@@ -87,7 +99,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "none", "avro_unicode", "avro" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "logical.table.cache.size",
     "type" : "number",
@@ -98,7 +111,9 @@
       "groupOrder" : 9999,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Advanced",

@@ -3,7 +3,7 @@
   "type" : "transformation",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Captures changes from a io.debezium.connector.mongodb.transforms.ExtractNewDocumentState"
+    "description" : "io.debezium.connector.mongodb.transforms.ExtractNewDocumentState"
   },
   "properties" : [ {
     "name" : "array.encoding",
@@ -19,7 +19,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "array", "document" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "flatten.struct",
     "type" : "boolean",
@@ -30,7 +31,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "flatten.struct.delimiter",
     "type" : "string",
@@ -41,7 +44,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "delete.tombstone.handling.mode.rewrite-with-id",
     "type" : "boolean",
@@ -52,7 +57,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "delete.tombstone.handling.mode",
     "type" : "string",
@@ -67,7 +74,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "drop", "tombstone", "rewrite-with-tombstone", "rewrite", "delete-to-tombstone" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "route.by.field",
     "type" : "string",
@@ -78,7 +86,9 @@
       "groupOrder" : 9999,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "add.fields.prefix",
     "type" : "string",
@@ -89,7 +99,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "add.fields",
     "type" : "list",
@@ -100,7 +112,9 @@
       "groupOrder" : 9999,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "add.headers.prefix",
     "type" : "string",
@@ -111,7 +125,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "add.headers",
     "type" : "list",
@@ -122,7 +138,9 @@
       "groupOrder" : 9999,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "replace.null.with.default",
     "type" : "boolean",
@@ -133,7 +151,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Advanced",

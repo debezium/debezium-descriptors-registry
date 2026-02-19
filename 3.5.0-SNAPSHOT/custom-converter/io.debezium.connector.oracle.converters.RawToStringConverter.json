@@ -1,0 +1,27 @@
+{
+  "name" : "io.debezium.connector.oracle.converters.RawToStringConverter",
+  "type" : "custom-converter",
+  "version" : "3.5.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.connector.oracle.converters.RawToStringConverter"
+  },
+  "properties" : [ {
+    "name" : "selector",
+    "type" : "string",
+    "display" : {
+      "label" : "Column selector",
+      "description" : "Comma-separated list of column selectors (regular expressions) to match columns that should be converted. Format: <table_name>.<column_name>. Example: 'inventory.products.metadata,orders.*.data'",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

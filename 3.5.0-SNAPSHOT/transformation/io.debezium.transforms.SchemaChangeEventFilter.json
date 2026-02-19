@@ -3,7 +3,7 @@
   "type" : "transformation",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Captures changes from a io.debezium.transforms.SchemaChangeEventFilter"
+    "description" : "io.debezium.transforms.SchemaChangeEventFilter"
   },
   "properties" : [ {
     "name" : "schema.change.event.exclude.list",
@@ -16,7 +16,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Advanced",

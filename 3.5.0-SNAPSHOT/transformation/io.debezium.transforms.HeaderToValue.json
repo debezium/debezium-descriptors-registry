@@ -3,7 +3,7 @@
   "type" : "transformation",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Captures changes from a io.debezium.transforms.HeaderToValue"
+    "description" : "io.debezium.transforms.HeaderToValue"
   },
   "properties" : [ {
     "name" : "headers",
@@ -15,7 +15,9 @@
       "group" : "Advanced",
       "groupOrder" : 9999,
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "fields",
     "type" : "list",
@@ -26,7 +28,9 @@
       "group" : "Advanced",
       "groupOrder" : 9999,
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "operation",
     "type" : "string",
@@ -41,7 +45,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "move", "copy" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Advanced",

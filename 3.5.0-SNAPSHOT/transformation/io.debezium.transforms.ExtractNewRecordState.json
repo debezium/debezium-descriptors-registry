@@ -3,7 +3,7 @@
   "type" : "transformation",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Captures changes from a io.debezium.transforms.ExtractNewRecordState"
+    "description" : "io.debezium.transforms.ExtractNewRecordState"
   },
   "properties" : [ {
     "name" : "drop.fields.header.name",
@@ -15,7 +15,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "drop.fields.from.key",
     "type" : "boolean",
@@ -26,7 +28,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "drop.fields.keep.schema.compatible",
     "type" : "boolean",
@@ -37,7 +41,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Advanced",

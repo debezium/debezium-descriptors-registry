@@ -3,7 +3,7 @@
   "type" : "transformation",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Captures changes from a io.debezium.transforms.GeometryFormatTransformer"
+    "description" : "io.debezium.transforms.GeometryFormatTransformer"
   },
   "properties" : [ {
     "name" : "format",
@@ -19,7 +19,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "ewkb", "wkb" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Advanced",

@@ -3,7 +3,7 @@
   "type" : "source-connector",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Captures changes from a Debezium MongoDB Connector"
+    "description" : "Debezium MongoDB Connector"
   },
   "properties" : [ {
     "name" : "topic.prefix",
@@ -16,7 +16,9 @@
       "groupOrder" : 0,
       "width" : "medium",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.connection.string",
     "type" : "string",
@@ -27,7 +29,9 @@
       "groupOrder" : 1,
       "width" : "medium",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.user",
     "type" : "string",
@@ -38,7 +42,9 @@
       "groupOrder" : 3,
       "width" : "short",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.password",
     "type" : "string",
@@ -49,7 +55,9 @@
       "groupOrder" : 4,
       "width" : "short",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.authsource",
     "type" : "string",
@@ -60,7 +68,9 @@
       "groupOrder" : 1,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.connect.timeout.ms",
     "type" : "number",
@@ -71,7 +81,9 @@
       "groupOrder" : 0,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.heartbeat.frequency.ms",
     "type" : "number",
@@ -82,7 +94,9 @@
       "groupOrder" : 4,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.socket.timeout.ms",
     "type" : "number",
@@ -93,7 +107,9 @@
       "groupOrder" : 3,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.server.selection.timeout.ms",
     "type" : "number",
@@ -104,7 +120,9 @@
       "groupOrder" : 2,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.poll.interval.ms",
     "type" : "number",
@@ -115,7 +133,9 @@
       "groupOrder" : 5,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.ssl.enabled",
     "type" : "boolean",
@@ -126,7 +146,9 @@
       "groupOrder" : 0,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.ssl.invalid.hostname.allowed",
     "type" : "boolean",
@@ -137,7 +159,9 @@
       "groupOrder" : 1,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "cursor.max.await.time.ms",
     "type" : "number",
@@ -148,7 +172,9 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "event.processing.failure.handling.mode",
     "type" : "string",
@@ -163,7 +189,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "warn", "fail", "ignore", "skip" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "max.batch.size",
     "type" : "number",
@@ -174,7 +201,9 @@
       "groupOrder" : 14,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "max.queue.size",
     "type" : "number",
@@ -185,7 +214,9 @@
       "groupOrder" : 15,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "poll.interval.ms",
     "type" : "number",
@@ -196,7 +227,9 @@
       "groupOrder" : 17,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "max.queue.size.in.bytes",
     "type" : "number",
@@ -207,7 +240,9 @@
       "groupOrder" : 16,
       "width" : "long",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "provide.transaction.metadata",
     "type" : "boolean",
@@ -218,7 +253,9 @@
       "groupOrder" : 17,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "skipped.operations",
     "type" : "list",
@@ -229,7 +266,9 @@
       "groupOrder" : 11,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.delay.ms",
     "type" : "number",
@@ -240,7 +279,9 @@
       "groupOrder" : 5,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "streaming.delay.ms",
     "type" : "number",
@@ -251,7 +292,9 @@
       "groupOrder" : 27,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.include.collection.list",
     "type" : "list",
@@ -262,7 +305,9 @@
       "groupOrder" : 2,
       "width" : "long",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.fetch.size",
     "type" : "number",
@@ -273,7 +318,9 @@
       "groupOrder" : 3,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.max.threads",
     "type" : "number",
@@ -284,7 +331,9 @@
       "groupOrder" : 7,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.mode.custom.name",
     "type" : "string",
@@ -295,7 +344,9 @@
       "groupOrder" : 12,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.mode.configuration.based.snapshot.data",
     "type" : "boolean",
@@ -306,7 +357,9 @@
       "groupOrder" : 17,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.mode.configuration.based.snapshot.schema",
     "type" : "boolean",
@@ -317,7 +370,9 @@
       "groupOrder" : 18,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.mode.configuration.based.start.stream",
     "type" : "boolean",
@@ -328,7 +383,9 @@
       "groupOrder" : 19,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.mode.configuration.based.snapshot.on.schema.error",
     "type" : "boolean",
@@ -339,7 +396,9 @@
       "groupOrder" : 20,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.mode.configuration.based.snapshot.on.data.error",
     "type" : "boolean",
@@ -350,7 +409,9 @@
       "groupOrder" : 21,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "retriable.restart.connector.wait.ms",
     "type" : "number",
@@ -361,7 +422,9 @@
       "groupOrder" : 18,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "query.fetch.size",
     "type" : "number",
@@ -372,7 +435,9 @@
       "groupOrder" : 13,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "errors.max.retries",
     "type" : "number",
@@ -383,7 +448,9 @@
       "groupOrder" : 24,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "incremental.snapshot.watermarking.strategy",
     "type" : "string",
@@ -397,8 +464,9 @@
     },
     "validation" : [ {
       "type" : "enum",
-      "values" : [ "INSERT_DELETE", "INSERT_INSERT" ]
-    } ]
+      "values" : [ "insert_delete", "insert_insert" ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "connection.validation.timeout.ms",
     "type" : "number",
@@ -409,7 +477,9 @@
       "groupOrder" : 13,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "executor.shutdown.timeout.ms",
     "type" : "number",
@@ -420,7 +490,9 @@
       "groupOrder" : 19,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "openlineage.integration.enabled",
     "type" : "boolean",
@@ -431,7 +503,9 @@
       "groupOrder" : 40,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "openlineage.integration.config.file.path",
     "type" : "string",
@@ -442,7 +516,9 @@
       "groupOrder" : 41,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "openlineage.integration.job.namespace",
     "type" : "string",
@@ -453,7 +529,9 @@
       "groupOrder" : 42,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "openlineage.integration.job.description",
     "type" : "string",
@@ -464,7 +542,9 @@
       "groupOrder" : 43,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "openlineage.integration.job.tags",
     "type" : "list",
@@ -475,7 +555,9 @@
       "groupOrder" : 44,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "openlineage.integration.job.owners",
     "type" : "list",
@@ -486,7 +568,9 @@
       "groupOrder" : 45,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "openlineage.integration.dataset.kafka.bootstrap.servers",
     "type" : "string",
@@ -497,7 +581,9 @@
       "groupOrder" : 47,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "extended.headers.enabled",
     "type" : "boolean",
@@ -508,7 +594,9 @@
       "groupOrder" : 46,
       "width" : "short",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "guardrail.collections.max",
     "type" : "number",
@@ -519,7 +607,9 @@
       "groupOrder" : 33,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "guardrail.collections.limit.action",
     "type" : "string",
@@ -534,7 +624,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "warn", "fail" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "custom.sanitize.pattern",
     "type" : "string",
@@ -545,7 +636,9 @@
       "groupOrder" : 48,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.mode",
     "type" : "string",
@@ -560,7 +653,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "always", "initial_only", "configuration_based", "when_needed", "initial", "custom", "no_data" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "capture.mode",
     "type" : "string",
@@ -575,7 +669,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "change_streams", "change_streams_update_full", "change_streams_with_pre_image", "change_streams_update_full_with_pre_image" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "schema.name.adjustment.mode",
     "type" : "string",
@@ -590,7 +685,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "none", "avro_unicode", "avro" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "converters",
     "type" : "string",
@@ -601,7 +697,9 @@
       "groupOrder" : 10,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "post.processors",
     "type" : "string",
@@ -612,7 +710,9 @@
       "groupOrder" : 998,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "tombstones.on.delete",
     "type" : "boolean",
@@ -623,7 +723,9 @@
       "groupOrder" : 1,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "heartbeat.interval.ms",
     "type" : "number",
@@ -634,7 +736,9 @@
       "groupOrder" : 0,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "heartbeat.topics.prefix",
     "type" : "string",
@@ -645,7 +749,9 @@
       "groupOrder" : 1,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "signal.data.collection",
     "type" : "list",
@@ -656,7 +762,9 @@
       "groupOrder" : 20,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "signal.poll.interval.ms",
     "type" : "number",
@@ -667,7 +775,9 @@
       "groupOrder" : 21,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "signal.enabled.channels",
     "type" : "list",
@@ -678,7 +788,9 @@
       "groupOrder" : 22,
       "width" : "long",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "topic.naming.strategy",
     "type" : "string",
@@ -689,7 +801,9 @@
       "groupOrder" : 23,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "notification.enabled.channels",
     "type" : "list",
@@ -700,7 +814,9 @@
       "groupOrder" : 9999,
       "width" : "long",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "notification.sink.topic.name",
     "type" : "string",
@@ -711,7 +827,9 @@
       "groupOrder" : 9999,
       "width" : "long",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "transaction.metadata.factory",
     "type" : "string",
@@ -722,7 +840,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "custom.metric.tags",
     "type" : "list",
@@ -733,7 +853,9 @@
       "groupOrder" : 25,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "database.include.list",
     "type" : "list",
@@ -744,7 +866,9 @@
       "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "database.exclude.list",
     "type" : "list",
@@ -755,7 +879,9 @@
       "groupOrder" : 1,
       "width" : "long",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "collection.include.list",
     "type" : "list",
@@ -766,7 +892,9 @@
       "groupOrder" : 2,
       "width" : "long",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "collection.exclude.list",
     "type" : "string",
@@ -775,7 +903,9 @@
       "group" : "Filters",
       "groupOrder" : 3,
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "field.exclude.list",
     "type" : "string",
@@ -786,7 +916,9 @@
       "groupOrder" : 5,
       "width" : "long",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "field.renames",
     "type" : "string",
@@ -797,7 +929,9 @@
       "groupOrder" : 0,
       "width" : "long",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "snapshot.collection.filter.overrides",
     "type" : "string",
@@ -808,7 +942,9 @@
       "groupOrder" : 1,
       "width" : "long",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "sourceinfo.struct.maker",
     "type" : "string",
@@ -819,20 +955,42 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Connection",
     "order" : 0,
     "description" : "Connection configuration"
   }, {
+    "name" : "Connection Advanced Ssl",
+    "order" : 1,
+    "description" : "Advanced SSL connection configuration"
+  }, {
+    "name" : "Connection Advanced",
+    "order" : 2,
+    "description" : "Advanced connection configuration"
+  }, {
     "name" : "Filters",
     "order" : 5,
     "description" : "Filtering options for tables and changes"
   }, {
+    "name" : "Connector Snapshot",
+    "order" : 6,
+    "description" : "Snapshot configuration"
+  }, {
     "name" : "Connector",
     "order" : 7,
     "description" : "Connector configuration"
+  }, {
+    "name" : "Advanced Heartbeat",
+    "order" : 8,
+    "description" : "Heartbeat configuration"
+  }, {
+    "name" : "Connector Advanced",
+    "order" : 9,
+    "description" : "Advanced connector configuration"
   }, {
     "name" : "Advanced",
     "order" : 10,

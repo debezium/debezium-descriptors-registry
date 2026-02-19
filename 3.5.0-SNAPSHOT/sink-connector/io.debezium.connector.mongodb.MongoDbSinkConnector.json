@@ -3,7 +3,7 @@
   "type" : "sink-connector",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Captures changes from a io.debezium.connector.mongodb.MongoDbSinkConnector"
+    "description" : "io.debezium.connector.mongodb.MongoDbSinkConnector"
   },
   "properties" : [ {
     "name" : "sink.database",
@@ -16,7 +16,9 @@
       "groupOrder" : 2,
       "width" : "medium",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "mongodb.connection.string",
     "type" : "string",
@@ -27,7 +29,9 @@
       "groupOrder" : 1,
       "width" : "medium",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "collection.naming.strategy",
     "type" : "string",
@@ -38,7 +42,9 @@
       "groupOrder" : 2,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "collection.name.format",
     "type" : "string",
@@ -49,7 +55,9 @@
       "groupOrder" : 3,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "column.naming.strategy",
     "type" : "string",
@@ -60,7 +68,9 @@
       "groupOrder" : 3,
       "width" : "long",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "batch.size",
     "type" : "number",
@@ -71,7 +81,9 @@
       "groupOrder" : 4,
       "width" : "short",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Connection",
@@ -81,5 +93,9 @@
     "name" : "Connector",
     "order" : 7,
     "description" : "Connector configuration"
+  }, {
+    "name" : "Connector Advanced",
+    "order" : 9,
+    "description" : "Advanced connector configuration"
   } ]
 }

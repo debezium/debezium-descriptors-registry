@@ -3,7 +3,7 @@
   "type" : "transformation",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Captures changes from a io.debezium.connector.jdbc.transforms.CollectionNameTransformation"
+    "description" : "io.debezium.connector.jdbc.transforms.CollectionNameTransformation"
   },
   "properties" : [ {
     "name" : "collection.naming.prefix",
@@ -14,7 +14,9 @@
       "group" : "Advanced",
       "groupOrder" : 9999,
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "collection.naming.suffix",
     "type" : "string",
@@ -24,7 +26,9 @@
       "group" : "Advanced",
       "groupOrder" : 9999,
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "collection.naming.style",
     "type" : "string",
@@ -34,7 +38,9 @@
       "group" : "Advanced",
       "groupOrder" : 9999,
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Advanced",

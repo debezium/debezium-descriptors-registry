@@ -3,7 +3,7 @@
   "type" : "transformation",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Captures changes from a io.debezium.connector.mongodb.transforms.outbox.MongoEventRouter"
+    "description" : "io.debezium.connector.mongodb.transforms.outbox.MongoEventRouter"
   },
   "properties" : [ {
     "name" : "table.op.invalid.behavior",
@@ -19,7 +19,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "warn", "error", "fatal" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "table.field.event.id",
     "type" : "string",
@@ -30,7 +31,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "table.field.event.key",
     "type" : "string",
@@ -41,7 +44,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "table.field.event.type",
     "type" : "string",
@@ -52,7 +57,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "table.field.event.timestamp",
     "type" : "string",
@@ -63,7 +70,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "table.field.event.payload",
     "type" : "string",
@@ -74,7 +83,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "table.fields.additional.placement",
     "type" : "list",
@@ -85,7 +96,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "table.fields.additional.error.on.missing",
     "type" : "boolean",
@@ -96,7 +109,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "table.field.event.schema.version",
     "type" : "string",
@@ -107,7 +122,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "route.by.field",
     "type" : "string",
@@ -118,7 +135,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "route.topic.regex",
     "type" : "string",
@@ -129,7 +148,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "low"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "route.topic.replacement",
     "type" : "string",
@@ -140,7 +161,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "route.tombstone.on.empty.payload",
     "type" : "boolean",
@@ -151,7 +174,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "table.expand.json.payload",
     "type" : "boolean",
@@ -162,7 +187,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "medium"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "table.json.payload.null.behavior",
     "type" : "string",
@@ -177,7 +204,8 @@
     "validation" : [ {
       "type" : "enum",
       "values" : [ "ignore", "optional_bytes" ]
-    } ]
+    } ],
+    "valueDependants" : [ ]
   }, {
     "name" : "tracing.span.context.field",
     "type" : "string",
@@ -188,7 +216,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "tracing.operation.name",
     "type" : "string",
@@ -199,7 +229,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   }, {
     "name" : "tracing.with.context.field.only",
     "type" : "boolean",
@@ -210,7 +242,9 @@
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "high"
-    }
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Advanced",
