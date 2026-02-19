@@ -2,7 +2,7 @@
     "schemaVersion": "1.0",
     "build": {
         "version": "3.5.0-SNAPSHOT",
-        "timestamp": "2026-02-19T08:54:57Z",
+        "timestamp": "2026-02-19T10:37:34Z",
         "sourceRepository": "debezium/debezium",
         "sourceCommit": "9007d72122",
         "sourceBranch": "main"
@@ -55,6 +55,12 @@
             }
         ],
         "source-connector": [
+            {
+                "class": "io.debezium.connector.db2.Db2Connector",
+                "name": "io.debezium.connector.db2.Db2Connector",
+                "description": "io.debezium.connector.db2.Db2Connector",
+                "descriptor": "source-connector/io.debezium.connector.db2.Db2Connector.json"
+            },
             {
                 "class": "io.debezium.connector.mariadb.MariaDbConnector",
                 "name": "Debezium MariaDB Connector",
