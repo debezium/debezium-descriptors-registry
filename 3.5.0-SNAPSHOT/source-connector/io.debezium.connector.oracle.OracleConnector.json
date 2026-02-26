@@ -159,10 +159,10 @@
     } ],
     "valueDependants" : [ {
       "values" : [ "logminer" ],
-      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.batch.size.default", "log.mining.batch.size.increment", "log.mining.batch.size.max", "log.mining.batch.size.min", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.scn.gap.detection.gap.size.min", "log.mining.scn.gap.detection.time.interval.max.ms", "log.mining.session.max.ms", "log.mining.sleep.time.default.ms", "log.mining.sleep.time.increment.ms", "log.mining.sleep.time.max.ms", "log.mining.sleep.time.min.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
+      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.batch.size.default", "log.mining.batch.size.increment", "log.mining.batch.size.max", "log.mining.batch.size.min", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.rs_id", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.scn.gap.detection.gap.size.min", "log.mining.scn.gap.detection.time.interval.max.ms", "log.mining.session.max.ms", "log.mining.sleep.time.default.ms", "log.mining.sleep.time.increment.ms", "log.mining.sleep.time.max.ms", "log.mining.sleep.time.min.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
     }, {
       "values" : [ "logminer_unbuffered" ],
-      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.batch.size.default", "log.mining.batch.size.increment", "log.mining.batch.size.max", "log.mining.batch.size.min", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.scn.gap.detection.gap.size.min", "log.mining.scn.gap.detection.time.interval.max.ms", "log.mining.session.max.ms", "log.mining.sleep.time.default.ms", "log.mining.sleep.time.increment.ms", "log.mining.sleep.time.max.ms", "log.mining.sleep.time.min.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
+      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.batch.size.default", "log.mining.batch.size.increment", "log.mining.batch.size.max", "log.mining.batch.size.min", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.rs_id", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.scn.gap.detection.gap.size.min", "log.mining.scn.gap.detection.time.interval.max.ms", "log.mining.session.max.ms", "log.mining.sleep.time.default.ms", "log.mining.sleep.time.increment.ms", "log.mining.sleep.time.max.ms", "log.mining.sleep.time.min.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
     }, {
       "values" : [ "xstream" ],
       "dependants" : [ "xstream.out.server.name" ]
@@ -353,6 +353,19 @@
       "description" : "The maximum number of threads used to perform the snapshot. Defaults to 1.",
       "group" : "Connector Snapshot",
       "groupOrder" : 7,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "snapshot.max.threads.multiplier",
+    "type" : "number",
+    "display" : {
+      "label" : "Snapshot maximum thread multiplier",
+      "description" : "The factor used to scale the number of snapshot chunks per table. The default behavior is to take 'row_count/snapshot.max.threads' to compute the number of rows per chunks. This may not be ideal for larger tables, and using the multiplier, the formula is adjusted to increase the number of chunks by using 'row_count/(snapshot.max.threads * snapshot.max.threads.multiplier).",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 8,
       "width" : "short",
       "importance" : "medium"
     },
@@ -962,6 +975,19 @@
       "type" : "enum",
       "values" : [ "ehcache", "memory", "infinispan_embedded", "infinispan_remote" ]
     } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "log.mining.buffer.track.rs_id",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Toggle whether the 'rs_id' value is tracked and buffered",
+      "description" : "This controls whether the 'RS_ID' column values are tracked. When set to true (the default), the 'RS_ID' values are buffered and provided in events when available. When set to false, the 'RS_ID' values are not buffered and can reduce the memory footprint.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
     "valueDependants" : [ ]
   }, {
     "name" : "log.mining.buffer.drop.on.stop",
@@ -1697,7 +1723,7 @@
       "label" : "List of tables where the default select statement used during snapshotting should be overridden.",
       "description" : " This property contains a comma-separated list of fully-qualified tables (DB_NAME.TABLE_NAME) or (SCHEMA_NAME.TABLE_NAME), depending on the specific connectors. Select statements for the individual tables are specified in further configuration properties, one for each table, identified by the id 'snapshot.select.statement.overrides.[DB_NAME].[TABLE_NAME]' or 'snapshot.select.statement.overrides.[SCHEMA_NAME].[TABLE_NAME]', respectively. The value of those properties is the select statement to use when retrieving data from the specific table during snapshotting. A possible use case for large append-only tables is setting a specific point where to start (resume) snapshotting, in case a previous snapshotting was interrupted.",
       "group" : "Connector Snapshot",
-      "groupOrder" : 8,
+      "groupOrder" : 10,
       "width" : "long",
       "importance" : "medium"
     },
