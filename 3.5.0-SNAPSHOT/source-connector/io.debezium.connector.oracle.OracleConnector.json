@@ -38,7 +38,7 @@
     "type" : "number",
     "display" : {
       "label" : "Port",
-      "description" : "Port of the database server.",
+      "description" : "Port of the database server. Default: 1528",
       "group" : "Connection",
       "groupOrder" : 3,
       "width" : "short",
@@ -92,7 +92,7 @@
     "type" : "number",
     "display" : {
       "label" : "Query timeout",
-      "description" : "Time to wait for a query to execute, given in milliseconds. Defaults to 600 seconds (600,000 ms); zero means there is no limit.",
+      "description" : "Time to wait for a query to execute, given in milliseconds. Defaults to 600 seconds (600,000 ms); zero means there is no limit. Default: 600000",
       "group" : "Connection",
       "groupOrder" : 12,
       "importance" : "low"
@@ -131,7 +131,7 @@
     "type" : "string",
     "display" : {
       "label" : "Snapshot mode",
-      "description" : "The criteria for running a snapshot upon startup of the connector. Select one of the following snapshot options: 'always': The connector runs a snapshot every time that it starts. After the snapshot completes, the connector begins to stream changes from the redo logs.; 'initial' (default): If the connector does not detect any offsets for the logical server name, it runs a snapshot that captures the current full state of the configured tables. After the snapshot completes, the connector begins to stream changes from the redo logs. 'initial_only': The connector performs a snapshot as it does for the 'initial' option, but after the connector completes the snapshot, it stops, and does not stream changes from the redo logs.; 'schema_only': If the connector does not detect any offsets for the logical server name, it runs a snapshot that captures only the schema (table structures), but not any table data. After the snapshot completes, the connector begins to stream changes from the redo logs.; 'schema_only_recovery': The connector performs a snapshot that captures only the database schema history. The connector then transitions to streaming from the redo logs. Use this setting to restore a corrupted or lost database schema history topic. Do not use if the database schema was modified after the connector stopped.",
+      "description" : "The criteria for running a snapshot upon startup of the connector. Select one of the following snapshot options: 'always': The connector runs a snapshot every time that it starts. After the snapshot completes, the connector begins to stream changes from the redo logs.; 'initial' (default): If the connector does not detect any offsets for the logical server name, it runs a snapshot that captures the current full state of the configured tables. After the snapshot completes, the connector begins to stream changes from the redo logs. 'initial_only': The connector performs a snapshot as it does for the 'initial' option, but after the connector completes the snapshot, it stops, and does not stream changes from the redo logs.; 'schema_only': If the connector does not detect any offsets for the logical server name, it runs a snapshot that captures only the schema (table structures), but not any table data. After the snapshot completes, the connector begins to stream changes from the redo logs.; 'schema_only_recovery': The connector performs a snapshot that captures only the database schema history. The connector then transitions to streaming from the redo logs. Use this setting to restore a corrupted or lost database schema history topic. Do not use if the database schema was modified after the connector stopped. Default: initial",
       "group" : "Connector Snapshot",
       "groupOrder" : 0,
       "width" : "short",
@@ -147,7 +147,7 @@
     "type" : "string",
     "display" : {
       "label" : "Connector adapter",
-      "description" : "The adapter to use when capturing changes from the database. Options include: 'LogMiner': (the default) to capture changes using native Oracle LogMiner with buffered transactions; 'LogMiner_Unbuffered': to capture changes using native Oracle LogMiner without buffering; 'XStream': to capture changes using Oracle XStreams; 'OLR': to capture changes using OpenLogReplicator",
+      "description" : "The adapter to use when capturing changes from the database. Options include: 'LogMiner': (the default) to capture changes using native Oracle LogMiner with buffered transactions; 'LogMiner_Unbuffered': to capture changes using native Oracle LogMiner without buffering; 'XStream': to capture changes using Oracle XStreams; 'OLR': to capture changes using OpenLogReplicator Default: LogMiner",
       "group" : "Connection Advanced",
       "groupOrder" : 7,
       "width" : "medium",
@@ -175,7 +175,7 @@
     "type" : "string",
     "display" : {
       "label" : "Log Mining Strategy",
-      "description" : "There are strategies: Online catalog with faster mining but no captured DDL. Another - with data dictionary loaded into REDO LOG files",
+      "description" : "There are strategies: Online catalog with faster mining but no captured DDL. Another - with data dictionary loaded into REDO LOG files Default: online_catalog",
       "group" : "Connection Advanced",
       "groupOrder" : 8,
       "width" : "medium",
@@ -204,7 +204,7 @@
     "type" : "string",
     "display" : {
       "label" : "Event deserialization failure handling",
-      "description" : "Specify how failures during processing of events (i.e. when encountering a corrupted event) should be handled, including: 'fail' (the default) an exception indicating the problematic event and its position is raised, causing the connector to be stopped; 'warn' the problematic event and its position will be logged and the event will be skipped; 'ignore' the problematic event will be skipped.",
+      "description" : "Specify how failures during processing of events (i.e. when encountering a corrupted event) should be handled, including: 'fail' (the default) an exception indicating the problematic event and its position is raised, causing the connector to be stopped; 'warn' the problematic event and its position will be logged and the event will be skipped; 'ignore' the problematic event will be skipped. Default: fail",
       "group" : "Advanced",
       "groupOrder" : 12,
       "width" : "short",
@@ -220,7 +220,7 @@
     "type" : "number",
     "display" : {
       "label" : "Change event batch size",
-      "description" : "Maximum size of each batch of source records. Defaults to 2048.",
+      "description" : "Maximum size of each batch of source records. Defaults to 2048. Default: 2048",
       "group" : "Advanced",
       "groupOrder" : 14,
       "width" : "short",
@@ -233,7 +233,7 @@
     "type" : "number",
     "display" : {
       "label" : "Change event buffer size",
-      "description" : "Maximum size of the queue for change events read from the database log but not yet recorded or forwarded. Defaults to 8192, and should always be larger than the maximum batch size.",
+      "description" : "Maximum size of the queue for change events read from the database log but not yet recorded or forwarded. Defaults to 8192, and should always be larger than the maximum batch size. Default: 8192",
       "group" : "Advanced",
       "groupOrder" : 15,
       "width" : "short",
@@ -246,7 +246,7 @@
     "type" : "number",
     "display" : {
       "label" : "Poll interval (ms)",
-      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms.",
+      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms. Default: 500",
       "group" : "Advanced",
       "groupOrder" : 17,
       "width" : "short",
@@ -259,7 +259,7 @@
     "type" : "number",
     "display" : {
       "label" : "Change event buffer size in bytes",
-      "description" : "Maximum size of the queue in bytes for change events read from the database log but not yet recorded or forwarded. Defaults to 0. Mean the feature is not enabled",
+      "description" : "Maximum size of the queue in bytes for change events read from the database log but not yet recorded or forwarded. Defaults to 0. Mean the feature is not enabled Default: 0",
       "group" : "Advanced",
       "groupOrder" : 16,
       "width" : "long",
@@ -272,7 +272,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Store transaction metadata information in a dedicated topic.",
-      "description" : "Enables transaction metadata extraction together with event counting",
+      "description" : "Enables transaction metadata extraction together with event counting Default: false",
       "group" : "Connector Advanced",
       "groupOrder" : 17,
       "width" : "short",
@@ -285,7 +285,7 @@
     "type" : "list",
     "display" : {
       "label" : "Skipped Operations",
-      "description" : "The comma-separated list of operations to skip during streaming, defined as: 'c' for inserts/create; 'u' for updates; 'd' for deletes, 't' for truncates, and 'none' to indicate nothing skipped. By default, only truncate operations will be skipped.",
+      "description" : "The comma-separated list of operations to skip during streaming, defined as: 'c' for inserts/create; 'u' for updates; 'd' for deletes, 't' for truncates, and 'none' to indicate nothing skipped. By default, only truncate operations will be skipped. Default: t",
       "group" : "Advanced",
       "groupOrder" : 11,
       "width" : "short",
@@ -298,7 +298,7 @@
     "type" : "number",
     "display" : {
       "label" : "Snapshot Delay (milliseconds)",
-      "description" : "A delay period before a snapshot will begin, given in milliseconds. Defaults to 0 ms.",
+      "description" : "A delay period before a snapshot will begin, given in milliseconds. Defaults to 0 ms. Default: 0",
       "group" : "Connector Snapshot",
       "groupOrder" : 5,
       "width" : "medium",
@@ -311,7 +311,7 @@
     "type" : "number",
     "display" : {
       "label" : "Streaming Delay (milliseconds)",
-      "description" : "A delay period after the snapshot is completed and the streaming begins, given in milliseconds. Defaults to 0 ms.",
+      "description" : "A delay period after the snapshot is completed and the streaming begins, given in milliseconds. Defaults to 0 ms. Default: 0",
       "group" : "Connector Advanced",
       "groupOrder" : 27,
       "width" : "medium",
@@ -350,7 +350,7 @@
     "type" : "number",
     "display" : {
       "label" : "Snapshot maximum threads",
-      "description" : "The maximum number of threads used to perform the snapshot. Defaults to 1.",
+      "description" : "The maximum number of threads used to perform the snapshot. Defaults to 1. Default: 1",
       "group" : "Connector Snapshot",
       "groupOrder" : 7,
       "width" : "short",
@@ -363,7 +363,7 @@
     "type" : "number",
     "display" : {
       "label" : "Snapshot maximum thread multiplier",
-      "description" : "The factor used to scale the number of snapshot chunks per table. The default behavior is to take 'row_count/snapshot.max.threads' to compute the number of rows per chunks. This may not be ideal for larger tables, and using the multiplier, the formula is adjusted to increase the number of chunks by using 'row_count/(snapshot.max.threads * snapshot.max.threads.multiplier).",
+      "description" : "The factor used to scale the number of snapshot chunks per table. The default behavior is to take 'row_count/snapshot.max.threads' to compute the number of rows per chunks. This may not be ideal for larger tables, and using the multiplier, the formula is adjusted to increase the number of chunks by using 'row_count/(snapshot.max.threads * snapshot.max.threads.multiplier). Default: 1",
       "group" : "Connector Snapshot",
       "groupOrder" : 8,
       "width" : "short",
@@ -389,7 +389,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Snapshot mode property based snapshot data",
-      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the data should be snapshotted or not.",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the data should be snapshotted or not. Default: false",
       "group" : "Connector Snapshot",
       "groupOrder" : 17,
       "width" : "medium",
@@ -402,7 +402,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Snapshot mode property based snapshot schema",
-      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the schema should be snapshotted or not.",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the schema should be snapshotted or not. Default: false",
       "group" : "Connector Snapshot",
       "groupOrder" : 18,
       "width" : "medium",
@@ -415,7 +415,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Snapshot mode property based start stream",
-      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the stream should start or not after snapshot.",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the stream should start or not after snapshot. Default: false",
       "group" : "Connector Snapshot",
       "groupOrder" : 19,
       "width" : "medium",
@@ -428,7 +428,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Snapshot mode property based snapshot on schema error",
-      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the schema should be snapshotted or not in case of error.",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the schema should be snapshotted or not in case of error. Default: false",
       "group" : "Connector Snapshot",
       "groupOrder" : 20,
       "width" : "medium",
@@ -441,7 +441,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Snapshot mode property based snapshot on data error",
-      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the data should be snapshotted or not in case of error.",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the data should be snapshotted or not in case of error. Default: false",
       "group" : "Connector Snapshot",
       "groupOrder" : 21,
       "width" : "medium",
@@ -454,7 +454,7 @@
     "type" : "number",
     "display" : {
       "label" : "Retriable restart wait (ms)",
-      "description" : "Time to wait before restarting connector after retriable exception occurs. Defaults to 10000ms.",
+      "description" : "Time to wait before restarting connector after retriable exception occurs. Defaults to 10000ms. Default: 10000",
       "group" : "Advanced",
       "groupOrder" : 18,
       "width" : "medium",
@@ -467,7 +467,7 @@
     "type" : "number",
     "display" : {
       "label" : "The maximum number of retries",
-      "description" : "The maximum number of retries on connection errors before failing (-1 = no limit, 0 = disabled, > 0 = num of retries).",
+      "description" : "The maximum number of retries on connection errors before failing (-1 = no limit, 0 = disabled, > 0 = num of retries). Default: -1",
       "group" : "Connector Advanced",
       "groupOrder" : 24,
       "width" : "medium",
@@ -480,7 +480,7 @@
     "type" : "string",
     "display" : {
       "label" : "Incremental snapshot watermarking strategy",
-      "description" : "Specify the strategy used for watermarking during an incremental snapshot: 'insert_insert' both open and close signal is written into signal data collection (default); 'insert_delete' only open signal is written on signal data collection, the close will delete the relative open signal;",
+      "description" : "Specify the strategy used for watermarking during an incremental snapshot: 'insert_insert' both open and close signal is written into signal data collection (default); 'insert_delete' only open signal is written on signal data collection, the close will delete the relative open signal; Default: INSERT_INSERT",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -496,7 +496,7 @@
     "type" : "number",
     "display" : {
       "label" : "Connection validation timeout (ms)",
-      "description" : "The maximum time in milliseconds to wait for connection validation to complete. Defaults to 60 seconds.",
+      "description" : "The maximum time in milliseconds to wait for connection validation to complete. Defaults to 60 seconds. Default: 60000",
       "group" : "Connection",
       "groupOrder" : 13,
       "width" : "short",
@@ -509,7 +509,7 @@
     "type" : "number",
     "display" : {
       "label" : "Executor shutdown timeout (ms)",
-      "description" : "The maximum time in milliseconds to wait for task executor to shut down.",
+      "description" : "The maximum time in milliseconds to wait for task executor to shut down. Default: 4000",
       "group" : "Advanced",
       "groupOrder" : 19,
       "width" : "medium",
@@ -522,7 +522,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Enables OpenLineage integration",
-      "description" : "Enable Debezium to emit data lineage metadata through OpenLineage API",
+      "description" : "Enable Debezium to emit data lineage metadata through OpenLineage API Default: false",
       "group" : "Advanced",
       "groupOrder" : 40,
       "width" : "short",
@@ -535,7 +535,7 @@
     "type" : "string",
     "display" : {
       "label" : "Path to OpenLineage file configuration",
-      "description" : "Path to OpenLineage file configuration. See https://openlineage.io/docs/client/java/configuration",
+      "description" : "Path to OpenLineage file configuration. See https://openlineage.io/docs/client/java/configuration Default: ./openlineage.yml",
       "group" : "Advanced",
       "groupOrder" : 41,
       "width" : "long",
@@ -561,7 +561,7 @@
     "type" : "string",
     "display" : {
       "label" : "Description used for Debezium job",
-      "description" : "The job's description emitted by Debezium",
+      "description" : "The job's description emitted by Debezium Default: Debezium change data capture job",
       "group" : "Advanced",
       "groupOrder" : 43,
       "width" : "long",
@@ -613,7 +613,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Enable/Disable extended headers",
-      "description" : "Enable/Disable Debezium context headers that provides essential metadata for tracking and identifying the source of CDC events in downstream processing systems.",
+      "description" : "Enable/Disable Debezium context headers that provides essential metadata for tracking and identifying the source of CDC events in downstream processing systems. Default: true",
       "group" : "Advanced",
       "groupOrder" : 46,
       "width" : "short",
@@ -626,7 +626,7 @@
     "type" : "number",
     "display" : {
       "label" : "Maximum number of collections or tables",
-      "description" : "The maximum number of collections or tables that can be captured by the connector. When this limit is exceeded, the action specified by 'guardrail.collections.limit.action' will be taken. Set to 0 to disable this guardrail.",
+      "description" : "The maximum number of collections or tables that can be captured by the connector. When this limit is exceeded, the action specified by 'guardrail.collections.limit.action' will be taken. Set to 0 to disable this guardrail. Default: 0",
       "group" : "Advanced",
       "groupOrder" : 33,
       "width" : "short",
@@ -639,7 +639,7 @@
     "type" : "string",
     "display" : {
       "label" : "Guardrail collections limit action",
-      "description" : "Specify the action to take when a guardrail collections limit is exceeded: 'warn' (the default) logs a warning message and continues processing; 'fail' stops the connector with an error.",
+      "description" : "Specify the action to take when a guardrail collections limit is exceeded: 'warn' (the default) logs a warning message and continues processing; 'fail' stops the connector with an error. Default: warn",
       "group" : "Advanced",
       "groupOrder" : 34,
       "width" : "short",
@@ -655,7 +655,7 @@
     "type" : "string",
     "display" : {
       "label" : "Custom pattern for masking sensitive configuration",
-      "description" : "Regular expression identifying configuration keys whose values should be masked. When set, this custom pattern replaces Debezium’s default password masking pattern.",
+      "description" : "Regular expression identifying configuration keys whose values should be masked. When set, this custom pattern replaces Debezium’s default password masking pattern. Default: .*secret$|.*password$|.*sasl\\.jaas\\.config$|.*basic\\.auth\\.user\\.info|.*registry\\.auth\\.client-secret",
       "group" : "Advanced",
       "groupOrder" : 48,
       "width" : "long",
@@ -668,7 +668,7 @@
     "type" : "string",
     "display" : {
       "label" : "Decimal Handling",
-      "description" : "Specify how DECIMAL and NUMERIC columns should be represented in change events, including: 'precise' (the default) uses java.math.BigDecimal to represent values, which are encoded in the change events using a binary representation and Kafka Connect's 'org.apache.kafka.connect.data.Decimal' type; 'string' uses string to represent values; 'double' represents values using Java's 'double', which may not offer the precision but will be far easier to use in consumers.",
+      "description" : "Specify how DECIMAL and NUMERIC columns should be represented in change events, including: 'precise' (the default) uses java.math.BigDecimal to represent values, which are encoded in the change events using a binary representation and Kafka Connect's 'org.apache.kafka.connect.data.Decimal' type; 'string' uses string to represent values; 'double' represents values using Java's 'double', which may not offer the precision but will be far easier to use in consumers. Default: precise",
       "group" : "Connector",
       "groupOrder" : 2,
       "width" : "short",
@@ -684,7 +684,7 @@
     "type" : "string",
     "display" : {
       "label" : "Time Precision",
-      "description" : "Time, date, and timestamps can be represented with different kinds of precisions, including: 'adaptive' (the default) bases the precision of time, date, and timestamp values on the database column's precision; 'adaptive_time_microseconds' like 'adaptive' mode, but TIME fields always use microseconds precision; 'connect' always represents time, date, and timestamp values using Kafka Connect's built-in representations for Time, Date, and Timestamp, which uses millisecond precision regardless of the database columns' precision.",
+      "description" : "Time, date, and timestamps can be represented with different kinds of precisions, including: 'adaptive' (the default) bases the precision of time, date, and timestamp values on the database column's precision; 'adaptive_time_microseconds' like 'adaptive' mode, but TIME fields always use microseconds precision; 'connect' always represents time, date, and timestamp values using Kafka Connect's built-in representations for Time, Date, and Timestamp, which uses millisecond precision regardless of the database columns' precision. Default: adaptive",
       "group" : "Connector",
       "groupOrder" : 4,
       "width" : "short",
@@ -700,7 +700,7 @@
     "type" : "number",
     "display" : {
       "label" : "Snapshot lock timeout (ms)",
-      "description" : "The maximum number of millis to wait for table locks at the beginning of a snapshot. If locks cannot be acquired in this time frame, the snapshot will be aborted. Defaults to 10 seconds",
+      "description" : "The maximum number of millis to wait for table locks at the beginning of a snapshot. If locks cannot be acquired in this time frame, the snapshot will be aborted. Defaults to 10 seconds Default: 10000",
       "group" : "Connector Snapshot",
       "groupOrder" : 6,
       "width" : "long",
@@ -713,7 +713,7 @@
     "type" : "number",
     "display" : {
       "label" : "Query fetch size",
-      "description" : "The maximum number of records that should be loaded into memory while streaming. A value of '0' uses the default JDBC fetch size, defaults to '2000'.",
+      "description" : "The maximum number of records that should be loaded into memory while streaming. A value of '0' uses the default JDBC fetch size, defaults to '2000'. Default: 10000",
       "group" : "Advanced",
       "groupOrder" : 13,
       "width" : "medium",
@@ -726,7 +726,7 @@
     "type" : "string",
     "display" : {
       "label" : "Snapshot locking mode",
-      "description" : "Controls how the connector holds locks on tables while performing the schema snapshot. The default is 'shared', which means the connector will hold a table lock that prevents exclusive table access for just the initial portion of the snapshot while the database schemas and other metadata are being read. The remaining work in a snapshot involves selecting all rows from each table, and this is done using a flashback query that requires no locks. However, in some cases it may be desirable to avoid locks entirely which can be done by specifying 'none'. This mode is only safe to use if no schema changes are happening while the snapshot is taken.",
+      "description" : "Controls how the connector holds locks on tables while performing the schema snapshot. The  The remaining work in a snapshot involves selecting all rows from each table, and this is done using a flashback query that requires no locks. However, in some cases it may be desirable to avoid locks entirely which can be done by specifying 'none'. This mode is only safe to use if no schema changes are happening while the snapshot is taken. Default: shared",
       "group" : "Connector Snapshot",
       "groupOrder" : 1,
       "width" : "short",
@@ -755,7 +755,7 @@
     "type" : "string",
     "display" : {
       "label" : "Interval Handling",
-      "description" : "Specify how INTERVAL columns should be represented in change events, including: 'string' represents values as an exact ISO formatted string; 'numeric' (default) represents values using the inexact conversion into microseconds",
+      "description" : "Specify how INTERVAL columns should be represented in change events, including: 'string' represents values as an exact ISO formatted string; 'numeric' (default) represents values using the inexact conversion into microseconds Default: numeric",
       "group" : "Connector",
       "groupOrder" : 6,
       "width" : "medium",
@@ -771,7 +771,7 @@
     "type" : "number",
     "display" : {
       "label" : "Archive Log Hours",
-      "description" : "The number of hours in the past from SYSDATE to mine archive logs. Using 0 mines all available archive logs",
+      "description" : "The number of hours in the past from SYSDATE to mine archive logs. Using 0 mines all available archive logs Default: 0",
       "group" : "Connection Advanced",
       "groupOrder" : 32,
       "width" : "short",
@@ -784,7 +784,7 @@
     "type" : "number",
     "display" : {
       "label" : "Default batch size for reading redo/archive logs.",
-      "description" : "The starting SCN interval size that the connector will use for reading data from redo/archive logs.",
+      "description" : "The starting SCN interval size that the connector will use for reading data from redo/archive logs. Default: 20000",
       "group" : "Connection Advanced",
       "groupOrder" : 11,
       "width" : "short",
@@ -797,7 +797,7 @@
     "type" : "number",
     "display" : {
       "label" : "Minimum batch size for reading redo/archive logs.",
-      "description" : "The minimum SCN interval size that this connector will try to read from redo/archive logs.",
+      "description" : "The minimum SCN interval size that this connector will try to read from redo/archive logs. Default: 1000",
       "group" : "Connection Advanced",
       "groupOrder" : 13,
       "width" : "short",
@@ -810,7 +810,7 @@
     "type" : "number",
     "display" : {
       "label" : "Maximum batch size for reading redo/archive logs.",
-      "description" : "The maximum SCN interval size that this connector will use when reading from redo/archive logs.",
+      "description" : "The maximum SCN interval size that this connector will use when reading from redo/archive logs. Default: 100000",
       "group" : "Connection Advanced",
       "groupOrder" : 14,
       "width" : "short",
@@ -823,7 +823,7 @@
     "type" : "number",
     "display" : {
       "label" : "Increment/Decrement batch size for reading redo/archive logs.",
-      "description" : "Active batch size will be also increased/decreased by this amount for tuning connector throughput when needed.",
+      "description" : "Active batch size will be also increased/decreased by this amount for tuning connector throughput when needed. Default: 20000",
       "group" : "Connection Advanced",
       "groupOrder" : 12,
       "width" : "short",
@@ -836,7 +836,7 @@
     "type" : "number",
     "display" : {
       "label" : "Default sleep time in milliseconds when reading redo/archive logs.",
-      "description" : "The amount of time that the connector will sleep after reading data from redo/archive logs and before starting reading data again. Value is in milliseconds.",
+      "description" : "The amount of time that the connector will sleep after reading data from redo/archive logs and before starting reading data again. Value is in milliseconds. Default: 1000",
       "group" : "Connection Advanced",
       "groupOrder" : 15,
       "width" : "short",
@@ -849,7 +849,7 @@
     "type" : "number",
     "display" : {
       "label" : "Minimum sleep time in milliseconds when reading redo/archive logs.",
-      "description" : "The minimum amount of time that the connector will sleep after reading data from redo/archive logs and before starting reading data again. Value is in milliseconds.",
+      "description" : "The minimum amount of time that the connector will sleep after reading data from redo/archive logs and before starting reading data again. Value is in milliseconds. Default: 0",
       "group" : "Connection Advanced",
       "groupOrder" : 16,
       "width" : "short",
@@ -862,7 +862,7 @@
     "type" : "number",
     "display" : {
       "label" : "Maximum sleep time in milliseconds when reading redo/archive logs.",
-      "description" : "The maximum amount of time that the connector will sleep after reading data from redo/archive logs and before starting reading data again. Value is in milliseconds.",
+      "description" : "The maximum amount of time that the connector will sleep after reading data from redo/archive logs and before starting reading data again. Value is in milliseconds. Default: 3000",
       "group" : "Connection Advanced",
       "groupOrder" : 17,
       "width" : "short",
@@ -875,7 +875,7 @@
     "type" : "number",
     "display" : {
       "label" : "The increment in sleep time in milliseconds used to tune auto-sleep behavior.",
-      "description" : "The maximum amount of time that the connector will use to tune the optimal sleep time when reading data from LogMiner. Value is in milliseconds.",
+      "description" : "The maximum amount of time that the connector will use to tune the optimal sleep time when reading data from LogMiner. Value is in milliseconds. Default: 200",
       "group" : "Connection Advanced",
       "groupOrder" : 18,
       "width" : "short",
@@ -888,7 +888,7 @@
     "type" : "number",
     "display" : {
       "label" : "Log Mining long running transaction retention",
-      "description" : "Duration in milliseconds to keep long running transactions in transaction buffer between log mining sessions. By default, all transactions are retained.",
+      "description" : "Duration in milliseconds to keep long running transactions in transaction buffer between log mining sessions. By default, all transactions are retained. Default: 0",
       "group" : "Connection Advanced",
       "groupOrder" : 19,
       "width" : "short",
@@ -901,7 +901,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Specifies whether log mining should only target archive logs or both archive and redo logs",
-      "description" : "When set to 'false', the default, the connector will mine both archive log and redo logs to emit change events. When set to 'true', the connector will only mine archive logs. There are circumstances where its advantageous to only mine archive logs and accept latency in event emission due to frequent revolving redo logs.",
+      "description" : "When set to 'false', the default, the connector will mine both archive log and redo logs to emit change events. When set to 'true', the connector will only mine archive logs. There are circumstances where its advantageous to only mine archive logs and accept latency in event emission due to frequent revolving redo logs. Default: false",
       "group" : "Connection Advanced",
       "groupOrder" : 9,
       "width" : "short",
@@ -914,7 +914,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Specifies whether the connector supports mining LOB fields and operations",
-      "description" : "When set to 'false', the default, LOB fields will not be captured nor emitted. When set to 'true', the connector will capture LOB fields and emit changes for those fields like any other column type.",
+      "description" : "When set to 'false', the default, LOB fields will not be captured nor emitted. When set to 'true', the connector will capture LOB fields and emit changes for those fields like any other column type. Default: false",
       "group" : "Connector Advanced",
       "groupOrder" : 21,
       "width" : "short",
@@ -966,7 +966,7 @@
     "type" : "string",
     "display" : {
       "label" : "Controls which buffer type implementation to be used",
-      "description" : "The buffer type controls how the connector manages buffering transaction data.\n\nmemory - Uses the JVM process' heap to buffer all transaction data.\n\ninfinispan_embedded - This option uses an embedded Infinispan cache to buffer transaction data and persist it to disk.\n\ninfinispan_remote - This option uses a remote Infinispan cluster to buffer transaction data and persist it to disk.\n\nehcache - Use ehcache in embedded mode to buffer transaction data and persist it to disk.",
+      "description" : "The buffer type controls how the connector manages buffering transaction data.\n\nmemory - Uses the JVM process' heap to buffer all transaction data.\n\ninfinispan_embedded - This option uses an embedded Infinispan cache to buffer transaction data and persist it to disk.\n\ninfinispan_remote - This option uses a remote Infinispan cluster to buffer transaction data and persist it to disk.\n\nehcache - Use ehcache in embedded mode to buffer transaction data and persist it to disk. Default: memory",
       "group" : "Connection Advanced",
       "groupOrder" : 22,
       "importance" : "low"
@@ -981,7 +981,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Toggle whether the 'rs_id' value is tracked and buffered",
-      "description" : "This controls whether the 'RS_ID' column values are tracked. When set to true (the default), the 'RS_ID' values are buffered and provided in events when available. When set to false, the 'RS_ID' values are not buffered and can reduce the memory footprint.",
+      "description" : "This controls whether the 'RS_ID' column values are tracked. When set to true (the default), the 'RS_ID' values are buffered and provided in events when available. When set to false, the 'RS_ID' values are not buffered and can reduce the memory footprint. Default: true",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -994,7 +994,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Controls whether the buffer cache is dropped when connector is stopped",
-      "description" : "When set to true the underlying buffer cache is not retained when the connector is stopped. When set to false (the default), the buffer cache is retained across restarts.",
+      "description" : "When set to true the underlying buffer cache is not retained when the connector is stopped. When set to false (the default), the buffer cache is retained across restarts. Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1072,7 +1072,7 @@
     "type" : "number",
     "display" : {
       "label" : "The maximum number of events a transaction can have before being discarded.",
-      "description" : "The number of events a transaction can include before the transaction is discarded. This is useful for managing buffer memory and/or space when dealing with very large transactions. Defaults to 0, meaning that no threshold is applied and transactions can have unlimited events.",
+      "description" : "The number of events a transaction can include before the transaction is discarded. This is useful for managing buffer memory and/or space when dealing with very large transactions. Defaults to 0, meaning that no threshold is applied and transactions can have unlimited events. Default: 0",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1085,7 +1085,7 @@
     "type" : "number",
     "display" : {
       "label" : "The interval in milliseconds to wait between polls when SCN is not yet in the archive logs",
-      "description" : "The interval in milliseconds to wait between polls checking to see if the SCN is in the archive logs.",
+      "description" : "The interval in milliseconds to wait between polls checking to see if the SCN is in the archive logs. Default: 10000",
       "group" : "Connection Advanced",
       "groupOrder" : 29,
       "width" : "short",
@@ -1098,7 +1098,7 @@
     "type" : "number",
     "display" : {
       "label" : "SCN gap size used to detect SCN gap",
-      "description" : "Used for SCN gap detection, if the difference between current SCN and previous end SCN is bigger than this value, and the time difference of current SCN and previous end SCN is smaller than log.mining.scn.gap.detection.time.interval.max.ms, consider it a SCN gap.",
+      "description" : "Used for SCN gap detection, if the difference between current SCN and previous end SCN is bigger than this value, and the time difference of current SCN and previous end SCN is smaller than log.mining.scn.gap.detection.time.interval.max.ms, consider it a SCN gap. Default: 1000000",
       "group" : "Connection Advanced",
       "groupOrder" : 30,
       "width" : "short",
@@ -1111,7 +1111,7 @@
     "type" : "number",
     "display" : {
       "label" : "Timer interval used to detect SCN gap",
-      "description" : "Used for SCN gap detection, if the difference between current SCN and previous end SCN is bigger than log.mining.scn.gap.detection.gap.size.min, and the time difference of current SCN and previous end SCN is smaller than  this value, consider it a SCN gap.",
+      "description" : "Used for SCN gap detection, if the difference between current SCN and previous end SCN is bigger than log.mining.scn.gap.detection.gap.size.min, and the time difference of current SCN and previous end SCN is smaller than  this value, consider it a SCN gap. Default: 20000",
       "group" : "Connection Advanced",
       "groupOrder" : 31,
       "width" : "short",
@@ -1124,7 +1124,7 @@
     "type" : "string",
     "display" : {
       "label" : "Unavailable value placeholder",
-      "description" : "Specify the constant that will be provided by Debezium to indicate that the original value is unavailable and not provided by the database.",
+      "description" : "Specify the constant that will be provided by Debezium to indicate that the original value is unavailable and not provided by the database. Default: __debezium_unavailable_value",
       "group" : "Connector Advanced",
       "groupOrder" : 20,
       "width" : "medium",
@@ -1137,7 +1137,7 @@
     "type" : "string",
     "display" : {
       "label" : "Binary Handling",
-      "description" : "Specify how binary (blob, binary, etc.) columns should be represented in change events, including: 'bytes' represents binary data as byte array (default); 'base64' represents binary data as base64-encoded string; 'base64-url-safe' represents binary data as base64-url-safe-encoded string; 'hex' represents binary data as hex-encoded (base16) string",
+      "description" : "Specify how binary (blob, binary, etc.) columns should be represented in change events, including: 'bytes' represents binary data as byte array (default); 'base64' represents binary data as base64-encoded string; 'base64-url-safe' represents binary data as base64-url-safe-encoded string; 'hex' represents binary data as hex-encoded (base16) string Default: bytes",
       "group" : "Connector",
       "groupOrder" : 3,
       "width" : "medium",
@@ -1153,7 +1153,7 @@
     "type" : "string",
     "display" : {
       "label" : "Schema Name Adjustment",
-      "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default)",
+      "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
       "groupOrder" : 7,
       "width" : "medium",
@@ -1169,7 +1169,7 @@
     "type" : "number",
     "display" : {
       "label" : "Maximum number of milliseconds of a single LogMiner session",
-      "description" : "The maximum number of milliseconds that a LogMiner session lives for before being restarted. Defaults to 0 (indefinite until a log switch occurs)",
+      "description" : "The maximum number of milliseconds that a LogMiner session lives for before being restarted. Defaults to 0 (indefinite until a log switch occurs) Default: 0",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1182,7 +1182,7 @@
     "type" : "number",
     "display" : {
       "label" : "Maximum number of milliseconds that the mining window can span",
-      "description" : "The maximum number of milliseconds that the mining window can span. If a transaction remains open for longer than this duration, the mining window start SCN will be advanced to minimize the window size, preventing it from growing indefinitely. Defaults to 0 (disabled).",
+      "description" : "The maximum number of milliseconds that the mining window can span. If a transaction remains open for longer than this duration, the mining window start SCN will be advanced to minimize the window size, preventing it from growing indefinitely. Defaults to 0 (disabled). Default: 0",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1195,7 +1195,7 @@
     "type" : "string",
     "display" : {
       "label" : "Specifies the name of the flush table used by the connector",
-      "description" : "The name of the flush table used by the connector, defaults to LOG_MINING_FLUSH.",
+      "description" : "The name of the flush table used by the connector, defaults to LOG_MINING_FLUSH. Default: LOG_MINING_FLUSH",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -1208,7 +1208,7 @@
     "type" : "string",
     "display" : {
       "label" : "Specifies how the filter configuration is applied to the LogMiner database query",
-      "description" : "Specifies how the filter configuration is applied to the LogMiner database query. \nnone - The query does not apply any schema or table filters, all filtering is at runtime by the connector.\nin - The query uses SQL in-clause expressions to specify the schema or table filters.\nregex - The query uses Oracle REGEXP_LIKE expressions to specify the schema or table filters.\n",
+      "description" : "Specifies how the filter configuration is applied to the LogMiner database query. \nnone - The query does not apply any schema or table filters, all filtering is at runtime by the connector.\nin - The query uses SQL in-clause expressions to specify the schema or table filters.\nregex - The query uses Oracle REGEXP_LIKE expressions to specify the schema or table filters. Default: none",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1224,7 +1224,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Restarts Oracle database connection when reaching maximum session time or database log switch",
-      "description" : "Debezium opens a database connection and keeps that connection open throughout the entire streaming phase. In some situations, this can lead to excessive SGA memory usage. By setting this option to 'true' (the default is 'false'), the connector will close and re-open a database connection after every detected log switch or if the log.mining.session.max.ms has been reached.",
+      "description" : "Debezium opens a database connection and keeps that connection open throughout the entire streaming phase. In some situations, this can lead to excessive SGA memory usage. By setting this option to 'true' (the mining.session.max.ms has been reached. Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1237,7 +1237,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Include the transaction log SQL",
-      "description" : "When enabled, the transaction log REDO SQL will be included in the source information block.",
+      "description" : "When enabled, the transaction log REDO SQL will be included in the source information block. Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1292,7 +1292,7 @@
     "type" : "number",
     "display" : {
       "label" : "The maximum number of retries before snapshot database errors are not retried",
-      "description" : "The number of attempts to retry database errors during snapshots before failing.",
+      "description" : "The number of attempts to retry database errors during snapshots before failing. Default: 0",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1305,7 +1305,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Should log mining session configured with CONTINUOUS_MINE setting?",
-      "description" : "(Deprecated) if true, CONTINUOUS_MINE option will be added to the log mining session. This will manage log files switches seamlessly.",
+      "description" : "(Deprecated) if true, CONTINUOUS_MINE option will be added to the log mining session. This will manage log files switches seamlessly. Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1435,7 +1435,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Use legacy decimal handling strategy",
-      "description" : "Uses the legacy decimal handling behavior before DBZ-7882",
+      "description" : "Uses the legacy decimal handling behavior before DBZ-7882 Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1448,7 +1448,7 @@
     "type" : "string",
     "display" : {
       "label" : "Database schema history class",
-      "description" : "The name of the SchemaHistory class that should be used to store and recover database schema changes. The configuration properties for the history are prefixed with the 'schema.history.internal.' string.",
+      "description" : "The name of the SchemaHistory class that should be used to store and recover database schema changes. The configuration properties for the history are prefixed with the 'schema.history.internal.' string. Default: io.debezium.storage.kafka.history.KafkaSchemaHistory",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "long",
@@ -1461,7 +1461,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Skip DDL statements that cannot be parsed",
-      "description" : "Controls the action Debezium will take when it meets a DDL statement in binlog, that it cannot parse.By default the connector will stop operating but by changing the setting it can ignore the statements which it cannot parse. If skipping is enabled then Debezium can miss metadata changes.",
+      "description" : "Controls the action Debezium will take when it meets a DDL statement in binlog, that it cannot parse.By default the connector will stop operating but by changing the setting it can ignore the statements which it cannot parse. If skipping is enabled then Debezium can miss metadata changes. Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1474,7 +1474,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Store only DDL that modifies tables that are captured based on include/exclude lists",
-      "description" : "Controls what DDL will Debezium store in database schema history. By default (false) Debezium will store all incoming DDL statements. If set to true, then only DDL that manipulates a captured table will be stored.",
+      "description" : "Controls what DDL will Debezium store in database schema history. By default (false) Debezium will store all incoming DDL statements. If set to true, then only DDL that manipulates a captured table will be stored. Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1487,7 +1487,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Store only DDL that modifies tables of databases that are captured based on include/exclude lists",
-      "description" : "Controls what DDL will Debezium store in database schema history. By default (false) Debezium will store all incoming DDL statements. If set to true, then only DDL that manipulates a table from captured schema/database will be stored.",
+      "description" : "Controls what DDL will Debezium store in database schema history. By default (false) Debezium will store all incoming DDL statements. If set to true, then only DDL that manipulates a table from captured schema/database will be stored. Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -1526,7 +1526,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Change the behaviour of Debezium with regards to delete operations",
-      "description" : "Whether delete operations should be represented by a delete event and a subsequent tombstone event (true) or only by a delete event (false). Emitting the tombstone event (the default behavior) allows Kafka to completely delete all events pertaining to the given key once the source record got deleted.",
+      "description" : "Whether delete operations should be represented by a delete event and a subsequent tombstone event (true) or only by a delete event (false). Emitting the tombstone event (the default behavior) allows Kafka to completely delete all events pertaining to the given key once the source record got deleted. Default: true",
       "group" : "Connector",
       "groupOrder" : 1,
       "width" : "short",
@@ -1539,7 +1539,7 @@
     "type" : "number",
     "display" : {
       "label" : "Connector heartbeat interval (milli-seconds)",
-      "description" : "Length of an interval in milli-seconds in in which the connector periodically sends heartbeat messages to a heartbeat topic. Use 0 to disable heartbeat messages. Disabled by default.",
+      "description" : "Length of an interval in milli-seconds in in which the connector periodically sends heartbeat messages to a heartbeat topic. Use 0 to disable heartbeat messages. Disabled by default. Default: 0",
       "group" : "Advanced Heartbeat",
       "groupOrder" : 0,
       "width" : "medium",
@@ -1552,7 +1552,7 @@
     "type" : "string",
     "display" : {
       "label" : "A prefix used for naming of heartbeat topics",
-      "description" : "The prefix that is used to name heartbeat topics.Defaults to __debezium-heartbeat.",
+      "description" : "The prefix that is used to name heartbeat topics.Defaults to __debezium-heartbeat. Default: __debezium-heartbeat",
       "group" : "Advanced Heartbeat",
       "groupOrder" : 1,
       "width" : "medium",
@@ -1565,7 +1565,7 @@
     "type" : "number",
     "display" : {
       "label" : "Signal processor poll interval",
-      "description" : "Interval for looking for new signals in registered channels, given in milliseconds. Defaults to 5 seconds.",
+      "description" : "Interval for looking for new signals in registered channels, given in milliseconds. Defaults to 5 seconds. Default: 5000",
       "group" : "Advanced",
       "groupOrder" : 21,
       "width" : "short",
@@ -1578,7 +1578,7 @@
     "type" : "list",
     "display" : {
       "label" : "Enabled channels names",
-      "description" : "List of channels names that are enabled. Source channel is enabled by default",
+      "description" : "List of channels names that are enabled. Source channel is enabled by default Default: source",
       "group" : "Advanced",
       "groupOrder" : 22,
       "width" : "long",
@@ -1591,7 +1591,7 @@
     "type" : "string",
     "display" : {
       "label" : "Topic naming strategy class",
-      "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc.",
+      "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc. Default: io.debezium.schema.SchemaTopicNamingStrategy",
       "group" : "Advanced",
       "groupOrder" : 23,
       "width" : "medium",
@@ -1630,7 +1630,7 @@
     "type" : "string",
     "display" : {
       "label" : "Factory class to create transaction context & transaction struct maker classes",
-      "description" : "Class to make transaction context & transaction struct/schemas",
+      "description" : "Class to make transaction context & transaction struct/schemas Default: io.debezium.pipeline.txmetadata.DefaultTransactionMetadataFactory",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -1771,7 +1771,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Include database schema changes",
-      "description" : "Whether the connector should publish changes in the database schema to a Kafka topic with the same name as the database server ID. Each schema change will be recorded using a key that contains the database name and whose value include logical description of the new schema and optionally the DDL statement(s). The default is 'true'. This is independent of how the connector internally records database schema history.",
+      "description" : "Whether the connector should publish changes in the database schema to a Kafka topic with the same name as the database server ID. Each schema change will be recorded using a key that contains the database name and whose value include logical description of the new schema and optionally the DDL statement(s). The  This is independent of how the connector internally records database schema history. Default: true",
       "group" : "Connector",
       "groupOrder" : 0,
       "width" : "short",
@@ -1784,7 +1784,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Include Table and Column Comments",
-      "description" : "Whether the connector parse table and column's comment to metadata object. Note: Enable this option will bring the implications on memory usage. The number and size of ColumnImpl objects is what largely impacts how much memory is consumed by the Debezium connectors, and adding a String to each of them can potentially be quite heavy. The default is 'false'.",
+      "description" : "Whether the connector parse table and column's comment to metadata object. Note: Enable this option will bring the implications on memory usage. The number and size of ColumnImpl objects is what largely impacts how much memory is consumed by the Debezium connectors, and adding a String to each of them can potentially be quite heavy. The Default: false",
       "group" : "Connector",
       "groupOrder" : 5,
       "width" : "short",
@@ -1821,7 +1821,7 @@
     "type" : "string",
     "display" : {
       "label" : "Initial snapshot tables order by row count",
-      "description" : "Controls the order in which tables are processed in the initial snapshot. A `descending` value will order the tables by row count descending. A `ascending` value will order the tables by row count ascending. A value of `disabled` (the default) will disable ordering by row count.",
+      "description" : "Controls the order in which tables are processed in the initial snapshot. A `descending` value will order the tables by row count descending. A `ascending` value will order the tables by row count ascending. A value of `disabled` (the default) will disable ordering by row count. Default: disabled",
       "group" : "Connector Snapshot",
       "groupOrder" : 111,
       "importance" : "medium"
@@ -1849,7 +1849,7 @@
     "type" : "string",
     "display" : {
       "label" : "Source info struct maker class",
-      "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct.",
+      "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.oracle.OracleSourceInfoStructMaker",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",

@@ -49,7 +49,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Treat REAL as DOUBLE",
-      "description" : "If true (MySQL default), REAL columns are emitted as FLOAT64. If false, they are emitted as FLOAT32.",
+      "description" : "If true (MySQL default), REAL columns are emitted as FLOAT64. If false, they are emitted as FLOAT32. Default: true",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",

@@ -23,7 +23,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Specifies whether the fields to be dropped should also be omitted from the key",
-      "description" : "Specifies whether to apply the drop fields behavior to the event key as well as the value. Default behavior is to only remove fields from the event value, not the key.",
+      "description" : "Specifies whether to apply the drop fields behavior to the event key as well as the value. Default behavior is to only remove fields from the event value, not the key. Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -36,7 +36,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Specifies if fields are dropped, will the event's schemas be compatible",
-      "description" : "Controls the output event's schema compatibility when using the drop fields feature. `true`: dropped fields are removed if the schema indicates its optional leaving the schemas unchanged, `false`: dropped fields are removed from the key/value schemas, regardless of optionality.",
+      "description" : "Controls the output event's schema compatibility when using the drop fields feature. `true`: dropped fields are removed if the schema indicates its optional leaving the schemas unchanged, `false`: dropped fields are removed from the key/value schemas, regardless of optionality. Default: true",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",

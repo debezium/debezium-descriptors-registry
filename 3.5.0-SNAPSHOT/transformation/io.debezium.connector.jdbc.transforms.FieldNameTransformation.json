@@ -10,7 +10,7 @@
     "type" : "string",
     "display" : {
       "label" : "Column Name Prefix",
-      "description" : "Optional prefix to add to column names.",
+      "description" : "Optional prefix to add to column names. Default: ",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "importance" : "low"
@@ -22,7 +22,7 @@
     "type" : "string",
     "display" : {
       "label" : "Column Name Suffix",
-      "description" : "Optional suffix to add to column names.",
+      "description" : "Optional suffix to add to column names. Default: ",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "importance" : "low"
@@ -34,7 +34,7 @@
     "type" : "string",
     "display" : {
       "label" : "Column Naming Style",
-      "description" : "The style of column naming: UPPERCASE, lowercase, snake_case, camelCase, kebab-case.",
+      "description" : "The style of column naming: UPPERCASE, lowercase, snake_case, camelCase, kebab-case. Default: default",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "importance" : "low"

@@ -10,7 +10,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Defines whether to include fields with null values to the decoded structure",
-      "description" : "Defines whether to include fields with null values to the decoded structure",
+      "description" : "Defines whether to include fields with null values to the decoded structure Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",

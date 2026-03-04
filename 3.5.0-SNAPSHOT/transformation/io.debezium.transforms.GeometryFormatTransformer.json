@@ -10,7 +10,7 @@
     "type" : "string",
     "display" : {
       "label" : "Target Format",
-      "description" : "The target Geometry format to convert to. Options are 'wkb' and 'ewkb'",
+      "description" : "The target Geometry format to convert to. Options are 'wkb' and 'ewkb' Default: wkb",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",

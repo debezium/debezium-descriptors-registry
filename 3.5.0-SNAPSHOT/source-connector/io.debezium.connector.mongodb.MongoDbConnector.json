@@ -63,7 +63,7 @@
     "type" : "string",
     "display" : {
       "label" : "Credentials Database",
-      "description" : "Database containing user credentials.",
+      "description" : "Database containing user credentials. Default: admin",
       "group" : "Connection Advanced",
       "groupOrder" : 1,
       "width" : "short",
@@ -76,7 +76,7 @@
     "type" : "number",
     "display" : {
       "label" : "Connect Timeout MS",
-      "description" : "The connection timeout, given in milliseconds. Defaults to 10 seconds (10,000 ms).",
+      "description" : "The connection timeout, given in milliseconds. Defaults to 10 seconds (10,000 ms). Default: 10000",
       "group" : "Connection Advanced",
       "groupOrder" : 0,
       "width" : "short",
@@ -89,7 +89,7 @@
     "type" : "number",
     "display" : {
       "label" : "Heartbeat frequency ms",
-      "description" : "The frequency that the cluster monitor attempts to reach each server. Defaults to 10 seconds (10,000 ms).",
+      "description" : "The frequency that the cluster monitor attempts to reach each server. Defaults to 10 seconds (10,000 ms). Default: 10000",
       "group" : "Connection Advanced",
       "groupOrder" : 4,
       "width" : "short",
@@ -102,7 +102,7 @@
     "type" : "number",
     "display" : {
       "label" : "Socket timeout MS",
-      "description" : "The socket timeout, given in milliseconds. Defaults to 0 ms.",
+      "description" : "The socket timeout, given in milliseconds. Defaults to 0 ms. Default: 0",
       "group" : "Connection Advanced",
       "groupOrder" : 3,
       "width" : "short",
@@ -115,7 +115,7 @@
     "type" : "number",
     "display" : {
       "label" : "Server selection timeout MS",
-      "description" : "The server selection timeout, given in milliseconds. Defaults to 10 seconds (10,000 ms).",
+      "description" : "The server selection timeout, given in milliseconds. Defaults to 10 seconds (10,000 ms). Default: 30000",
       "group" : "Connection Advanced",
       "groupOrder" : 2,
       "width" : "short",
@@ -128,7 +128,7 @@
     "type" : "number",
     "display" : {
       "label" : "Replica membership poll interval (ms)",
-      "description" : "Interval for looking for new, removed, or changed replica sets, given in milliseconds. Defaults to 30 seconds (30,000 ms).",
+      "description" : "Interval for looking for new, removed, or changed replica sets, given in milliseconds. Defaults to 30 seconds (30,000 ms). Default: 30000",
       "group" : "Connection",
       "groupOrder" : 5,
       "width" : "short",
@@ -141,7 +141,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Enable SSL connection to MongoDB",
-      "description" : "Should connector use SSL to connect to MongoDB instances",
+      "description" : "Should connector use SSL to connect to MongoDB instances Default: false",
       "group" : "Connection Advanced Ssl",
       "groupOrder" : 0,
       "width" : "short",
@@ -154,7 +154,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Allow invalid hostnames for SSL connection",
-      "description" : "Whether invalid host names are allowed when using SSL. If true the connection will not prevent man-in-the-middle attacks",
+      "description" : "Whether invalid host names are allowed when using SSL. If true the connection will not prevent man-in-the-middle attacks Default: false",
       "group" : "Connection Advanced Ssl",
       "groupOrder" : 1,
       "width" : "short",
@@ -180,7 +180,7 @@
     "type" : "string",
     "display" : {
       "label" : "Event deserialization failure handling",
-      "description" : "Specify how failures during processing of events (i.e. when encountering a corrupted event) should be handled, including: 'fail' (the default) an exception indicating the problematic event and its position is raised, causing the connector to be stopped; 'warn' the problematic event and its position will be logged and the event will be skipped; 'ignore' the problematic event will be skipped.",
+      "description" : "Specify how failures during processing of events (i.e. when encountering a corrupted event) should be handled, including: 'fail' (the default) an exception indicating the problematic event and its position is raised, causing the connector to be stopped; 'warn' the problematic event and its position will be logged and the event will be skipped; 'ignore' the problematic event will be skipped. Default: fail",
       "group" : "Advanced",
       "groupOrder" : 12,
       "width" : "short",
@@ -196,7 +196,7 @@
     "type" : "number",
     "display" : {
       "label" : "Change event batch size",
-      "description" : "Maximum size of each batch of source records. Defaults to 2048.",
+      "description" : "Maximum size of each batch of source records. Defaults to 2048. Default: 2048",
       "group" : "Advanced",
       "groupOrder" : 14,
       "width" : "short",
@@ -209,7 +209,7 @@
     "type" : "number",
     "display" : {
       "label" : "Change event buffer size",
-      "description" : "Maximum size of the queue for change events read from the database log but not yet recorded or forwarded. Defaults to 8192, and should always be larger than the maximum batch size.",
+      "description" : "Maximum size of the queue for change events read from the database log but not yet recorded or forwarded. Defaults to 8192, and should always be larger than the maximum batch size. Default: 8192",
       "group" : "Advanced",
       "groupOrder" : 15,
       "width" : "short",
@@ -222,7 +222,7 @@
     "type" : "number",
     "display" : {
       "label" : "Poll interval (ms)",
-      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms.",
+      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms. Default: 500",
       "group" : "Advanced",
       "groupOrder" : 17,
       "width" : "short",
@@ -235,7 +235,7 @@
     "type" : "number",
     "display" : {
       "label" : "Change event buffer size in bytes",
-      "description" : "Maximum size of the queue in bytes for change events read from the database log but not yet recorded or forwarded. Defaults to 0. Mean the feature is not enabled",
+      "description" : "Maximum size of the queue in bytes for change events read from the database log but not yet recorded or forwarded. Defaults to 0. Mean the feature is not enabled Default: 0",
       "group" : "Advanced",
       "groupOrder" : 16,
       "width" : "long",
@@ -248,7 +248,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Store transaction metadata information in a dedicated topic.",
-      "description" : "Enables transaction metadata extraction together with event counting",
+      "description" : "Enables transaction metadata extraction together with event counting Default: false",
       "group" : "Connector Advanced",
       "groupOrder" : 17,
       "width" : "short",
@@ -261,7 +261,7 @@
     "type" : "list",
     "display" : {
       "label" : "Skipped Operations",
-      "description" : "The comma-separated list of operations to skip during streaming, defined as: 'c' for inserts/create; 'u' for updates; 'd' for deletes, 't' for truncates, and 'none' to indicate nothing skipped. By default, only truncate operations will be skipped.",
+      "description" : "The comma-separated list of operations to skip during streaming, defined as: 'c' for inserts/create; 'u' for updates; 'd' for deletes, 't' for truncates, and 'none' to indicate nothing skipped. By default, only truncate operations will be skipped. Default: t",
       "group" : "Advanced",
       "groupOrder" : 11,
       "width" : "short",
@@ -274,7 +274,7 @@
     "type" : "number",
     "display" : {
       "label" : "Snapshot Delay (milliseconds)",
-      "description" : "A delay period before a snapshot will begin, given in milliseconds. Defaults to 0 ms.",
+      "description" : "A delay period before a snapshot will begin, given in milliseconds. Defaults to 0 ms. Default: 0",
       "group" : "Connector Snapshot",
       "groupOrder" : 5,
       "width" : "medium",
@@ -287,7 +287,7 @@
     "type" : "number",
     "display" : {
       "label" : "Streaming Delay (milliseconds)",
-      "description" : "A delay period after the snapshot is completed and the streaming begins, given in milliseconds. Defaults to 0 ms.",
+      "description" : "A delay period after the snapshot is completed and the streaming begins, given in milliseconds. Defaults to 0 ms. Default: 0",
       "group" : "Connector Advanced",
       "groupOrder" : 27,
       "width" : "medium",
@@ -326,7 +326,7 @@
     "type" : "number",
     "display" : {
       "label" : "Snapshot maximum threads",
-      "description" : "The maximum number of threads used to perform the snapshot. Defaults to 1.",
+      "description" : "The maximum number of threads used to perform the snapshot. Defaults to 1. Default: 1",
       "group" : "Connector Snapshot",
       "groupOrder" : 7,
       "width" : "short",
@@ -339,7 +339,7 @@
     "type" : "number",
     "display" : {
       "label" : "Snapshot maximum thread multiplier",
-      "description" : "The factor used to scale the number of snapshot chunks per table. The default behavior is to take 'row_count/snapshot.max.threads' to compute the number of rows per chunks. This may not be ideal for larger tables, and using the multiplier, the formula is adjusted to increase the number of chunks by using 'row_count/(snapshot.max.threads * snapshot.max.threads.multiplier).",
+      "description" : "The factor used to scale the number of snapshot chunks per table. The default behavior is to take 'row_count/snapshot.max.threads' to compute the number of rows per chunks. This may not be ideal for larger tables, and using the multiplier, the formula is adjusted to increase the number of chunks by using 'row_count/(snapshot.max.threads * snapshot.max.threads.multiplier). Default: 1",
       "group" : "Connector Snapshot",
       "groupOrder" : 8,
       "width" : "short",
@@ -365,7 +365,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Snapshot mode property based snapshot data",
-      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the data should be snapshotted or not.",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the data should be snapshotted or not. Default: false",
       "group" : "Connector Snapshot",
       "groupOrder" : 17,
       "width" : "medium",
@@ -378,7 +378,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Snapshot mode property based snapshot schema",
-      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the schema should be snapshotted or not.",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the schema should be snapshotted or not. Default: false",
       "group" : "Connector Snapshot",
       "groupOrder" : 18,
       "width" : "medium",
@@ -391,7 +391,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Snapshot mode property based start stream",
-      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the stream should start or not after snapshot.",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the stream should start or not after snapshot. Default: false",
       "group" : "Connector Snapshot",
       "groupOrder" : 19,
       "width" : "medium",
@@ -404,7 +404,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Snapshot mode property based snapshot on schema error",
-      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the schema should be snapshotted or not in case of error.",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the schema should be snapshotted or not in case of error. Default: false",
       "group" : "Connector Snapshot",
       "groupOrder" : 20,
       "width" : "medium",
@@ -417,7 +417,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Snapshot mode property based snapshot on data error",
-      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the data should be snapshotted or not in case of error.",
+      "description" : "When 'snapshot.mode' is set as configuration_based, this setting permits to specify whenever the data should be snapshotted or not in case of error. Default: false",
       "group" : "Connector Snapshot",
       "groupOrder" : 21,
       "width" : "medium",
@@ -430,7 +430,7 @@
     "type" : "number",
     "display" : {
       "label" : "Retriable restart wait (ms)",
-      "description" : "Time to wait before restarting connector after retriable exception occurs. Defaults to 10000ms.",
+      "description" : "Time to wait before restarting connector after retriable exception occurs. Defaults to 10000ms. Default: 10000",
       "group" : "Advanced",
       "groupOrder" : 18,
       "width" : "medium",
@@ -443,7 +443,7 @@
     "type" : "number",
     "display" : {
       "label" : "Query fetch size",
-      "description" : "The maximum number of records that should be loaded into memory while streaming. A value of '0' uses the default JDBC fetch size.",
+      "description" : "The maximum number of records that should be loaded into memory while streaming. A value of '0' uses the default JDBC fetch size. Default: 0",
       "group" : "Advanced",
       "groupOrder" : 13,
       "width" : "medium",
@@ -456,7 +456,7 @@
     "type" : "number",
     "display" : {
       "label" : "The maximum number of retries",
-      "description" : "The maximum number of retries on connection errors before failing (-1 = no limit, 0 = disabled, > 0 = num of retries).",
+      "description" : "The maximum number of retries on connection errors before failing (-1 = no limit, 0 = disabled, > 0 = num of retries). Default: -1",
       "group" : "Connector Advanced",
       "groupOrder" : 24,
       "width" : "medium",
@@ -469,7 +469,7 @@
     "type" : "string",
     "display" : {
       "label" : "Incremental snapshot watermarking strategy",
-      "description" : "Specify the strategy used for watermarking during an incremental snapshot: 'insert_insert' both open and close signal is written into signal data collection (default); 'insert_delete' only open signal is written on signal data collection, the close will delete the relative open signal;",
+      "description" : "Specify the strategy used for watermarking during an incremental snapshot: 'insert_insert' both open and close signal is written into signal data collection (default); 'insert_delete' only open signal is written on signal data collection, the close will delete the relative open signal; Default: INSERT_INSERT",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -485,7 +485,7 @@
     "type" : "number",
     "display" : {
       "label" : "Connection validation timeout (ms)",
-      "description" : "The maximum time in milliseconds to wait for connection validation to complete. Defaults to 60 seconds.",
+      "description" : "The maximum time in milliseconds to wait for connection validation to complete. Defaults to 60 seconds. Default: 60000",
       "group" : "Connection",
       "groupOrder" : 13,
       "width" : "short",
@@ -498,7 +498,7 @@
     "type" : "number",
     "display" : {
       "label" : "Executor shutdown timeout (ms)",
-      "description" : "The maximum time in milliseconds to wait for task executor to shut down.",
+      "description" : "The maximum time in milliseconds to wait for task executor to shut down. Default: 4000",
       "group" : "Advanced",
       "groupOrder" : 19,
       "width" : "medium",
@@ -511,7 +511,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Enables OpenLineage integration",
-      "description" : "Enable Debezium to emit data lineage metadata through OpenLineage API",
+      "description" : "Enable Debezium to emit data lineage metadata through OpenLineage API Default: false",
       "group" : "Advanced",
       "groupOrder" : 40,
       "width" : "short",
@@ -524,7 +524,7 @@
     "type" : "string",
     "display" : {
       "label" : "Path to OpenLineage file configuration",
-      "description" : "Path to OpenLineage file configuration. See https://openlineage.io/docs/client/java/configuration",
+      "description" : "Path to OpenLineage file configuration. See https://openlineage.io/docs/client/java/configuration Default: ./openlineage.yml",
       "group" : "Advanced",
       "groupOrder" : 41,
       "width" : "long",
@@ -550,7 +550,7 @@
     "type" : "string",
     "display" : {
       "label" : "Description used for Debezium job",
-      "description" : "The job's description emitted by Debezium",
+      "description" : "The job's description emitted by Debezium Default: Debezium change data capture job",
       "group" : "Advanced",
       "groupOrder" : 43,
       "width" : "long",
@@ -602,7 +602,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Enable/Disable extended headers",
-      "description" : "Enable/Disable Debezium context headers that provides essential metadata for tracking and identifying the source of CDC events in downstream processing systems.",
+      "description" : "Enable/Disable Debezium context headers that provides essential metadata for tracking and identifying the source of CDC events in downstream processing systems. Default: true",
       "group" : "Advanced",
       "groupOrder" : 46,
       "width" : "short",
@@ -615,7 +615,7 @@
     "type" : "number",
     "display" : {
       "label" : "Maximum number of collections or tables",
-      "description" : "The maximum number of collections or tables that can be captured by the connector. When this limit is exceeded, the action specified by 'guardrail.collections.limit.action' will be taken. Set to 0 to disable this guardrail.",
+      "description" : "The maximum number of collections or tables that can be captured by the connector. When this limit is exceeded, the action specified by 'guardrail.collections.limit.action' will be taken. Set to 0 to disable this guardrail. Default: 0",
       "group" : "Advanced",
       "groupOrder" : 33,
       "width" : "short",
@@ -628,7 +628,7 @@
     "type" : "string",
     "display" : {
       "label" : "Guardrail collections limit action",
-      "description" : "Specify the action to take when a guardrail collections limit is exceeded: 'warn' (the default) logs a warning message and continues processing; 'fail' stops the connector with an error.",
+      "description" : "Specify the action to take when a guardrail collections limit is exceeded: 'warn' (the default) logs a warning message and continues processing; 'fail' stops the connector with an error. Default: warn",
       "group" : "Advanced",
       "groupOrder" : 34,
       "width" : "short",
@@ -644,7 +644,7 @@
     "type" : "string",
     "display" : {
       "label" : "Custom pattern for masking sensitive configuration",
-      "description" : "Regular expression identifying configuration keys whose values should be masked. When set, this custom pattern replaces Debezium’s default password masking pattern.",
+      "description" : "Regular expression identifying configuration keys whose values should be masked. When set, this custom pattern replaces Debezium’s default password masking pattern. Default: .*secret$|.*password$|.*sasl\\.jaas\\.config$|.*basic\\.auth\\.user\\.info|.*registry\\.auth\\.client-secret",
       "group" : "Advanced",
       "groupOrder" : 48,
       "width" : "long",
@@ -657,7 +657,7 @@
     "type" : "string",
     "display" : {
       "label" : "Snapshot mode",
-      "description" : "The criteria for running a snapshot upon startup of the connector. Select one of the following snapshot options: 'initial' (default):  If the connector does not detect any offsets for the logical server name, it runs a snapshot that captures the current full state of the configured tables. After the snapshot completes, the connector begins to stream changes from the oplog. 'never': The connector does not run a snapshot. Upon first startup, the connector immediately begins reading from the beginning of the oplog.",
+      "description" : "The criteria for running a snapshot upon startup of the connector. Select one of the following snapshot options: 'initial' (default):  If the connector does not detect any offsets for the logical server name, it runs a snapshot that captures the current full state of the configured tables. After the snapshot completes, the connector begins to stream changes from the oplog. 'never': The connector does not run a snapshot. Upon first startup, the connector immediately begins reading from the beginning of the oplog. Default: initial",
       "group" : "Connector Snapshot",
       "groupOrder" : 0,
       "width" : "short",
@@ -673,7 +673,7 @@
     "type" : "string",
     "display" : {
       "label" : "Capture mode",
-      "description" : "The method used to capture changes from MongoDB server. Options include: 'change_streams' to capture changes via MongoDB Change Streams, update events do not contain full documents; 'change_streams_update_full' (the default) to capture changes via MongoDB Change Streams, update events contain full documents",
+      "description" : "The method used to capture changes from MongoDB server. Options include: 'change_streams' to capture changes via MongoDB Change Streams, update events do not contain full documents; 'change_streams_update_full' (the default) to capture changes via MongoDB Change Streams, update events contain full documents Default: change_streams_update_full",
       "group" : "Connector Advanced",
       "groupOrder" : 1,
       "width" : "short",
@@ -689,7 +689,7 @@
     "type" : "string",
     "display" : {
       "label" : "Schema Name Adjustment",
-      "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default)",
+      "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
       "groupOrder" : 7,
       "width" : "medium",
@@ -731,7 +731,7 @@
     "type" : "boolean",
     "display" : {
       "label" : "Change the behaviour of Debezium with regards to delete operations",
-      "description" : "Whether delete operations should be represented by a delete event and a subsequent tombstone event (true) or only by a delete event (false). Emitting the tombstone event (the default behavior) allows Kafka to completely delete all events pertaining to the given key once the source record got deleted.",
+      "description" : "Whether delete operations should be represented by a delete event and a subsequent tombstone event (true) or only by a delete event (false). Emitting the tombstone event (the default behavior) allows Kafka to completely delete all events pertaining to the given key once the source record got deleted. Default: true",
       "group" : "Connector",
       "groupOrder" : 1,
       "width" : "short",
@@ -744,7 +744,7 @@
     "type" : "number",
     "display" : {
       "label" : "Connector heartbeat interval (milli-seconds)",
-      "description" : "Length of an interval in milli-seconds in in which the connector periodically sends heartbeat messages to a heartbeat topic. Use 0 to disable heartbeat messages. Disabled by default.",
+      "description" : "Length of an interval in milli-seconds in in which the connector periodically sends heartbeat messages to a heartbeat topic. Use 0 to disable heartbeat messages. Disabled by default. Default: 0",
       "group" : "Advanced Heartbeat",
       "groupOrder" : 0,
       "width" : "medium",
@@ -757,7 +757,7 @@
     "type" : "string",
     "display" : {
       "label" : "A prefix used for naming of heartbeat topics",
-      "description" : "The prefix that is used to name heartbeat topics.Defaults to __debezium-heartbeat.",
+      "description" : "The prefix that is used to name heartbeat topics.Defaults to __debezium-heartbeat. Default: __debezium-heartbeat",
       "group" : "Advanced Heartbeat",
       "groupOrder" : 1,
       "width" : "medium",
@@ -783,7 +783,7 @@
     "type" : "number",
     "display" : {
       "label" : "Signal processor poll interval",
-      "description" : "Interval for looking for new signals in registered channels, given in milliseconds. Defaults to 5 seconds.",
+      "description" : "Interval for looking for new signals in registered channels, given in milliseconds. Defaults to 5 seconds. Default: 5000",
       "group" : "Advanced",
       "groupOrder" : 21,
       "width" : "short",
@@ -796,7 +796,7 @@
     "type" : "list",
     "display" : {
       "label" : "Enabled channels names",
-      "description" : "List of channels names that are enabled. Source channel is enabled by default",
+      "description" : "List of channels names that are enabled. Source channel is enabled by default Default: source",
       "group" : "Advanced",
       "groupOrder" : 22,
       "width" : "long",
@@ -809,7 +809,7 @@
     "type" : "string",
     "display" : {
       "label" : "Topic naming strategy class",
-      "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc.",
+      "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc. Default: io.debezium.schema.SchemaTopicNamingStrategy",
       "group" : "Advanced",
       "groupOrder" : 23,
       "width" : "medium",
@@ -848,7 +848,7 @@
     "type" : "string",
     "display" : {
       "label" : "Factory class to create transaction context & transaction struct maker classes",
-      "description" : "Class to make transaction context & transaction struct/schemas",
+      "description" : "Class to make transaction context & transaction struct/schemas Default: io.debezium.pipeline.txmetadata.DefaultTransactionMetadataFactory",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -963,7 +963,7 @@
     "type" : "string",
     "display" : {
       "label" : "Source info struct maker class",
-      "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct.",
+      "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.mongodb.MongoDbSourceInfoStructMaker",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
