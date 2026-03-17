@@ -56,7 +56,7 @@ Example structure:
 ## Branching Strategy
 
 ### `main` Branch (Release)
-- Contains stable release versions (e.g., `3.4.0-Final`, `3.4.1-Beta1`)
+- Contains published (non-snapshot) versions (e.g., `3.4.0-Final`, `3.4.1-Beta1`)
 - New version directories are added when Debezium releases are published
 - Each push triggers OCI artifact publication with version-specific tags
 
