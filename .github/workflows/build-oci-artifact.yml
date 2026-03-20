@@ -73,6 +73,7 @@ jobs:
           cp -r . /tmp/oci-artifact/
           rm -rf /tmp/oci-artifact/.git
           rm -rf /tmp/oci-artifact/.github
+          rm -rf /tmp/oci-artifact/_github_main
 
           echo "Artifact contents:"
           ls -lah /tmp/oci-artifact/
