@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - snapshot
+  repository_dispatch:
+    types:
+      - snapshot-updated
 
 env:
   REGISTRY: quay.io
