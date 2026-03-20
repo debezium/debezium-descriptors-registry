@@ -35,8 +35,8 @@ jobs:
 
       - name: Copy actions to workspace
         run: |
-          mkdir -p .github/actions
-          cp -r _github_main/.github/actions .github/actions
+          mkdir -p .github
+          cp -r _github_main/.github/actions .github/
 
       - name: Find manifest
         id: find-manifest
