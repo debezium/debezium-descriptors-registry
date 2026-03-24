@@ -1,0 +1,110 @@
+{
+  "name" : "io.debezium.converters.CloudEventsConverter",
+  "type" : "converter",
+  "version" : "3.5.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.converters.CloudEventsConverter"
+  },
+  "properties" : [ {
+    "name" : "serializer.type",
+    "type" : "string",
+    "display" : {
+      "label" : "CloudEvents serializer type",
+      "description" : "Specify a serializer to serialize CloudEvents values Default: json",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "data.serializer.type",
+    "type" : "string",
+    "display" : {
+      "label" : "CloudEvents data serializer type",
+      "description" : "Specify a serializer to serialize the data field of CloudEvents values Default: json",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "opentelemetry.tracing.attributes.enable",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Enable OpenTelemetry tracing attributes",
+      "description" : "Specify whether to include OpenTelemetry tracing attributes to a cloud event Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "extension.attributes.enable",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Enable extension attributes",
+      "description" : "Specify whether to include extension attributes to a cloud event Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "schema.name.adjustment.mode",
+    "type" : "string",
+    "display" : {
+      "label" : "Schema name adjustment mode",
+      "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including:'avro' replaces the characters that cannot be used in the Avro type name with underscore (default)'none' does not apply any adjustment Default: avro",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "schema.cloudevents.name",
+    "type" : "string",
+    "display" : {
+      "label" : "CloudEvents schema name",
+      "description" : "Specify CloudEvents schema name under which the schema is registered in a Schema Registry",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "schema.data.name.source.header.enable",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Enable schema data name from header",
+      "description" : "Specify whether CloudEvents.data schema name can be retrieved from the header Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "metadata.source",
+    "type" : "list",
+    "display" : {
+      "label" : "Metadata source",
+      "description" : "Specify from where to retrieve metadata Default: value,id:generate,type:generate,traceparent:header,dataSchemaName:generate",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

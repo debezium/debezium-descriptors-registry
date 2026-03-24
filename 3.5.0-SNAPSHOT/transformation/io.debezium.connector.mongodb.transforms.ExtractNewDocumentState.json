@@ -6,61 +6,6 @@
     "description" : "io.debezium.connector.mongodb.transforms.ExtractNewDocumentState"
   },
   "properties" : [ {
-    "name" : "array.encoding",
-    "type" : "string",
-    "display" : {
-      "label" : "Array encoding",
-      "description" : "The arrays can be encoded using 'array' schema type (the default) or as a 'document' (similar to how BSON encodes arrays). 'array' is easier to consume but requires all elements in the array to be of the same type. Use 'document' if the arrays in data source mix different types together. Default: array",
-      "group" : "Advanced",
-      "groupOrder" : 9999,
-      "width" : "short",
-      "importance" : "medium"
-    },
-    "validation" : [ {
-      "type" : "enum",
-      "values" : [ "array", "document" ]
-    } ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "flatten.struct",
-    "type" : "boolean",
-    "display" : {
-      "label" : "Flatten struct",
-      "description" : "Flattening structs by concatenating the fields into plain properties, using a (configurable) delimiter. Default: false",
-      "group" : "Advanced",
-      "groupOrder" : 9999,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "flatten.struct.delimiter",
-    "type" : "string",
-    "display" : {
-      "label" : "Delimiter for flattened struct",
-      "description" : "Delimiter to concat between field names from the input record when generating field names for theoutput record. Default: _",
-      "group" : "Advanced",
-      "groupOrder" : 9999,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "delete.tombstone.handling.mode.rewrite-with-id",
-    "type" : "boolean",
-    "display" : {
-      "label" : "Rewrite delete records with id field",
-      "description" : "When set to true and \"delete.tombstone.handling.mode\" is rewrite, extracts the \"id\" from the deleted record's key and includes it as \"_id\" in the event payload. Default: false",
-      "group" : "Advanced",
-      "groupOrder" : 9999,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
     "name" : "delete.tombstone.handling.mode",
     "type" : "string",
     "display" : {
@@ -142,11 +87,53 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "replace.null.with.default",
+    "name" : "array.encoding",
+    "type" : "string",
+    "display" : {
+      "label" : "Array encoding",
+      "description" : "The arrays can be encoded using 'array' schema type (the default) or as a 'document' (similar to how BSON encodes arrays). 'array' is easier to consume but requires all elements in the array to be of the same type. Use 'document' if the arrays in data source mix different types together. Default: array",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "array", "document" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "flatten.struct",
     "type" : "boolean",
     "display" : {
-      "label" : "replace null field value with default",
-      "description" : "When this option is enabled, null field values are replaced by source-defined defaults when rewriting the record. Default: true",
+      "label" : "Flatten struct",
+      "description" : "Flattening structs by concatenating the fields into plain properties, using a (configurable) delimiter. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "flatten.struct.delimiter",
+    "type" : "string",
+    "display" : {
+      "label" : "Delimiter for flattened struct",
+      "description" : "Delimiter to concat between field names from the input record when generating field names for theoutput record. Default: _",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "delete.tombstone.handling.mode.rewrite-with-id",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Rewrite delete records with id field",
+      "description" : "When set to true and \"delete.tombstone.handling.mode\" is rewrite, extracts the \"id\" from the deleted record's key and includes it as \"_id\" in the event payload. Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",

@@ -2,12 +2,32 @@
     "schemaVersion": "1.0",
     "build": {
         "version": "3.5.0-SNAPSHOT",
-        "timestamp": "2026-03-23T14:22:24Z",
+        "timestamp": "2026-03-24T16:34:47Z",
         "sourceRepository": "debezium/debezium",
-        "sourceCommit": "458a1c046c",
+        "sourceCommit": "284a27dc56",
         "sourceBranch": "main"
     },
     "components": {
+        "converter": [
+            {
+                "class": "io.debezium.converters.BinaryDataConverter",
+                "name": "io.debezium.converters.BinaryDataConverter",
+                "description": "io.debezium.converters.BinaryDataConverter",
+                "descriptor": "converter/io.debezium.converters.BinaryDataConverter.json"
+            },
+            {
+                "class": "io.debezium.converters.ByteArrayConverter",
+                "name": "io.debezium.converters.ByteArrayConverter",
+                "description": "io.debezium.converters.ByteArrayConverter",
+                "descriptor": "converter/io.debezium.converters.ByteArrayConverter.json"
+            },
+            {
+                "class": "io.debezium.converters.CloudEventsConverter",
+                "name": "io.debezium.converters.CloudEventsConverter",
+                "description": "io.debezium.converters.CloudEventsConverter",
+                "descriptor": "converter/io.debezium.converters.CloudEventsConverter.json"
+            }
+        ],
         "custom-converter": [
             {
                 "class": "io.debezium.connector.binlog.converters.JdbcSinkDataTypesConverter",
@@ -200,6 +220,30 @@
                 "name": "io.debezium.transforms.VectorToJsonConverter",
                 "description": "io.debezium.transforms.VectorToJsonConverter",
                 "descriptor": "transformation/io.debezium.transforms.VectorToJsonConverter.json"
+            },
+            {
+                "class": "io.debezium.transforms.openlineage.OpenLineage",
+                "name": "io.debezium.transforms.openlineage.OpenLineage",
+                "description": "io.debezium.transforms.openlineage.OpenLineage",
+                "descriptor": "transformation/io.debezium.transforms.openlineage.OpenLineage.json"
+            },
+            {
+                "class": "io.debezium.transforms.outbox.EventRouter",
+                "name": "io.debezium.transforms.outbox.EventRouter",
+                "description": "io.debezium.transforms.outbox.EventRouter",
+                "descriptor": "transformation/io.debezium.transforms.outbox.EventRouter.json"
+            },
+            {
+                "class": "io.debezium.transforms.partitions.PartitionRouting",
+                "name": "io.debezium.transforms.partitions.PartitionRouting",
+                "description": "io.debezium.transforms.partitions.PartitionRouting",
+                "descriptor": "transformation/io.debezium.transforms.partitions.PartitionRouting.json"
+            },
+            {
+                "class": "io.debezium.transforms.tracing.ActivateTracingSpan",
+                "name": "io.debezium.transforms.tracing.ActivateTracingSpan",
+                "description": "io.debezium.transforms.tracing.ActivateTracingSpan",
+                "descriptor": "transformation/io.debezium.transforms.tracing.ActivateTracingSpan.json"
             }
         ]
     }

@@ -1,16 +1,16 @@
 {
-  "name" : "io.debezium.connector.mongodb.transforms.outbox.MongoEventRouter",
+  "name" : "io.debezium.transforms.outbox.EventRouter",
   "type" : "transformation",
   "version" : "3.5.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.connector.mongodb.transforms.outbox.MongoEventRouter"
+    "description" : "io.debezium.transforms.outbox.EventRouter"
   },
   "properties" : [ {
-    "name" : "collection.field.event.id",
+    "name" : "table.field.event.id",
     "type" : "string",
     "display" : {
       "label" : "Event ID Field",
-      "description" : "The field which contains the event ID within the outbox collection Default: _id",
+      "description" : "The column which contains the event ID within the outbox table Default: id",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -19,11 +19,11 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "collection.field.event.key",
+    "name" : "table.field.event.key",
     "type" : "string",
     "display" : {
       "label" : "Event Key Field",
-      "description" : "The field which contains the event key within the outbox collection",
+      "description" : "The column which contains the event key within the outbox table Default: aggregateid",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -32,11 +32,11 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "collection.field.event.type",
+    "name" : "table.field.event.type",
     "type" : "string",
     "display" : {
       "label" : "Event Type Field",
-      "description" : "The field which contains the event type within the outbox collection Default: type",
+      "description" : "The column which contains the event type within the outbox table Default: type",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -45,11 +45,24 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "collection.field.event.timestamp",
+    "name" : "table.field.event.payload",
+    "type" : "string",
+    "display" : {
+      "label" : "Event Payload Field",
+      "description" : "The column which contains the event payload within the outbox table Default: payload",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "table.field.event.timestamp",
     "type" : "string",
     "display" : {
       "label" : "Event Timestamp Field",
-      "description" : "Optionally you can override the Kafka message timestamp with a value from a chosen field, otherwise it'll be the Debezium event processed timestamp.",
+      "description" : "Optionally you can override the Kafka message timestamp with a value from a chosen column, otherwise it'll be the Debezium event processed timestamp.",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -58,24 +71,11 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "collection.field.event.payload",
-    "type" : "string",
-    "display" : {
-      "label" : "Event Payload Field",
-      "description" : "The field which contains the event payload within the outbox collection Default: payload",
-      "group" : "Advanced",
-      "groupOrder" : 9999,
-      "width" : "medium",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "collection.fields.additional.placement",
+    "name" : "table.fields.additional.placement",
     "type" : "list",
     "display" : {
       "label" : "Settings for each additional column in the outbox table",
-      "description" : "Extra fields can be added as part of the event envelope or a message header, format is a list of colon-delimited pairs or trios when you desire to have aliases, e.g. <code>id:header,field_name:envelope:alias</code> ",
+      "description" : "Extra fields can be added as part of the event envelope or a message header, format is a list of colon-delimited pairs or trios when you desire to have aliases, e.g. <code>id:header,field_name:envelope:alias,field_name:partition</code> ",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -84,11 +84,24 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "collection.field.event.schema.version",
+    "name" : "table.fields.additional.error.on.missing",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Should the transform error if an additional field is missing in the change data",
+      "description" : "When transforming the 'table.fields.additional.placement' fields, should the transform throw an exception if one of the fields is missing in the change data Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "table.field.event.schema.version",
     "type" : "string",
     "display" : {
       "label" : "Event Schema Version Field",
-      "description" : "The field which contains the event schema version within the outbox collection",
+      "description" : "The column which contains the event schema version within the outbox table",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -101,7 +114,7 @@
     "type" : "string",
     "display" : {
       "label" : "Field to route events by",
-      "description" : "The field which determines how the events will be routed within the outbox collection. The value will become a part of the topic name Default: aggregatetype",
+      "description" : "The column which determines how the events will be routed, the value will become part of the topic name Default: aggregatetype",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -127,7 +140,7 @@
     "type" : "string",
     "display" : {
       "label" : "The name of the routed topic",
-      "description" : "The name of the topic in which the events will be routed, a replacement '${routedByValue}' is available which is the value of the field configured via 'route.by.field' Default: outbox.event.${routedByValue}",
+      "description" : "The name of the topic in which the events will be routed, a replacement '${routedByValue}' is available which is the value of The column configured via 'route.by.field' Default: outbox.event.${routedByValue}",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -153,7 +166,7 @@
     "type" : "string",
     "display" : {
       "label" : "Behavior when capturing an unexpected outbox event",
-      "description" : "While Debezium is monitoring the collection, it's expecting only to see 'create' document events, in case something else is processed this transform can log it as warning, error or stop the process Default: warn",
+      "description" : "While Debezium is capturing changes from the outbox table, it is expecting only to process 'create' or 'delete' row events; in case something else is processed this transform can log it as warning, error or stop the process. Default: warn",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -165,7 +178,7 @@
     } ],
     "valueDependants" : [ ]
   }, {
-    "name" : "collection.expand.json.payload",
+    "name" : "table.expand.json.payload",
     "type" : "boolean",
     "display" : {
       "label" : "Expand Payload escaped string as real JSON",
@@ -176,6 +189,22 @@
       "importance" : "medium"
     },
     "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "table.json.payload.null.behavior",
+    "type" : "string",
+    "display" : {
+      "label" : "Behavior when json payload including null value",
+      "description" : "Behavior when json payload including null value, the default will ignore null, optional_bytes will keep the null value, and treat null as optional bytes of connect. Default: ignore",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "ignore", "optional_bytes" ]
+    } ],
     "valueDependants" : [ ]
   }, {
     "name" : "tracing.span.context.field",
