@@ -62,6 +62,30 @@ runs:
           exit 1
         fi
 
+        # Convert version to semver format
+        echo "Original version: $VERSION"
+
+        # Extract base version (X.Y.Z)
+        if [[ $VERSION =~ ^([0-9]+\.[0-9]+\.[0-9]+)\..* ]]; then
+          BASE_VERSION="${BASH_REMATCH[1]}"
+
+          # Check if it ends with .Final
+          if [[ $VERSION == *.Final ]]; then
+            SEMVER_VERSION="$BASE_VERSION"
+          else
+            # Extract prerelease part after base version
+            PRERELEASE_PART="${VERSION#$BASE_VERSION.}"
+            # Convert to lowercase and replace dots with hyphens
+            SEMVER_PRERELEASE=$(echo "$PRERELEASE_PART" | tr '[:upper:]' '[:lower:]' | tr '.' '-')
+            SEMVER_VERSION="${BASE_VERSION}-${SEMVER_PRERELEASE}"
+          fi
+
+          echo "Converted to semver: $SEMVER_VERSION"
+          VERSION="$SEMVER_VERSION"
+        else
+          echo "Version does not match expected format, using as-is: $VERSION"
+        fi
+
         # Extract build metadata
         SOURCE_REPO=$(jq -r '.build.sourceRepository // "unknown"' "$MANIFEST_PATH")
         SOURCE_COMMIT=$(jq -r '.build.sourceCommit // "unknown"' "$MANIFEST_PATH")
