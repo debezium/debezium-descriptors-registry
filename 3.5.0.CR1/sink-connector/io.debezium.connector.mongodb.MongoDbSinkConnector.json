@@ -1,0 +1,112 @@
+{
+  "name": "io.debezium.connector.mongodb.MongoDbSinkConnector",
+  "type": "sink-connector",
+  "version": "3.5.0.CR1",
+  "metadata": {
+    "description": "io.debezium.connector.mongodb.MongoDbSinkConnector"
+  },
+  "properties": [
+    {
+      "name": "sink.database",
+      "type": "string",
+      "required": true,
+      "display": {
+        "label": "The sink MongoDB database name.",
+        "description": "The name of the MongoDB database to which the connector writes to.",
+        "group": "Connector",
+        "groupOrder": 2,
+        "width": "medium",
+        "importance": "high"
+      },
+      "validation": [],
+      "valueDependants": []
+    },
+    {
+      "name": "mongodb.connection.string",
+      "type": "string",
+      "display": {
+        "label": "Connection String",
+        "description": "Database connection string.",
+        "group": "Connection",
+        "groupOrder": 1,
+        "width": "medium",
+        "importance": "high"
+      },
+      "validation": [],
+      "valueDependants": []
+    },
+    {
+      "name": "collection.naming.strategy",
+      "type": "string",
+      "display": {
+        "label": "CollectionNamingStrategy class",
+        "description": "Name of the strategy class that defines the collection name from the topic name. It implements the CollectionNamingStrategy interface. Default: io.debezium.sink.naming.DefaultCollectionNamingStrategy",
+        "group": "Connector Advanced",
+        "groupOrder": 2,
+        "width": "long",
+        "importance": "low"
+      },
+      "validation": [],
+      "valueDependants": []
+    },
+    {
+      "name": "collection.name.format",
+      "type": "string",
+      "display": {
+        "label": "A format string for the collection name",
+        "description": "A format string for the table, which may contain '${topic}' as a placeholder for the original topic name. Default: ${topic}",
+        "group": "Connector",
+        "groupOrder": 3,
+        "width": "medium",
+        "importance": "medium"
+      },
+      "validation": [],
+      "valueDependants": []
+    },
+    {
+      "name": "column.naming.strategy",
+      "type": "string",
+      "display": {
+        "label": "ColumnNamingStrategy class",
+        "description": "The fully qualified name of the class that provide the column naming strategy. It must implement the ColumnNamingStrategy interface. Default: io.debezium.sink.naming.DefaultColumnNamingStrategy",
+        "group": "Connector Advanced",
+        "groupOrder": 3,
+        "width": "long",
+        "importance": "low"
+      },
+      "validation": [],
+      "valueDependants": []
+    },
+    {
+      "name": "batch.size",
+      "type": "number",
+      "display": {
+        "label": "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration.",
+        "description": "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration. Default: 500",
+        "group": "Connector Advanced",
+        "groupOrder": 4,
+        "width": "short",
+        "importance": "medium"
+      },
+      "validation": [],
+      "valueDependants": []
+    }
+  ],
+  "groups": [
+    {
+      "name": "Connection",
+      "order": 0,
+      "description": "Connection configuration"
+    },
+    {
+      "name": "Connector",
+      "order": 7,
+      "description": "Connector configuration"
+    },
+    {
+      "name": "Connector Advanced",
+      "order": 9,
+      "description": "Advanced connector configuration"
+    }
+  ]
+}
