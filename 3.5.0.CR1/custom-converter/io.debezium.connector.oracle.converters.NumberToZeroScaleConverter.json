@@ -1,0 +1,31 @@
+{
+  "name": "io.debezium.connector.oracle.converters.NumberToZeroScaleConverter",
+  "type": "custom-converter",
+  "version": "3.5.0.CR1",
+  "metadata": {
+    "description": "io.debezium.connector.oracle.converters.NumberToZeroScaleConverter"
+  },
+  "properties": [
+    {
+      "name": "decimal.mode",
+      "type": "string",
+      "display": {
+        "label": "Decimal handling mode",
+        "description": "Specifies how DECIMAL and NUMERIC columns should be represented in change events. Options are: PRECISE (default) - uses java.math.BigDecimal, DOUBLE - uses double, STRING - encodes values as formatted strings. Default: PRECISE",
+        "group": "Advanced",
+        "groupOrder": 9999,
+        "width": "medium",
+        "importance": "medium"
+      },
+      "validation": [],
+      "valueDependants": []
+    }
+  ],
+  "groups": [
+    {
+      "name": "Advanced",
+      "order": 10,
+      "description": "Advanced configuration"
+    }
+  ]
+}

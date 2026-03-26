@@ -1,0 +1,45 @@
+{
+  "name": "io.debezium.connector.binlog.converters.TinyIntOneToBooleanConverter",
+  "type": "custom-converter",
+  "version": "3.5.0.CR1",
+  "metadata": {
+    "description": "io.debezium.connector.binlog.converters.TinyIntOneToBooleanConverter"
+  },
+  "properties": [
+    {
+      "name": "selector",
+      "type": "string",
+      "display": {
+        "label": "Column selector",
+        "description": "Comma-separated list of column selectors (regular expressions) to match TINYINT(1) columns that should be converted to boolean. Format: <table_name>.<column_name>. Example: 'inventory.products.is_active,orders.*.is_processed'",
+        "group": "Advanced",
+        "groupOrder": 9999,
+        "width": "long",
+        "importance": "high"
+      },
+      "validation": [],
+      "valueDependants": []
+    },
+    {
+      "name": "length.checker",
+      "type": "boolean",
+      "display": {
+        "label": "Enable length checking",
+        "description": "If true, only TINYINT columns with length 1 will be converted to boolean. Set to false for MySQL 8+ where SHOW CREATE TABLE doesn't show length for TINYINT UNSIGNED. Default: true",
+        "group": "Advanced",
+        "groupOrder": 9999,
+        "width": "short",
+        "importance": "medium"
+      },
+      "validation": [],
+      "valueDependants": []
+    }
+  ],
+  "groups": [
+    {
+      "name": "Advanced",
+      "order": 10,
+      "description": "Advanced configuration"
+    }
+  ]
+}

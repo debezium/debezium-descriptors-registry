@@ -1,0 +1,31 @@
+{
+  "name": "io.debezium.transforms.SwapGeometryCoordinates",
+  "type": "transformation",
+  "version": "3.5.0.CR1",
+  "metadata": {
+    "description": "io.debezium.transforms.SwapGeometryCoordinates"
+  },
+  "properties": [
+    {
+      "name": "srids",
+      "type": "string",
+      "display": {
+        "label": "Geometry SRIDs that should be considered for coordinate swapping",
+        "description": "A comma-separated list of Geometry SRIDs that indicate which geometry fields should be included when swapping coordinates.",
+        "group": "Advanced",
+        "groupOrder": 9999,
+        "width": "medium",
+        "importance": "low"
+      },
+      "validation": [],
+      "valueDependants": []
+    }
+  ],
+  "groups": [
+    {
+      "name": "Advanced",
+      "order": 10,
+      "description": "Advanced configuration"
+    }
+  ]
+}
