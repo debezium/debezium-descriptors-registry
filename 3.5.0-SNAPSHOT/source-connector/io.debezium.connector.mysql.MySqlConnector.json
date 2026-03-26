@@ -778,6 +778,32 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "binlog.net.write.timeout",
+    "type" : "number",
+    "display" : {
+      "label" : "Binlog Net Write Timeout",
+      "description" : "The number of seconds to wait for a write to the binlog connection to complete before the server times out. A value of 0 means use the MySQL server default. May need to be increased when large data volumes cause EOFException during streaming. Default: 0",
+      "group" : "Connection Advanced",
+      "groupOrder" : 6,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "binlog.net.read.timeout",
+    "type" : "number",
+    "display" : {
+      "label" : "Binlog Net Read Timeout",
+      "description" : "The number of seconds to wait for a read from the binlog connection to complete before the server times out. A value of 0 means use the MySQL server default. May need to be increased in high-latency network environments to prevent EOFException during streaming. Default: 0",
+      "group" : "Connection Advanced",
+      "groupOrder" : 7,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "snapshot.mode",
     "type" : "string",
     "display" : {
