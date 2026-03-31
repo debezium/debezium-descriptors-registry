@@ -73,19 +73,6 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "connection.pool.acquire_increment",
-    "type" : "number",
-    "display" : {
-      "label" : "Connection pool acquire increment",
-      "description" : "Connection pool acquire increment Default: 32",
-      "group" : "Connection",
-      "groupOrder" : 6,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
     "name" : "connection.pool.timeout",
     "type" : "number",
     "display" : {
@@ -385,7 +372,7 @@
     "type" : "string",
     "display" : {
       "label" : "CloudEvents messages schema name pattern",
-      "description" : "Regular expression pattern to identify CloudEvents messages by this schema name pattern. Default: .*CloudEvents\\.Envelope$",
+      "description" : "Regular expression pattern to identify CloudEvents messages by matching the schema name with this pattern. Default: .*CloudEvents\\.Envelope$",
       "group" : "Connector Advanced",
       "groupOrder" : 8,
       "width" : "long",
