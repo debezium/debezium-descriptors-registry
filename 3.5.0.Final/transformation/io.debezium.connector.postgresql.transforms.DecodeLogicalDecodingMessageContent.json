@@ -1,0 +1,27 @@
+{
+  "name" : "io.debezium.connector.postgresql.transforms.DecodeLogicalDecodingMessageContent",
+  "type" : "transformation",
+  "version" : "3.5.0.Final",
+  "metadata" : {
+    "description" : "io.debezium.connector.postgresql.transforms.DecodeLogicalDecodingMessageContent"
+  },
+  "properties" : [ {
+    "name" : "fields.null.include",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Defines whether to include fields with null values to the decoded structure",
+      "description" : "Defines whether to include fields with null values to the decoded structure Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

@@ -1,0 +1,50 @@
+{
+  "name" : "io.debezium.connector.jdbc.transforms.FieldNameTransformation",
+  "type" : "transformation",
+  "version" : "3.5.0.Final",
+  "metadata" : {
+    "description" : "io.debezium.connector.jdbc.transforms.FieldNameTransformation"
+  },
+  "properties" : [ {
+    "name" : "column.naming.prefix",
+    "type" : "string",
+    "display" : {
+      "label" : "Column Name Prefix",
+      "description" : "Optional prefix to add to column names. Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "column.naming.suffix",
+    "type" : "string",
+    "display" : {
+      "label" : "Column Name Suffix",
+      "description" : "Optional suffix to add to column names. Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "column.naming.style",
+    "type" : "string",
+    "display" : {
+      "label" : "Column Naming Style",
+      "description" : "The style of column naming: UPPERCASE, lowercase, snake_case, camelCase, kebab-case. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

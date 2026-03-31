@@ -1,0 +1,40 @@
+{
+  "name" : "io.debezium.connector.postgresql.transforms.timescaledb.TimescaleDb",
+  "type" : "transformation",
+  "version" : "3.5.0.Final",
+  "metadata" : {
+    "description" : "io.debezium.connector.postgresql.transforms.timescaledb.TimescaleDb"
+  },
+  "properties" : [ {
+    "name" : "schema.list",
+    "type" : "list",
+    "display" : {
+      "label" : "The list of TimescaleDB data schemas",
+      "description" : "Comma-separated list schema names that contain TimescaleDB data tables, defaults to: '_timescaledb_internal' Default: _timescaledb_internal",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "target.topic.prefix",
+    "type" : "string",
+    "display" : {
+      "label" : "The prefix of TimescaleDB topic names",
+      "description" : "The namespace (prefix) of topics where TimescaleDB events will be routed, defaults to: '_timescaledb_internal' Default: timescaledb",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

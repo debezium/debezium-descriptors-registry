@@ -1,0 +1,56 @@
+{
+  "name" : "io.debezium.transforms.HeaderToValue",
+  "type" : "transformation",
+  "version" : "3.5.0.Final",
+  "metadata" : {
+    "description" : "io.debezium.transforms.HeaderToValue"
+  },
+  "properties" : [ {
+    "name" : "headers",
+    "type" : "list",
+    "required" : true,
+    "display" : {
+      "label" : "Header names list",
+      "description" : "Header names in the record whose values are to be copied or moved to record value.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "fields",
+    "type" : "list",
+    "required" : true,
+    "display" : {
+      "label" : "Field names list",
+      "description" : "Field names, in the same order as the header names listed in the headers configuration property. Supports Struct nesting using dot notation.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "operation",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Operation: mover or copy",
+      "description" : "Either <code>move</code> if the fields are to be moved to the value (removed from the headers), or <code>copy</code> if the fields are to be copied to the value (retained in the headers).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "move", "copy" ]
+    } ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

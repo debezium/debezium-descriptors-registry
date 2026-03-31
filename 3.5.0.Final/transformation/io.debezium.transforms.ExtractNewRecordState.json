@@ -1,0 +1,134 @@
+{
+  "name" : "io.debezium.transforms.ExtractNewRecordState",
+  "type" : "transformation",
+  "version" : "3.5.0.Final",
+  "metadata" : {
+    "description" : "io.debezium.transforms.ExtractNewRecordState"
+  },
+  "properties" : [ {
+    "name" : "delete.tombstone.handling.mode",
+    "type" : "string",
+    "display" : {
+      "label" : "Handle delete and tombstone records",
+      "description" : "How to handle delete records. Options are: drop - Remove the delete event and tombstone from the stream.tombstone (default) - For each delete event, leave only a tombstone in the stream.rewrite - Remove tombstone from the record, and add a `__deleted` field with the value `true`.rewrite-with-tombstone - Retain tombstone in record and add a `__deleted` field with the value `true`.delete-to-tombstone - Convert delete events to tombstone events and drop tombstone events. Default: tombstone",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "drop", "tombstone", "rewrite-with-tombstone", "rewrite", "delete-to-tombstone" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "route.by.field",
+    "type" : "string",
+    "display" : {
+      "label" : "Route by field name",
+      "description" : "The column which determines how the events will be routed, the value will replace the topic name. Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "add.fields.prefix",
+    "type" : "string",
+    "display" : {
+      "label" : "Field prefix to be added to each field.",
+      "description" : "Adds this prefix to each field listed. Default: __",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "add.fields",
+    "type" : "list",
+    "display" : {
+      "label" : "Adds the specified field(s) to the message if they exist.",
+      "description" : "Adds each field listed, prefixed with __ (or __<struct>_ if the struct is specified). Example: 'version,connector,source.ts_ms' would add __version, __connector and __source_ts_ms fields. Optionally one can also map new field name like version:VERSION,connector:CONNECTOR,source.ts_ms:EVENT_TIMESTAMP.Please note that the new field name is case-sensitive. Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "add.headers.prefix",
+    "type" : "string",
+    "display" : {
+      "label" : "Header prefix to be added to each header.",
+      "description" : "Adds this prefix listed to each header. Default: __",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "add.headers",
+    "type" : "list",
+    "display" : {
+      "label" : "Adds the specified fields to the header if they exist.",
+      "description" : "Adds each field listed to the header,  __ (or __<struct>_ if the struct is specified). Example: 'version,connector,source.ts_ms' would add __version, __connector and __source_ts_ms fields. Optionally one can also map new field name like version:VERSION,connector:CONNECTOR,source.ts_ms:EVENT_TIMESTAMP.Please note that the new field name is case-sensitive. Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "drop.fields.header.name",
+    "type" : "string",
+    "display" : {
+      "label" : "Specifies a header that contains a list of field names to be removed",
+      "description" : "Specifies the name of a header that contains a list of fields to be removed from the event value.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "drop.fields.from.key",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Specifies whether the fields to be dropped should also be omitted from the key",
+      "description" : "Specifies whether to apply the drop fields behavior to the event key as well as the value. Default behavior is to only remove fields from the event value, not the key. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "drop.fields.keep.schema.compatible",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Specifies if fields are dropped, will the event's schemas be compatible",
+      "description" : "Controls the output event's schema compatibility when using the drop fields feature. `true`: dropped fields are removed if the schema indicates its optional leaving the schemas unchanged, `false`: dropped fields are removed from the key/value schemas, regardless of optionality. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

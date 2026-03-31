@@ -1,0 +1,28 @@
+{
+  "name" : "io.debezium.transforms.SchemaChangeEventFilter",
+  "type" : "transformation",
+  "version" : "3.5.0.Final",
+  "metadata" : {
+    "description" : "io.debezium.transforms.SchemaChangeEventFilter"
+  },
+  "properties" : [ {
+    "name" : "schema.change.event.exclude.list",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Schema change event exclude list",
+      "description" : "Support filtering during DDL synchronization",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

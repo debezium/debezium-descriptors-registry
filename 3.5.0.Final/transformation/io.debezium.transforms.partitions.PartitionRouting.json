@@ -1,0 +1,52 @@
+{
+  "name" : "io.debezium.transforms.partitions.PartitionRouting",
+  "type" : "transformation",
+  "version" : "3.5.0.Final",
+  "metadata" : {
+    "description" : "io.debezium.transforms.partitions.PartitionRouting"
+  },
+  "properties" : [ {
+    "name" : "partition.payload.fields",
+    "type" : "list",
+    "required" : true,
+    "display" : {
+      "label" : "List of payload fields to use for compute partition.",
+      "description" : "Payload fields to use to calculate the partition. Supports Struct nesting using dot notation.To access fields related to data collections, you can use: after, before or change, where 'change' is a special field that will automatically choose, based on operation, the 'after' or 'before'. If a field not exist for the current record it will simply not usede.g. after.name,source.table,change.name",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "partition.topic.num",
+    "type" : "number",
+    "required" : true,
+    "display" : {
+      "label" : "Number of partition configured for topic",
+      "description" : "Number of partition for the topic on which this SMT act. Use TopicNameMatches predicate to filter records by topic",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "partition.hash.function",
+    "type" : "string",
+    "display" : {
+      "label" : "Hash function",
+      "description" : "Hash function to be used when computing hash of the fields which would determine number of the destination partition. Default: java",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

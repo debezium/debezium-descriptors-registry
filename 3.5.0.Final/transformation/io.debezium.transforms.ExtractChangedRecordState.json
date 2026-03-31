@@ -1,0 +1,40 @@
+{
+  "name" : "io.debezium.transforms.ExtractChangedRecordState",
+  "type" : "transformation",
+  "version" : "3.5.0.Final",
+  "metadata" : {
+    "description" : "io.debezium.transforms.ExtractChangedRecordState"
+  },
+  "properties" : [ {
+    "name" : "header.changed.name",
+    "type" : "string",
+    "display" : {
+      "label" : "Header change name.",
+      "description" : "Specify the header changed name, default is null which means not send changes to header.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "header.unchanged.name",
+    "type" : "string",
+    "display" : {
+      "label" : "Header unchanged name.",
+      "description" : "Specify the header unchanged name of schema, default is null which means not send changes to header.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

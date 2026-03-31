@@ -1,0 +1,10 @@
+{
+  "name" : "io.debezium.transforms.openlineage.OpenLineage",
+  "type" : "transformation",
+  "version" : "3.5.0.Final",
+  "metadata" : {
+    "description" : "io.debezium.transforms.openlineage.OpenLineage"
+  },
+  "properties" : [ ],
+  "groups" : [ ]
+}

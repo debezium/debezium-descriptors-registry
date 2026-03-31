@@ -1,0 +1,10 @@
+{
+  "name" : "io.debezium.transforms.ExtractSchemaToNewRecord",
+  "type" : "transformation",
+  "version" : "3.5.0.Final",
+  "metadata" : {
+    "description" : "io.debezium.transforms.ExtractSchemaToNewRecord"
+  },
+  "properties" : [ ],
+  "groups" : [ ]
+}
