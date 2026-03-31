@@ -1,0 +1,53 @@
+{
+  "name" : "io.debezium.transforms.TimezoneConverter",
+  "type" : "transformation",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.transforms.TimezoneConverter"
+  },
+  "properties" : [ {
+    "name" : "converted.timezone",
+    "type" : "string",
+    "display" : {
+      "label" : "Converted Timezone",
+      "description" : "A string that represents the timezone to which the time-based fields should be converted.The format can be geographic (e.g. America/Los_Angeles), or it can be a UTC offset in the format of +/-hh:mm, (e.g. +08:00).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "include.list",
+    "type" : "list",
+    "display" : {
+      "label" : "Include List",
+      "description" : "A comma-separated list of rules that specify what events should be evaluated for timezone conversion, using one of the following formats: `source:<tablename>`:: Matches only Debezium change events with a source information block with the specified table name. All time-based fields will be converted. `source:<tablename>:<fieldname>`:: Matches only Debezium change events with a source information with the specified table name. Only the specified field name will be converted. `topic:<topicname>`:: Matches the specified topic name, converting all time-based fields. `topic:<topicname>:<fieldname>`:: Matches the specified topic name, converting only the specified field name. `<matchname>:<fieldname>`:: Uses a heuristic matching algorithm to matches the source information block table name if the source information block exists, otherwise matches against the topic name. The conversion is applied only to to the specified field name. ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "exclude.list",
+    "type" : "list",
+    "display" : {
+      "label" : "Exclude List",
+      "description" : "A comma-separated list of rules that specify what events should be excluded from timezone conversion, using one of the following formats: `source:<tablename>`:: Matches only Debezium change events with a source information block with the specified table name. All time-based fields will be excluded. `source:<tablename>:<fieldnames>`:: Matches only Debezium change events with a source information with the specified table name. Only the specified field name will be excluded. `topic:<topicname>`:: Matches the specified topic name, excluding all time-based fields. `topic:<topicname>:<fieldnames>`:: Matches the specified topic name, excluding only the specified field name. `<matchname>:<fieldnames>`:: Uses a heuristic matching algorithm to matches the source information block table name if the source information block exists, otherwise matches against the topic name. The conversion is applied only to to the specified field name. ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

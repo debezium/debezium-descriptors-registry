@@ -1,0 +1,10 @@
+{
+  "name" : "io.debezium.connector.mysql.transforms.ReadToInsertEvent",
+  "type" : "transformation",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.connector.mysql.transforms.ReadToInsertEvent"
+  },
+  "properties" : [ ],
+  "groups" : [ ]
+}

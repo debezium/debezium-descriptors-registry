@@ -1,0 +1,53 @@
+{
+  "name" : "io.debezium.transforms.tracing.ActivateTracingSpan",
+  "type" : "transformation",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.transforms.tracing.ActivateTracingSpan"
+  },
+  "properties" : [ {
+    "name" : "tracing.span.context.field",
+    "type" : "string",
+    "display" : {
+      "label" : "Serialized tracing span context field",
+      "description" : "The name of the field containing java.util.Properties representation of serialized span context. Defaults to 'tracingspancontext' Default: tracingspancontext",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tracing.operation.name",
+    "type" : "string",
+    "display" : {
+      "label" : "Tracing operation name",
+      "description" : "The operation name representing Debezium processing span. Default is 'debezium-read' Default: debezium-read",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tracing.with.context.field.only",
+    "type" : "boolean",
+    "display" : {
+      "label" : "Trace only events with context field present",
+      "description" : "Set to `true` when only events that have serialized context field should be traced. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
