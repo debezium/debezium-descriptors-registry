@@ -1,0 +1,41 @@
+{
+  "name" : "io.debezium.ai.embeddings.FieldToEmbedding",
+  "type" : "transformation",
+  "version" : "${project.version}",
+  "metadata" : {
+    "description" : "io.debezium.ai.embeddings.FieldToEmbedding"
+  },
+  "properties" : [ {
+    "name" : "field.source",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Name of the record field from which embeddings should be created.",
+      "description" : "Name of the field of the record which content will be used as an input for embeddings. Supports also nested fields.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "field.embedding",
+    "type" : "string",
+    "display" : {
+      "label" : "Name of the field which would contain the embeddings of the input field.",
+      "description" : "Name of the field which which will be appended to the record and which would contain the embeddings of the content `filed.source` field. Supports also nested fields.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

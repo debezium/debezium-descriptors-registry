@@ -2,9 +2,9 @@
     "schemaVersion": "1.0",
     "build": {
         "version": "3.6.0-SNAPSHOT",
-        "timestamp": "2026-04-02T08:01:01Z",
+        "timestamp": "2026-04-02T14:14:35Z",
         "sourceRepository": "debezium/debezium",
-        "sourceCommit": "614ef5c372",
+        "sourceCommit": "514e5146e1",
         "sourceBranch": "main"
     },
     "components": {
@@ -119,6 +119,30 @@
             }
         ],
         "transformation": [
+            {
+                "class": "io.debezium.ai.embeddings.FieldToEmbeddingHuggingFace",
+                "name": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "description": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "descriptor": "transformation/io.debezium.ai.embeddings.FieldToEmbeddingHuggingFace.json"
+            },
+            {
+                "class": "io.debezium.ai.embeddings.FieldToEmbeddingMinilm",
+                "name": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "description": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "descriptor": "transformation/io.debezium.ai.embeddings.FieldToEmbeddingMinilm.json"
+            },
+            {
+                "class": "io.debezium.ai.embeddings.FieldToEmbeddingOllama",
+                "name": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "description": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "descriptor": "transformation/io.debezium.ai.embeddings.FieldToEmbeddingOllama.json"
+            },
+            {
+                "class": "io.debezium.ai.embeddings.FieldToEmbeddingVoyageAi",
+                "name": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "description": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "descriptor": "transformation/io.debezium.ai.embeddings.FieldToEmbeddingVoyageAi.json"
+            },
             {
                 "class": "io.debezium.connector.jdbc.transforms.CollectionNameTransformation",
                 "name": "io.debezium.connector.jdbc.transforms.CollectionNameTransformation",
