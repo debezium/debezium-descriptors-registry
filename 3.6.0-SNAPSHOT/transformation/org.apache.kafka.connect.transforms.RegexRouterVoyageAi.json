@@ -1,0 +1,38 @@
+{
+  "name" : "org.apache.kafka.connect.transforms.RegexRouter",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.transforms.RegexRouter"
+  },
+  "properties" : [ {
+    "name" : "regex",
+    "type" : "string",
+    "display" : {
+      "label" : "regex",
+      "description" : "Regular expression to use for matching.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "replacement",
+    "type" : "string",
+    "display" : {
+      "label" : "replacement",
+      "description" : "Replacement string.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

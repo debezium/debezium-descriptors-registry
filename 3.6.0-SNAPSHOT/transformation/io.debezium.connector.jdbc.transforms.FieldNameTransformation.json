@@ -39,7 +39,10 @@
       "groupOrder" : 9999,
       "importance" : "low"
     },
-    "validation" : [ ],
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "default", "lower_case", "upper_case", "camel_case", "snake_case" ]
+    } ],
     "valueDependants" : [ ]
   } ],
   "groups" : [ {

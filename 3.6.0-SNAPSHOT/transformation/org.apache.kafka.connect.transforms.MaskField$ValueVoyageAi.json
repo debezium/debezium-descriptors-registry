@@ -1,0 +1,50 @@
+{
+  "name" : "org.apache.kafka.connect.transforms.MaskField$Value",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.transforms.MaskField$Value"
+  },
+  "properties" : [ {
+    "name" : "fields",
+    "type" : "list",
+    "display" : {
+      "label" : "fields",
+      "description" : "Names of fields to mask.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "replacement",
+    "type" : "string",
+    "display" : {
+      "label" : "replacement",
+      "description" : "Custom value replacement, that will be applied to all 'fields' values (numeric or non-empty string values only).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "replace.null.with.default",
+    "type" : "boolean",
+    "display" : {
+      "label" : "replace.null.with.default",
+      "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

@@ -1,0 +1,74 @@
+{
+  "name" : "org.apache.kafka.connect.transforms.TimestampConverter$Value",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.transforms.TimestampConverter$Value"
+  },
+  "properties" : [ {
+    "name" : "field",
+    "type" : "string",
+    "display" : {
+      "label" : "field",
+      "description" : "The field containing the timestamp, or empty if the entire value is a timestamp Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "target.type",
+    "type" : "string",
+    "display" : {
+      "label" : "target.type",
+      "description" : "The desired timestamp representation: string, unix, Date, Time, or Timestamp",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "format",
+    "type" : "string",
+    "display" : {
+      "label" : "format",
+      "description" : "A SimpleDateFormat-compatible format for the timestamp. Used to generate the output when type=string or used to parse the input if the input is a string. Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "unix.precision",
+    "type" : "string",
+    "display" : {
+      "label" : "unix.precision",
+      "description" : "The desired Unix precision for the timestamp: seconds, milliseconds, microseconds, or nanoseconds. Used to generate the output when type=unix or used to parse the input if the input is a Long.Note: This SMT will cause precision loss during conversions from, and to, values with sub-millisecond components. Default: milliseconds",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "replace.null.with.default",
+    "type" : "boolean",
+    "display" : {
+      "label" : "replace.null.with.default",
+      "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

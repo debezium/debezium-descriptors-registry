@@ -1,0 +1,39 @@
+{
+  "name" : "org.apache.kafka.connect.storage.StringConverter",
+  "type" : "converter",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.storage.StringConverter"
+  },
+  "properties" : [ {
+    "name" : "converter.type",
+    "type" : "string",
+    "display" : {
+      "label" : "converter.type",
+      "description" : "How this converter will be used.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "converter.encoding",
+    "type" : "string",
+    "display" : {
+      "label" : "Encoding",
+      "description" : "The name of the Java character set to use for encoding strings as byte arrays. Default: UTF-8",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
