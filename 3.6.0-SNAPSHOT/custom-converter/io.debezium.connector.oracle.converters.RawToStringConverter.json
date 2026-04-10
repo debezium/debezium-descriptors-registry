@@ -18,6 +18,19 @@
     },
     "validation" : [ ],
     "valueDependants" : [ ]
+  }, {
+    "name" : "charset",
+    "type" : "string",
+    "display" : {
+      "label" : "Character set",
+      "description" : "The character set used to decode RAW column bytes into strings. Defaults to UTF-8. For databases using a non-UTF-8 character set such as WE8ISO8859P1, this should be set to the corresponding Java charset name (e.g. 'ISO-8859-1'). Default: UTF-8",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Advanced",
