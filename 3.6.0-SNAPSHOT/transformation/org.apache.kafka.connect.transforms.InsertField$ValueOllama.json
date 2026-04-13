@@ -80,6 +80,7 @@
   }, {
     "name" : "replace.null.with.default",
     "type" : "boolean",
+    "default" : "true",
     "display" : {
       "label" : "replace.null.with.default",
       "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",

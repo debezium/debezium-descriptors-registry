@@ -34,6 +34,7 @@
   }, {
     "name" : "partition.hash.function",
     "type" : "string",
+    "default" : "java",
     "display" : {
       "label" : "Hash function",
       "description" : "Hash function to be used when computing hash of the fields which would determine number of the destination partition. Default: java",

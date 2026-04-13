@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "schema.list",
     "type" : "list",
+    "default" : "_timescaledb_internal",
     "display" : {
       "label" : "The list of TimescaleDB data schemas",
       "description" : "Comma-separated list schema names that contain TimescaleDB data tables, defaults to: '_timescaledb_internal' Default: _timescaledb_internal",
@@ -21,6 +22,7 @@
   }, {
     "name" : "target.topic.prefix",
     "type" : "string",
+    "default" : "timescaledb",
     "display" : {
       "label" : "The prefix of TimescaleDB topic names",
       "description" : "The namespace (prefix) of topics where TimescaleDB events will be routed, defaults to: '_timescaledb_internal' Default: timescaledb",

@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "collection.naming.prefix",
     "type" : "string",
+    "default" : "",
     "display" : {
       "label" : "Collection Name Prefix",
       "description" : "Optional prefix to add to collection names. Default: ",
@@ -20,6 +21,7 @@
   }, {
     "name" : "collection.naming.suffix",
     "type" : "string",
+    "default" : "",
     "display" : {
       "label" : "Collection Name Suffix",
       "description" : "Optional suffix to add to collection names. Default: ",
@@ -32,6 +34,7 @@
   }, {
     "name" : "collection.naming.style",
     "type" : "string",
+    "default" : "default",
     "display" : {
       "label" : "Collection Naming Style",
       "description" : "The style of collection naming: UPPER_CASE, lower_case, snake_case, camelCase, kebab-case. Default: default",

@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "field",
     "type" : "string",
+    "default" : "",
     "display" : {
       "label" : "field",
       "description" : "The field containing the timestamp, or empty if the entire value is a timestamp Default: ",
@@ -32,6 +33,7 @@
   }, {
     "name" : "format",
     "type" : "string",
+    "default" : "",
     "display" : {
       "label" : "format",
       "description" : "A SimpleDateFormat-compatible format for the timestamp. Used to generate the output when type=string or used to parse the input if the input is a string. Default: ",
@@ -44,6 +46,7 @@
   }, {
     "name" : "unix.precision",
     "type" : "string",
+    "default" : "milliseconds",
     "display" : {
       "label" : "unix.precision",
       "description" : "The desired Unix precision for the timestamp: seconds, milliseconds, microseconds, or nanoseconds. Used to generate the output when type=unix or used to parse the input if the input is a Long.Note: This SMT will cause precision loss during conversions from, and to, values with sub-millisecond components. Default: milliseconds",
@@ -56,6 +59,7 @@
   }, {
     "name" : "replace.null.with.default",
     "type" : "boolean",
+    "default" : "true",
     "display" : {
       "label" : "replace.null.with.default",
       "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",

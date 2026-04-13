@@ -21,6 +21,7 @@
   }, {
     "name" : "length.checker",
     "type" : "boolean",
+    "default" : "true",
     "display" : {
       "label" : "Enable length checking",
       "description" : "If true, only TINYINT columns with length 1 will be converted to boolean. Set to false for MySQL 8+ where SHOW CREATE TABLE doesn't show length for TINYINT UNSIGNED. Default: true",

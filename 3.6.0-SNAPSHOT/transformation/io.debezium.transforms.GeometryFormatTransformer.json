@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "format",
     "type" : "string",
+    "default" : "wkb",
     "display" : {
       "label" : "Target Format",
       "description" : "The target Geometry format to convert to. Options are 'wkb' and 'ewkb' Default: wkb",

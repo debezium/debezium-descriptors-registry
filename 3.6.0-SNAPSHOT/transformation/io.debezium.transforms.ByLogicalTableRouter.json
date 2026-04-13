@@ -36,6 +36,7 @@
   }, {
     "name" : "key.enforce.uniqueness",
     "type" : "boolean",
+    "default" : "true",
     "display" : {
       "label" : "Add source topic name into key",
       "description" : "Augment each record's key with a field denoting the source topic. This field distinguishes records coming from different physical tables which may otherwise have primary/unique key conflicts. If the source tables are guaranteed to have globally unique keys then this may be set to false to disable key rewriting. Default: true",
@@ -62,6 +63,7 @@
   }, {
     "name" : "key.field.name",
     "type" : "string",
+    "default" : "__dbz__physicalTableIdentifier",
     "display" : {
       "label" : "Key field name",
       "description" : "Each record's key schema will be augmented with this field name. The purpose of this field is to distinguish the different physical tables that can now share a single topic. Make sure not to configure a field name that is at risk of conflict with existing key schema field names. Default: __dbz__physicalTableIdentifier",
@@ -88,6 +90,7 @@
   }, {
     "name" : "schema.name.adjustment.mode",
     "type" : "string",
+    "default" : "none",
     "display" : {
       "label" : "Schema Name Adjustment",
       "description" : "Specify how the message key schema names derived from the resulting topic name should be adjusted for compatibility with the message converter used by the connector, including:'avro' replaces the characters that cannot be used in the Avro type name with underscore (default)'none' does not apply any adjustment Default: none",
@@ -104,6 +107,7 @@
   }, {
     "name" : "logical.table.cache.size",
     "type" : "number",
+    "default" : "16",
     "display" : {
       "label" : "Logical table cache size",
       "description" : "The size used for holding the max entries in LRUCache. The cache will keep the old/new schema for logical table key and value, also cache the derived key and topic regex result for improving the source record transformation. Default: 16",

@@ -20,6 +20,7 @@
   }, {
     "name" : "schemas.enable",
     "type" : "boolean",
+    "default" : "true",
     "display" : {
       "label" : "Enable Schemas",
       "description" : "Include schemas within each of the serialized values and keys. Default: true",
@@ -33,6 +34,7 @@
   }, {
     "name" : "schemas.cache.size",
     "type" : "number",
+    "default" : "1000",
     "display" : {
       "label" : "Schema Cache Size",
       "description" : "The maximum number of schemas that can be cached in this converter instance. Default: 1000",
@@ -46,6 +48,7 @@
   }, {
     "name" : "decimal.format",
     "type" : "string",
+    "default" : "BASE64",
     "display" : {
       "label" : "Decimal Format",
       "description" : "Controls which format this converter will serialize decimals in. This value is case insensitive and can be either 'BASE64' (default) or 'NUMERIC' Default: BASE64",
@@ -59,6 +62,7 @@
   }, {
     "name" : "replace.null.with.default",
     "type" : "boolean",
+    "default" : "true",
     "display" : {
       "label" : "Replace null with default",
       "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",

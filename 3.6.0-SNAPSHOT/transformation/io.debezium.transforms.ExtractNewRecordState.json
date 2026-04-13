@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "delete.tombstone.handling.mode",
     "type" : "string",
+    "default" : "tombstone",
     "display" : {
       "label" : "Handle delete and tombstone records",
       "description" : "How to handle delete records. Options are: drop - Remove the delete event and tombstone from the stream.tombstone (default) - For each delete event, leave only a tombstone in the stream.rewrite - Remove tombstone from the record, and add a `__deleted` field with the value `true`.rewrite-with-tombstone - Retain tombstone in record and add a `__deleted` field with the value `true`.delete-to-tombstone - Convert delete events to tombstone events and drop tombstone events. Default: tombstone",
@@ -24,6 +25,7 @@
   }, {
     "name" : "route.by.field",
     "type" : "string",
+    "default" : "",
     "display" : {
       "label" : "Route by field name",
       "description" : "The column which determines how the events will be routed, the value will replace the topic name. Default: ",
@@ -37,6 +39,7 @@
   }, {
     "name" : "add.fields.prefix",
     "type" : "string",
+    "default" : "__",
     "display" : {
       "label" : "Field prefix to be added to each field.",
       "description" : "Adds this prefix to each field listed. Default: __",
@@ -50,6 +53,7 @@
   }, {
     "name" : "add.fields",
     "type" : "list",
+    "default" : "",
     "display" : {
       "label" : "Adds the specified field(s) to the message if they exist.",
       "description" : "Adds each field listed, prefixed with __ (or __<struct>_ if the struct is specified). Example: 'version,connector,source.ts_ms' would add __version, __connector and __source_ts_ms fields. Optionally one can also map new field name like version:VERSION,connector:CONNECTOR,source.ts_ms:EVENT_TIMESTAMP.Please note that the new field name is case-sensitive. Default: ",
@@ -63,6 +67,7 @@
   }, {
     "name" : "add.headers.prefix",
     "type" : "string",
+    "default" : "__",
     "display" : {
       "label" : "Header prefix to be added to each header.",
       "description" : "Adds this prefix listed to each header. Default: __",
@@ -76,6 +81,7 @@
   }, {
     "name" : "add.headers",
     "type" : "list",
+    "default" : "",
     "display" : {
       "label" : "Adds the specified fields to the header if they exist.",
       "description" : "Adds each field listed to the header,  __ (or __<struct>_ if the struct is specified). Example: 'version,connector,source.ts_ms' would add __version, __connector and __source_ts_ms fields. Optionally one can also map new field name like version:VERSION,connector:CONNECTOR,source.ts_ms:EVENT_TIMESTAMP.Please note that the new field name is case-sensitive. Default: ",
@@ -102,6 +108,7 @@
   }, {
     "name" : "drop.fields.from.key",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Specifies whether the fields to be dropped should also be omitted from the key",
       "description" : "Specifies whether to apply the drop fields behavior to the event key as well as the value. Default behavior is to only remove fields from the event value, not the key. Default: false",
@@ -115,6 +122,7 @@
   }, {
     "name" : "drop.fields.keep.schema.compatible",
     "type" : "boolean",
+    "default" : "true",
     "display" : {
       "label" : "Specifies if fields are dropped, will the event's schemas be compatible",
       "description" : "Controls the output event's schema compatibility when using the drop fields feature. `true`: dropped fields are removed if the schema indicates its optional leaving the schemas unchanged, `false`: dropped fields are removed from the key/value schemas, regardless of optionality. Default: true",

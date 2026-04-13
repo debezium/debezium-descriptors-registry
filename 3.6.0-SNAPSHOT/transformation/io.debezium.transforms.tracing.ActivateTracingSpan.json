@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "tracing.span.context.field",
     "type" : "string",
+    "default" : "tracingspancontext",
     "display" : {
       "label" : "Serialized tracing span context field",
       "description" : "The name of the field containing java.util.Properties representation of serialized span context. Defaults to 'tracingspancontext' Default: tracingspancontext",
@@ -21,6 +22,7 @@
   }, {
     "name" : "tracing.operation.name",
     "type" : "string",
+    "default" : "debezium-read",
     "display" : {
       "label" : "Tracing operation name",
       "description" : "The operation name representing Debezium processing span. Default is 'debezium-read' Default: debezium-read",
@@ -34,6 +36,7 @@
   }, {
     "name" : "tracing.with.context.field.only",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Trace only events with context field present",
       "description" : "Set to `true` when only events that have serialized context field should be traced. Default: false",

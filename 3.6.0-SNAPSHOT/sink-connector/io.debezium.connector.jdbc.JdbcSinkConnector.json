@@ -49,6 +49,7 @@
   }, {
     "name" : "connection.pool.min_size",
     "type" : "number",
+    "default" : "5",
     "display" : {
       "label" : "Connection pool minimum size",
       "description" : "Minimum number of connection in the connection pool Default: 5",
@@ -62,6 +63,7 @@
   }, {
     "name" : "connection.pool.max_size",
     "type" : "number",
+    "default" : "32",
     "display" : {
       "label" : "Connection pool maximum size",
       "description" : "Maximum number of connection in the connection pool Default: 32",
@@ -75,6 +77,7 @@
   }, {
     "name" : "connection.pool.timeout",
     "type" : "number",
+    "default" : "1800",
     "display" : {
       "label" : "Connection pool timeout",
       "description" : "Connection pool timeout Default: 1800",
@@ -88,6 +91,7 @@
   }, {
     "name" : "insert.mode",
     "type" : "string",
+    "default" : "insert",
     "display" : {
       "label" : "The insertion mode to use",
       "description" : "The insertion mode to use. 'insert' - the default mode, uses standard SQL insert statements; 'upsert' - uses upsert semantics for the database if its supported and requires setting primary.key.mode and primary.key.fields;'update' - uses update semantics for the database if its supported. Default: insert",
@@ -104,6 +108,7 @@
   }, {
     "name" : "delete.enabled",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Controls whether records can be deleted by the connector",
       "description" : "Whether to treat `null` record values as deletes. Requires primary.key.mode to be `record.key`. Default: false",
@@ -117,6 +122,7 @@
   }, {
     "name" : "truncate.enabled",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Controls whether tables can be truncated by the connector",
       "description" : "Whether to process debezium event `t` as truncate statement. Default: false",
@@ -130,6 +136,7 @@
   }, {
     "name" : "collection.name.format",
     "type" : "string",
+    "default" : "${topic}",
     "display" : {
       "label" : "A format string for the collection name",
       "description" : "A format string for the table, which may contain '${topic}' as a placeholder for the original topic name. Default: ${topic}",
@@ -143,6 +150,7 @@
   }, {
     "name" : "primary.key.mode",
     "type" : "string",
+    "default" : "none",
     "display" : {
       "label" : "Primary key mode",
       "description" : "The primary key mode. Default: none",
@@ -172,6 +180,7 @@
   }, {
     "name" : "schema.evolution",
     "type" : "string",
+    "default" : "none",
     "display" : {
       "label" : "Controls how schema evolution is handled by the sink connector",
       "description" : "Controls how schema evolution is handled by the sink connector Default: none",
@@ -188,6 +197,7 @@
   }, {
     "name" : "quote.identifiers",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Controls whether table, column, or other identifiers are quoted",
       "description" : "When enabled, table, column, and other identifiers are quoted based on the database dialect. When disabled, only explicit cases where the dialect requires quoting will be used, such as names starting with an underscore. Default: false",
@@ -201,6 +211,7 @@
   }, {
     "name" : "collection.naming.strategy",
     "type" : "string",
+    "default" : "io.debezium.sink.naming.DefaultCollectionNamingStrategy",
     "display" : {
       "label" : "CollectionNamingStrategy class",
       "description" : "Name of the strategy class that defines the collection name from the topic name. It implements the CollectionNamingStrategy interface. Default: io.debezium.sink.naming.DefaultCollectionNamingStrategy",
@@ -214,6 +225,7 @@
   }, {
     "name" : "column.naming.strategy",
     "type" : "string",
+    "default" : "io.debezium.connector.jdbc.naming.DefaultColumnNamingStrategy",
     "display" : {
       "label" : "Name of the strategy class that implements the ColumnNamingStrategy interface",
       "description" : "Name of the strategy class that implements the ColumnNamingStrategy interface. Default: io.debezium.connector.jdbc.naming.DefaultColumnNamingStrategy",
@@ -227,6 +239,7 @@
   }, {
     "name" : "collection.table.format",
     "type" : "string",
+    "default" : "${table}",
     "display" : {
       "label" : "Format string using table name",
       "description" : "Alternative format that uses table name instead of topic name. Use ${schema} for schema name and ${table} for table name. Default: ${table}",
@@ -240,6 +253,7 @@
   }, {
     "name" : "use.time.zone",
     "type" : "string",
+    "default" : "UTC",
     "display" : {
       "label" : "The timezone used when inserting temporal values.",
       "description" : "The timezone used when inserting temporal values. Defaults to UTC. Default: UTC",
@@ -253,6 +267,7 @@
   }, {
     "name" : "dialect.postgres.postgis.schema",
     "type" : "string",
+    "default" : "public",
     "display" : {
       "label" : "Name of the schema where postgis extension is installed",
       "description" : "Name of the schema where postgis extension is installed. Default is public Default: public",
@@ -266,6 +281,7 @@
   }, {
     "name" : "dialect.postgres.unnest.insert.enabled",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Enable UNNEST-based batch inserts for PostgreSQL",
       "description" : "When enabled, uses PostgreSQL UNNEST() for batch inserts which can significantly improve performance by reducing the number of SQL statements executed. This optimization is compatible with INSERT and UPSERT modes. Instead of executing multiple INSERT statements with JDBC batching, a single INSERT statement with UNNEST is used to insert all records at once. This can provide 5-10x performance improvement for high-throughput scenarios. Default: false",
@@ -279,6 +295,7 @@
   }, {
     "name" : "dialect.sqlserver.identity.insert",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Allowing to insert explicit value for identity column in table for SQLSERVER.",
       "description" : "Allowing to insert explicit value for identity column in table for SQLSERVER. Default: false",
@@ -292,6 +309,7 @@
   }, {
     "name" : "batch.size",
     "type" : "number",
+    "default" : "500",
     "display" : {
       "label" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration.",
       "description" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration. Default: 500",
@@ -331,6 +349,7 @@
   }, {
     "name" : "flush.max.retries",
     "type" : "number",
+    "default" : "5",
     "display" : {
       "label" : "Max retry count",
       "description" : "Max retry count when fail to flush. In case of retriable exceptions, the flush will be retried for the defined max retry count. Default: 5",
@@ -344,6 +363,7 @@
   }, {
     "name" : "flush.retry.delay.ms",
     "type" : "number",
+    "default" : "1000",
     "display" : {
       "label" : "Delay to retry flush",
       "description" : "Delay to retry when fail to flush Default: 1000",
@@ -357,6 +377,7 @@
   }, {
     "name" : "connection.restart.on.errors",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Restart connection on errors",
       "description" : "Specifies whether the connector should attempt to restart the connection automatically upon connection-related errors. Defaults to false. In environments where the sink database uses asynchronous replication, enabling this option may risk data loss or inconsistencies during failover if the replica has not fully caught up with the primary. Default: false",
@@ -370,6 +391,7 @@
   }, {
     "name" : "cloud.events.schema.name.pattern",
     "type" : "string",
+    "default" : ".*CloudEvents\\.Envelope$",
     "display" : {
       "label" : "CloudEvents messages schema name pattern",
       "description" : "Regular expression pattern to identify CloudEvents messages by matching the schema name with this pattern. Default: .*CloudEvents\\.Envelope$",

@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "exclude",
     "type" : "list",
+    "default" : "[]",
     "display" : {
       "label" : "exclude",
       "description" : "Fields to exclude. This takes precedence over the fields to include. Default: []",
@@ -20,6 +21,7 @@
   }, {
     "name" : "include",
     "type" : "list",
+    "default" : "[]",
     "display" : {
       "label" : "include",
       "description" : "Fields to include. If specified, only these fields will be used. Default: []",
@@ -32,6 +34,7 @@
   }, {
     "name" : "renames",
     "type" : "list",
+    "default" : "[]",
     "display" : {
       "label" : "renames",
       "description" : "Field rename mappings. Default: []",
@@ -44,6 +47,7 @@
   }, {
     "name" : "replace.null.with.default",
     "type" : "boolean",
+    "default" : "true",
     "display" : {
       "label" : "replace.null.with.default",
       "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",

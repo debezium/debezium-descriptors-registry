@@ -20,6 +20,7 @@
   }, {
     "name" : "converter.encoding",
     "type" : "string",
+    "default" : "UTF-8",
     "display" : {
       "label" : "Encoding",
       "description" : "The name of the Java character set to use for encoding strings as byte arrays. Default: UTF-8",

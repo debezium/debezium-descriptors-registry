@@ -20,6 +20,7 @@
   }, {
     "name" : "replace.null.with.default",
     "type" : "boolean",
+    "default" : "true",
     "display" : {
       "label" : "replace.null.with.default",
       "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
@@ -32,6 +33,7 @@
   }, {
     "name" : "field.syntax.version",
     "type" : "string",
+    "default" : "V1",
     "display" : {
       "label" : "field.syntax.version",
       "description" : "Defines the version of the syntax to access fields. If set to `V1`, then the field paths are limited to access the elements at the root level of the struct or map. If set to `V2`, the syntax will support accessing nested elements. To access nested elements, dotted notation is used. If dots are already included in the field name, then backtick pairs can be used to wrap field names containing dots. E.g. to access the subfield `baz` from a field named \"foo.bar\" in a struct/map the following format can be used to access its elements: \"`foo.bar`.baz\". Default: V1",

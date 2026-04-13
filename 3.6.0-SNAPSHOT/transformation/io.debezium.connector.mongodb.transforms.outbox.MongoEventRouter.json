@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "collection.field.event.id",
     "type" : "string",
+    "default" : "_id",
     "display" : {
       "label" : "Event ID Field",
       "description" : "The field which contains the event ID within the outbox collection Default: _id",
@@ -34,6 +35,7 @@
   }, {
     "name" : "collection.field.event.type",
     "type" : "string",
+    "default" : "type",
     "display" : {
       "label" : "Event Type Field",
       "description" : "The field which contains the event type within the outbox collection Default: type",
@@ -60,6 +62,7 @@
   }, {
     "name" : "collection.field.event.payload",
     "type" : "string",
+    "default" : "payload",
     "display" : {
       "label" : "Event Payload Field",
       "description" : "The field which contains the event payload within the outbox collection Default: payload",
@@ -99,6 +102,7 @@
   }, {
     "name" : "route.by.field",
     "type" : "string",
+    "default" : "aggregatetype",
     "display" : {
       "label" : "Field to route events by",
       "description" : "The field which determines how the events will be routed within the outbox collection. The value will become a part of the topic name Default: aggregatetype",
@@ -112,6 +116,7 @@
   }, {
     "name" : "route.topic.regex",
     "type" : "string",
+    "default" : "(?<routedByValue>.*)",
     "display" : {
       "label" : "The name of the routed topic",
       "description" : "The default regex to use within the RegexRouter, the default capture will allow to replace the routed field into a new topic name defined in 'route.topic.replacement' Default: (?<routedByValue>.*)",
@@ -125,6 +130,7 @@
   }, {
     "name" : "route.topic.replacement",
     "type" : "string",
+    "default" : "outbox.event.${routedByValue}",
     "display" : {
       "label" : "The name of the routed topic",
       "description" : "The name of the topic in which the events will be routed, a replacement '${routedByValue}' is available which is the value of the field configured via 'route.by.field' Default: outbox.event.${routedByValue}",
@@ -138,6 +144,7 @@
   }, {
     "name" : "route.tombstone.on.empty.payload",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Empty payloads cause a tombstone message",
       "description" : "Whether or not an empty payload should cause a tombstone event. Default: false",
@@ -151,6 +158,7 @@
   }, {
     "name" : "table.op.invalid.behavior",
     "type" : "string",
+    "default" : "warn",
     "display" : {
       "label" : "Behavior when capturing an unexpected outbox event",
       "description" : "While Debezium is monitoring the collection, it's expecting only to see 'create' document events, in case something else is processed this transform can log it as warning, error or stop the process Default: warn",
@@ -167,6 +175,7 @@
   }, {
     "name" : "collection.expand.json.payload",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Expand Payload escaped string as real JSON",
       "description" : "Whether or not to try unescaping a JSON string and make it real JSON. It will infer schema information from payload and update the record schema accordingly. If content is not JSON, it just produces a warning and emits the record unchanged Default: false",
@@ -180,6 +189,7 @@
   }, {
     "name" : "tracing.span.context.field",
     "type" : "string",
+    "default" : "tracingspancontext",
     "display" : {
       "label" : "Serialized tracing span context field",
       "description" : "The name of the field containing java.util.Properties representation of serialized span context. Defaults to 'tracingspancontext' Default: tracingspancontext",
@@ -193,6 +203,7 @@
   }, {
     "name" : "tracing.operation.name",
     "type" : "string",
+    "default" : "debezium-read",
     "display" : {
       "label" : "Tracing operation name",
       "description" : "The operation name representing Debezium processing span. Default is 'debezium-read' Default: debezium-read",
@@ -206,6 +217,7 @@
   }, {
     "name" : "tracing.with.context.field.only",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Trace only events with context field present",
       "description" : "Set to `true` when only events that have serialized context field should be traced. Default: false",

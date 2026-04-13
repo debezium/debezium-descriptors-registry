@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "delimiter",
     "type" : "string",
+    "default" : ".",
     "display" : {
       "label" : "delimiter",
       "description" : "Delimiter to insert between field names from the input record when generating field names for the output record Default: .",

@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "topic.format",
     "type" : "string",
+    "default" : "${topic}-${timestamp}",
     "display" : {
       "label" : "topic.format",
       "description" : "Format string which can contain <code>${topic}</code> and <code>${timestamp}</code> as placeholders for the topic and timestamp, respectively. Default: ${topic}-${timestamp}",
@@ -20,6 +21,7 @@
   }, {
     "name" : "timestamp.format",
     "type" : "string",
+    "default" : "yyyyMMdd",
     "display" : {
       "label" : "timestamp.format",
       "description" : "Format string for the timestamp that is compatible with <code>java.text.SimpleDateFormat</code>. Default: yyyyMMdd",

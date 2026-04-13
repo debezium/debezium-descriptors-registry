@@ -63,6 +63,7 @@
   }, {
     "name" : "ollama.operation.timeout.ms",
     "type" : "number",
+    "default" : "15000",
     "display" : {
       "label" : "Operation timeout.",
       "description" : "Milliseconds to wait for Ollama calculations to finish (defaults to 15000). Default: 15000",

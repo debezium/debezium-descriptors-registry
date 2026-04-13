@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "fields.null.include",
     "type" : "boolean",
+    "default" : "false",
     "display" : {
       "label" : "Defines whether to include fields with null values to the decoded structure",
       "description" : "Defines whether to include fields with null values to the decoded structure Default: false",

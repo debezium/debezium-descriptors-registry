@@ -8,6 +8,7 @@
   "properties" : [ {
     "name" : "column.naming.prefix",
     "type" : "string",
+    "default" : "",
     "display" : {
       "label" : "Column Name Prefix",
       "description" : "Optional prefix to add to column names. Default: ",
@@ -20,6 +21,7 @@
   }, {
     "name" : "column.naming.suffix",
     "type" : "string",
+    "default" : "",
     "display" : {
       "label" : "Column Name Suffix",
       "description" : "Optional suffix to add to column names. Default: ",
@@ -32,6 +34,7 @@
   }, {
     "name" : "column.naming.style",
     "type" : "string",
+    "default" : "default",
     "display" : {
       "label" : "Column Naming Style",
       "description" : "The style of column naming: UPPERCASE, lowercase, snake_case, camelCase, kebab-case. Default: default",

@@ -76,6 +76,7 @@
   }, {
     "name" : "huggingface.operation.timeout.ms",
     "type" : "number",
+    "default" : "15000",
     "display" : {
       "label" : "Operation timeout.",
       "description" : "Milliseconds to wait for Hugging Face calculations to finish (defaults to 15000). Default: 15000",
