@@ -2,9 +2,9 @@
     "schemaVersion": "1.0",
     "build": {
         "version": "3.6.0-SNAPSHOT",
-        "timestamp": "2026-04-13T20:16:33Z",
+        "timestamp": "2026-04-14T02:12:23Z",
         "sourceRepository": "debezium/debezium",
-        "sourceCommit": "74520961c6",
+        "sourceCommit": "9aa1c7c94c",
         "sourceBranch": "main"
     },
     "components": {
@@ -319,6 +319,12 @@
             }
         ],
         "transformation": [
+            {
+                "class": "io.debezium.ai.docling.FieldToDocling",
+                "name": "io.debezium.ai.docling.FieldToDocling",
+                "description": "io.debezium.ai.docling.FieldToDocling",
+                "descriptor": "transformation/io.debezium.ai.docling.FieldToDocling.json"
+            },
             {
                 "class": "io.debezium.ai.embeddings.FieldToEmbeddingHuggingFace",
                 "name": "io.debezium.ai.embeddings.FieldToEmbedding",

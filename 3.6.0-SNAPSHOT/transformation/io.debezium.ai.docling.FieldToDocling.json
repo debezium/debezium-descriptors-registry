@@ -1,0 +1,132 @@
+{
+  "name" : "io.debezium.ai.docling.FieldToDocling",
+  "type" : "transformation",
+  "version" : "${project.version}",
+  "metadata" : {
+    "description" : "io.debezium.ai.docling.FieldToDocling"
+  },
+  "properties" : [ {
+    "name" : "field.source",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Name of the record field which should be used as a Docling input.",
+      "description" : "Name of the record field which should be used as a Docling input. Supports also nested fields.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "field.docling",
+    "type" : "string",
+    "display" : {
+      "label" : "Name of the field which would contain Docling output.",
+      "description" : "Name of the field which will be appended to the record and which would contain Docling document created from `field.source` field. Supports also nested fields, but the nested structure has to exists. If the field is not specified, records will be replaced by record containing only Docling document.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "serve.url",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "URL of Docling Serve API.",
+      "description" : "URL of Docling Serve API, a server this provides Docling as a service.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "input.source",
+    "type" : "string",
+    "required" : true,
+    "default" : "text",
+    "display" : {
+      "label" : "Docling input source, either 'text' or 'link' value.",
+      "description" : "Specifies how Docling should treat the source field - it can contain either directly the document to be transformed ('text' option) or a link to the document to be transformed ('link' option). Default: text",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "link", "text" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "input.format",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Docling input format.",
+      "description" : "Format of the document to be transformed. Can be any option which Docling supports.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "include.images",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Whether to include images.",
+      "description" : "Specifies if the images should or shouldn't be included into the resulting document. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "output.format",
+    "type" : "string",
+    "default" : "text",
+    "display" : {
+      "label" : "Docling output format.",
+      "description" : "Format of the document provided by the Docling. Can be one of 'html', 'markdown' or 'text'. Default: text",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "markdown", "html", "text" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "simple.schema.lookup",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Use simple schema lookup.",
+      "description" : "Adding Docling field requires schema update. Debezium caches the schemas, but even cache lookup can be expensive. If the schema doesn't change over time, the schema lookup can be looked up in the cache by its name. Turn on only when you are sure the schema evolution is not happening during the Debezium run. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
