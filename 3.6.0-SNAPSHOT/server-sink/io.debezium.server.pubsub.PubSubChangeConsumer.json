@@ -1,0 +1,332 @@
+{
+  "name" : "io.debezium.server.pubsub.PubSubChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.pubsub.PubSubChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "project.id",
+    "type" : "string",
+    "display" : {
+      "label" : "GCP Project ID",
+      "description" : "Google Cloud project ID. If not specified, uses the default from the environment.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "ordering.enabled",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Message Ordering Enabled",
+      "description" : "Enable message ordering to preserve order within a single ordering key. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "ordering.key",
+    "type" : "string",
+    "display" : {
+      "label" : "Ordering Key",
+      "description" : "Custom ordering key to use for all messages. If not specified, uses the record key.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "null.key",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "label" : "Null Key Value",
+      "description" : "Ordering key to use when the record key is null. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "batch.delay.threshold.ms",
+    "type" : "number",
+    "default" : "100",
+    "display" : {
+      "label" : "Batch Delay Threshold (ms)",
+      "description" : "Maximum delay threshold in milliseconds for batching messages. Default: 100",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "batch.element.count.threshold",
+    "type" : "number",
+    "default" : "100",
+    "display" : {
+      "label" : "Batch Element Count Threshold",
+      "description" : "Maximum number of messages to include in a single batch. Default: 100",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "batch.request.byte.threshold",
+    "type" : "number",
+    "default" : "9500000",
+    "display" : {
+      "label" : "Batch Request Byte Threshold",
+      "description" : "Maximum total size in bytes of messages in a single batch. Default: 9500000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "flowcontrol.enabled",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Flow Control Enabled",
+      "description" : "Enable flow control to limit outstanding messages and bytes. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "flowcontrol.max.outstanding.messages",
+    "type" : "number",
+    "default" : "9223372036854775807",
+    "display" : {
+      "label" : "Max Outstanding Messages",
+      "description" : "Maximum number of outstanding messages allowed when flow control is enabled. Default: 9223372036854775807",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "flowcontrol.max.outstanding.bytes",
+    "type" : "number",
+    "default" : "9223372036854775807",
+    "display" : {
+      "label" : "Max Outstanding Bytes",
+      "description" : "Maximum total size in bytes of outstanding messages when flow control is enabled. Default: 9223372036854775807",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retry.total.timeout.ms",
+    "type" : "number",
+    "default" : "60000",
+    "display" : {
+      "label" : "Retry Total Timeout (ms)",
+      "description" : "Total timeout in milliseconds for retry attempts. Default: 60000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retry.max.rpc.timeout.ms",
+    "type" : "number",
+    "default" : "10000",
+    "display" : {
+      "label" : "Retry Max RPC Timeout (ms)",
+      "description" : "Maximum RPC timeout in milliseconds for retry attempts. Default: 10000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retry.initial.delay.ms",
+    "type" : "number",
+    "default" : "5",
+    "display" : {
+      "label" : "Retry Initial Delay (ms)",
+      "description" : "Initial delay in milliseconds before first retry attempt. Default: 5",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retry.delay.multiplier",
+    "type" : "number",
+    "default" : "2.0",
+    "display" : {
+      "label" : "Retry Delay Multiplier",
+      "description" : "Multiplier for exponential backoff between retry attempts. Default: 2.0",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retry.max.delay.ms",
+    "type" : "number",
+    "default" : "9223372036854775807",
+    "display" : {
+      "label" : "Retry Max Delay (ms)",
+      "description" : "Maximum delay in milliseconds between retry attempts. Default: 9223372036854775807",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retry.initial.rpc.timeout.ms",
+    "type" : "number",
+    "default" : "10000",
+    "display" : {
+      "label" : "Retry Initial RPC Timeout (ms)",
+      "description" : "Initial RPC timeout in milliseconds for retry attempts. Default: 10000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retry.rpc.timeout.multiplier",
+    "type" : "number",
+    "default" : "2.0",
+    "display" : {
+      "label" : "Retry RPC Timeout Multiplier",
+      "description" : "Multiplier for RPC timeout between retry attempts. Default: 2.0",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "wait.message.delivery.timeout.ms",
+    "type" : "number",
+    "default" : "30000",
+    "display" : {
+      "label" : "Wait Message Delivery Timeout (ms)",
+      "description" : "Timeout in milliseconds to wait for message delivery confirmation. Default: 30000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "concurrency.threads",
+    "type" : "number",
+    "default" : "0",
+    "display" : {
+      "label" : "Concurrency Threads",
+      "description" : "Number of threads for concurrent publishing. 0 means use default. Default: 0",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "compression.threshold.bytes",
+    "type" : "number",
+    "default" : "-1",
+    "display" : {
+      "label" : "Compression Threshold (bytes)",
+      "description" : "Minimum message size in bytes to enable compression. -1 disables compression. Default: -1",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "channel.shutdown.timeout.ms",
+    "type" : "number",
+    "default" : "30000",
+    "display" : {
+      "label" : "Channel Shutdown Timeout (ms)",
+      "description" : "Timeout in milliseconds for channel shutdown. Default: 30000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "address",
+    "type" : "string",
+    "display" : {
+      "label" : "PubSub Endpoint Address",
+      "description" : "Optional PubSub endpoint address (for testing with emulator).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "region",
+    "type" : "string",
+    "display" : {
+      "label" : "GCP Region",
+      "description" : "GCP region for regional endpoint (e.g., 'us-east1').",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

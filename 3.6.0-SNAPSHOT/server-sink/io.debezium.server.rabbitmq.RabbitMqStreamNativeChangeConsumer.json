@@ -1,0 +1,466 @@
+{
+  "name" : "io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "connection.host",
+    "type" : "string",
+    "display" : {
+      "label" : "Connection Host (deprecated)",
+      "description" : "Connection host (deprecated, use 'host' instead).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.port",
+    "type" : "number",
+    "display" : {
+      "label" : "Connection Port (deprecated)",
+      "description" : "Connection port (deprecated, use 'port' instead).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "host",
+    "type" : "string",
+    "default" : "localhost",
+    "display" : {
+      "label" : "Host",
+      "description" : "RabbitMQ Stream host. Default: localhost",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "port",
+    "type" : "number",
+    "default" : "5552",
+    "display" : {
+      "label" : "Port",
+      "description" : "RabbitMQ Stream port. Default: 5552",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "username",
+    "type" : "string",
+    "default" : "guest",
+    "display" : {
+      "label" : "Username",
+      "description" : "RabbitMQ username. Default: guest",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "password",
+    "type" : "string",
+    "default" : "guest",
+    "display" : {
+      "label" : "Password",
+      "description" : "RabbitMQ password. Default: guest",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "virtualHost",
+    "type" : "string",
+    "default" : "/",
+    "display" : {
+      "label" : "Virtual Host",
+      "description" : "RabbitMQ virtual host. Default: /",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tls.enable",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "TLS Enable",
+      "description" : "Enable TLS connection. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tls.serverName",
+    "type" : "string",
+    "display" : {
+      "label" : "TLS Server Name",
+      "description" : "TLS server name for SNI.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "rpcTimeout",
+    "type" : "number",
+    "default" : "10",
+    "display" : {
+      "label" : "RPC Timeout (seconds)",
+      "description" : "RPC timeout in seconds. Default: 10",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "maxProducersByConnection",
+    "type" : "number",
+    "default" : "256",
+    "display" : {
+      "label" : "Max Producers By Connection",
+      "description" : "Maximum number of producers per connection. Default: 256",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "maxTrackingConsumersByConnection",
+    "type" : "number",
+    "default" : "50",
+    "display" : {
+      "label" : "Max Tracking Consumers By Connection",
+      "description" : "Maximum number of tracking consumers per connection. Default: 50",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "maxConsumersByConnection",
+    "type" : "number",
+    "default" : "256",
+    "display" : {
+      "label" : "Max Consumers By Connection",
+      "description" : "Maximum number of consumers per connection. Default: 256",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "requestedHeartbeat",
+    "type" : "number",
+    "default" : "60",
+    "display" : {
+      "label" : "Requested Heartbeat (seconds)",
+      "description" : "Requested heartbeat interval in seconds. Default: 60",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "requestedMaxFrameSize",
+    "type" : "number",
+    "default" : "0",
+    "display" : {
+      "label" : "Requested Max Frame Size",
+      "description" : "Requested maximum frame size. Default: 0",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "id",
+    "type" : "string",
+    "default" : "rabbitmq-stream",
+    "display" : {
+      "label" : "ID",
+      "description" : "Client ID. Default: rabbitmq-stream",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "stream",
+    "type" : "string",
+    "display" : {
+      "label" : "Stream",
+      "description" : "Stream name.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "stream.maxAge",
+    "type" : "string",
+    "display" : {
+      "label" : "Stream Max Age",
+      "description" : "Maximum age for stream messages.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "stream.maxLength",
+    "type" : "string",
+    "display" : {
+      "label" : "Stream Max Length",
+      "description" : "Maximum length for stream in bytes.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "stream.maxSegmentSize",
+    "type" : "string",
+    "display" : {
+      "label" : "Stream Max Segment Size",
+      "description" : "Maximum segment size for stream in bytes.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "superStream.enable",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Super Stream Enable",
+      "description" : "Enable super stream. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "superStream.partitions",
+    "type" : "number",
+    "default" : "3",
+    "display" : {
+      "label" : "Super Stream Partitions",
+      "description" : "Number of partitions for super stream. Default: 3",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "superStream.bindingKeys",
+    "type" : "list",
+    "display" : {
+      "label" : "Super Stream Binding Keys",
+      "description" : "Binding keys for super stream.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.name",
+    "type" : "string",
+    "display" : {
+      "label" : "Producer Name",
+      "description" : "Producer name.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.filterValue",
+    "type" : "string",
+    "display" : {
+      "label" : "Producer Filter Value",
+      "description" : "Producer filter value.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.batchSize",
+    "type" : "number",
+    "default" : "100",
+    "display" : {
+      "label" : "Producer Batch Size",
+      "description" : "Producer batch size. Default: 100",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.subEntrySize",
+    "type" : "number",
+    "default" : "1",
+    "display" : {
+      "label" : "Producer Sub Entry Size",
+      "description" : "Producer sub-entry size. Default: 1",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.maxUnconfirmedMessages",
+    "type" : "number",
+    "default" : "10000",
+    "display" : {
+      "label" : "Producer Max Unconfirmed Messages",
+      "description" : "Maximum number of unconfirmed messages. Default: 10000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.batchPublishingDelay",
+    "type" : "number",
+    "default" : "100",
+    "display" : {
+      "label" : "Producer Batch Publishing Delay (ms)",
+      "description" : "Producer batch publishing delay in milliseconds. Default: 100",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.confirmTimeout",
+    "type" : "number",
+    "default" : "30",
+    "display" : {
+      "label" : "Producer Confirm Timeout (seconds)",
+      "description" : "Producer confirm timeout in seconds. Default: 30",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.enqueueTimeout",
+    "type" : "number",
+    "default" : "10",
+    "display" : {
+      "label" : "Producer Enqueue Timeout (seconds)",
+      "description" : "Producer enqueue timeout in seconds. Default: 10",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "batchConfirmTimeout",
+    "type" : "number",
+    "default" : "30",
+    "display" : {
+      "label" : "Batch Confirm Timeout (seconds)",
+      "description" : "Batch confirm timeout in seconds. Default: 30",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "null.value",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "label" : "Null Value",
+      "description" : "Value to use when record value is null. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

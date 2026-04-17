@@ -1,0 +1,82 @@
+{
+  "name" : "io.debezium.server.pubsub.PubSubLiteChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.pubsub.PubSubLiteChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "project.id",
+    "type" : "string",
+    "display" : {
+      "label" : "GCP Project ID",
+      "description" : "Google Cloud project ID. If not specified, uses the default from the environment.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "region",
+    "type" : "string",
+    "display" : {
+      "label" : "GCP Region or Zone",
+      "description" : "Google Cloud region or zone for the Pub/Sub Lite topic (e.g., 'us-central1-a').",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "ordering.enabled",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Message Ordering Enabled",
+      "description" : "Enable message ordering to preserve order within a single ordering key. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "null.key",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "label" : "Null Key Value",
+      "description" : "Ordering key to use when the record key is null. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "wait.message.delivery.timeout.ms",
+    "type" : "number",
+    "default" : "30000",
+    "display" : {
+      "label" : "Wait Message Delivery Timeout (ms)",
+      "description" : "Timeout in milliseconds to wait for message delivery confirmation. Default: 30000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

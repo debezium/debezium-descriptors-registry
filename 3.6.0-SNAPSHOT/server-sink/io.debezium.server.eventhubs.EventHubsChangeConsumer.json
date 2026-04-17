@@ -1,0 +1,109 @@
+{
+  "name" : "io.debezium.server.eventhubs.EventHubsChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.eventhubs.EventHubsChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "connectionstring",
+    "type" : "string",
+    "display" : {
+      "label" : "Event Hubs Connection String",
+      "description" : "Azure Event Hubs connection string (without EntityPath).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "hubname",
+    "type" : "string",
+    "display" : {
+      "label" : "Event Hub Name",
+      "description" : "Name of the Event Hub.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "partitionid",
+    "type" : "string",
+    "default" : "",
+    "display" : {
+      "label" : "Partition ID",
+      "description" : "Specific partition ID to send all events to. Leave empty for dynamic routing. Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "partitionkey",
+    "type" : "string",
+    "default" : "",
+    "display" : {
+      "label" : "Partition Key",
+      "description" : "Partition key to use for all events. Leave empty for dynamic routing. Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "dynamicpartitionrouting",
+    "type" : "string",
+    "default" : "DEFAULT",
+    "display" : {
+      "label" : "Dynamic Partition Routing Strategy",
+      "description" : "Dynamic partition routing strategy when no partition ID or key is configured. Default: DEFAULT",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "maxbatchsize",
+    "type" : "number",
+    "default" : "0",
+    "display" : {
+      "label" : "Max Batch Size (bytes)",
+      "description" : "Maximum size in bytes for the batch of events. 0 means use default. Default: 0",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "hashmessagekeyfunction",
+    "type" : "string",
+    "display" : {
+      "label" : "Hash Message Key Function",
+      "description" : "Hash function to use for message key-based routing.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

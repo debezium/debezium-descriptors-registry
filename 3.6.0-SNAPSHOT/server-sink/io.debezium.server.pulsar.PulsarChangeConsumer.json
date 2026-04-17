@@ -1,0 +1,84 @@
+{
+  "name" : "io.debezium.server.pulsar.PulsarChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.pulsar.PulsarChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "null.key",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "label" : "Null Key Value",
+      "description" : "Key to use when the record key is null. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tenant",
+    "type" : "string",
+    "default" : "public",
+    "display" : {
+      "label" : "Pulsar Tenant",
+      "description" : "Pulsar tenant name. Default: public",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "namespace",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "label" : "Pulsar Namespace",
+      "description" : "Pulsar namespace name. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "timeout",
+    "type" : "number",
+    "default" : "0",
+    "display" : {
+      "label" : "Timeout (ms)",
+      "description" : "Timeout in milliseconds for producer close operations. 0 means no timeout. Default: 0",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.batcherBuilder",
+    "type" : "string",
+    "default" : "DEFAULT",
+    "display" : {
+      "label" : "Batcher Builder",
+      "description" : "Pulsar batcher builder type: DEFAULT, KEY_BASED. Default: DEFAULT",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

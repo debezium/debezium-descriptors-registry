@@ -1,0 +1,55 @@
+{
+  "name" : "io.debezium.server.pravega.PravegaChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.pravega.PravegaChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "controller.uri",
+    "type" : "string",
+    "default" : "tcp://localhost:9090",
+    "display" : {
+      "label" : "Controller URI",
+      "description" : "Pravega controller URI. Default: tcp://localhost:9090",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "scope",
+    "type" : "string",
+    "display" : {
+      "label" : "Scope",
+      "description" : "Pravega scope.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "transaction",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Transaction",
+      "description" : "Enable transaction support. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

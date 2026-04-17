@@ -1,0 +1,106 @@
+{
+  "name" : "io.debezium.server.rocketmq.RocketMqChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.rocketmq.RocketMqChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "producer.acl.enabled",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "ACL Enabled",
+      "description" : "Enable ACL (Access Control List) authentication. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.access.key",
+    "type" : "string",
+    "display" : {
+      "label" : "Access Key",
+      "description" : "Access key for ACL authentication (required when ACL is enabled).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.secret.key",
+    "type" : "string",
+    "display" : {
+      "label" : "Secret Key",
+      "description" : "Secret key for ACL authentication (required when ACL is enabled).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.name.srv.addr",
+    "type" : "string",
+    "display" : {
+      "label" : "Name Server Address",
+      "description" : "RocketMQ name server address.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.group",
+    "type" : "string",
+    "display" : {
+      "label" : "Producer Group",
+      "description" : "RocketMQ producer group name.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.max.message.size",
+    "type" : "number",
+    "display" : {
+      "label" : "Max Message Size",
+      "description" : "Maximum message size in bytes.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "producer.send.msg.timeout",
+    "type" : "number",
+    "display" : {
+      "label" : "Send Message Timeout (ms)",
+      "description" : "Timeout in milliseconds for sending messages.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

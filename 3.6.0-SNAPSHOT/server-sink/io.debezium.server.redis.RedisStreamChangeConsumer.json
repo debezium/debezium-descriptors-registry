@@ -1,0 +1,330 @@
+{
+  "name" : "io.debezium.server.redis.RedisStreamChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.redis.RedisStreamChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "redis.batch.size",
+    "type" : "string",
+    "default" : "500",
+    "display" : {
+      "description" : " Default: 500",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.null.key",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "description" : " Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.null.value",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "description" : " Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.message.format",
+    "type" : "string",
+    "default" : "compact",
+    "display" : {
+      "description" : " Default: compact",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "compact", "extended" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.skip.heartbeat.messages",
+    "type" : "string",
+    "default" : "true",
+    "display" : {
+      "description" : " Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.address",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "description" : "The url that will be used to access Redis",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.db.index",
+    "type" : "string",
+    "default" : "0",
+    "display" : {
+      "description" : "The database index (0--15) that will be used to access Redis Default: 0",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.user",
+    "type" : "string",
+    "display" : {
+      "description" : "The user that will be used to access Redis",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.password",
+    "type" : "string",
+    "display" : {
+      "description" : "The password that will be used to access Redis",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.ssl.enabled",
+    "type" : "string",
+    "default" : "false",
+    "display" : {
+      "description" : "Use SSL for Redis connection Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.ssl.hostname.verification.enabled",
+    "type" : "string",
+    "default" : "false",
+    "display" : {
+      "description" : "Enable hostname verification Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.ssl.truststore.path",
+    "type" : "string",
+    "default" : "",
+    "display" : {
+      "description" : "Path to the truststore file Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.ssl.truststore.password",
+    "type" : "string",
+    "default" : "",
+    "display" : {
+      "description" : "Password for the truststore Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.ssl.truststore.type",
+    "type" : "string",
+    "default" : "JKS",
+    "display" : {
+      "description" : "Type of the truststore (e.g., JKS, PKCS12), defaults to JKS Default: JKS",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.ssl.keystore.path",
+    "type" : "string",
+    "default" : "",
+    "display" : {
+      "description" : "Path to the keystore file Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.ssl.keystore.password",
+    "type" : "string",
+    "default" : "",
+    "display" : {
+      "description" : "Password for the keystore Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.ssl.keystore.type",
+    "type" : "string",
+    "default" : "JKS",
+    "display" : {
+      "description" : "Type of the keystore (e.g., JKS, PKCS12), defaults to JKS Default: JKS",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.connection.timeout.ms",
+    "type" : "string",
+    "default" : "2000",
+    "display" : {
+      "description" : "Connection timeout (in ms) Default: 2000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.socket.timeout.ms",
+    "type" : "string",
+    "default" : "2000",
+    "display" : {
+      "description" : "Socket timeout (in ms) Default: 2000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.retry.initial.delay.ms",
+    "type" : "string",
+    "default" : "300",
+    "display" : {
+      "description" : "Initial retry delay (in ms) Default: 300",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.retry.max.delay.ms",
+    "type" : "string",
+    "default" : "10000",
+    "display" : {
+      "description" : "Maximum retry delay (in ms) Default: 10000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.wait.enabled",
+    "type" : "string",
+    "default" : "false",
+    "display" : {
+      "description" : "Enables wait for replica. In case Redis is configured with a replica shard, this allows to verify that the data has been written to the replica. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.wait.timeout.ms",
+    "type" : "string",
+    "default" : "1000",
+    "display" : {
+      "description" : "Timeout when wait for replica Default: 1000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.wait.retry.enabled",
+    "type" : "string",
+    "default" : "false",
+    "display" : {
+      "description" : "Enables retry on wait for replica failure Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.wait.retry.delay.ms",
+    "type" : "string",
+    "default" : "1000",
+    "display" : {
+      "description" : "Delay of retry on wait for replica failure Default: 1000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "redis.cluster.enabled",
+    "type" : "string",
+    "default" : "false",
+    "display" : {
+      "description" : "Enable Redis Cluster mode; when true, a JedisCluster client will be created. Single or comma-separated host:port addresses are accepted. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

@@ -1,0 +1,270 @@
+{
+  "name" : "io.debezium.server.http.HttpChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.http.HttpChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "url",
+    "type" : "string",
+    "display" : {
+      "label" : "Webhook URL",
+      "description" : "The HTTP webhook destination URL to send change events to.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "timeout.ms",
+    "type" : "number",
+    "default" : "60000",
+    "display" : {
+      "label" : "Client timeout (ms)",
+      "description" : "HTTP client timeout in milliseconds. Default: 60000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retries",
+    "type" : "number",
+    "default" : "5",
+    "display" : {
+      "label" : "Max retries",
+      "description" : "Maximum number of retry attempts for failed HTTP requests. Default: 5",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retry.interval.ms",
+    "type" : "number",
+    "default" : "1000",
+    "display" : {
+      "label" : "Retry interval (ms)",
+      "description" : "Interval in milliseconds between retry attempts. Default: 1000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "headers.encode.base64",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Encode headers in Base64",
+      "description" : "Whether to encode custom header values in Base64. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "headers.prefix",
+    "type" : "string",
+    "default" : "X-DEBEZIUM-",
+    "display" : {
+      "label" : "Headers prefix",
+      "description" : "Prefix to prepend to custom header names. Default: X-DEBEZIUM-",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "batch.enabled",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Batch mode enabled",
+      "description" : "Whether to send events in batches. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "batch.max-size",
+    "type" : "number",
+    "default" : "200",
+    "display" : {
+      "label" : "Batch maximum size",
+      "description" : "Maximum number of events to include in a single batch. Default: 200",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.type",
+    "type" : "string",
+    "display" : {
+      "label" : "Authentication type",
+      "description" : "Type of authentication to use. Valid values: 'jwt', 'oauth2', 'standard-webhooks'.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.jwt.username",
+    "type" : "string",
+    "display" : {
+      "label" : "JWT username",
+      "description" : "Username for JWT authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.jwt.password",
+    "type" : "string",
+    "display" : {
+      "label" : "JWT password",
+      "description" : "Password for JWT authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.jwt.url",
+    "type" : "string",
+    "display" : {
+      "label" : "JWT authentication URL",
+      "description" : "Base URL for JWT authentication service.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.jwt.token_expiration",
+    "type" : "number",
+    "default" : "60",
+    "display" : {
+      "label" : "JWT token expiration (minutes)",
+      "description" : "JWT token expiration time in minutes. Default: 60",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.jwt.refresh_token_expiration",
+    "type" : "number",
+    "default" : "1440",
+    "display" : {
+      "label" : "JWT refresh token expiration (minutes)",
+      "description" : "JWT refresh token expiration time in minutes. Default: 1440",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.oauth2.client-id",
+    "type" : "string",
+    "display" : {
+      "label" : "OAuth2 client ID",
+      "description" : "Client ID for OAuth2 authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.oauth2.client-secret",
+    "type" : "string",
+    "display" : {
+      "label" : "OAuth2 client secret",
+      "description" : "Client secret for OAuth2 authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.oauth2.token-url",
+    "type" : "string",
+    "display" : {
+      "label" : "OAuth2 token URL",
+      "description" : "Token endpoint URL for OAuth2 authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.oauth2.scope",
+    "type" : "string",
+    "display" : {
+      "label" : "OAuth2 scope",
+      "description" : "Scope for OAuth2 authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.webhook.secret",
+    "type" : "string",
+    "display" : {
+      "label" : "Webhook secret",
+      "description" : "Secret key for Standard Webhooks authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

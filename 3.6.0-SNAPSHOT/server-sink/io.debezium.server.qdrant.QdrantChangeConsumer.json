@@ -1,0 +1,68 @@
+{
+  "name" : "io.debezium.server.qdrant.QdrantChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.qdrant.QdrantChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "host",
+    "type" : "string",
+    "default" : "localhost",
+    "display" : {
+      "label" : "Host",
+      "description" : "Qdrant server host. Default: localhost",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "port",
+    "type" : "number",
+    "default" : "6333",
+    "display" : {
+      "label" : "Port",
+      "description" : "Qdrant server port. Default: 6333",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "api.key",
+    "type" : "string",
+    "display" : {
+      "label" : "API Key",
+      "description" : "Qdrant API key for authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "vector.field.names",
+    "type" : "string",
+    "display" : {
+      "label" : "Vector Field Names",
+      "description" : "Comma-separated list of vector field names.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

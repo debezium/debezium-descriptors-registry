@@ -1562,6 +1562,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "gtid.ignore.on.recovery",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Ignore GTID on recovery",
+      "description" : "Whether the connector should ignore GTID during recovery and restart from the binlog file and position instead. GTID mode on the server remains enabled, and GTID tracking resumes normally after recovery. Default: false",
+      "group" : "Connector Advanced",
+      "groupOrder" : 8,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "gtid.source.includes",
     "type" : "list",
     "display" : {

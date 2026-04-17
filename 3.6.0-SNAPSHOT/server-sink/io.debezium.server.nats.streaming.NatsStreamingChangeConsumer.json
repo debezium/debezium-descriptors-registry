@@ -1,0 +1,53 @@
+{
+  "name" : "io.debezium.server.nats.streaming.NatsStreamingChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.nats.streaming.NatsStreamingChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "url",
+    "type" : "string",
+    "display" : {
+      "label" : "URL",
+      "description" : "NATS server URL.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "cluster.id",
+    "type" : "string",
+    "display" : {
+      "label" : "Cluster ID",
+      "description" : "NATS Streaming cluster ID.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "client.id",
+    "type" : "string",
+    "display" : {
+      "label" : "Client ID",
+      "description" : "NATS Streaming client ID.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
