@@ -2,7 +2,7 @@
     "schemaVersion": "1.0",
     "build": {
         "version": "3.6.0-SNAPSHOT",
-        "timestamp": "2026-04-17T20:20:11Z",
+        "timestamp": "2026-04-18T02:18:19Z",
         "sourceRepository": "debezium/debezium",
         "sourceCommit": "ab8bff9494",
         "sourceBranch": "main"
@@ -368,6 +368,12 @@
                 "name": "io.debezium.server.rocketmq.RocketMqChangeConsumer",
                 "description": "io.debezium.server.rocketmq.RocketMqChangeConsumer",
                 "descriptor": "server-sink/io.debezium.server.rocketmq.RocketMqChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.sns.SnsChangeConsumer",
+                "name": "io.debezium.server.sns.SnsChangeConsumer",
+                "description": "io.debezium.server.sns.SnsChangeConsumer",
+                "descriptor": "server-sink/io.debezium.server.sns.SnsChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.sqs.SqsChangeConsumer",

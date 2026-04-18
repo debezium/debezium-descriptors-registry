@@ -1,0 +1,134 @@
+{
+  "name" : "io.debezium.server.sns.SnsChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : "io.debezium.server.sns.SnsChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "region",
+    "type" : "string",
+    "display" : {
+      "label" : "AWS Region",
+      "description" : "AWS region for the SNS topic.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "endpoint",
+    "type" : "string",
+    "display" : {
+      "label" : "SNS Endpoint Override",
+      "description" : "Optional SNS endpoint override (for local testing with LocalStack).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "credentials.profile",
+    "type" : "string",
+    "display" : {
+      "label" : "AWS Credentials Profile",
+      "description" : "AWS credentials profile name to use for authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "topic.arn",
+    "type" : "string",
+    "display" : {
+      "label" : "Default Topic ARN",
+      "description" : "Default SNS topic ARN to publish messages to.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "topic.arn.prefix",
+    "type" : "string",
+    "display" : {
+      "label" : "Topic ARN Prefix",
+      "description" : "Prefix to prepend to the destination name to compose the full topic ARN.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "default.retries",
+    "type" : "number",
+    "default" : "5",
+    "display" : {
+      "label" : "Default Retries",
+      "description" : "Maximum number of retry attempts for failed requests. Default: 5",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "fifo.message.group.id.header",
+    "type" : "string",
+    "default" : "aggregateId",
+    "display" : {
+      "label" : "FIFO Message Group ID Header",
+      "description" : "Header name to use as the MessageGroupId for FIFO topics. Default: aggregateId",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "fifo.message.dedup.id.header",
+    "type" : "string",
+    "display" : {
+      "label" : "FIFO Message Deduplication ID Header",
+      "description" : "Header name to use as the MessageDeduplicationId for FIFO topics.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "fifo.default.group.id",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "label" : "FIFO Default Group ID",
+      "description" : "Default MessageGroupId when no header value is found for FIFO topics. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
