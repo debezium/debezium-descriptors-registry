@@ -1,0 +1,99 @@
+{
+  "name" : "org.apache.kafka.connect.transforms.InsertField$Key",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.transforms.InsertField$Key"
+  },
+  "properties" : [ {
+    "name" : "topic.field",
+    "type" : "string",
+    "display" : {
+      "label" : "topic.field",
+      "description" : "Field name for Kafka topic. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "partition.field",
+    "type" : "string",
+    "display" : {
+      "label" : "partition.field",
+      "description" : "Field name for Kafka partition. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "offset.field",
+    "type" : "string",
+    "display" : {
+      "label" : "offset.field",
+      "description" : "Field name for Kafka offset - only applicable to sink connectors.<br/>Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "timestamp.field",
+    "type" : "string",
+    "display" : {
+      "label" : "timestamp.field",
+      "description" : "Field name for record timestamp. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "static.field",
+    "type" : "string",
+    "display" : {
+      "label" : "static.field",
+      "description" : "Field name for static data field. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "static.value",
+    "type" : "string",
+    "display" : {
+      "label" : "static.value",
+      "description" : "Static field value, if field name configured.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "replace.null.with.default",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "replace.null.with.default",
+      "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

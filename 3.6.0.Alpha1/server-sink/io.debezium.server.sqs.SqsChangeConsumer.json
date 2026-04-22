@@ -1,0 +1,80 @@
+{
+  "name" : "io.debezium.server.sqs.SqsChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0.Alpha1",
+  "metadata" : {
+    "description" : "io.debezium.server.sqs.SqsChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "region",
+    "type" : "string",
+    "display" : {
+      "label" : "AWS Region",
+      "description" : "AWS region for the SQS queue.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "endpoint",
+    "type" : "string",
+    "display" : {
+      "label" : "SQS Endpoint Override",
+      "description" : "Optional SQS endpoint override (for local testing with LocalStack).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "queue.url",
+    "type" : "string",
+    "display" : {
+      "label" : "SQS Queue URL",
+      "description" : "The URL of the SQS queue to send messages to.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "credentials.profile",
+    "type" : "string",
+    "display" : {
+      "label" : "AWS Credentials Profile",
+      "description" : "AWS credentials profile name to use for authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "fifo.message.group.id",
+    "type" : "string",
+    "default" : "cdc-group",
+    "display" : {
+      "label" : "FIFO Message Group ID",
+      "description" : "Message group ID for FIFO queues (only used when queue URL ends with .fifo). Default: cdc-group",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

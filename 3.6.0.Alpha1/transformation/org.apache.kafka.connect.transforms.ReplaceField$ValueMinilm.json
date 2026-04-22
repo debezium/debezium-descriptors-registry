@@ -1,0 +1,66 @@
+{
+  "name" : "org.apache.kafka.connect.transforms.ReplaceField$Value",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.transforms.ReplaceField$Value"
+  },
+  "properties" : [ {
+    "name" : "exclude",
+    "type" : "list",
+    "default" : "[]",
+    "display" : {
+      "label" : "exclude",
+      "description" : "Fields to exclude. This takes precedence over the fields to include. Default: []",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "include",
+    "type" : "list",
+    "default" : "[]",
+    "display" : {
+      "label" : "include",
+      "description" : "Fields to include. If specified, only these fields will be used. Default: []",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "renames",
+    "type" : "list",
+    "default" : "[]",
+    "display" : {
+      "label" : "renames",
+      "description" : "Field rename mappings. Default: []",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "replace.null.with.default",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "replace.null.with.default",
+      "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

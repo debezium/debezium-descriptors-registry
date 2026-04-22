@@ -1,0 +1,258 @@
+{
+  "name" : "io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0.Alpha1",
+  "metadata" : {
+    "description" : "io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "url",
+    "type" : "string",
+    "display" : {
+      "label" : "URL",
+      "description" : "NATS server URL(s), comma-separated.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "stream-name",
+    "type" : "string",
+    "default" : "DebeziumStream",
+    "display" : {
+      "label" : "Stream Name",
+      "description" : "NATS JetStream stream name. Default: DebeziumStream",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "create-stream",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Create Stream",
+      "description" : "Whether to create the stream if it doesn't exist. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "subjects",
+    "type" : "string",
+    "default" : "*.*.*",
+    "display" : {
+      "label" : "Subjects",
+      "description" : "Subjects for the stream, comma-separated. Default: *.*.*",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "storage",
+    "type" : "string",
+    "default" : "memory",
+    "display" : {
+      "label" : "Storage Type",
+      "description" : "Storage type for the stream (memory or file). Default: memory",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "auth.jwt",
+    "type" : "string",
+    "display" : {
+      "label" : "JWT Token",
+      "description" : "JWT token for authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "auth.seed",
+    "type" : "string",
+    "display" : {
+      "label" : "Seed",
+      "description" : "Seed for JWT authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "auth.user",
+    "type" : "string",
+    "display" : {
+      "label" : "User",
+      "description" : "Username for basic authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "auth.password",
+    "type" : "string",
+    "display" : {
+      "label" : "Password",
+      "description" : "Password for basic authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "auth.tls.keystore",
+    "type" : "string",
+    "display" : {
+      "label" : "TLS Keystore Path",
+      "description" : "Path to TLS keystore.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "auth.tls.keystore.password",
+    "type" : "string",
+    "display" : {
+      "label" : "TLS Keystore Password",
+      "description" : "Password for TLS keystore.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "auth.tls.password",
+    "type" : "string",
+    "display" : {
+      "label" : "TLS Password",
+      "description" : "Password for TLS authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "async.enabled",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Async Publishing Enabled",
+      "description" : "Enable asynchronous message publishing. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "async.timeout.ms",
+    "type" : "number",
+    "default" : "5000",
+    "display" : {
+      "label" : "Async Timeout (ms)",
+      "description" : "Timeout for asynchronous publishing in milliseconds. Default: 5000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "sync.retries",
+    "type" : "number",
+    "default" : "5",
+    "display" : {
+      "label" : "Sync Retries",
+      "description" : "Maximum number of retry attempts for synchronous publishing. Default: 5",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "sync.retry.interval.ms",
+    "type" : "number",
+    "default" : "1000",
+    "display" : {
+      "label" : "Sync Retry Interval (ms)",
+      "description" : "Initial retry interval in milliseconds. Default: 1000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "sync.retry.max.interval.ms",
+    "type" : "number",
+    "default" : "60000",
+    "display" : {
+      "label" : "Sync Retry Max Interval (ms)",
+      "description" : "Maximum retry interval in milliseconds. Default: 60000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "sync.retry.backoff.multiplier",
+    "type" : "number",
+    "default" : "2.0",
+    "display" : {
+      "label" : "Sync Retry Backoff Multiplier",
+      "description" : "Backoff multiplier for retry intervals. Default: 2.0",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

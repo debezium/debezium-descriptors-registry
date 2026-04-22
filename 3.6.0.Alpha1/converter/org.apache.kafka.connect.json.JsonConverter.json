@@ -1,0 +1,82 @@
+{
+  "name" : "org.apache.kafka.connect.json.JsonConverter",
+  "type" : "converter",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.json.JsonConverter"
+  },
+  "properties" : [ {
+    "name" : "converter.type",
+    "type" : "string",
+    "display" : {
+      "label" : "converter.type",
+      "description" : "How this converter will be used.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "schemas.enable",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Enable Schemas",
+      "description" : "Include schemas within each of the serialized values and keys. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "schemas.cache.size",
+    "type" : "number",
+    "default" : "1000",
+    "display" : {
+      "label" : "Schema Cache Size",
+      "description" : "The maximum number of schemas that can be cached in this converter instance. Default: 1000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "decimal.format",
+    "type" : "string",
+    "default" : "BASE64",
+    "display" : {
+      "label" : "Decimal Format",
+      "description" : "Controls which format this converter will serialize decimals in. This value is case insensitive and can be either 'BASE64' (default) or 'NUMERIC' Default: BASE64",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "replace.null.with.default",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Replace null with default",
+      "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

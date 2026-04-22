@@ -1,0 +1,28 @@
+{
+  "name" : "io.debezium.server.kafka.KafkaChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0.Alpha1",
+  "metadata" : {
+    "description" : "io.debezium.server.kafka.KafkaChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "wait.message.delivery.timeout.ms",
+    "type" : "number",
+    "default" : "30000",
+    "display" : {
+      "label" : "Wait message delivery timeout (ms)",
+      "description" : "Timeout in milliseconds to wait for message delivery confirmation. Default: 30000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

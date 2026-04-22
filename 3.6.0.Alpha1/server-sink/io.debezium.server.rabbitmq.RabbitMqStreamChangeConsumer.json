@@ -1,0 +1,140 @@
+{
+  "name" : "io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0.Alpha1",
+  "metadata" : {
+    "description" : "io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "exchange",
+    "type" : "string",
+    "default" : "",
+    "display" : {
+      "label" : "Exchange",
+      "description" : "RabbitMQ exchange name. Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "routingKey",
+    "type" : "string",
+    "default" : "",
+    "display" : {
+      "label" : "Routing Key",
+      "description" : "RabbitMQ routing key. Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "autoCreateRoutingKey",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Auto Create Routing Key",
+      "description" : "Automatically create routing key if it doesn't exist. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "routingKeyDurable",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Routing Key Durable",
+      "description" : "Make routing key durable. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "routingKey.source",
+    "type" : "string",
+    "default" : "static",
+    "display" : {
+      "label" : "Routing Key Source",
+      "description" : "Source for routing key value. Default: static",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "routingKeyFromTopicName",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Routing Key From Topic Name",
+      "description" : "Use topic name as routing key. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "deliveryMode",
+    "type" : "number",
+    "default" : "2",
+    "display" : {
+      "label" : "Delivery Mode",
+      "description" : "Message delivery mode (1=non-persistent, 2=persistent). Default: 2",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "ackTimeout",
+    "type" : "number",
+    "default" : "30000",
+    "display" : {
+      "label" : "Ack Timeout (ms)",
+      "description" : "Acknowledgment timeout in milliseconds. Default: 30000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "null.value",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "label" : "Null Value",
+      "description" : "Value to use when record value is null. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

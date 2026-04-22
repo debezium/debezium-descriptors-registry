@@ -1,0 +1,27 @@
+{
+  "name" : "org.apache.kafka.connect.transforms.Flatten$Value",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.transforms.Flatten$Value"
+  },
+  "properties" : [ {
+    "name" : "delimiter",
+    "type" : "string",
+    "default" : ".",
+    "display" : {
+      "label" : "delimiter",
+      "description" : "Delimiter to insert between field names from the input record when generating field names for the output record Default: .",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

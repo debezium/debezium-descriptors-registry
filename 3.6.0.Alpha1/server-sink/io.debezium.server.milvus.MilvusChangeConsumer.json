@@ -1,0 +1,56 @@
+{
+  "name" : "io.debezium.server.milvus.MilvusChangeConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0.Alpha1",
+  "metadata" : {
+    "description" : "io.debezium.server.milvus.MilvusChangeConsumer"
+  },
+  "properties" : [ {
+    "name" : "uri",
+    "type" : "string",
+    "default" : "http://localhost:19530",
+    "display" : {
+      "label" : "URI",
+      "description" : "Milvus server URI. Default: http://localhost:19530",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "database",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "label" : "Database",
+      "description" : "Milvus database name. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "unwind.json",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Unwind JSON",
+      "description" : "Unwind JSON fields. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

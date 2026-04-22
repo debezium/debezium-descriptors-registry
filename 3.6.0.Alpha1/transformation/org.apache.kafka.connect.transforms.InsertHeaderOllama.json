@@ -1,0 +1,38 @@
+{
+  "name" : "org.apache.kafka.connect.transforms.InsertHeader",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.transforms.InsertHeader"
+  },
+  "properties" : [ {
+    "name" : "header",
+    "type" : "string",
+    "display" : {
+      "label" : "header",
+      "description" : "The name of the header.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "value.literal",
+    "type" : "string",
+    "display" : {
+      "label" : "value.literal",
+      "description" : "The literal value that is to be set as the header value on all records.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

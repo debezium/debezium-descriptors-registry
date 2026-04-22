@@ -1,0 +1,26 @@
+{
+  "name" : "io.debezium.converters.BinaryDataConverter",
+  "type" : "converter",
+  "version" : "3.6.0.Alpha1",
+  "metadata" : {
+    "description" : "io.debezium.converters.BinaryDataConverter"
+  },
+  "properties" : [ {
+    "name" : "delegate.converter.type",
+    "type" : "string",
+    "display" : {
+      "label" : "Delegate converter type",
+      "description" : "Specifies the delegate converter class",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

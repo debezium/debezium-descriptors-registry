@@ -1,0 +1,106 @@
+{
+  "name" : "io.debezium.server.instructlab.InstructLabSinkConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0.Alpha1",
+  "metadata" : {
+    "description" : "io.debezium.server.instructlab.InstructLabSinkConsumer"
+  },
+  "properties" : [ {
+    "name" : "taxonomy.base.path",
+    "type" : "string",
+    "display" : {
+      "label" : "Taxonomy Base Path",
+      "description" : "Base path for the InstructLab taxonomy directory.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "taxonomies",
+    "type" : "string",
+    "display" : {
+      "label" : "Taxonomies",
+      "description" : "Comma-separated list of taxonomy names to configure.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "taxonomy.<name>.question",
+    "type" : "string",
+    "display" : {
+      "label" : "Taxonomy Question Mapping",
+      "description" : "Mapping for the question field. Use 'value:<field>' for a value field, 'header:<name>' for a header, or a constant string.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "taxonomy.<name>.answer",
+    "type" : "string",
+    "display" : {
+      "label" : "Taxonomy Answer Mapping",
+      "description" : "Mapping for the answer field. Use 'value:<field>' for a value field, 'header:<name>' for a header, or a constant string.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "taxonomy.<name>.context",
+    "type" : "string",
+    "display" : {
+      "label" : "Taxonomy Context Mapping",
+      "description" : "Optional mapping for the context field. Use 'value:<field>' for a value field, 'header:<name>' for a header, or a constant string.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "taxonomy.<name>.topic",
+    "type" : "string",
+    "default" : ".*",
+    "display" : {
+      "label" : "Taxonomy Topic Pattern",
+      "description" : "Regular expression pattern to filter events by topic for this taxonomy. Default: .*",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "taxonomy.<name>.domain",
+    "type" : "string",
+    "display" : {
+      "label" : "Taxonomy Domain",
+      "description" : "Domain path for the taxonomy (e.g., 'knowledge/database/postgresql').",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

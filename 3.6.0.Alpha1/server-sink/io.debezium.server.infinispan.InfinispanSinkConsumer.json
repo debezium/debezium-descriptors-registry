@@ -1,0 +1,80 @@
+{
+  "name" : "io.debezium.server.infinispan.InfinispanSinkConsumer",
+  "type" : "server-sink",
+  "version" : "3.6.0.Alpha1",
+  "metadata" : {
+    "description" : "io.debezium.server.infinispan.InfinispanSinkConsumer"
+  },
+  "properties" : [ {
+    "name" : "server.host",
+    "type" : "string",
+    "display" : {
+      "label" : "Server Host",
+      "description" : "Infinispan server host.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "server.port",
+    "type" : "number",
+    "default" : "11222",
+    "display" : {
+      "label" : "Server Port",
+      "description" : "Infinispan server port. Default: 11222",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "cache",
+    "type" : "string",
+    "display" : {
+      "label" : "Cache Name",
+      "description" : "Infinispan cache name.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "user",
+    "type" : "string",
+    "display" : {
+      "label" : "User",
+      "description" : "Infinispan user.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "password",
+    "type" : "string",
+    "display" : {
+      "label" : "Password",
+      "description" : "Infinispan password.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

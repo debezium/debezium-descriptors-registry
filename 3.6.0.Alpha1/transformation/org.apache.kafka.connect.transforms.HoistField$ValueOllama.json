@@ -1,0 +1,26 @@
+{
+  "name" : "org.apache.kafka.connect.transforms.HoistField$Value",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.transforms.HoistField$Value"
+  },
+  "properties" : [ {
+    "name" : "field",
+    "type" : "string",
+    "display" : {
+      "label" : "field",
+      "description" : "Field name for the single field that will be created in the resulting Struct or Map.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
