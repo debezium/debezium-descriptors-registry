@@ -163,10 +163,10 @@
     } ],
     "valueDependants" : [ {
       "values" : [ "logminer" ],
-      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.batch.size.default", "log.mining.batch.size.increment", "log.mining.batch.size.max", "log.mining.batch.size.min", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.rs_id", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.scn.gap.detection.gap.size.min", "log.mining.scn.gap.detection.time.interval.max.ms", "log.mining.session.max.ms", "log.mining.sleep.time.default.ms", "log.mining.sleep.time.increment.ms", "log.mining.sleep.time.max.ms", "log.mining.sleep.time.min.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
+      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.rs_id", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.session.max.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
     }, {
       "values" : [ "logminer_unbuffered" ],
-      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.batch.size.default", "log.mining.batch.size.increment", "log.mining.batch.size.max", "log.mining.batch.size.min", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.rs_id", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.scn.gap.detection.gap.size.min", "log.mining.scn.gap.detection.time.interval.max.ms", "log.mining.session.max.ms", "log.mining.sleep.time.default.ms", "log.mining.sleep.time.increment.ms", "log.mining.sleep.time.max.ms", "log.mining.sleep.time.min.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
+      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.rs_id", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.session.max.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
     }, {
       "values" : [ "xstream" ],
       "dependants" : [ "xstream.out.server.name" ]
@@ -820,118 +820,6 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "log.mining.batch.size.default",
-    "type" : "number",
-    "default" : "20000",
-    "display" : {
-      "label" : "Default batch size for reading redo/archive logs.",
-      "description" : "The starting SCN interval size that the connector will use for reading data from redo/archive logs. Default: 20000",
-      "group" : "Connection Advanced",
-      "groupOrder" : 11,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "log.mining.batch.size.min",
-    "type" : "number",
-    "default" : "1000",
-    "display" : {
-      "label" : "Minimum batch size for reading redo/archive logs.",
-      "description" : "The minimum SCN interval size that this connector will try to read from redo/archive logs. Default: 1000",
-      "group" : "Connection Advanced",
-      "groupOrder" : 13,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "log.mining.batch.size.max",
-    "type" : "number",
-    "default" : "100000",
-    "display" : {
-      "label" : "Maximum batch size for reading redo/archive logs.",
-      "description" : "The maximum SCN interval size that this connector will use when reading from redo/archive logs. Default: 100000",
-      "group" : "Connection Advanced",
-      "groupOrder" : 14,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "log.mining.batch.size.increment",
-    "type" : "number",
-    "default" : "20000",
-    "display" : {
-      "label" : "Increment/Decrement batch size for reading redo/archive logs.",
-      "description" : "Active batch size will be also increased/decreased by this amount for tuning connector throughput when needed. Default: 20000",
-      "group" : "Connection Advanced",
-      "groupOrder" : 12,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "log.mining.sleep.time.default.ms",
-    "type" : "number",
-    "default" : "1000",
-    "display" : {
-      "label" : "Default sleep time in milliseconds when reading redo/archive logs.",
-      "description" : "The amount of time that the connector will sleep after reading data from redo/archive logs and before starting reading data again. Value is in milliseconds. Default: 1000",
-      "group" : "Connection Advanced",
-      "groupOrder" : 15,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "log.mining.sleep.time.min.ms",
-    "type" : "number",
-    "default" : "0",
-    "display" : {
-      "label" : "Minimum sleep time in milliseconds when reading redo/archive logs.",
-      "description" : "The minimum amount of time that the connector will sleep after reading data from redo/archive logs and before starting reading data again. Value is in milliseconds. Default: 0",
-      "group" : "Connection Advanced",
-      "groupOrder" : 16,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "log.mining.sleep.time.max.ms",
-    "type" : "number",
-    "default" : "3000",
-    "display" : {
-      "label" : "Maximum sleep time in milliseconds when reading redo/archive logs.",
-      "description" : "The maximum amount of time that the connector will sleep after reading data from redo/archive logs and before starting reading data again. Value is in milliseconds. Default: 3000",
-      "group" : "Connection Advanced",
-      "groupOrder" : 17,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "log.mining.sleep.time.increment.ms",
-    "type" : "number",
-    "default" : "200",
-    "display" : {
-      "label" : "The increment in sleep time in milliseconds used to tune auto-sleep behavior.",
-      "description" : "The maximum amount of time that the connector will use to tune the optimal sleep time when reading data from LogMiner. Value is in milliseconds. Default: 200",
-      "group" : "Connection Advanced",
-      "groupOrder" : 18,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
     "name" : "log.mining.transaction.retention.ms",
     "type" : "number",
     "default" : "0",
@@ -1157,34 +1045,6 @@
       "description" : "The interval in milliseconds to wait between polls checking to see if the SCN is in the archive logs. Default: 10000",
       "group" : "Connection Advanced",
       "groupOrder" : 29,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "log.mining.scn.gap.detection.gap.size.min",
-    "type" : "number",
-    "default" : "1000000",
-    "display" : {
-      "label" : "SCN gap size used to detect SCN gap",
-      "description" : "Used for SCN gap detection, if the difference between current SCN and previous end SCN is bigger than this value, and the time difference of current SCN and previous end SCN is smaller than log.mining.scn.gap.detection.time.interval.max.ms, consider it a SCN gap. Default: 1000000",
-      "group" : "Connection Advanced",
-      "groupOrder" : 30,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "log.mining.scn.gap.detection.time.interval.max.ms",
-    "type" : "number",
-    "default" : "20000",
-    "display" : {
-      "label" : "Timer interval used to detect SCN gap",
-      "description" : "Used for SCN gap detection, if the difference between current SCN and previous end SCN is bigger than log.mining.scn.gap.detection.gap.size.min, and the time difference of current SCN and previous end SCN is smaller than  this value, consider it a SCN gap. Default: 20000",
-      "group" : "Connection Advanced",
-      "groupOrder" : 31,
       "width" : "short",
       "importance" : "low"
     },
@@ -1536,6 +1396,20 @@
       "groupOrder" : 9999,
       "width" : "short",
       "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "log.mining.log.count.min",
+    "type" : "number",
+    "default" : "2",
+    "display" : {
+      "label" : "Minimum number of logs per redo thread to mine",
+      "description" : "Specifies the minimum number of logs to mine per redo thread. Setting this to 0 disables the cap, and all available logs are mined in a single pass. Default: 2",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
     },
     "validation" : [ ],
     "valueDependants" : [ ]
