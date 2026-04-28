@@ -46,6 +46,19 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "schema.content",
+    "type" : "string",
+    "display" : {
+      "label" : "Schema Content",
+      "description" : "When set, this is used as the schema for all messages, and the schemas within each of the message will be ignored.Otherwise, the schema will be included in the content of each message. This configuration applies only 'schemas.enable' is true, and it exclusively affects the sink connector.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "decimal.format",
     "type" : "string",
     "default" : "BASE64",

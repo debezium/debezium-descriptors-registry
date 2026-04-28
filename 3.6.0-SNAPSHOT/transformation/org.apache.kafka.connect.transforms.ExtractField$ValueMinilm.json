@@ -36,7 +36,7 @@
     "default" : "V1",
     "display" : {
       "label" : "field.syntax.version",
-      "description" : "Defines the version of the syntax to access fields. If set to `V1`, then the field paths are limited to access the elements at the root level of the struct or map. If set to `V2`, the syntax will support accessing nested elements. To access nested elements, dotted notation is used. If dots are already included in the field name, then backtick pairs can be used to wrap field names containing dots. E.g. to access the subfield `baz` from a field named \"foo.bar\" in a struct/map the following format can be used to access its elements: \"`foo.bar`.baz\". Default: V1",
+      "description" : "Defines the version of the syntax to access fields. If set to <code>V1</code>, then the field paths are limited to access the elements at the root level of the struct or map. If set to <code>V2</code>, the syntax will support accessing nested elements. To access nested elements, dotted notation is used. If dots are already included in the field name, then backtick pairs can be used to wrap field names containing dots. E.g. to access the subfield <code>baz</code> from a field named \"foo.bar\" in a struct/map the following format can be used to access its elements: \"<code>foo.bar</code>.baz\". Default: V1",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "importance" : "high"
