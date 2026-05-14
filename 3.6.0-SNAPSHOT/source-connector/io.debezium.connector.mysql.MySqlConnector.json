@@ -1032,6 +1032,23 @@
     } ],
     "valueDependants" : [ ]
   }, {
+    "name" : "ddl.parser.type",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "label" : "DDL Parser Type",
+      "description" : "Specifies which ANTLR grammar to use for parsing MySQL DDL statements. 'default' uses the Oracle MySQL grammar, which is actively maintained and supports MySQL 8.0+ features. 'legacy' uses the Positive Technologies grammar for backward compatibility with existing deployments. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "default", "legacy" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "schema.history.internal",
     "type" : "string",
     "default" : "io.debezium.storage.kafka.history.KafkaSchemaHistory",
