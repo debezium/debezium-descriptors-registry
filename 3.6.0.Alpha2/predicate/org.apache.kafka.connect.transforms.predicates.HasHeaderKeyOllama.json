@@ -1,0 +1,26 @@
+{
+  "name" : "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
+  "type" : "predicate",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.transforms.predicates.HasHeaderKey"
+  },
+  "properties" : [ {
+    "name" : "name",
+    "type" : "string",
+    "display" : {
+      "label" : "name",
+      "description" : "The header name.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

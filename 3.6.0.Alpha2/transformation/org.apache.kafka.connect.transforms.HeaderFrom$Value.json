@@ -1,0 +1,63 @@
+{
+  "name" : "org.apache.kafka.connect.transforms.HeaderFrom$Value",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.transforms.HeaderFrom$Value"
+  },
+  "properties" : [ {
+    "name" : "fields",
+    "type" : "list",
+    "display" : {
+      "label" : "fields",
+      "description" : "Field names in the record whose values are to be copied or moved to headers.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "headers",
+    "type" : "list",
+    "display" : {
+      "label" : "headers",
+      "description" : "Header names, in the same order as the field names listed in the fields configuration property.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "operation",
+    "type" : "string",
+    "display" : {
+      "label" : "operation",
+      "description" : "Either <code>move</code> if the fields are to be moved to the headers (removed from the key/value), or <code>copy</code> if the fields are to be copied to the headers (retained in the key/value).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "replace.null.with.default",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "replace.null.with.default",
+      "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

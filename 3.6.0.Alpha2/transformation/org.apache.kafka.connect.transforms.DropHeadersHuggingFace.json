@@ -1,0 +1,26 @@
+{
+  "name" : "org.apache.kafka.connect.transforms.DropHeaders",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : "org.apache.kafka.connect.transforms.DropHeaders"
+  },
+  "properties" : [ {
+    "name" : "headers",
+    "type" : "list",
+    "display" : {
+      "label" : "headers",
+      "description" : "The name of the headers to be removed.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

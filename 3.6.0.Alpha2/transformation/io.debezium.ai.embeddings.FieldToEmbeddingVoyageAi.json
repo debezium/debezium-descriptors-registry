@@ -1,0 +1,96 @@
+{
+  "name" : "io.debezium.ai.embeddings.FieldToEmbedding",
+  "type" : "transformation",
+  "version" : "${project.version}",
+  "metadata" : {
+    "description" : "io.debezium.ai.embeddings.FieldToEmbedding"
+  },
+  "properties" : [ {
+    "name" : "field.source",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Name of the record field from which embeddings should be created.",
+      "description" : "Name of the field of the record which content will be used as an input for embeddings. Supports also nested fields.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "field.embedding",
+    "type" : "string",
+    "display" : {
+      "label" : "Name of the field which would contain the embeddings of the input field.",
+      "description" : "Name of the field which which will be appended to the record and which would contain the embeddings of the content `filed.source` field. Supports also nested fields.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "voyageai.baseUrl",
+    "type" : "string",
+    "display" : {
+      "label" : "Voyage AI base URL.",
+      "description" : "Base URL for Voyage AI client. If not provided, default Voyage AI client URL will be used.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "voyageai.access.token",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Voyage AI API access token.",
+      "description" : "Access token for Voyage AI API.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "voyageai.model.name",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Model name.",
+      "description" : "Name of the Voyage AI model which should be used.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "voyageai.operation.timeout.ms",
+    "type" : "number",
+    "default" : "15000",
+    "display" : {
+      "label" : "Operation timeout.",
+      "description" : "Milliseconds to wait for Voyage AI calculations to finish (defaults to 15000). Default: 15000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
