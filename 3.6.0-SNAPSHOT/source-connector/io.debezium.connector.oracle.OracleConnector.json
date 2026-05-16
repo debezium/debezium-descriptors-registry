@@ -163,10 +163,10 @@
     } ],
     "valueDependants" : [ {
       "values" : [ "logminer" ],
-      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.rs_id", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.session.max.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
+      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.client_id", "log.mining.buffer.track.commit_timestamp", "log.mining.buffer.track.rs_id", "log.mining.buffer.track.start_timestamp", "log.mining.buffer.track.username", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.session.max.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
     }, {
       "values" : [ "logminer_unbuffered" ],
-      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.rs_id", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.session.max.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
+      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.client_id", "log.mining.buffer.track.commit_timestamp", "log.mining.buffer.track.rs_id", "log.mining.buffer.track.start_timestamp", "log.mining.buffer.track.username", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.session.max.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
     }, {
       "values" : [ "xstream" ],
       "dependants" : [ "xstream.out.server.name" ]
@@ -936,7 +936,63 @@
     "default" : "true",
     "display" : {
       "label" : "Toggle whether the 'rs_id' value is tracked and buffered",
-      "description" : "This controls whether the 'RS_ID' column values are tracked. When set to true (the default), the 'RS_ID' values are buffered and provided in events when available. When set to false, the 'RS_ID' values are not buffered and can reduce the memory footprint. Default: true",
+      "description" : "This controls whether the 'RS_ID' column values are tracked. When set to true (the default), the 'RS_ID' values are buffered and provided in events when available. When set to false, the 'RS_ID' column is excluded from the LogMiner query and its values are not buffered, reducing both the memory footprint and query bandwidth. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "log.mining.buffer.track.client_id",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Toggle whether the 'client_id' value is tracked and buffered",
+      "description" : "This controls whether the 'CLIENT_ID' column values are tracked. When set to true (the default), the 'CLIENT_ID' values are buffered and provided in events when available. When set to false, the 'CLIENT_ID' column is excluded from the LogMiner query and its values are not buffered, reducing both the memory footprint and query bandwidth. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "log.mining.buffer.track.username",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Toggle whether the 'username' value is tracked and buffered",
+      "description" : "This controls whether the 'USERNAME' column values are tracked. When set to true (the default), the 'USERNAME' values are buffered and provided in events when available. When set to false, the 'USERNAME' column is excluded from the LogMiner query and its values are not buffered, reducing both the memory footprint and query bandwidth. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "log.mining.buffer.track.commit_timestamp",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Toggle whether the 'commit_timestamp' value is tracked and buffered",
+      "description" : "This controls whether the 'COMMIT_TIMESTAMP' column values are tracked. When set to true (the default), the 'COMMIT_TIMESTAMP' values are buffered and provided in events when available. When set to false, the 'COMMIT_TIMESTAMP' column is excluded from the LogMiner query and its values are not buffered, reducing both the memory footprint and query bandwidth. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "log.mining.buffer.track.start_timestamp",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Toggle whether the 'start_timestamp' value is tracked and buffered",
+      "description" : "This controls whether the 'START_TIMESTAMP' column values are tracked. When set to true (the default), the 'START_TIMESTAMP' values are buffered and provided in events when available. When set to false, the 'START_TIMESTAMP' column is excluded from the LogMiner query and its values are not buffered, reducing both the memory footprint and query bandwidth. Default: true",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
