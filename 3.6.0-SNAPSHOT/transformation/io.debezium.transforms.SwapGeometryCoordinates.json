@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.transforms.SwapGeometryCoordinates",
+  "name" : "Debezium Swap Geometry Coordinates",
   "type" : "transformation",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.transforms.SwapGeometryCoordinates"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "srids",

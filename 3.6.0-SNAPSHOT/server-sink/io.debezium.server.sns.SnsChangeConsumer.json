@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.sns.SnsChangeConsumer",
+  "name" : "Debezium SNS Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.sns.SnsChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "region",

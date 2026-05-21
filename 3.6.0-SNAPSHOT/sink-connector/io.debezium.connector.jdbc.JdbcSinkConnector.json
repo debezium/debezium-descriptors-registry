@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.connector.jdbc.JdbcSinkConnector",
+  "name" : "Debezium JDBC Sink Connector",
   "type" : "sink-connector",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.connector.jdbc.JdbcSinkConnector"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "connection.url",

@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.converters.FloatConverter",
+  "name" : "Kafka Float Converter",
   "type" : "converter",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.converters.FloatConverter"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "converter.type",

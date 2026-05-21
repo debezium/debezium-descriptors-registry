@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.transforms.ExtractSchemaToNewRecord",
+  "name" : "Debezium Extract Schema To New Record",
   "type" : "transformation",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.transforms.ExtractSchemaToNewRecord"
+    "description" : ""
   },
   "properties" : [ ],
   "groups" : [ ]

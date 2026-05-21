@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.transforms.InsertField$Value",
+  "name" : "Kafka Insert Field (Value)",
   "type" : "transformation",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.transforms.InsertField$Value"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "topic.field",

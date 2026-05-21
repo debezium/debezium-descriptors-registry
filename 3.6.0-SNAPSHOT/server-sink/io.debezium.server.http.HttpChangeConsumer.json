@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.http.HttpChangeConsumer",
+  "name" : "Debezium HTTP Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.http.HttpChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "url",

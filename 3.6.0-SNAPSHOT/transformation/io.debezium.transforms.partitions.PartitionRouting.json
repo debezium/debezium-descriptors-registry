@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.transforms.partitions.PartitionRouting",
+  "name" : "Debezium Partition Routing",
   "type" : "transformation",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.transforms.partitions.PartitionRouting"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "partition.payload.fields",

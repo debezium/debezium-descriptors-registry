@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.kinesis.KinesisChangeConsumer",
+  "name" : "Debezium Kinesis Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.kinesis.KinesisChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "region",

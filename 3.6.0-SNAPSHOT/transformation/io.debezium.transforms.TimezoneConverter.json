@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.transforms.TimezoneConverter",
+  "name" : "Debezium Timezone Converter",
   "type" : "transformation",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.transforms.TimezoneConverter"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "converted.timezone",

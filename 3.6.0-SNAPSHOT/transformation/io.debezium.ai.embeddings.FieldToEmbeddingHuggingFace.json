@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.ai.embeddings.FieldToEmbedding",
+  "name" : "Debezium Field To Embedding",
   "type" : "transformation",
   "version" : "${project.version}",
   "metadata" : {
-    "description" : "io.debezium.ai.embeddings.FieldToEmbedding"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "field.source",

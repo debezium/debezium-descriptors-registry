@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.converters.ShortConverter",
+  "name" : "Kafka Short Converter",
   "type" : "converter",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.converters.ShortConverter"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "converter.type",

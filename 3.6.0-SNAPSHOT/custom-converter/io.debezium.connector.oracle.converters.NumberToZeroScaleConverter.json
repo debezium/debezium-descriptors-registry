@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.connector.oracle.converters.NumberToZeroScaleConverter",
+  "name" : "Debezium Number To Zero Scale Custom Converter",
   "type" : "custom-converter",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.connector.oracle.converters.NumberToZeroScaleConverter"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "decimal.mode",

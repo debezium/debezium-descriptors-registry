@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.instructlab.InstructLabSinkConsumer",
+  "name" : "Debezium InstructLab Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.instructlab.InstructLabSinkConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "taxonomy.base.path",

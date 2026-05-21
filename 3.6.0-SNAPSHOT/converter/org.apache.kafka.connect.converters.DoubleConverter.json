@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.converters.DoubleConverter",
+  "name" : "Kafka Double Converter",
   "type" : "converter",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.converters.DoubleConverter"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "converter.type",

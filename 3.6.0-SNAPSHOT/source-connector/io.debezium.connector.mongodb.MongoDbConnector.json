@@ -3,7 +3,7 @@
   "type" : "source-connector",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Debezium MongoDB Connector"
+    "description" : "Captures document changes from a MongoDB database in near real-time."
   },
   "properties" : [ {
     "name" : "topic.prefix",

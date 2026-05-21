@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.transforms.HeaderFrom$Value",
+  "name" : "Kafka Header From (Value)",
   "type" : "transformation",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.transforms.HeaderFrom$Value"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "fields",

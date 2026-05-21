@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.qdrant.QdrantChangeConsumer",
+  "name" : "Debezium Qdrant Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.qdrant.QdrantChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "host",

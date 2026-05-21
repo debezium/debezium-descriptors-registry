@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.transforms.tracing.ActivateTracingSpan",
+  "name" : "Debezium Activate Tracing Span",
   "type" : "transformation",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.transforms.tracing.ActivateTracingSpan"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "tracing.span.context.field",

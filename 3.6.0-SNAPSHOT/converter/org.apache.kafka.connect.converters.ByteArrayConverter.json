@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.converters.ByteArrayConverter",
+  "name" : "Kafka Byte Array Converter",
   "type" : "converter",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.converters.ByteArrayConverter"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "converter.type",

@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.transforms.DropHeaders",
+  "name" : "Kafka Drop Headers",
   "type" : "transformation",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.transforms.DropHeaders"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "headers",

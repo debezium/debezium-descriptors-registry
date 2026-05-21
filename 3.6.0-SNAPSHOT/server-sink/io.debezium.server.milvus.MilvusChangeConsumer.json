@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.milvus.MilvusChangeConsumer",
+  "name" : "Debezium Milvus Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.milvus.MilvusChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "uri",

@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.pravega.PravegaChangeConsumer",
+  "name" : "Debezium Pravega Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.pravega.PravegaChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "controller.uri",

@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.nats.streaming.NatsStreamingChangeConsumer",
+  "name" : "Debezium NATS Streaming Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.nats.streaming.NatsStreamingChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "url",

@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.infinispan.InfinispanSinkConsumer",
+  "name" : "Debezium Infinispan Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.infinispan.InfinispanSinkConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "server.host",

@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.connector.db2.Db2Connector",
+  "name" : "Debezium DB2 Connector",
   "type" : "source-connector",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.connector.db2.Db2Connector"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "topic.prefix",

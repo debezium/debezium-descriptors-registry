@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.transforms.openlineage.OpenLineage",
+  "name" : "Debezium Open Lineage",
   "type" : "transformation",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.transforms.openlineage.OpenLineage"
+    "description" : ""
   },
   "properties" : [ ],
   "groups" : [ ]

@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.ai.docling.FieldToDocling",
+  "name" : "Debezium Field To Docling",
   "type" : "transformation",
   "version" : "${project.version}",
   "metadata" : {
-    "description" : "io.debezium.ai.docling.FieldToDocling"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "field.source",

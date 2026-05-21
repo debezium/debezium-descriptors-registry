@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.rocketmq.RocketMqChangeConsumer",
+  "name" : "Debezium RocketMQ Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.rocketmq.RocketMqChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "producer.acl.enabled",

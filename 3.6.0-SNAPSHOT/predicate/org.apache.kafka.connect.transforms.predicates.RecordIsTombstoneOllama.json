@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
+  "name" : "Kafka Record Is Tombstone",
   "type" : "predicate",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone"
+    "description" : ""
   },
   "properties" : [ ],
   "groups" : [ ]

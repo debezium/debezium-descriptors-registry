@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.transforms.SchemaChangeEventFilter",
+  "name" : "Debezium Schema Change Event Filter",
   "type" : "transformation",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.transforms.SchemaChangeEventFilter"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "schema.change.event.exclude.list",

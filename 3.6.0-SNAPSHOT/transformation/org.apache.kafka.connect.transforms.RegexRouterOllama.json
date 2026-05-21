@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.transforms.RegexRouter",
+  "name" : "Kafka Regex Router",
   "type" : "transformation",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.transforms.RegexRouter"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "regex",

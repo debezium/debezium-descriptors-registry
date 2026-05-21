@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.transforms.ValueToKey",
+  "name" : "Kafka Value To Key",
   "type" : "transformation",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.transforms.ValueToKey"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "fields",

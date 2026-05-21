@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.transforms.ExtractNewRecordState",
+  "name" : "Debezium Extract New Record State",
   "type" : "transformation",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.transforms.ExtractNewRecordState"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "delete.tombstone.handling.mode",

@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.transforms.HoistField$Key",
+  "name" : "Kafka Hoist Field (Key)",
   "type" : "transformation",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.transforms.HoistField$Key"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "field",

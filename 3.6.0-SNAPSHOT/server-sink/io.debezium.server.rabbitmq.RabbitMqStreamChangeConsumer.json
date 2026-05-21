@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer",
+  "name" : "Debezium RabbitMQ Stream Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "exchange",

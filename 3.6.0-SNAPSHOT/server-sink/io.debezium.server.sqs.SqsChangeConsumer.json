@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.sqs.SqsChangeConsumer",
+  "name" : "Debezium SQS Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.sqs.SqsChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "region",

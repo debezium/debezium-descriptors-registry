@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.connector.jdbc.transforms.CollectionNameTransformation",
+  "name" : "Debezium Collection Name Transformation",
   "type" : "transformation",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.connector.jdbc.transforms.CollectionNameTransformation"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "collection.naming.prefix",

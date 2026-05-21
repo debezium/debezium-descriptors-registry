@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
+  "name" : "Kafka Set Schema Metadata (Key)",
   "type" : "transformation",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "schema.name",

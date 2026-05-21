@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.connector.mongodb.MongoDbSinkConnector",
+  "name" : "Debezium MongoDB Sink Connector",
   "type" : "sink-connector",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.connector.mongodb.MongoDbSinkConnector"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "sink.database",

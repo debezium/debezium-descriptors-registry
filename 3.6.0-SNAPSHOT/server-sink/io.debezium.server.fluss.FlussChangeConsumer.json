@@ -1,0 +1,110 @@
+{
+  "name" : "Debezium Fluss Server Sink",
+  "type" : "server-sink",
+  "version" : "3.6.0-SNAPSHOT",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "bootstrap.servers",
+    "type" : "string",
+    "display" : {
+      "label" : "Bootstrap Servers",
+      "description" : "Comma-separated list of Fluss coordinator server addresses (host:port).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "default.database",
+    "type" : "string",
+    "display" : {
+      "label" : "Default Database",
+      "description" : "Default Fluss database used when resolving table paths from event destinations.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "table.auto.create",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Auto-create Tables",
+      "description" : "When true, automatically create Fluss tables if they do not exist, deriving the schema from the Debezium event schema. Requires the JSON converter with schemas.enable=true. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retries.max",
+    "type" : "number",
+    "default" : "5",
+    "display" : {
+      "label" : "Maximum Retries",
+      "description" : "Maximum number of retry attempts on transient write failures. Default: 5",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retries.interval.ms",
+    "type" : "number",
+    "default" : "1000",
+    "display" : {
+      "label" : "Retry Interval",
+      "description" : "The initial retry interval in milliseconds. Default: 1000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retries.max.interval.ms",
+    "type" : "number",
+    "default" : "60000",
+    "display" : {
+      "label" : "Retry Maximum Interval",
+      "description" : "The maximum retry interval in milliseconds. Default: 60000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retries.backoff.multiplier",
+    "type" : "number",
+    "default" : "2.0",
+    "display" : {
+      "label" : "Retry Backoff Multiplier",
+      "description" : "Backoff multiplier for retry intervals. Default: 2.0",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

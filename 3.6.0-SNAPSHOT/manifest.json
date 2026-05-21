@@ -2,1379 +2,1385 @@
     "schemaVersion": "1.0",
     "build": {
         "version": "3.6.0-SNAPSHOT",
-        "timestamp": "2026-05-19T08:12:42Z",
+        "timestamp": "2026-05-21T14:18:24Z",
         "sourceRepository": "debezium/debezium",
-        "sourceCommit": "e0b13873bf",
+        "sourceCommit": "1d381a8915",
         "sourceBranch": "main"
     },
     "components": {
         "converter": [
             {
                 "class": "io.debezium.converters.BinaryDataConverter",
-                "name": "io.debezium.converters.BinaryDataConverter",
-                "description": "io.debezium.converters.BinaryDataConverter",
+                "name": "Debezium Binary Data Converter",
+                "description": "",
                 "descriptor": "converter/io.debezium.converters.BinaryDataConverter.json"
             },
             {
                 "class": "io.debezium.converters.ByteArrayConverter",
-                "name": "io.debezium.converters.ByteArrayConverter",
-                "description": "io.debezium.converters.ByteArrayConverter",
+                "name": "Debezium Byte Array Converter",
+                "description": "",
                 "descriptor": "converter/io.debezium.converters.ByteArrayConverter.json"
             },
             {
                 "class": "io.debezium.converters.CloudEventsConverter",
-                "name": "io.debezium.converters.CloudEventsConverter",
-                "description": "io.debezium.converters.CloudEventsConverter",
+                "name": "Debezium Cloud Events Converter",
+                "description": "",
                 "descriptor": "converter/io.debezium.converters.CloudEventsConverter.json"
             },
             {
                 "class": "org.apache.kafka.connect.converters.BooleanConverter",
-                "name": "org.apache.kafka.connect.converters.BooleanConverter",
-                "description": "org.apache.kafka.connect.converters.BooleanConverter",
+                "name": "Kafka Boolean Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.converters.BooleanConverter.json"
             },
             {
                 "class": "org.apache.kafka.connect.converters.ByteArrayConverter",
-                "name": "org.apache.kafka.connect.converters.ByteArrayConverter",
-                "description": "org.apache.kafka.connect.converters.ByteArrayConverter",
+                "name": "Kafka Byte Array Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.converters.ByteArrayConverter.json"
             },
             {
                 "class": "org.apache.kafka.connect.converters.DoubleConverter",
-                "name": "org.apache.kafka.connect.converters.DoubleConverter",
-                "description": "org.apache.kafka.connect.converters.DoubleConverter",
+                "name": "Kafka Double Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.converters.DoubleConverter.json"
             },
             {
                 "class": "org.apache.kafka.connect.converters.FloatConverter",
-                "name": "org.apache.kafka.connect.converters.FloatConverter",
-                "description": "org.apache.kafka.connect.converters.FloatConverter",
+                "name": "Kafka Float Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.converters.FloatConverter.json"
             },
             {
                 "class": "org.apache.kafka.connect.converters.IntegerConverter",
-                "name": "org.apache.kafka.connect.converters.IntegerConverter",
-                "description": "org.apache.kafka.connect.converters.IntegerConverter",
+                "name": "Kafka Integer Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.converters.IntegerConverter.json"
             },
             {
                 "class": "org.apache.kafka.connect.converters.LongConverter",
-                "name": "org.apache.kafka.connect.converters.LongConverter",
-                "description": "org.apache.kafka.connect.converters.LongConverter",
+                "name": "Kafka Long Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.converters.LongConverter.json"
             },
             {
                 "class": "org.apache.kafka.connect.converters.ShortConverter",
-                "name": "org.apache.kafka.connect.converters.ShortConverter",
-                "description": "org.apache.kafka.connect.converters.ShortConverter",
+                "name": "Kafka Short Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.converters.ShortConverter.json"
             },
             {
                 "class": "org.apache.kafka.connect.json.JsonConverter",
-                "name": "org.apache.kafka.connect.json.JsonConverter",
-                "description": "org.apache.kafka.connect.json.JsonConverter",
+                "name": "Kafka JSON Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.json.JsonConverter.json"
             },
             {
                 "class": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
-                "name": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
-                "description": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
+                "name": "Kafka Simple Header Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.storage.SimpleHeaderConverter.json"
             },
             {
                 "class": "org.apache.kafka.connect.storage.SimpleHeaderConverterHuggingFace",
-                "name": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
-                "description": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
+                "name": "Kafka Simple Header Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.storage.SimpleHeaderConverterHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.storage.SimpleHeaderConverterMinilm",
-                "name": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
-                "description": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
+                "name": "Kafka Simple Header Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.storage.SimpleHeaderConverterMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.storage.SimpleHeaderConverterOllama",
-                "name": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
-                "description": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
+                "name": "Kafka Simple Header Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.storage.SimpleHeaderConverterOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.storage.SimpleHeaderConverterVoyageAi",
-                "name": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
-                "description": "org.apache.kafka.connect.storage.SimpleHeaderConverter",
+                "name": "Kafka Simple Header Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.storage.SimpleHeaderConverterVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.storage.StringConverter",
-                "name": "org.apache.kafka.connect.storage.StringConverter",
-                "description": "org.apache.kafka.connect.storage.StringConverter",
+                "name": "Kafka String Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.storage.StringConverter.json"
             },
             {
                 "class": "org.apache.kafka.connect.storage.StringConverterHuggingFace",
-                "name": "org.apache.kafka.connect.storage.StringConverter",
-                "description": "org.apache.kafka.connect.storage.StringConverter",
+                "name": "Kafka String Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.storage.StringConverterHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.storage.StringConverterMinilm",
-                "name": "org.apache.kafka.connect.storage.StringConverter",
-                "description": "org.apache.kafka.connect.storage.StringConverter",
+                "name": "Kafka String Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.storage.StringConverterMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.storage.StringConverterOllama",
-                "name": "org.apache.kafka.connect.storage.StringConverter",
-                "description": "org.apache.kafka.connect.storage.StringConverter",
+                "name": "Kafka String Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.storage.StringConverterOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.storage.StringConverterVoyageAi",
-                "name": "org.apache.kafka.connect.storage.StringConverter",
-                "description": "org.apache.kafka.connect.storage.StringConverter",
+                "name": "Kafka String Converter",
+                "description": "",
                 "descriptor": "converter/org.apache.kafka.connect.storage.StringConverterVoyageAi.json"
             }
         ],
         "custom-converter": [
             {
                 "class": "io.debezium.connector.binlog.converters.JdbcSinkDataTypesConverter",
-                "name": "io.debezium.connector.binlog.converters.JdbcSinkDataTypesConverter",
-                "description": "io.debezium.connector.binlog.converters.JdbcSinkDataTypesConverter",
+                "name": "Debezium JDBC Sink Data Types Custom Converter",
+                "description": "",
                 "descriptor": "custom-converter/io.debezium.connector.binlog.converters.JdbcSinkDataTypesConverter.json"
             },
             {
                 "class": "io.debezium.connector.binlog.converters.TinyIntOneToBooleanConverter",
-                "name": "io.debezium.connector.binlog.converters.TinyIntOneToBooleanConverter",
-                "description": "io.debezium.connector.binlog.converters.TinyIntOneToBooleanConverter",
+                "name": "Debezium Tiny Int One To Boolean Custom Converter",
+                "description": "",
                 "descriptor": "custom-converter/io.debezium.connector.binlog.converters.TinyIntOneToBooleanConverter.json"
             },
             {
                 "class": "io.debezium.connector.oracle.converters.NumberOneToBooleanConverter",
-                "name": "io.debezium.connector.oracle.converters.NumberOneToBooleanConverter",
-                "description": "io.debezium.connector.oracle.converters.NumberOneToBooleanConverter",
+                "name": "Debezium Number One To Boolean Custom Converter",
+                "description": "",
                 "descriptor": "custom-converter/io.debezium.connector.oracle.converters.NumberOneToBooleanConverter.json"
             },
             {
                 "class": "io.debezium.connector.oracle.converters.NumberToZeroScaleConverter",
-                "name": "io.debezium.connector.oracle.converters.NumberToZeroScaleConverter",
-                "description": "io.debezium.connector.oracle.converters.NumberToZeroScaleConverter",
+                "name": "Debezium Number To Zero Scale Custom Converter",
+                "description": "",
                 "descriptor": "custom-converter/io.debezium.connector.oracle.converters.NumberToZeroScaleConverter.json"
             },
             {
                 "class": "io.debezium.connector.oracle.converters.RawToStringConverter",
-                "name": "io.debezium.connector.oracle.converters.RawToStringConverter",
-                "description": "io.debezium.connector.oracle.converters.RawToStringConverter",
+                "name": "Debezium Raw To String Custom Converter",
+                "description": "",
                 "descriptor": "custom-converter/io.debezium.connector.oracle.converters.RawToStringConverter.json"
             }
         ],
         "predicate": [
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
-                "name": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
-                "description": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
+                "name": "Kafka Has Header Key",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.HasHeaderKey.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.HasHeaderKeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
-                "description": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
+                "name": "Kafka Has Header Key",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.HasHeaderKeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.HasHeaderKeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
-                "description": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
+                "name": "Kafka Has Header Key",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.HasHeaderKeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.HasHeaderKeyOllama",
-                "name": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
-                "description": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
+                "name": "Kafka Has Header Key",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.HasHeaderKeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.HasHeaderKeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
-                "description": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
+                "name": "Kafka Has Header Key",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.HasHeaderKeyVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
-                "name": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
-                "description": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
+                "name": "Kafka Record Is Tombstone",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.RecordIsTombstone.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
-                "description": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
+                "name": "Kafka Record Is Tombstone",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneMinilm",
-                "name": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
-                "description": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
+                "name": "Kafka Record Is Tombstone",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneOllama",
-                "name": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
-                "description": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
+                "name": "Kafka Record Is Tombstone",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
-                "description": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstone",
+                "name": "Kafka Record Is Tombstone",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.TopicNameMatches",
-                "name": "org.apache.kafka.connect.transforms.predicates.TopicNameMatches",
-                "description": "org.apache.kafka.connect.transforms.predicates.TopicNameMatches",
+                "name": "Kafka Topic Name Matches",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.TopicNameMatches.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.TopicNameMatchesHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.predicates.TopicNameMatches",
-                "description": "org.apache.kafka.connect.transforms.predicates.TopicNameMatches",
+                "name": "Kafka Topic Name Matches",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.TopicNameMatchesHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.TopicNameMatchesMinilm",
-                "name": "org.apache.kafka.connect.transforms.predicates.TopicNameMatches",
-                "description": "org.apache.kafka.connect.transforms.predicates.TopicNameMatches",
+                "name": "Kafka Topic Name Matches",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.TopicNameMatchesMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.TopicNameMatchesOllama",
-                "name": "org.apache.kafka.connect.transforms.predicates.TopicNameMatches",
-                "description": "org.apache.kafka.connect.transforms.predicates.TopicNameMatches",
+                "name": "Kafka Topic Name Matches",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.TopicNameMatchesOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.predicates.TopicNameMatchesVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.predicates.TopicNameMatches",
-                "description": "org.apache.kafka.connect.transforms.predicates.TopicNameMatches",
+                "name": "Kafka Topic Name Matches",
+                "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.TopicNameMatchesVoyageAi.json"
             }
         ],
         "server-sink": [
             {
                 "class": "io.debezium.server.eventhubs.EventHubsChangeConsumer",
-                "name": "io.debezium.server.eventhubs.EventHubsChangeConsumer",
-                "description": "io.debezium.server.eventhubs.EventHubsChangeConsumer",
+                "name": "Debezium Event Hubs Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.eventhubs.EventHubsChangeConsumer.json"
             },
             {
+                "class": "io.debezium.server.fluss.FlussChangeConsumer",
+                "name": "Debezium Fluss Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.fluss.FlussChangeConsumer.json"
+            },
+            {
                 "class": "io.debezium.server.http.HttpChangeConsumer",
-                "name": "io.debezium.server.http.HttpChangeConsumer",
-                "description": "io.debezium.server.http.HttpChangeConsumer",
+                "name": "Debezium HTTP Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.http.HttpChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.infinispan.InfinispanSinkConsumer",
-                "name": "io.debezium.server.infinispan.InfinispanSinkConsumer",
-                "description": "io.debezium.server.infinispan.InfinispanSinkConsumer",
+                "name": "Debezium Infinispan Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.infinispan.InfinispanSinkConsumer.json"
             },
             {
                 "class": "io.debezium.server.instructlab.InstructLabSinkConsumer",
-                "name": "io.debezium.server.instructlab.InstructLabSinkConsumer",
-                "description": "io.debezium.server.instructlab.InstructLabSinkConsumer",
+                "name": "Debezium InstructLab Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.instructlab.InstructLabSinkConsumer.json"
             },
             {
                 "class": "io.debezium.server.kafka.KafkaChangeConsumer",
-                "name": "io.debezium.server.kafka.KafkaChangeConsumer",
-                "description": "io.debezium.server.kafka.KafkaChangeConsumer",
+                "name": "Debezium Kafka Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.kafka.KafkaChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.kinesis.KinesisChangeConsumer",
-                "name": "io.debezium.server.kinesis.KinesisChangeConsumer",
-                "description": "io.debezium.server.kinesis.KinesisChangeConsumer",
+                "name": "Debezium Kinesis Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.kinesis.KinesisChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.milvus.MilvusChangeConsumer",
-                "name": "io.debezium.server.milvus.MilvusChangeConsumer",
-                "description": "io.debezium.server.milvus.MilvusChangeConsumer",
+                "name": "Debezium Milvus Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.milvus.MilvusChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer",
-                "name": "io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer",
-                "description": "io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer",
+                "name": "Debezium NATS JetStream Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.nats.streaming.NatsStreamingChangeConsumer",
-                "name": "io.debezium.server.nats.streaming.NatsStreamingChangeConsumer",
-                "description": "io.debezium.server.nats.streaming.NatsStreamingChangeConsumer",
+                "name": "Debezium NATS Streaming Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.nats.streaming.NatsStreamingChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.pravega.PravegaChangeConsumer",
-                "name": "io.debezium.server.pravega.PravegaChangeConsumer",
-                "description": "io.debezium.server.pravega.PravegaChangeConsumer",
+                "name": "Debezium Pravega Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.pravega.PravegaChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.pubsub.PubSubChangeConsumer",
-                "name": "io.debezium.server.pubsub.PubSubChangeConsumer",
-                "description": "io.debezium.server.pubsub.PubSubChangeConsumer",
+                "name": "Debezium PubSub Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.pubsub.PubSubChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.pubsub.PubSubLiteChangeConsumer",
-                "name": "io.debezium.server.pubsub.PubSubLiteChangeConsumer",
-                "description": "io.debezium.server.pubsub.PubSubLiteChangeConsumer",
+                "name": "Debezium PubSub Lite Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.pubsub.PubSubLiteChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.pulsar.PulsarChangeConsumer",
-                "name": "io.debezium.server.pulsar.PulsarChangeConsumer",
-                "description": "io.debezium.server.pulsar.PulsarChangeConsumer",
+                "name": "Debezium Pulsar Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.pulsar.PulsarChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.qdrant.QdrantChangeConsumer",
-                "name": "io.debezium.server.qdrant.QdrantChangeConsumer",
-                "description": "io.debezium.server.qdrant.QdrantChangeConsumer",
+                "name": "Debezium Qdrant Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.qdrant.QdrantChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer",
-                "name": "io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer",
-                "description": "io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer",
+                "name": "Debezium RabbitMQ Stream Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer",
-                "name": "io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer",
-                "description": "io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer",
+                "name": "Debezium RabbitMQ Stream Native Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.redis.RedisStreamChangeConsumer",
-                "name": "io.debezium.server.redis.RedisStreamChangeConsumer",
-                "description": "io.debezium.server.redis.RedisStreamChangeConsumer",
+                "name": "Debezium Redis Stream Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.redis.RedisStreamChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.rocketmq.RocketMqChangeConsumer",
-                "name": "io.debezium.server.rocketmq.RocketMqChangeConsumer",
-                "description": "io.debezium.server.rocketmq.RocketMqChangeConsumer",
+                "name": "Debezium RocketMQ Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.rocketmq.RocketMqChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.sns.SnsChangeConsumer",
-                "name": "io.debezium.server.sns.SnsChangeConsumer",
-                "description": "io.debezium.server.sns.SnsChangeConsumer",
+                "name": "Debezium SNS Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.sns.SnsChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.sqs.SqsChangeConsumer",
-                "name": "io.debezium.server.sqs.SqsChangeConsumer",
-                "description": "io.debezium.server.sqs.SqsChangeConsumer",
+                "name": "Debezium SQS Server Sink",
+                "description": "",
                 "descriptor": "server-sink/io.debezium.server.sqs.SqsChangeConsumer.json"
             }
         ],
         "sink-connector": [
             {
                 "class": "io.debezium.connector.jdbc.JdbcSinkConnector",
-                "name": "io.debezium.connector.jdbc.JdbcSinkConnector",
-                "description": "io.debezium.connector.jdbc.JdbcSinkConnector",
+                "name": "Debezium JDBC Sink Connector",
+                "description": "",
                 "descriptor": "sink-connector/io.debezium.connector.jdbc.JdbcSinkConnector.json"
             },
             {
                 "class": "io.debezium.connector.mongodb.MongoDbSinkConnector",
-                "name": "io.debezium.connector.mongodb.MongoDbSinkConnector",
-                "description": "io.debezium.connector.mongodb.MongoDbSinkConnector",
+                "name": "Debezium MongoDB Sink Connector",
+                "description": "",
                 "descriptor": "sink-connector/io.debezium.connector.mongodb.MongoDbSinkConnector.json"
             }
         ],
         "source-connector": [
             {
                 "class": "io.debezium.connector.db2.Db2Connector",
-                "name": "io.debezium.connector.db2.Db2Connector",
-                "description": "io.debezium.connector.db2.Db2Connector",
+                "name": "Debezium DB2 Connector",
+                "description": "",
                 "descriptor": "source-connector/io.debezium.connector.db2.Db2Connector.json"
             },
             {
                 "class": "io.debezium.connector.mariadb.MariaDbConnector",
                 "name": "Debezium MariaDB Connector",
-                "description": "Debezium MariaDB Connector",
+                "description": "Captures row-level changes from a MariaDB database in near real-time.",
                 "descriptor": "source-connector/io.debezium.connector.mariadb.MariaDbConnector.json"
             },
             {
                 "class": "io.debezium.connector.mongodb.MongoDbConnector",
                 "name": "Debezium MongoDB Connector",
-                "description": "Debezium MongoDB Connector",
+                "description": "Captures document changes from a MongoDB database in near real-time.",
                 "descriptor": "source-connector/io.debezium.connector.mongodb.MongoDbConnector.json"
             },
             {
                 "class": "io.debezium.connector.mysql.MySqlConnector",
                 "name": "Debezium MySQL Connector",
-                "description": "Debezium MySQL Connector",
+                "description": "Captures row-level changes from a MySQL database in near real-time.",
                 "descriptor": "source-connector/io.debezium.connector.mysql.MySqlConnector.json"
             },
             {
                 "class": "io.debezium.connector.oracle.OracleConnector",
                 "name": "Debezium Oracle Connector",
-                "description": "Debezium Oracle Connector",
+                "description": "Captures row-level changes from an Oracle database in near real-time.",
                 "descriptor": "source-connector/io.debezium.connector.oracle.OracleConnector.json"
             },
             {
                 "class": "io.debezium.connector.postgresql.PostgresConnector",
                 "name": "Debezium PostgreSQL Connector",
-                "description": "Debezium PostgreSQL Connector",
+                "description": "Captures row-level changes from a PostgreSQL database in near real-time.",
                 "descriptor": "source-connector/io.debezium.connector.postgresql.PostgresConnector.json"
             },
             {
                 "class": "io.debezium.connector.sqlserver.SqlServerConnector",
                 "name": "Debezium SQLServer Connector",
-                "description": "Debezium SQLServer Connector",
+                "description": "Captures row-level changes from a SQL Server database in near real-time.",
                 "descriptor": "source-connector/io.debezium.connector.sqlserver.SqlServerConnector.json"
             }
         ],
         "transformation": [
             {
                 "class": "io.debezium.ai.docling.FieldToDocling",
-                "name": "io.debezium.ai.docling.FieldToDocling",
-                "description": "io.debezium.ai.docling.FieldToDocling",
+                "name": "Debezium Field To Docling",
+                "description": "",
                 "descriptor": "transformation/io.debezium.ai.docling.FieldToDocling.json"
             },
             {
                 "class": "io.debezium.ai.embeddings.FieldToEmbeddingHuggingFace",
-                "name": "io.debezium.ai.embeddings.FieldToEmbedding",
-                "description": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "name": "Debezium Field To Embedding",
+                "description": "",
                 "descriptor": "transformation/io.debezium.ai.embeddings.FieldToEmbeddingHuggingFace.json"
             },
             {
                 "class": "io.debezium.ai.embeddings.FieldToEmbeddingMinilm",
-                "name": "io.debezium.ai.embeddings.FieldToEmbedding",
-                "description": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "name": "Debezium Field To Embedding",
+                "description": "",
                 "descriptor": "transformation/io.debezium.ai.embeddings.FieldToEmbeddingMinilm.json"
             },
             {
                 "class": "io.debezium.ai.embeddings.FieldToEmbeddingOllama",
-                "name": "io.debezium.ai.embeddings.FieldToEmbedding",
-                "description": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "name": "Debezium Field To Embedding",
+                "description": "",
                 "descriptor": "transformation/io.debezium.ai.embeddings.FieldToEmbeddingOllama.json"
             },
             {
                 "class": "io.debezium.ai.embeddings.FieldToEmbeddingVoyageAi",
-                "name": "io.debezium.ai.embeddings.FieldToEmbedding",
-                "description": "io.debezium.ai.embeddings.FieldToEmbedding",
+                "name": "Debezium Field To Embedding",
+                "description": "",
                 "descriptor": "transformation/io.debezium.ai.embeddings.FieldToEmbeddingVoyageAi.json"
             },
             {
                 "class": "io.debezium.connector.jdbc.transforms.CollectionNameTransformation",
-                "name": "io.debezium.connector.jdbc.transforms.CollectionNameTransformation",
-                "description": "io.debezium.connector.jdbc.transforms.CollectionNameTransformation",
+                "name": "Debezium Collection Name Transformation",
+                "description": "",
                 "descriptor": "transformation/io.debezium.connector.jdbc.transforms.CollectionNameTransformation.json"
             },
             {
                 "class": "io.debezium.connector.jdbc.transforms.FieldNameTransformation",
-                "name": "io.debezium.connector.jdbc.transforms.FieldNameTransformation",
-                "description": "io.debezium.connector.jdbc.transforms.FieldNameTransformation",
+                "name": "Debezium Field Name Transformation",
+                "description": "",
                 "descriptor": "transformation/io.debezium.connector.jdbc.transforms.FieldNameTransformation.json"
             },
             {
                 "class": "io.debezium.connector.mongodb.transforms.ExtractNewDocumentState",
-                "name": "io.debezium.connector.mongodb.transforms.ExtractNewDocumentState",
-                "description": "io.debezium.connector.mongodb.transforms.ExtractNewDocumentState",
+                "name": "Debezium Extract New Document State",
+                "description": "",
                 "descriptor": "transformation/io.debezium.connector.mongodb.transforms.ExtractNewDocumentState.json"
             },
             {
                 "class": "io.debezium.connector.mongodb.transforms.outbox.MongoEventRouter",
-                "name": "io.debezium.connector.mongodb.transforms.outbox.MongoEventRouter",
-                "description": "io.debezium.connector.mongodb.transforms.outbox.MongoEventRouter",
+                "name": "Debezium Mongo Event Router",
+                "description": "",
                 "descriptor": "transformation/io.debezium.connector.mongodb.transforms.outbox.MongoEventRouter.json"
             },
             {
                 "class": "io.debezium.connector.mysql.transforms.ReadToInsertEvent",
-                "name": "io.debezium.connector.mysql.transforms.ReadToInsertEvent",
-                "description": "io.debezium.connector.mysql.transforms.ReadToInsertEvent",
+                "name": "Debezium Read To Insert Event",
+                "description": "",
                 "descriptor": "transformation/io.debezium.connector.mysql.transforms.ReadToInsertEvent.json"
             },
             {
                 "class": "io.debezium.connector.postgresql.transforms.DecodeLogicalDecodingMessageContent",
-                "name": "io.debezium.connector.postgresql.transforms.DecodeLogicalDecodingMessageContent",
-                "description": "io.debezium.connector.postgresql.transforms.DecodeLogicalDecodingMessageContent",
+                "name": "Debezium Decode Logical Decoding Message Content",
+                "description": "",
                 "descriptor": "transformation/io.debezium.connector.postgresql.transforms.DecodeLogicalDecodingMessageContent.json"
             },
             {
                 "class": "io.debezium.connector.postgresql.transforms.timescaledb.TimescaleDb",
-                "name": "io.debezium.connector.postgresql.transforms.timescaledb.TimescaleDb",
-                "description": "io.debezium.connector.postgresql.transforms.timescaledb.TimescaleDb",
+                "name": "Debezium Timescale Db",
+                "description": "",
                 "descriptor": "transformation/io.debezium.connector.postgresql.transforms.timescaledb.TimescaleDb.json"
             },
             {
                 "class": "io.debezium.transforms.ByLogicalTableRouter",
-                "name": "io.debezium.transforms.ByLogicalTableRouter",
-                "description": "io.debezium.transforms.ByLogicalTableRouter",
+                "name": "Debezium By Logical Table Router",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.ByLogicalTableRouter.json"
             },
             {
                 "class": "io.debezium.transforms.ExtractChangedRecordState",
-                "name": "io.debezium.transforms.ExtractChangedRecordState",
-                "description": "io.debezium.transforms.ExtractChangedRecordState",
+                "name": "Debezium Extract Changed Record State",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.ExtractChangedRecordState.json"
             },
             {
                 "class": "io.debezium.transforms.ExtractNewRecordState",
-                "name": "io.debezium.transforms.ExtractNewRecordState",
-                "description": "io.debezium.transforms.ExtractNewRecordState",
+                "name": "Debezium Extract New Record State",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.ExtractNewRecordState.json"
             },
             {
                 "class": "io.debezium.transforms.ExtractSchemaToNewRecord",
-                "name": "io.debezium.transforms.ExtractSchemaToNewRecord",
-                "description": "io.debezium.transforms.ExtractSchemaToNewRecord",
+                "name": "Debezium Extract Schema To New Record",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.ExtractSchemaToNewRecord.json"
             },
             {
                 "class": "io.debezium.transforms.GeometryFormatTransformer",
-                "name": "io.debezium.transforms.GeometryFormatTransformer",
-                "description": "io.debezium.transforms.GeometryFormatTransformer",
+                "name": "Debezium Geometry Format Transformer",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.GeometryFormatTransformer.json"
             },
             {
                 "class": "io.debezium.transforms.HeaderToValue",
-                "name": "io.debezium.transforms.HeaderToValue",
-                "description": "io.debezium.transforms.HeaderToValue",
+                "name": "Debezium Header To Value",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.HeaderToValue.json"
             },
             {
                 "class": "io.debezium.transforms.SchemaChangeEventFilter",
-                "name": "io.debezium.transforms.SchemaChangeEventFilter",
-                "description": "io.debezium.transforms.SchemaChangeEventFilter",
+                "name": "Debezium Schema Change Event Filter",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.SchemaChangeEventFilter.json"
             },
             {
                 "class": "io.debezium.transforms.SwapGeometryCoordinates",
-                "name": "io.debezium.transforms.SwapGeometryCoordinates",
-                "description": "io.debezium.transforms.SwapGeometryCoordinates",
+                "name": "Debezium Swap Geometry Coordinates",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.SwapGeometryCoordinates.json"
             },
             {
                 "class": "io.debezium.transforms.TimezoneConverter",
-                "name": "io.debezium.transforms.TimezoneConverter",
-                "description": "io.debezium.transforms.TimezoneConverter",
+                "name": "Debezium Timezone Converter",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.TimezoneConverter.json"
             },
             {
                 "class": "io.debezium.transforms.VectorToJsonConverter",
-                "name": "io.debezium.transforms.VectorToJsonConverter",
-                "description": "io.debezium.transforms.VectorToJsonConverter",
+                "name": "Debezium Vector To JSON Converter",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.VectorToJsonConverter.json"
             },
             {
                 "class": "io.debezium.transforms.openlineage.OpenLineage",
-                "name": "io.debezium.transforms.openlineage.OpenLineage",
-                "description": "io.debezium.transforms.openlineage.OpenLineage",
+                "name": "Debezium Open Lineage",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.openlineage.OpenLineage.json"
             },
             {
                 "class": "io.debezium.transforms.outbox.EventRouter",
-                "name": "io.debezium.transforms.outbox.EventRouter",
-                "description": "io.debezium.transforms.outbox.EventRouter",
+                "name": "Debezium Event Router",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.outbox.EventRouter.json"
             },
             {
                 "class": "io.debezium.transforms.partitions.PartitionRouting",
-                "name": "io.debezium.transforms.partitions.PartitionRouting",
-                "description": "io.debezium.transforms.partitions.PartitionRouting",
+                "name": "Debezium Partition Routing",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.partitions.PartitionRouting.json"
             },
             {
                 "class": "io.debezium.transforms.tracing.ActivateTracingSpan",
-                "name": "io.debezium.transforms.tracing.ActivateTracingSpan",
-                "description": "io.debezium.transforms.tracing.ActivateTracingSpan",
+                "name": "Debezium Activate Tracing Span",
+                "description": "",
                 "descriptor": "transformation/io.debezium.transforms.tracing.ActivateTracingSpan.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Cast$Key",
-                "name": "org.apache.kafka.connect.transforms.Cast$Key",
-                "description": "org.apache.kafka.connect.transforms.Cast$Key",
+                "name": "Kafka Cast (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$Key.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Cast$KeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.Cast$Key",
-                "description": "org.apache.kafka.connect.transforms.Cast$Key",
+                "name": "Kafka Cast (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$KeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Cast$KeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.Cast$Key",
-                "description": "org.apache.kafka.connect.transforms.Cast$Key",
+                "name": "Kafka Cast (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$KeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Cast$KeyOllama",
-                "name": "org.apache.kafka.connect.transforms.Cast$Key",
-                "description": "org.apache.kafka.connect.transforms.Cast$Key",
+                "name": "Kafka Cast (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$KeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Cast$KeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.Cast$Key",
-                "description": "org.apache.kafka.connect.transforms.Cast$Key",
+                "name": "Kafka Cast (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$KeyVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Cast$Value",
-                "name": "org.apache.kafka.connect.transforms.Cast$Value",
-                "description": "org.apache.kafka.connect.transforms.Cast$Value",
+                "name": "Kafka Cast (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$Value.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Cast$ValueHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.Cast$Value",
-                "description": "org.apache.kafka.connect.transforms.Cast$Value",
+                "name": "Kafka Cast (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$ValueHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Cast$ValueMinilm",
-                "name": "org.apache.kafka.connect.transforms.Cast$Value",
-                "description": "org.apache.kafka.connect.transforms.Cast$Value",
+                "name": "Kafka Cast (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$ValueMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Cast$ValueOllama",
-                "name": "org.apache.kafka.connect.transforms.Cast$Value",
-                "description": "org.apache.kafka.connect.transforms.Cast$Value",
+                "name": "Kafka Cast (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$ValueOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Cast$ValueVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.Cast$Value",
-                "description": "org.apache.kafka.connect.transforms.Cast$Value",
+                "name": "Kafka Cast (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$ValueVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.DropHeaders",
-                "name": "org.apache.kafka.connect.transforms.DropHeaders",
-                "description": "org.apache.kafka.connect.transforms.DropHeaders",
+                "name": "Kafka Drop Headers",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.DropHeaders.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.DropHeadersHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.DropHeaders",
-                "description": "org.apache.kafka.connect.transforms.DropHeaders",
+                "name": "Kafka Drop Headers",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.DropHeadersHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.DropHeadersMinilm",
-                "name": "org.apache.kafka.connect.transforms.DropHeaders",
-                "description": "org.apache.kafka.connect.transforms.DropHeaders",
+                "name": "Kafka Drop Headers",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.DropHeadersMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.DropHeadersOllama",
-                "name": "org.apache.kafka.connect.transforms.DropHeaders",
-                "description": "org.apache.kafka.connect.transforms.DropHeaders",
+                "name": "Kafka Drop Headers",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.DropHeadersOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.DropHeadersVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.DropHeaders",
-                "description": "org.apache.kafka.connect.transforms.DropHeaders",
+                "name": "Kafka Drop Headers",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.DropHeadersVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ExtractField$Key",
-                "name": "org.apache.kafka.connect.transforms.ExtractField$Key",
-                "description": "org.apache.kafka.connect.transforms.ExtractField$Key",
+                "name": "Kafka Extract Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$Key.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ExtractField$KeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.ExtractField$Key",
-                "description": "org.apache.kafka.connect.transforms.ExtractField$Key",
+                "name": "Kafka Extract Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$KeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ExtractField$KeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.ExtractField$Key",
-                "description": "org.apache.kafka.connect.transforms.ExtractField$Key",
+                "name": "Kafka Extract Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$KeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ExtractField$KeyOllama",
-                "name": "org.apache.kafka.connect.transforms.ExtractField$Key",
-                "description": "org.apache.kafka.connect.transforms.ExtractField$Key",
+                "name": "Kafka Extract Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$KeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ExtractField$KeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.ExtractField$Key",
-                "description": "org.apache.kafka.connect.transforms.ExtractField$Key",
+                "name": "Kafka Extract Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$KeyVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ExtractField$Value",
-                "name": "org.apache.kafka.connect.transforms.ExtractField$Value",
-                "description": "org.apache.kafka.connect.transforms.ExtractField$Value",
+                "name": "Kafka Extract Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$Value.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ExtractField$ValueHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.ExtractField$Value",
-                "description": "org.apache.kafka.connect.transforms.ExtractField$Value",
+                "name": "Kafka Extract Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$ValueHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ExtractField$ValueMinilm",
-                "name": "org.apache.kafka.connect.transforms.ExtractField$Value",
-                "description": "org.apache.kafka.connect.transforms.ExtractField$Value",
+                "name": "Kafka Extract Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$ValueMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ExtractField$ValueOllama",
-                "name": "org.apache.kafka.connect.transforms.ExtractField$Value",
-                "description": "org.apache.kafka.connect.transforms.ExtractField$Value",
+                "name": "Kafka Extract Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$ValueOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ExtractField$ValueVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.ExtractField$Value",
-                "description": "org.apache.kafka.connect.transforms.ExtractField$Value",
+                "name": "Kafka Extract Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$ValueVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Filter",
-                "name": "org.apache.kafka.connect.transforms.Filter",
-                "description": "org.apache.kafka.connect.transforms.Filter",
+                "name": "Kafka Filter",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Filter.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.FilterHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.Filter",
-                "description": "org.apache.kafka.connect.transforms.Filter",
+                "name": "Kafka Filter",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.FilterHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.FilterMinilm",
-                "name": "org.apache.kafka.connect.transforms.Filter",
-                "description": "org.apache.kafka.connect.transforms.Filter",
+                "name": "Kafka Filter",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.FilterMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.FilterOllama",
-                "name": "org.apache.kafka.connect.transforms.Filter",
-                "description": "org.apache.kafka.connect.transforms.Filter",
+                "name": "Kafka Filter",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.FilterOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.FilterVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.Filter",
-                "description": "org.apache.kafka.connect.transforms.Filter",
+                "name": "Kafka Filter",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.FilterVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Flatten$Key",
-                "name": "org.apache.kafka.connect.transforms.Flatten$Key",
-                "description": "org.apache.kafka.connect.transforms.Flatten$Key",
+                "name": "Kafka Flatten (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$Key.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Flatten$KeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.Flatten$Key",
-                "description": "org.apache.kafka.connect.transforms.Flatten$Key",
+                "name": "Kafka Flatten (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$KeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Flatten$KeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.Flatten$Key",
-                "description": "org.apache.kafka.connect.transforms.Flatten$Key",
+                "name": "Kafka Flatten (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$KeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Flatten$KeyOllama",
-                "name": "org.apache.kafka.connect.transforms.Flatten$Key",
-                "description": "org.apache.kafka.connect.transforms.Flatten$Key",
+                "name": "Kafka Flatten (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$KeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Flatten$KeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.Flatten$Key",
-                "description": "org.apache.kafka.connect.transforms.Flatten$Key",
+                "name": "Kafka Flatten (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$KeyVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Flatten$Value",
-                "name": "org.apache.kafka.connect.transforms.Flatten$Value",
-                "description": "org.apache.kafka.connect.transforms.Flatten$Value",
+                "name": "Kafka Flatten (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$Value.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Flatten$ValueHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.Flatten$Value",
-                "description": "org.apache.kafka.connect.transforms.Flatten$Value",
+                "name": "Kafka Flatten (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$ValueHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Flatten$ValueMinilm",
-                "name": "org.apache.kafka.connect.transforms.Flatten$Value",
-                "description": "org.apache.kafka.connect.transforms.Flatten$Value",
+                "name": "Kafka Flatten (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$ValueMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Flatten$ValueOllama",
-                "name": "org.apache.kafka.connect.transforms.Flatten$Value",
-                "description": "org.apache.kafka.connect.transforms.Flatten$Value",
+                "name": "Kafka Flatten (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$ValueOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.Flatten$ValueVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.Flatten$Value",
-                "description": "org.apache.kafka.connect.transforms.Flatten$Value",
+                "name": "Kafka Flatten (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$ValueVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HeaderFrom$Key",
-                "name": "org.apache.kafka.connect.transforms.HeaderFrom$Key",
-                "description": "org.apache.kafka.connect.transforms.HeaderFrom$Key",
+                "name": "Kafka Header From (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$Key.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HeaderFrom$KeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.HeaderFrom$Key",
-                "description": "org.apache.kafka.connect.transforms.HeaderFrom$Key",
+                "name": "Kafka Header From (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$KeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HeaderFrom$KeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.HeaderFrom$Key",
-                "description": "org.apache.kafka.connect.transforms.HeaderFrom$Key",
+                "name": "Kafka Header From (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$KeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HeaderFrom$KeyOllama",
-                "name": "org.apache.kafka.connect.transforms.HeaderFrom$Key",
-                "description": "org.apache.kafka.connect.transforms.HeaderFrom$Key",
+                "name": "Kafka Header From (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$KeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HeaderFrom$KeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.HeaderFrom$Key",
-                "description": "org.apache.kafka.connect.transforms.HeaderFrom$Key",
+                "name": "Kafka Header From (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$KeyVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HeaderFrom$Value",
-                "name": "org.apache.kafka.connect.transforms.HeaderFrom$Value",
-                "description": "org.apache.kafka.connect.transforms.HeaderFrom$Value",
+                "name": "Kafka Header From (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$Value.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HeaderFrom$ValueHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.HeaderFrom$Value",
-                "description": "org.apache.kafka.connect.transforms.HeaderFrom$Value",
+                "name": "Kafka Header From (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$ValueHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HeaderFrom$ValueMinilm",
-                "name": "org.apache.kafka.connect.transforms.HeaderFrom$Value",
-                "description": "org.apache.kafka.connect.transforms.HeaderFrom$Value",
+                "name": "Kafka Header From (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$ValueMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HeaderFrom$ValueOllama",
-                "name": "org.apache.kafka.connect.transforms.HeaderFrom$Value",
-                "description": "org.apache.kafka.connect.transforms.HeaderFrom$Value",
+                "name": "Kafka Header From (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$ValueOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HeaderFrom$ValueVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.HeaderFrom$Value",
-                "description": "org.apache.kafka.connect.transforms.HeaderFrom$Value",
+                "name": "Kafka Header From (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$ValueVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HoistField$Key",
-                "name": "org.apache.kafka.connect.transforms.HoistField$Key",
-                "description": "org.apache.kafka.connect.transforms.HoistField$Key",
+                "name": "Kafka Hoist Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$Key.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HoistField$KeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.HoistField$Key",
-                "description": "org.apache.kafka.connect.transforms.HoistField$Key",
+                "name": "Kafka Hoist Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$KeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HoistField$KeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.HoistField$Key",
-                "description": "org.apache.kafka.connect.transforms.HoistField$Key",
+                "name": "Kafka Hoist Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$KeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HoistField$KeyOllama",
-                "name": "org.apache.kafka.connect.transforms.HoistField$Key",
-                "description": "org.apache.kafka.connect.transforms.HoistField$Key",
+                "name": "Kafka Hoist Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$KeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HoistField$KeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.HoistField$Key",
-                "description": "org.apache.kafka.connect.transforms.HoistField$Key",
+                "name": "Kafka Hoist Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$KeyVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HoistField$Value",
-                "name": "org.apache.kafka.connect.transforms.HoistField$Value",
-                "description": "org.apache.kafka.connect.transforms.HoistField$Value",
+                "name": "Kafka Hoist Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$Value.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HoistField$ValueHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.HoistField$Value",
-                "description": "org.apache.kafka.connect.transforms.HoistField$Value",
+                "name": "Kafka Hoist Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$ValueHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HoistField$ValueMinilm",
-                "name": "org.apache.kafka.connect.transforms.HoistField$Value",
-                "description": "org.apache.kafka.connect.transforms.HoistField$Value",
+                "name": "Kafka Hoist Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$ValueMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HoistField$ValueOllama",
-                "name": "org.apache.kafka.connect.transforms.HoistField$Value",
-                "description": "org.apache.kafka.connect.transforms.HoistField$Value",
+                "name": "Kafka Hoist Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$ValueOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.HoistField$ValueVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.HoistField$Value",
-                "description": "org.apache.kafka.connect.transforms.HoistField$Value",
+                "name": "Kafka Hoist Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$ValueVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertField$Key",
-                "name": "org.apache.kafka.connect.transforms.InsertField$Key",
-                "description": "org.apache.kafka.connect.transforms.InsertField$Key",
+                "name": "Kafka Insert Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$Key.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertField$KeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.InsertField$Key",
-                "description": "org.apache.kafka.connect.transforms.InsertField$Key",
+                "name": "Kafka Insert Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$KeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertField$KeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.InsertField$Key",
-                "description": "org.apache.kafka.connect.transforms.InsertField$Key",
+                "name": "Kafka Insert Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$KeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertField$KeyOllama",
-                "name": "org.apache.kafka.connect.transforms.InsertField$Key",
-                "description": "org.apache.kafka.connect.transforms.InsertField$Key",
+                "name": "Kafka Insert Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$KeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertField$KeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.InsertField$Key",
-                "description": "org.apache.kafka.connect.transforms.InsertField$Key",
+                "name": "Kafka Insert Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$KeyVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertField$Value",
-                "name": "org.apache.kafka.connect.transforms.InsertField$Value",
-                "description": "org.apache.kafka.connect.transforms.InsertField$Value",
+                "name": "Kafka Insert Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$Value.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertField$ValueHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.InsertField$Value",
-                "description": "org.apache.kafka.connect.transforms.InsertField$Value",
+                "name": "Kafka Insert Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$ValueHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertField$ValueMinilm",
-                "name": "org.apache.kafka.connect.transforms.InsertField$Value",
-                "description": "org.apache.kafka.connect.transforms.InsertField$Value",
+                "name": "Kafka Insert Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$ValueMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertField$ValueOllama",
-                "name": "org.apache.kafka.connect.transforms.InsertField$Value",
-                "description": "org.apache.kafka.connect.transforms.InsertField$Value",
+                "name": "Kafka Insert Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$ValueOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertField$ValueVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.InsertField$Value",
-                "description": "org.apache.kafka.connect.transforms.InsertField$Value",
+                "name": "Kafka Insert Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$ValueVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertHeader",
-                "name": "org.apache.kafka.connect.transforms.InsertHeader",
-                "description": "org.apache.kafka.connect.transforms.InsertHeader",
+                "name": "Kafka Insert Header",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertHeader.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertHeaderHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.InsertHeader",
-                "description": "org.apache.kafka.connect.transforms.InsertHeader",
+                "name": "Kafka Insert Header",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertHeaderHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertHeaderMinilm",
-                "name": "org.apache.kafka.connect.transforms.InsertHeader",
-                "description": "org.apache.kafka.connect.transforms.InsertHeader",
+                "name": "Kafka Insert Header",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertHeaderMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertHeaderOllama",
-                "name": "org.apache.kafka.connect.transforms.InsertHeader",
-                "description": "org.apache.kafka.connect.transforms.InsertHeader",
+                "name": "Kafka Insert Header",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertHeaderOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.InsertHeaderVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.InsertHeader",
-                "description": "org.apache.kafka.connect.transforms.InsertHeader",
+                "name": "Kafka Insert Header",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertHeaderVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.MaskField$Key",
-                "name": "org.apache.kafka.connect.transforms.MaskField$Key",
-                "description": "org.apache.kafka.connect.transforms.MaskField$Key",
+                "name": "Kafka Mask Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$Key.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.MaskField$KeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.MaskField$Key",
-                "description": "org.apache.kafka.connect.transforms.MaskField$Key",
+                "name": "Kafka Mask Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$KeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.MaskField$KeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.MaskField$Key",
-                "description": "org.apache.kafka.connect.transforms.MaskField$Key",
+                "name": "Kafka Mask Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$KeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.MaskField$KeyOllama",
-                "name": "org.apache.kafka.connect.transforms.MaskField$Key",
-                "description": "org.apache.kafka.connect.transforms.MaskField$Key",
+                "name": "Kafka Mask Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$KeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.MaskField$KeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.MaskField$Key",
-                "description": "org.apache.kafka.connect.transforms.MaskField$Key",
+                "name": "Kafka Mask Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$KeyVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.MaskField$Value",
-                "name": "org.apache.kafka.connect.transforms.MaskField$Value",
-                "description": "org.apache.kafka.connect.transforms.MaskField$Value",
+                "name": "Kafka Mask Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$Value.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.MaskField$ValueHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.MaskField$Value",
-                "description": "org.apache.kafka.connect.transforms.MaskField$Value",
+                "name": "Kafka Mask Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$ValueHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.MaskField$ValueMinilm",
-                "name": "org.apache.kafka.connect.transforms.MaskField$Value",
-                "description": "org.apache.kafka.connect.transforms.MaskField$Value",
+                "name": "Kafka Mask Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$ValueMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.MaskField$ValueOllama",
-                "name": "org.apache.kafka.connect.transforms.MaskField$Value",
-                "description": "org.apache.kafka.connect.transforms.MaskField$Value",
+                "name": "Kafka Mask Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$ValueOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.MaskField$ValueVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.MaskField$Value",
-                "description": "org.apache.kafka.connect.transforms.MaskField$Value",
+                "name": "Kafka Mask Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$ValueVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.RegexRouter",
-                "name": "org.apache.kafka.connect.transforms.RegexRouter",
-                "description": "org.apache.kafka.connect.transforms.RegexRouter",
+                "name": "Kafka Regex Router",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.RegexRouter.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.RegexRouterHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.RegexRouter",
-                "description": "org.apache.kafka.connect.transforms.RegexRouter",
+                "name": "Kafka Regex Router",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.RegexRouterHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.RegexRouterMinilm",
-                "name": "org.apache.kafka.connect.transforms.RegexRouter",
-                "description": "org.apache.kafka.connect.transforms.RegexRouter",
+                "name": "Kafka Regex Router",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.RegexRouterMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.RegexRouterOllama",
-                "name": "org.apache.kafka.connect.transforms.RegexRouter",
-                "description": "org.apache.kafka.connect.transforms.RegexRouter",
+                "name": "Kafka Regex Router",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.RegexRouterOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.RegexRouterVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.RegexRouter",
-                "description": "org.apache.kafka.connect.transforms.RegexRouter",
+                "name": "Kafka Regex Router",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.RegexRouterVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ReplaceField$Key",
-                "name": "org.apache.kafka.connect.transforms.ReplaceField$Key",
-                "description": "org.apache.kafka.connect.transforms.ReplaceField$Key",
+                "name": "Kafka Replace Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$Key.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ReplaceField$KeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.ReplaceField$Key",
-                "description": "org.apache.kafka.connect.transforms.ReplaceField$Key",
+                "name": "Kafka Replace Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$KeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ReplaceField$KeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.ReplaceField$Key",
-                "description": "org.apache.kafka.connect.transforms.ReplaceField$Key",
+                "name": "Kafka Replace Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$KeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ReplaceField$KeyOllama",
-                "name": "org.apache.kafka.connect.transforms.ReplaceField$Key",
-                "description": "org.apache.kafka.connect.transforms.ReplaceField$Key",
+                "name": "Kafka Replace Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$KeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ReplaceField$KeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.ReplaceField$Key",
-                "description": "org.apache.kafka.connect.transforms.ReplaceField$Key",
+                "name": "Kafka Replace Field (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$KeyVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ReplaceField$Value",
-                "name": "org.apache.kafka.connect.transforms.ReplaceField$Value",
-                "description": "org.apache.kafka.connect.transforms.ReplaceField$Value",
+                "name": "Kafka Replace Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$Value.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ReplaceField$ValueHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.ReplaceField$Value",
-                "description": "org.apache.kafka.connect.transforms.ReplaceField$Value",
+                "name": "Kafka Replace Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$ValueHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ReplaceField$ValueMinilm",
-                "name": "org.apache.kafka.connect.transforms.ReplaceField$Value",
-                "description": "org.apache.kafka.connect.transforms.ReplaceField$Value",
+                "name": "Kafka Replace Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$ValueMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ReplaceField$ValueOllama",
-                "name": "org.apache.kafka.connect.transforms.ReplaceField$Value",
-                "description": "org.apache.kafka.connect.transforms.ReplaceField$Value",
+                "name": "Kafka Replace Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$ValueOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ReplaceField$ValueVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.ReplaceField$Value",
-                "description": "org.apache.kafka.connect.transforms.ReplaceField$Value",
+                "name": "Kafka Replace Field (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$ValueVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
-                "name": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
-                "description": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
+                "name": "Kafka Set Schema Metadata (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$Key.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
-                "description": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
+                "name": "Kafka Set Schema Metadata (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
-                "description": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
+                "name": "Kafka Set Schema Metadata (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyOllama",
-                "name": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
-                "description": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
+                "name": "Kafka Set Schema Metadata (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
-                "description": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Key",
+                "name": "Kafka Set Schema Metadata (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
-                "name": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
-                "description": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
+                "name": "Kafka Set Schema Metadata (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$Value.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
-                "description": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
+                "name": "Kafka Set Schema Metadata (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueMinilm",
-                "name": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
-                "description": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
+                "name": "Kafka Set Schema Metadata (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueOllama",
-                "name": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
-                "description": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
+                "name": "Kafka Set Schema Metadata (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
-                "description": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
+                "name": "Kafka Set Schema Metadata (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampConverter$Key",
-                "name": "org.apache.kafka.connect.transforms.TimestampConverter$Key",
-                "description": "org.apache.kafka.connect.transforms.TimestampConverter$Key",
+                "name": "Kafka Timestamp Converter (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$Key.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampConverter$KeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.TimestampConverter$Key",
-                "description": "org.apache.kafka.connect.transforms.TimestampConverter$Key",
+                "name": "Kafka Timestamp Converter (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$KeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampConverter$KeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.TimestampConverter$Key",
-                "description": "org.apache.kafka.connect.transforms.TimestampConverter$Key",
+                "name": "Kafka Timestamp Converter (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$KeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampConverter$KeyOllama",
-                "name": "org.apache.kafka.connect.transforms.TimestampConverter$Key",
-                "description": "org.apache.kafka.connect.transforms.TimestampConverter$Key",
+                "name": "Kafka Timestamp Converter (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$KeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampConverter$KeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.TimestampConverter$Key",
-                "description": "org.apache.kafka.connect.transforms.TimestampConverter$Key",
+                "name": "Kafka Timestamp Converter (Key)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$KeyVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
-                "name": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
-                "description": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
+                "name": "Kafka Timestamp Converter (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$Value.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampConverter$ValueHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
-                "description": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
+                "name": "Kafka Timestamp Converter (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$ValueHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampConverter$ValueMinilm",
-                "name": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
-                "description": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
+                "name": "Kafka Timestamp Converter (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$ValueMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampConverter$ValueOllama",
-                "name": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
-                "description": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
+                "name": "Kafka Timestamp Converter (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$ValueOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampConverter$ValueVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
-                "description": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
+                "name": "Kafka Timestamp Converter (Value)",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$ValueVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampRouter",
-                "name": "org.apache.kafka.connect.transforms.TimestampRouter",
-                "description": "org.apache.kafka.connect.transforms.TimestampRouter",
+                "name": "Kafka Timestamp Router",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampRouter.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampRouterHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.TimestampRouter",
-                "description": "org.apache.kafka.connect.transforms.TimestampRouter",
+                "name": "Kafka Timestamp Router",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampRouterHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampRouterMinilm",
-                "name": "org.apache.kafka.connect.transforms.TimestampRouter",
-                "description": "org.apache.kafka.connect.transforms.TimestampRouter",
+                "name": "Kafka Timestamp Router",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampRouterMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampRouterOllama",
-                "name": "org.apache.kafka.connect.transforms.TimestampRouter",
-                "description": "org.apache.kafka.connect.transforms.TimestampRouter",
+                "name": "Kafka Timestamp Router",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampRouterOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.TimestampRouterVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.TimestampRouter",
-                "description": "org.apache.kafka.connect.transforms.TimestampRouter",
+                "name": "Kafka Timestamp Router",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampRouterVoyageAi.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ValueToKey",
-                "name": "org.apache.kafka.connect.transforms.ValueToKey",
-                "description": "org.apache.kafka.connect.transforms.ValueToKey",
+                "name": "Kafka Value To Key",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ValueToKey.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ValueToKeyHuggingFace",
-                "name": "org.apache.kafka.connect.transforms.ValueToKey",
-                "description": "org.apache.kafka.connect.transforms.ValueToKey",
+                "name": "Kafka Value To Key",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ValueToKeyHuggingFace.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ValueToKeyMinilm",
-                "name": "org.apache.kafka.connect.transforms.ValueToKey",
-                "description": "org.apache.kafka.connect.transforms.ValueToKey",
+                "name": "Kafka Value To Key",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ValueToKeyMinilm.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ValueToKeyOllama",
-                "name": "org.apache.kafka.connect.transforms.ValueToKey",
-                "description": "org.apache.kafka.connect.transforms.ValueToKey",
+                "name": "Kafka Value To Key",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ValueToKeyOllama.json"
             },
             {
                 "class": "org.apache.kafka.connect.transforms.ValueToKeyVoyageAi",
-                "name": "org.apache.kafka.connect.transforms.ValueToKey",
-                "description": "org.apache.kafka.connect.transforms.ValueToKey",
+                "name": "Kafka Value To Key",
+                "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ValueToKeyVoyageAi.json"
             }
         ]

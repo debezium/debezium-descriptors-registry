@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.pulsar.PulsarChangeConsumer",
+  "name" : "Debezium Pulsar Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.pulsar.PulsarChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "null.key",

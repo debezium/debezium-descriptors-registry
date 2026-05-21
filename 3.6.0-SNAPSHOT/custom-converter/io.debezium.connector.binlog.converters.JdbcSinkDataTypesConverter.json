@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.connector.binlog.converters.JdbcSinkDataTypesConverter",
+  "name" : "Debezium JDBC Sink Data Types Custom Converter",
   "type" : "custom-converter",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.connector.binlog.converters.JdbcSinkDataTypesConverter"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "selector.boolean",

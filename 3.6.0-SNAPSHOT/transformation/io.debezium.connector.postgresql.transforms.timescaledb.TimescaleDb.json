@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.connector.postgresql.transforms.timescaledb.TimescaleDb",
+  "name" : "Debezium Timescale Db",
   "type" : "transformation",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.connector.postgresql.transforms.timescaledb.TimescaleDb"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "schema.list",

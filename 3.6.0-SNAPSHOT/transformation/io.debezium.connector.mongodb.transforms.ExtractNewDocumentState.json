@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.connector.mongodb.transforms.ExtractNewDocumentState",
+  "name" : "Debezium Extract New Document State",
   "type" : "transformation",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.connector.mongodb.transforms.ExtractNewDocumentState"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "delete.tombstone.handling.mode",

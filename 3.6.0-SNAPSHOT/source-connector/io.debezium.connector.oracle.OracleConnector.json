@@ -3,7 +3,7 @@
   "type" : "source-connector",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "Debezium Oracle Connector"
+    "description" : "Captures row-level changes from an Oracle database in near real-time."
   },
   "properties" : [ {
     "name" : "topic.prefix",
@@ -180,7 +180,7 @@
     "default" : "online_catalog",
     "display" : {
       "label" : "Log Mining Strategy",
-      "description" : "There are strategies: Online catalog with faster mining but no captured DDL. Another - with data dictionary loaded into REDO LOG files Default: online_catalog",
+      "description" : "Defines the mining strategy and LogMiner session characteristics: 'redo_log_catalog' writes the data dictionary to the redo logs, is deprecated and will be removed in 3.7, 'online_catalog' uses the existing data dictionary and operates faster than 'redo_log_catalog' but requires schema changes in lock-step, 'hybrid' uses the existing data dictionary, operates faster than 'redo_log_catalog', and supports interleaved schema changes. Default: online_catalog",
       "group" : "Connection Advanced",
       "groupOrder" : 8,
       "width" : "medium",

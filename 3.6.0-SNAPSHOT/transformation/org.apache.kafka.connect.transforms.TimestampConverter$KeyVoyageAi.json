@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.transforms.TimestampConverter$Key",
+  "name" : "Kafka Timestamp Converter (Key)",
   "type" : "transformation",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.transforms.TimestampConverter$Key"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "field",

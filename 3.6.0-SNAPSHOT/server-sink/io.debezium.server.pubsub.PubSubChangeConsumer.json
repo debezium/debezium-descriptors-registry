@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.pubsub.PubSubChangeConsumer",
+  "name" : "Debezium PubSub Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.pubsub.PubSubChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "project.id",

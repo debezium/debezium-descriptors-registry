@@ -1,9 +1,9 @@
 {
-  "name" : "io.debezium.server.redis.RedisStreamChangeConsumer",
+  "name" : "Debezium Redis Stream Server Sink",
   "type" : "server-sink",
   "version" : "3.6.0-SNAPSHOT",
   "metadata" : {
-    "description" : "io.debezium.server.redis.RedisStreamChangeConsumer"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "redis.batch.size",
@@ -53,7 +53,7 @@
     },
     "validation" : [ {
       "type" : "enum",
-      "values" : [ "compact", "extended" ]
+      "values" : [ "extended", "compact" ]
     } ],
     "valueDependants" : [ ]
   }, {

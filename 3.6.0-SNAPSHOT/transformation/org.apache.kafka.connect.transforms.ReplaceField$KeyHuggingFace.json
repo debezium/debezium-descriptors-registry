@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.transforms.ReplaceField$Key",
+  "name" : "Kafka Replace Field (Key)",
   "type" : "transformation",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.transforms.ReplaceField$Key"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "exclude",

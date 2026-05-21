@@ -1,9 +1,9 @@
 {
-  "name" : "org.apache.kafka.connect.transforms.Cast$Value",
+  "name" : "Kafka Cast (Value)",
   "type" : "transformation",
   "version" : "1.0.0",
   "metadata" : {
-    "description" : "org.apache.kafka.connect.transforms.Cast$Value"
+    "description" : ""
   },
   "properties" : [ {
     "name" : "spec",
