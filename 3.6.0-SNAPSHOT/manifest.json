@@ -2,9 +2,9 @@
     "schemaVersion": "1.0",
     "build": {
         "version": "3.6.0-SNAPSHOT",
-        "timestamp": "2026-05-25T08:18:17Z",
+        "timestamp": "2026-05-25T14:18:17Z",
         "sourceRepository": "debezium/debezium",
-        "sourceCommit": "c03fc3674f",
+        "sourceCommit": "24df3a1f37",
         "sourceBranch": "main"
     },
     "components": {
@@ -290,6 +290,12 @@
                 "name": "Debezium InstructLab Server Sink",
                 "description": "",
                 "descriptor": "server-sink/io.debezium.server.instructlab.InstructLabSinkConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.jdbc.JdbcChangeConsumer",
+                "name": "Debezium JDBC Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.jdbc.JdbcChangeConsumer.json"
             },
             {
                 "class": "io.debezium.server.kafka.KafkaChangeConsumer",
