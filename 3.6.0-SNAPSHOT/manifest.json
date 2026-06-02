@@ -2,9 +2,9 @@
     "schemaVersion": "1.0",
     "build": {
         "version": "3.6.0-SNAPSHOT",
-        "timestamp": "2026-06-02T08:27:42Z",
+        "timestamp": "2026-06-02T20:17:49Z",
         "sourceRepository": "debezium/debezium",
-        "sourceCommit": "ac2831df5a",
+        "sourceCommit": "eac369984f",
         "sourceBranch": "main"
     },
     "components": {
@@ -148,6 +148,12 @@
                 "name": "Debezium Tiny Int One To Boolean Custom Converter",
                 "description": "",
                 "descriptor": "custom-converter/io.debezium.connector.binlog.converters.TinyIntOneToBooleanConverter.json"
+            },
+            {
+                "class": "io.debezium.connector.binlog.converters.ZeroDateFallbackConverter",
+                "name": "Debezium Zero Date Fallback Custom Converter",
+                "description": "",
+                "descriptor": "custom-converter/io.debezium.connector.binlog.converters.ZeroDateFallbackConverter.json"
             },
             {
                 "class": "io.debezium.connector.oracle.converters.NumberOneToBooleanConverter",
