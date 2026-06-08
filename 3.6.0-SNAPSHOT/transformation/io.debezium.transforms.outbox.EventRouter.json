@@ -88,18 +88,21 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "table.fields.additional.error.on.missing",
-    "type" : "boolean",
-    "default" : "true",
+    "name" : "table.field.additional.missing",
+    "type" : "string",
+    "default" : "error",
     "display" : {
-      "label" : "Should the transform error if an additional field is missing in the change data",
-      "description" : "When transforming the 'table.fields.additional.placement' fields, should the transform throw an exception if one of the fields is missing in the change data Default: true",
+      "label" : "Behavior when an additional field is missing in the change data",
+      "description" : "When transforming the 'table.fields.additional.placement' fields, defines the behavior when one of the configured fields is missing in the change data. 'error' (default) will throw an exception; 'ignore' will silently skip the missing field. Default: error",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
       "importance" : "medium"
     },
-    "validation" : [ ],
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "ignore", "error" ]
+    } ],
     "valueDependants" : [ ]
   }, {
     "name" : "table.field.event.schema.version",
