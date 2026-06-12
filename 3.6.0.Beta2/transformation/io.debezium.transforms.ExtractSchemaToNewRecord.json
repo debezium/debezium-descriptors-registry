@@ -1,0 +1,10 @@
+{
+  "name" : "Debezium Extract Schema To New Record",
+  "type" : "transformation",
+  "version" : "3.6.0.Beta2",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ ],
+  "groups" : [ ]
+}
