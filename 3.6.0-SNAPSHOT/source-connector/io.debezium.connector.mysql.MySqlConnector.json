@@ -777,6 +777,34 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "memory.management.schemas.class",
+    "type" : "string",
+    "default" : "io.debezium.relational.ConcurrentMapTableMappingStorage",
+    "display" : {
+      "label" : "Schema storage class",
+      "description" : "The fully-qualified class name of the storage implementation for schema metadata. The class must implement io.debezium.relational.TableMappingStorage<io.debezium.relational.TableSchema>. Defaults to io.debezium.relational.ConcurrentMapTableMappingStorage for in-memory storage. Default: io.debezium.relational.ConcurrentMapTableMappingStorage",
+      "group" : "Connector Advanced",
+      "groupOrder" : 112,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "memory.management.tables.class",
+    "type" : "string",
+    "default" : "io.debezium.relational.ConcurrentMapTableMappingStorage",
+    "display" : {
+      "label" : "Table storage class",
+      "description" : "The fully-qualified class name of the storage implementation for table metadata. The class must implement io.debezium.relational.TableMappingStorage<io.debezium.relational.Table>. Defaults to io.debezium.relational.ConcurrentMapTableMappingStorage for in-memory storage. Default: io.debezium.relational.ConcurrentMapTableMappingStorage",
+      "group" : "Connector Advanced",
+      "groupOrder" : 113,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "connect.timeout.ms",
     "type" : "number",
     "default" : "30000",
