@@ -1,0 +1,10 @@
+{
+  "name" : "Kafka Filter",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ ],
+  "groups" : [ ]
+}
