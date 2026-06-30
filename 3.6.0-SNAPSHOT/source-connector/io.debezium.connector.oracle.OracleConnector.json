@@ -163,10 +163,10 @@
     } ],
     "valueDependants" : [ {
       "values" : [ "logminer" ],
-      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.buffer.deferred.transaction.retention.ms", "log.mining.buffer.deferred.transaction.start", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.client_id", "log.mining.buffer.track.commit_timestamp", "log.mining.buffer.track.rs_id", "log.mining.buffer.track.start_timestamp", "log.mining.buffer.track.username", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.session.max.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
+      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.buffer.deferred.transaction.retention.ms", "log.mining.buffer.deferred.transaction.start", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.client_id", "log.mining.buffer.track.commit_timestamp", "log.mining.buffer.track.rs_id", "log.mining.buffer.track.start_timestamp", "log.mining.buffer.track.username", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.read.only", "log.mining.restart.connection", "log.mining.session.max.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
     }, {
       "values" : [ "logminer_unbuffered" ],
-      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.buffer.deferred.transaction.retention.ms", "log.mining.buffer.deferred.transaction.start", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.client_id", "log.mining.buffer.track.commit_timestamp", "log.mining.buffer.track.rs_id", "log.mining.buffer.track.start_timestamp", "log.mining.buffer.track.username", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.readonly.hostname", "log.mining.restart.connection", "log.mining.session.max.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
+      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.buffer.deferred.transaction.retention.ms", "log.mining.buffer.deferred.transaction.start", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.client_id", "log.mining.buffer.track.commit_timestamp", "log.mining.buffer.track.rs_id", "log.mining.buffer.track.start_timestamp", "log.mining.buffer.track.username", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.read.only", "log.mining.restart.connection", "log.mining.session.max.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
     }, {
       "values" : [ "xstream" ],
       "dependants" : [ "xstream.out.server.name" ]
@@ -1225,6 +1225,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "log.mining.read.only",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Runs the connector in read-only mode",
+      "description" : "When set to 'true', the connector will not attempt to flush the LGWR buffer to disk, allowing connecting to read-only databases. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "log.mining.flush.table.name",
     "type" : "string",
     "default" : "LOG_MINING_FLUSH",
@@ -1499,14 +1513,71 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "log.mining.readonly.hostname",
+    "name" : "capture.mode",
     "type" : "string",
+    "default" : "primary",
     "display" : {
-      "label" : "Read-only connector hostname.",
-      "description" : "The hostname the connector will use to connect and perform read-only operations for the the replica.",
+      "label" : "The streaming capture mode",
+      "description" : "Specifies the capture mode used to capture streaming changes from Oracle'primary' (the default) captures changes from the primary, specified by database.* configurations, 'physical_standby' captures changes from a read-only physical standby, specified by secondary.* configurations. Default: primary",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "physical_standby", "primary" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "secondary.dbname",
+    "type" : "string",
+    "display" : {
+      "label" : "The secondary Oracle instance database name",
+      "description" : "The secondary Oracle instance database name, if different from primary",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "secondary.hostname",
+    "type" : "string",
+    "display" : {
+      "label" : "The secondary Oracle instance host name",
+      "description" : "The secondary Oracle instance where changes will be streamed",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "secondary.port",
+    "type" : "number",
+    "default" : "1528",
+    "display" : {
+      "label" : "The secondary Oracle instance port",
+      "description" : "The secondary Oracle instance port where changes will be streamed Default: 1528",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "secondary.url",
+    "type" : "string",
+    "display" : {
+      "label" : "The secondary Oracle instance connection string",
+      "description" : "The secondary Oracle instance connection string URL where changes will be streamed",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
       "importance" : "low"
     },
     "validation" : [ ],
