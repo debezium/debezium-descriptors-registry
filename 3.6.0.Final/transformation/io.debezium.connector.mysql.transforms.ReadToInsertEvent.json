@@ -1,0 +1,10 @@
+{
+  "name" : "Debezium Read To Insert Event",
+  "type" : "transformation",
+  "version" : "3.6.0.Final",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ ],
+  "groups" : [ ]
+}
