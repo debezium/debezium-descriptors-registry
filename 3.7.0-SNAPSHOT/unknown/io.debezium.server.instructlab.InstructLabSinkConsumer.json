@@ -1,6 +1,6 @@
 {
-  "name" : "Debezium InstructLab Server Sink",
-  "type" : "server-sink",
+  "name" : "Debezium InstructLab Sink Consumer",
+  "type" : "unknown",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""

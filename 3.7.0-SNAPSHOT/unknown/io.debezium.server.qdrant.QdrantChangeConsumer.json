@@ -1,16 +1,17 @@
 {
-  "name" : "Debezium Infinispan Server Sink",
-  "type" : "server-sink",
+  "name" : "Debezium Qdrant Change Consumer",
+  "type" : "unknown",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""
   },
   "properties" : [ {
-    "name" : "server.host",
+    "name" : "host",
     "type" : "string",
+    "default" : "localhost",
     "display" : {
-      "label" : "Server Host",
-      "description" : "Infinispan server host.",
+      "label" : "Host",
+      "description" : "Qdrant server host. Default: localhost",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -19,12 +20,12 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "server.port",
+    "name" : "port",
     "type" : "number",
-    "default" : "11222",
+    "default" : "6333",
     "display" : {
-      "label" : "Server Port",
-      "description" : "Infinispan server port. Default: 11222",
+      "label" : "Port",
+      "description" : "Qdrant server port. Default: 6333",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
@@ -33,24 +34,11 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "cache",
+    "name" : "api.key",
     "type" : "string",
     "display" : {
-      "label" : "Cache Name",
-      "description" : "Infinispan cache name.",
-      "group" : "Advanced",
-      "groupOrder" : 9999,
-      "width" : "medium",
-      "importance" : "high"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "user",
-    "type" : "string",
-    "display" : {
-      "label" : "User",
-      "description" : "Infinispan user.",
+      "label" : "API Key",
+      "description" : "Qdrant API key for authentication.",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -59,11 +47,11 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "password",
+    "name" : "vector.field.names",
     "type" : "string",
     "display" : {
-      "label" : "Password",
-      "description" : "Infinispan password.",
+      "label" : "Vector Field Names",
+      "description" : "Comma-separated list of vector field names.",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",

@@ -1,6 +1,6 @@
 {
-  "name" : "Debezium SNS Server Sink",
-  "type" : "server-sink",
+  "name" : "Debezium SNS Change Consumer",
+  "type" : "unknown",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""

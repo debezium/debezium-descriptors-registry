@@ -1,6 +1,6 @@
 {
-  "name" : "Debezium Event Hubs Server Sink",
-  "type" : "server-sink",
+  "name" : "Debezium Event Hubs Change Consumer",
+  "type" : "unknown",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""

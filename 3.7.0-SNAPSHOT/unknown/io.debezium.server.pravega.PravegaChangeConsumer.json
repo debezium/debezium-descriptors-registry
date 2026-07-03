@@ -1,17 +1,17 @@
 {
-  "name" : "Debezium Milvus Server Sink",
-  "type" : "server-sink",
+  "name" : "Debezium Pravega Change Consumer",
+  "type" : "unknown",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""
   },
   "properties" : [ {
-    "name" : "uri",
+    "name" : "controller.uri",
     "type" : "string",
-    "default" : "http://localhost:19530",
+    "default" : "tcp://localhost:9090",
     "display" : {
-      "label" : "URI",
-      "description" : "Milvus server URI. Default: http://localhost:19530",
+      "label" : "Controller URI",
+      "description" : "Pravega controller URI. Default: tcp://localhost:9090",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "long",
@@ -20,12 +20,11 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "database",
+    "name" : "scope",
     "type" : "string",
-    "default" : "default",
     "display" : {
-      "label" : "Database",
-      "description" : "Milvus database name. Default: default",
+      "label" : "Scope",
+      "description" : "Pravega scope.",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "medium",
@@ -34,12 +33,12 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "unwind.json",
+    "name" : "transaction",
     "type" : "boolean",
     "default" : "false",
     "display" : {
-      "label" : "Unwind JSON",
-      "description" : "Unwind JSON fields. Default: false",
+      "label" : "Transaction",
+      "description" : "Enable transaction support. Default: false",
       "group" : "Advanced",
       "groupOrder" : 9999,
       "width" : "short",
