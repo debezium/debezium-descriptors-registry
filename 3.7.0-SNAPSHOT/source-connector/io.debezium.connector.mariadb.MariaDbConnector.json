@@ -1182,6 +1182,34 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "signal.emit.failure.max.retries",
+    "type" : "number",
+    "default" : "0",
+    "display" : {
+      "label" : "Signal emit window event failure maximum retries",
+      "description" : "The maximum number of retries after encountering an error emitting a window event (-1 = no limit, 0 = disabled, > 0 = num of retries). Defaults to 0. Default: 0",
+      "group" : "Advanced",
+      "groupOrder" : 24,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "signal.emit.failure.backoff.ms",
+    "type" : "number",
+    "default" : "10000",
+    "display" : {
+      "label" : "Signal emit window event failure backoff time in ms",
+      "description" : "Duration to sleep for after encountering an error emitting a window event, given in milliseconds. Defaults to 10 seconds. Default: 10000",
+      "group" : "Advanced",
+      "groupOrder" : 25,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "signal.enabled.channels",
     "type" : "list",
     "default" : "source",

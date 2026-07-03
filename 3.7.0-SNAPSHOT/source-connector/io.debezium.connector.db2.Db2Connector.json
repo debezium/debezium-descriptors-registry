@@ -764,6 +764,93 @@
     } ],
     "valueDependants" : [ ]
   }, {
+    "name" : "update.capture.table.prune.ind",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "description" : "A switch to control if the connector instance is responsible for updating the prune table (usually done by IBM Apply agent) which will cause the IBM Capture agent to prune read data from the change tables. default false. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "update.capture.table.prune.set.name",
+    "type" : "string",
+    "display" : {
+      "description" : "If set to update the prune table, this will identify the prune set name that should be used when updating the table for this instance.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "update.capture.table.prune.min.interval.ms",
+    "type" : "number",
+    "default" : "10000",
+    "display" : {
+      "description" : "The minimum number of milliseconds between the connector instance's update of the prune point for the subscription set. Default: 10000",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "update.capture.table.prune.lsn.decrement",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "description" : "An switch to decrement the prune lsn/syncpoint by one to avoid allowing the last lsn processed to get pruned to avoid the risk of an unnecessary snapshot due to the last processed lsn not being present in the change table. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "update.capture.table.prune.apply.qual",
+    "type" : "string",
+    "display" : {
+      "description" : "The apply_qual name that represents the apply agent (this instance) to the subscription set.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "update.capture.table.prune.target.server",
+    "type" : "string",
+    "display" : {
+      "description" : "The target_server name that represents the apply agent's target (where the data is going) for the subscription set.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "update.capture.table.prune.procedure.override.name",
+    "type" : "string",
+    "display" : {
+      "description" : "The name of a prepared statement in the database that will be used instead of direct sql to allow for DBA control of the update code where needed.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "schema.history.internal",
     "type" : "string",
     "default" : "io.debezium.storage.kafka.history.KafkaSchemaHistory",
@@ -909,6 +996,34 @@
       "description" : "Interval for looking for new signals in registered channels, given in milliseconds. Defaults to 5 seconds. Default: 5000",
       "group" : "Advanced",
       "groupOrder" : 21,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "signal.emit.failure.max.retries",
+    "type" : "number",
+    "default" : "0",
+    "display" : {
+      "label" : "Signal emit window event failure maximum retries",
+      "description" : "The maximum number of retries after encountering an error emitting a window event (-1 = no limit, 0 = disabled, > 0 = num of retries). Defaults to 0. Default: 0",
+      "group" : "Advanced",
+      "groupOrder" : 24,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "signal.emit.failure.backoff.ms",
+    "type" : "number",
+    "default" : "10000",
+    "display" : {
+      "label" : "Signal emit window event failure backoff time in ms",
+      "description" : "Duration to sleep for after encountering an error emitting a window event, given in milliseconds. Defaults to 10 seconds. Default: 10000",
+      "group" : "Advanced",
+      "groupOrder" : 25,
       "width" : "short",
       "importance" : "medium"
     },
