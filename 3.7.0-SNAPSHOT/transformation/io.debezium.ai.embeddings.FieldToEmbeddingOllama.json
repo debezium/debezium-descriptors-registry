@@ -13,7 +13,7 @@
       "label" : "Name of the record field from which embeddings should be created.",
       "description" : "Name of the field of the record which content will be used as an input for embeddings. Supports also nested fields.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "short",
       "importance" : "high"
     },
@@ -26,7 +26,7 @@
       "label" : "Name of the field which would contain the embeddings of the input field.",
       "description" : "Name of the field which which will be appended to the record and which would contain the embeddings of the content `filed.source` field. Supports also nested fields.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "high"
     },
@@ -40,7 +40,7 @@
       "label" : "Ollama server URL.",
       "description" : "Base URL of Ollama server.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "high"
     },
@@ -54,7 +54,7 @@
       "label" : "Model name.",
       "description" : "Name of the model which should be served by Ollama server.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "high"
     },
@@ -68,7 +68,7 @@
       "label" : "Operation timeout.",
       "description" : "Milliseconds to wait for Ollama calculations to finish (defaults to 15000). Default: 15000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "short",
       "importance" : "medium"
     },

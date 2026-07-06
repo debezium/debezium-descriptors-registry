@@ -12,7 +12,7 @@
       "label" : "URL",
       "description" : "NATS server URL(s), comma-separated.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
     },
@@ -26,7 +26,7 @@
       "label" : "Stream Name",
       "description" : "NATS JetStream stream name. Default: DebeziumStream",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "high"
     },
@@ -40,7 +40,7 @@
       "label" : "Create Stream",
       "description" : "Whether to create the stream if it doesn't exist. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "medium"
     },
@@ -54,7 +54,7 @@
       "label" : "Subjects",
       "description" : "Subjects for the stream, comma-separated. Default: *.*.*",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -68,7 +68,7 @@
       "label" : "Storage Type",
       "description" : "Storage type for the stream (memory or file). Default: memory",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "short",
       "importance" : "medium"
     },
@@ -81,7 +81,7 @@
       "label" : "JWT Token",
       "description" : "JWT token for authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "long",
       "importance" : "medium"
     },
@@ -94,7 +94,7 @@
       "label" : "Seed",
       "description" : "Seed for JWT authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "width" : "long",
       "importance" : "medium"
     },
@@ -107,7 +107,7 @@
       "label" : "User",
       "description" : "Username for basic authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 7,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -120,7 +120,7 @@
       "label" : "Password",
       "description" : "Password for basic authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 8,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -133,7 +133,7 @@
       "label" : "TLS Keystore Path",
       "description" : "Path to TLS keystore.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 9,
       "width" : "long",
       "importance" : "medium"
     },
@@ -146,7 +146,7 @@
       "label" : "TLS Keystore Password",
       "description" : "Password for TLS keystore.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 10,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -159,7 +159,7 @@
       "label" : "TLS Password",
       "description" : "Password for TLS authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 11,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -173,7 +173,7 @@
       "label" : "Async Publishing Enabled",
       "description" : "Enable asynchronous message publishing. Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "medium"
     },
@@ -187,7 +187,7 @@
       "label" : "Async Timeout (ms)",
       "description" : "Timeout for asynchronous publishing in milliseconds. Default: 5000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 13,
       "width" : "short",
       "importance" : "medium"
     },
@@ -201,7 +201,7 @@
       "label" : "Sync Retries",
       "description" : "Maximum number of retry attempts for synchronous publishing. Default: 5",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 14,
       "width" : "short",
       "importance" : "medium"
     },
@@ -215,7 +215,7 @@
       "label" : "Sync Retry Interval (ms)",
       "description" : "Initial retry interval in milliseconds. Default: 1000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 15,
       "width" : "short",
       "importance" : "medium"
     },
@@ -229,7 +229,7 @@
       "label" : "Sync Retry Max Interval (ms)",
       "description" : "Maximum retry interval in milliseconds. Default: 60000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 16,
       "width" : "short",
       "importance" : "medium"
     },
@@ -243,7 +243,7 @@
       "label" : "Sync Retry Backoff Multiplier",
       "description" : "Backoff multiplier for retry intervals. Default: 2.0",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 17,
       "width" : "short",
       "importance" : "medium"
     },

@@ -12,7 +12,7 @@
       "label" : "Header change name.",
       "description" : "Specify the header changed name, default is null which means not send changes to header.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "low"
     },
@@ -25,7 +25,7 @@
       "label" : "Header unchanged name.",
       "description" : "Specify the header unchanged name of schema, default is null which means not send changes to header.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "long",
       "importance" : "low"
     },

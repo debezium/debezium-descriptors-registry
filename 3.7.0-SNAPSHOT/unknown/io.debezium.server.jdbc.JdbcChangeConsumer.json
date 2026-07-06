@@ -13,7 +13,7 @@
       "label" : "Hostname",
       "description" : "Valid JDBC URL",
       "group" : "Connection",
-      "groupOrder" : 1,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
     },
@@ -27,7 +27,7 @@
       "label" : "User",
       "description" : "Name of the database user to be used when connecting to the connection.",
       "group" : "Connection",
-      "groupOrder" : 2,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "high"
     },
@@ -40,7 +40,7 @@
       "label" : "Password",
       "description" : "Password of the database user to be used when connecting to the connection.",
       "group" : "Connection",
-      "groupOrder" : 3,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "high"
     },
@@ -54,7 +54,7 @@
       "label" : "Connection pool minimum size",
       "description" : "Minimum number of connection in the connection pool Default: 5",
       "group" : "Connection",
-      "groupOrder" : 4,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "low"
     },
@@ -68,7 +68,7 @@
       "label" : "Connection pool maximum size",
       "description" : "Maximum number of connection in the connection pool Default: 32",
       "group" : "Connection",
-      "groupOrder" : 5,
+      "groupOrder" : 4,
       "width" : "short",
       "importance" : "low"
     },
@@ -82,7 +82,7 @@
       "label" : "Connection pool timeout",
       "description" : "Connection pool timeout Default: 1800",
       "group" : "Connection",
-      "groupOrder" : 7,
+      "groupOrder" : 5,
       "width" : "short",
       "importance" : "low"
     },
@@ -96,7 +96,7 @@
       "label" : "The insertion mode to use",
       "description" : "The insertion mode to use. 'insert' - the default mode, uses standard SQL insert statements; 'upsert' - uses upsert semantics for the database if its supported and requires setting primary.key.mode and primary.key.fields;'update' - uses update semantics for the database if its supported. Default: insert",
       "group" : "Connector",
-      "groupOrder" : 1,
+      "groupOrder" : 0,
       "width" : "short",
       "importance" : "low"
     },
@@ -113,7 +113,7 @@
       "label" : "Controls whether records can be deleted by the connector",
       "description" : "Whether to treat `null` record values as deletes. Requires primary.key.mode to be `record.key`. Default: false",
       "group" : "Connector",
-      "groupOrder" : 2,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "low"
     },
@@ -185,7 +185,7 @@
       "label" : "Controls how schema evolution is handled by the sink connector",
       "description" : "Controls how schema evolution is handled by the sink connector Default: none",
       "group" : "Connector",
-      "groupOrder" : 7,
+      "groupOrder" : 6,
       "width" : "short",
       "importance" : "low"
     },
@@ -202,7 +202,7 @@
       "label" : "Controls whether table, column, or other identifiers are quoted",
       "description" : "When enabled, table, column, and other identifiers are quoted based on the database dialect. When disabled, only explicit cases where the dialect requires quoting will be used, such as names starting with an underscore. Default: false",
       "group" : "Connector",
-      "groupOrder" : 8,
+      "groupOrder" : 7,
       "width" : "short",
       "importance" : "low"
     },
@@ -215,8 +215,8 @@
     "display" : {
       "label" : "CollectionNamingStrategy class",
       "description" : "Name of the strategy class that defines the collection name from the topic name. It implements the CollectionNamingStrategy interface. Default: io.debezium.sink.naming.DefaultCollectionNamingStrategy",
-      "group" : "Connector Advanced",
-      "groupOrder" : 2,
+      "group" : "Connector",
+      "groupOrder" : 8,
       "width" : "long",
       "importance" : "low"
     },
@@ -229,8 +229,8 @@
     "display" : {
       "label" : "Name of the strategy class that implements the ColumnNamingStrategy interface",
       "description" : "Name of the strategy class that implements the ColumnNamingStrategy interface. Default: io.debezium.connector.jdbc.naming.DefaultColumnNamingStrategy",
-      "group" : "Connector Advanced",
-      "groupOrder" : 2,
+      "group" : "Connector",
+      "groupOrder" : 9,
       "width" : "long",
       "importance" : "low"
     },
@@ -244,7 +244,7 @@
       "label" : "Format string using table name",
       "description" : "Alternative format that uses table name instead of topic name. Use ${schema} for schema name and ${table} for table name. Default: ${table}",
       "group" : "Connector",
-      "groupOrder" : 3,
+      "groupOrder" : 10,
       "width" : "long",
       "importance" : "medium"
     },
@@ -258,7 +258,7 @@
       "label" : "The timezone used when inserting temporal values.",
       "description" : "The timezone used when inserting temporal values. Defaults to UTC. Default: UTC",
       "group" : "Connector",
-      "groupOrder" : 6,
+      "groupOrder" : 11,
       "width" : "short",
       "importance" : "medium"
     },
@@ -271,8 +271,8 @@
     "display" : {
       "label" : "Name of the schema where postgis extension is installed",
       "description" : "Name of the schema where postgis extension is installed. Default is public Default: public",
-      "group" : "Connector Advanced",
-      "groupOrder" : 3,
+      "group" : "Connector",
+      "groupOrder" : 12,
       "width" : "long",
       "importance" : "low"
     },
@@ -285,8 +285,8 @@
     "display" : {
       "label" : "Enable UNNEST-based batch inserts for PostgreSQL",
       "description" : "When enabled, uses PostgreSQL UNNEST() for batch inserts which can significantly improve performance by reducing the number of SQL statements executed. This optimization is compatible with INSERT and UPSERT modes. Instead of executing multiple INSERT statements with JDBC batching, a single INSERT statement with UNNEST is used to insert all records at once. This can provide 5-10x performance improvement for high-throughput scenarios. Default: false",
-      "group" : "Connector Advanced",
-      "groupOrder" : 3,
+      "group" : "Connector",
+      "groupOrder" : 13,
       "width" : "short",
       "importance" : "medium"
     },
@@ -299,8 +299,8 @@
     "display" : {
       "label" : "Allowing to insert explicit value for identity column in table for SQLSERVER.",
       "description" : "Allowing to insert explicit value for identity column in table for SQLSERVER. Default: false",
-      "group" : "Connector Advanced",
-      "groupOrder" : 4,
+      "group" : "Connector",
+      "groupOrder" : 14,
       "width" : "short",
       "importance" : "low"
     },
@@ -313,8 +313,8 @@
     "display" : {
       "label" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration.",
       "description" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration. Default: 500",
-      "group" : "Connector Advanced",
-      "groupOrder" : 4,
+      "group" : "Connector",
+      "groupOrder" : 15,
       "width" : "short",
       "importance" : "medium"
     },
@@ -326,8 +326,8 @@
     "display" : {
       "label" : "Include Fields",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of fields that should be included in change events. The field names must be delimited by the format <topic>:<field> ",
-      "group" : "Filters",
-      "groupOrder" : 1,
+      "group" : "Connector",
+      "groupOrder" : 16,
       "width" : "long",
       "importance" : "medium"
     },
@@ -339,8 +339,8 @@
     "display" : {
       "label" : "Exclude Fields",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of fields that should be excluded from change events. The field names must be delimited by the format <topic>:<field> ",
-      "group" : "Filters",
-      "groupOrder" : 2,
+      "group" : "Connector",
+      "groupOrder" : 17,
       "width" : "long",
       "importance" : "medium"
     },
@@ -353,8 +353,8 @@
     "display" : {
       "label" : "Max retry count",
       "description" : "Max retry count when fail to flush. In case of retriable exceptions, the flush will be retried for the defined max retry count. Default: 5",
-      "group" : "Connector Advanced",
-      "groupOrder" : 5,
+      "group" : "Connector",
+      "groupOrder" : 18,
       "width" : "short",
       "importance" : "low"
     },
@@ -367,8 +367,8 @@
     "display" : {
       "label" : "Delay to retry flush",
       "description" : "Delay to retry when fail to flush Default: 1000",
-      "group" : "Connector Advanced",
-      "groupOrder" : 6,
+      "group" : "Connector",
+      "groupOrder" : 19,
       "width" : "short",
       "importance" : "low"
     },
@@ -381,8 +381,8 @@
     "display" : {
       "label" : "Restart connection on errors",
       "description" : "Specifies whether the connector should attempt to restart the connection automatically upon connection-related errors. Defaults to false. In environments where the sink database uses asynchronous replication, enabling this option may risk data loss or inconsistencies during failover if the replica has not fully caught up with the primary. Default: false",
-      "group" : "Connector Advanced",
-      "groupOrder" : 7,
+      "group" : "Connector",
+      "groupOrder" : 20,
       "width" : "short",
       "importance" : "low"
     },
@@ -395,8 +395,8 @@
     "display" : {
       "label" : "CloudEvents messages schema name pattern",
       "description" : "Regular expression pattern to identify CloudEvents messages by matching the schema name with this pattern. Default: .*CloudEvents\\.Envelope$",
-      "group" : "Connector Advanced",
-      "groupOrder" : 8,
+      "group" : "Connector",
+      "groupOrder" : 21,
       "width" : "long",
       "importance" : "low"
     },
@@ -408,16 +408,8 @@
     "order" : 0,
     "description" : "Connection configuration"
   }, {
-    "name" : "Filters",
-    "order" : 5,
-    "description" : "Filtering options for tables and changes"
-  }, {
     "name" : "Connector",
     "order" : 7,
     "description" : "Connector configuration"
-  }, {
-    "name" : "Connector Advanced",
-    "order" : 9,
-    "description" : "Advanced connector configuration"
   } ]
 }

@@ -13,7 +13,7 @@
       "label" : "Target JDBC types",
       "description" : "Comma-separated list of JDBC temporal types this converter applies to. Allowed tokens: DATE, DATETIME, TIMESTAMP. Default: DATE,DATETIME,TIMESTAMP",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "low"
     },
@@ -26,7 +26,7 @@
       "label" : "DATE zero-date fallback",
       "description" : "Replacement value emitted for MySQL/MariaDB DATE zero-date rows (0000-00-00). Use 'NULL' (or leave unset) to emit null and promote the column schema to optional. Otherwise specify an ISO-8601 date literal (yyyy-MM-dd).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -39,7 +39,7 @@
       "label" : "DATETIME zero-date fallback",
       "description" : "Replacement value emitted for MySQL/MariaDB DATETIME zero-date rows (0000-00-00 00:00:00). Use 'NULL' (or leave unset) to emit null and promote the column schema to optional. Otherwise specify a UTC datetime literal (yyyy-MM-dd HH:mm:ss).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -52,7 +52,7 @@
       "label" : "TIMESTAMP zero-date fallback",
       "description" : "Replacement value emitted for MySQL/MariaDB TIMESTAMP zero-date rows. Use 'NULL' (or leave unset) to emit null and promote the column schema to optional. Otherwise specify an ISO-8601 offset datetime literal (e.g. 1970-01-01T00:00:00Z).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -66,7 +66,7 @@
       "label" : "Column selector",
       "description" : "Comma-separated list of regex patterns matched against <database>.<table>.<column>. Only matching columns have this converter applied. Default '.*' matches every column whose JDBC type is in target.types. Default: .*",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "long",
       "importance" : "low"
     },

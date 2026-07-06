@@ -12,7 +12,7 @@
       "label" : "Connection Host (deprecated)",
       "description" : "Connection host (deprecated, use 'host' instead).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "low"
     },
@@ -25,7 +25,7 @@
       "label" : "Connection Port (deprecated)",
       "description" : "Connection port (deprecated, use 'port' instead).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "low"
     },
@@ -39,7 +39,7 @@
       "label" : "Host",
       "description" : "RabbitMQ Stream host. Default: localhost",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "high"
     },
@@ -53,7 +53,7 @@
       "label" : "Port",
       "description" : "RabbitMQ Stream port. Default: 5552",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "high"
     },
@@ -67,7 +67,7 @@
       "label" : "Username",
       "description" : "RabbitMQ username. Default: guest",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "high"
     },
@@ -81,7 +81,7 @@
       "label" : "Password",
       "description" : "RabbitMQ password. Default: guest",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "medium",
       "importance" : "high"
     },
@@ -95,7 +95,7 @@
       "label" : "Virtual Host",
       "description" : "RabbitMQ virtual host. Default: /",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -109,7 +109,7 @@
       "label" : "TLS Enable",
       "description" : "Enable TLS connection. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 7,
       "width" : "short",
       "importance" : "medium"
     },
@@ -122,7 +122,7 @@
       "label" : "TLS Server Name",
       "description" : "TLS server name for SNI.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 8,
       "width" : "medium",
       "importance" : "low"
     },
@@ -136,7 +136,7 @@
       "label" : "RPC Timeout (seconds)",
       "description" : "RPC timeout in seconds. Default: 10",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 9,
       "width" : "short",
       "importance" : "medium"
     },
@@ -150,7 +150,7 @@
       "label" : "Max Producers By Connection",
       "description" : "Maximum number of producers per connection. Default: 256",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 10,
       "width" : "short",
       "importance" : "medium"
     },
@@ -164,7 +164,7 @@
       "label" : "Max Tracking Consumers By Connection",
       "description" : "Maximum number of tracking consumers per connection. Default: 50",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 11,
       "width" : "short",
       "importance" : "medium"
     },
@@ -178,7 +178,7 @@
       "label" : "Max Consumers By Connection",
       "description" : "Maximum number of consumers per connection. Default: 256",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "medium"
     },
@@ -192,7 +192,7 @@
       "label" : "Requested Heartbeat (seconds)",
       "description" : "Requested heartbeat interval in seconds. Default: 60",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 13,
       "width" : "short",
       "importance" : "medium"
     },
@@ -206,7 +206,7 @@
       "label" : "Requested Max Frame Size",
       "description" : "Requested maximum frame size. Default: 0",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 14,
       "width" : "short",
       "importance" : "medium"
     },
@@ -220,7 +220,7 @@
       "label" : "ID",
       "description" : "Client ID. Default: rabbitmq-stream",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 15,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -233,7 +233,7 @@
       "label" : "Stream",
       "description" : "Stream name.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 16,
       "width" : "medium",
       "importance" : "high"
     },
@@ -246,7 +246,7 @@
       "label" : "Stream Max Age",
       "description" : "Maximum age for stream messages.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 17,
       "width" : "medium",
       "importance" : "low"
     },
@@ -259,7 +259,7 @@
       "label" : "Stream Max Length",
       "description" : "Maximum length for stream in bytes.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 18,
       "width" : "medium",
       "importance" : "low"
     },
@@ -272,7 +272,7 @@
       "label" : "Stream Max Segment Size",
       "description" : "Maximum segment size for stream in bytes.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 19,
       "width" : "medium",
       "importance" : "low"
     },
@@ -286,7 +286,7 @@
       "label" : "Super Stream Enable",
       "description" : "Enable super stream. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 20,
       "width" : "short",
       "importance" : "medium"
     },
@@ -300,7 +300,7 @@
       "label" : "Super Stream Partitions",
       "description" : "Number of partitions for super stream. Default: 3",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 21,
       "width" : "short",
       "importance" : "medium"
     },
@@ -313,7 +313,7 @@
       "label" : "Super Stream Binding Keys",
       "description" : "Binding keys for super stream.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 22,
       "width" : "long",
       "importance" : "low"
     },
@@ -326,7 +326,7 @@
       "label" : "Producer Name",
       "description" : "Producer name.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 23,
       "width" : "medium",
       "importance" : "low"
     },
@@ -339,7 +339,7 @@
       "label" : "Producer Filter Value",
       "description" : "Producer filter value.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 24,
       "width" : "medium",
       "importance" : "low"
     },
@@ -353,7 +353,7 @@
       "label" : "Producer Batch Size",
       "description" : "Producer batch size. Default: 100",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 25,
       "width" : "short",
       "importance" : "medium"
     },
@@ -367,7 +367,7 @@
       "label" : "Producer Sub Entry Size",
       "description" : "Producer sub-entry size. Default: 1",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 26,
       "width" : "short",
       "importance" : "low"
     },
@@ -381,7 +381,7 @@
       "label" : "Producer Max Unconfirmed Messages",
       "description" : "Maximum number of unconfirmed messages. Default: 10000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 27,
       "width" : "short",
       "importance" : "medium"
     },
@@ -395,7 +395,7 @@
       "label" : "Producer Batch Publishing Delay (ms)",
       "description" : "Producer batch publishing delay in milliseconds. Default: 100",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 28,
       "width" : "short",
       "importance" : "medium"
     },
@@ -409,7 +409,7 @@
       "label" : "Producer Confirm Timeout (seconds)",
       "description" : "Producer confirm timeout in seconds. Default: 30",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 29,
       "width" : "short",
       "importance" : "medium"
     },
@@ -423,7 +423,7 @@
       "label" : "Producer Enqueue Timeout (seconds)",
       "description" : "Producer enqueue timeout in seconds. Default: 10",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 30,
       "width" : "short",
       "importance" : "medium"
     },
@@ -437,7 +437,7 @@
       "label" : "Batch Confirm Timeout (seconds)",
       "description" : "Batch confirm timeout in seconds. Default: 30",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 31,
       "width" : "short",
       "importance" : "medium"
     },
@@ -451,7 +451,7 @@
       "label" : "Null Value",
       "description" : "Value to use when record value is null. Default: default",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 32,
       "width" : "short",
       "importance" : "low"
     },

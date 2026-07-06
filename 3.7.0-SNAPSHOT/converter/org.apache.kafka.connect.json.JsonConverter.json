@@ -12,7 +12,7 @@
       "label" : "converter.type",
       "description" : "How this converter will be used.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "low"
     },
     "validation" : [ ],
@@ -25,7 +25,7 @@
       "label" : "Enable Schemas",
       "description" : "Include schemas within each of the serialized values and keys. Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "high"
     },
@@ -39,7 +39,7 @@
       "label" : "Schema Cache Size",
       "description" : "The maximum number of schemas that can be cached in this converter instance. Default: 1000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "high"
     },
@@ -52,7 +52,7 @@
       "label" : "Schema Content",
       "description" : "When set, this is used as the schema for all messages, and the schemas within each of the message will be ignored.Otherwise, the schema will be included in the content of each message. This configuration applies only 'schemas.enable' is true, and it exclusively affects the sink connector.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "high"
     },
@@ -66,7 +66,7 @@
       "label" : "Decimal Format",
       "description" : "Controls which format this converter will serialize decimals in. This value is case insensitive and can be either 'BASE64' (default) or 'NUMERIC' Default: BASE64",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "low"
     },
@@ -80,7 +80,7 @@
       "label" : "Replace null with default",
       "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "medium",
       "importance" : "low"
     },

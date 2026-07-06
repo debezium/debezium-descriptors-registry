@@ -12,7 +12,7 @@
       "label" : "Geometry SRIDs that should be considered for coordinate swapping",
       "description" : "A comma-separated list of Geometry SRIDs that indicate which geometry fields should be included when swapping coordinates.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "low"
     },

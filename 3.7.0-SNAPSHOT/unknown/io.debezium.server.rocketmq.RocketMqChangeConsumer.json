@@ -13,7 +13,7 @@
       "label" : "ACL Enabled",
       "description" : "Enable ACL (Access Control List) authentication. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "short",
       "importance" : "medium"
     },
@@ -26,7 +26,7 @@
       "label" : "Access Key",
       "description" : "Access key for ACL authentication (required when ACL is enabled).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "high"
     },
@@ -39,7 +39,7 @@
       "label" : "Secret Key",
       "description" : "Secret key for ACL authentication (required when ACL is enabled).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "high"
     },
@@ -52,7 +52,7 @@
       "label" : "Name Server Address",
       "description" : "RocketMQ name server address.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "long",
       "importance" : "high"
     },
@@ -65,7 +65,7 @@
       "label" : "Producer Group",
       "description" : "RocketMQ producer group name.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "high"
     },
@@ -78,7 +78,7 @@
       "label" : "Max Message Size",
       "description" : "Maximum message size in bytes.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "short",
       "importance" : "medium"
     },
@@ -91,7 +91,7 @@
       "label" : "Send Message Timeout (ms)",
       "description" : "Timeout in milliseconds for sending messages.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "width" : "short",
       "importance" : "medium"
     },

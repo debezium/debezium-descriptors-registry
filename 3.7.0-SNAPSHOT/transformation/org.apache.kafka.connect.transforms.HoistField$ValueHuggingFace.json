@@ -12,7 +12,7 @@
       "label" : "field",
       "description" : "Field name for the single field that will be created in the resulting Struct or Map.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "medium"
     },
     "validation" : [ ],

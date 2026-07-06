@@ -12,7 +12,7 @@
       "label" : "schema.name",
       "description" : "Schema name to set.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "high"
     },
     "validation" : [ ],
@@ -24,7 +24,7 @@
       "label" : "schema.version",
       "description" : "Schema version to set.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "importance" : "high"
     },
     "validation" : [ ],
@@ -37,7 +37,7 @@
       "label" : "replace.null.with.default",
       "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "importance" : "medium"
     },
     "validation" : [ ],

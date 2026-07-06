@@ -13,7 +13,7 @@
       "label" : "Collection Name Prefix",
       "description" : "Optional prefix to add to collection names. Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "low"
     },
     "validation" : [ ],
@@ -26,7 +26,7 @@
       "label" : "Collection Name Suffix",
       "description" : "Optional suffix to add to collection names. Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "importance" : "low"
     },
     "validation" : [ ],
@@ -39,7 +39,7 @@
       "label" : "Collection Naming Style",
       "description" : "The style of collection naming: UPPER_CASE, lower_case, snake_case, camelCase, kebab-case. Default: default",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "importance" : "low"
     },
     "validation" : [ {

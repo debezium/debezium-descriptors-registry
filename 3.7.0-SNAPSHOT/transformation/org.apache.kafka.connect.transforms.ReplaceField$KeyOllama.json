@@ -13,7 +13,7 @@
       "label" : "exclude",
       "description" : "Fields to exclude. This takes precedence over the fields to include. Default: []",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -26,7 +26,7 @@
       "label" : "include",
       "description" : "Fields to include. If specified, only these fields will be used. Default: []",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -39,7 +39,7 @@
       "label" : "renames",
       "description" : "Field rename mappings. Default: []",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -52,7 +52,7 @@
       "label" : "replace.null.with.default",
       "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "importance" : "medium"
     },
     "validation" : [ ],

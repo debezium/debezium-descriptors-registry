@@ -12,7 +12,7 @@
       "label" : "Column selector",
       "description" : "Comma-separated list of column selectors (regular expressions) to match columns that should be converted. Format: <table_name>.<column_name>. Example: 'inventory.products.metadata,orders.*.data'",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
     },
@@ -26,7 +26,7 @@
       "label" : "Character set",
       "description" : "The character set used to decode RAW column bytes into strings. Defaults to UTF-8. For databases using a non-UTF-8 character set such as WE8ISO8859P1, this should be set to the corresponding Java charset name (e.g. 'ISO-8859-1'). Default: UTF-8",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "medium"
     },

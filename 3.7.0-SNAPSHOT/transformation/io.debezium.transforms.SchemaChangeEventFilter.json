@@ -13,7 +13,7 @@
       "label" : "Schema change event exclude list",
       "description" : "Support filtering during DDL synchronization",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "short",
       "importance" : "high"
     },

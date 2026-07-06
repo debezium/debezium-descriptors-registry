@@ -13,7 +13,7 @@
       "label" : "Handle delete and tombstone records",
       "description" : "How to handle delete records. Options are: drop - Remove the delete event and tombstone from the stream.tombstone (default) - For each delete event, leave only a tombstone in the stream.rewrite - Remove tombstone from the record, and add a `__deleted` field with the value `true`.rewrite-with-tombstone - Retain tombstone in record and add a `__deleted` field with the value `true`.delete-to-tombstone - Convert delete events to tombstone events and drop tombstone events. Default: tombstone",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -30,7 +30,7 @@
       "label" : "Route by field name",
       "description" : "The column which determines how the events will be routed, the value will replace the topic name. Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "long",
       "importance" : "low"
     },
@@ -44,7 +44,7 @@
       "label" : "Field prefix to be added to each field.",
       "description" : "Adds this prefix to each field listed. Default: __",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "low"
     },
@@ -58,7 +58,7 @@
       "label" : "Adds the specified field(s) to the message if they exist.",
       "description" : "Adds each field listed, prefixed with __ (or __<struct>_ if the struct is specified). Example: 'version,connector,source.ts_ms' would add __version, __connector and __source_ts_ms fields. Optionally one can also map new field name like version:VERSION,connector:CONNECTOR,source.ts_ms:EVENT_TIMESTAMP.Please note that the new field name is case-sensitive. Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "long",
       "importance" : "low"
     },
@@ -72,7 +72,7 @@
       "label" : "Header prefix to be added to each header.",
       "description" : "Adds this prefix listed to each header. Default: __",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "short",
       "importance" : "low"
     },
@@ -86,7 +86,7 @@
       "label" : "Adds the specified fields to the header if they exist.",
       "description" : "Adds each field listed to the header,  __ (or __<struct>_ if the struct is specified). Example: 'version,connector,source.ts_ms' would add __version, __connector and __source_ts_ms fields. Optionally one can also map new field name like version:VERSION,connector:CONNECTOR,source.ts_ms:EVENT_TIMESTAMP.Please note that the new field name is case-sensitive. Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "long",
       "importance" : "low"
     },
@@ -100,7 +100,7 @@
       "label" : "Array encoding",
       "description" : "The arrays can be encoded using 'array' schema type (the default) or as a 'document' (similar to how BSON encodes arrays). 'array' is easier to consume but requires all elements in the array to be of the same type. Use 'document' if the arrays in data source mix different types together. Default: array",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "width" : "short",
       "importance" : "medium"
     },
@@ -117,7 +117,7 @@
       "label" : "Flatten struct",
       "description" : "Flattening structs by concatenating the fields into plain properties, using a (configurable) delimiter. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 7,
       "width" : "short",
       "importance" : "low"
     },
@@ -131,7 +131,7 @@
       "label" : "Delimiter for flattened struct",
       "description" : "Delimiter to concat between field names from the input record when generating field names for theoutput record. Default: _",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 8,
       "width" : "short",
       "importance" : "low"
     },
@@ -145,7 +145,7 @@
       "label" : "Rewrite delete records with id field",
       "description" : "When set to true and \"delete.tombstone.handling.mode\" is rewrite, extracts the \"id\" from the deleted record's key and includes it as \"_id\" in the event payload. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 9,
       "width" : "short",
       "importance" : "low"
     },

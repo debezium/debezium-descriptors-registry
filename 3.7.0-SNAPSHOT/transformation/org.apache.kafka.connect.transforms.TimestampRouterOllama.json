@@ -13,7 +13,7 @@
       "label" : "topic.format",
       "description" : "Format string which can contain <code>${topic}</code> and <code>${timestamp}</code> as placeholders for the topic and timestamp, respectively. Default: ${topic}-${timestamp}",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "high"
     },
     "validation" : [ ],
@@ -26,7 +26,7 @@
       "label" : "timestamp.format",
       "description" : "Format string for the timestamp that is compatible with <code>java.text.SimpleDateFormat</code>. Default: yyyyMMdd",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "importance" : "high"
     },
     "validation" : [ ],

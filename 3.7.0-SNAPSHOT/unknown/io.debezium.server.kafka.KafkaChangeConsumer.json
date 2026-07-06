@@ -13,7 +13,7 @@
       "label" : "Wait message delivery timeout (ms)",
       "description" : "Timeout in milliseconds to wait for message delivery confirmation. Default: 30000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "short",
       "importance" : "medium"
     },

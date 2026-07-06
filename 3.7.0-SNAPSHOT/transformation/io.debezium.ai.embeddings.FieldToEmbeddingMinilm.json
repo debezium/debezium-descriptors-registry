@@ -13,7 +13,7 @@
       "label" : "Name of the record field from which embeddings should be created.",
       "description" : "Name of the field of the record which content will be used as an input for embeddings. Supports also nested fields.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "short",
       "importance" : "high"
     },
@@ -26,7 +26,7 @@
       "label" : "Name of the field which would contain the embeddings of the input field.",
       "description" : "Name of the field which which will be appended to the record and which would contain the embeddings of the content `filed.source` field. Supports also nested fields.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "high"
     },

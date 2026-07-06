@@ -13,7 +13,7 @@
       "label" : "The list of TimescaleDB data schemas",
       "description" : "Comma-separated list schema names that contain TimescaleDB data tables, defaults to: '_timescaledb_internal' Default: _timescaledb_internal",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "high"
     },
@@ -27,7 +27,7 @@
       "label" : "The prefix of TimescaleDB topic names",
       "description" : "The namespace (prefix) of topics where TimescaleDB events will be routed, defaults to: '_timescaledb_internal' Default: timescaledb",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "medium"
     },

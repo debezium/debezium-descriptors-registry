@@ -12,7 +12,7 @@
       "label" : "Webhook URL",
       "description" : "The HTTP webhook destination URL to send change events to.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
     },
@@ -26,7 +26,7 @@
       "label" : "Client timeout (ms)",
       "description" : "HTTP client timeout in milliseconds. Default: 60000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "medium"
     },
@@ -40,7 +40,7 @@
       "label" : "Max retries",
       "description" : "Maximum number of retry attempts for failed HTTP requests. Default: 5",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "medium"
     },
@@ -54,7 +54,7 @@
       "label" : "Retry interval (ms)",
       "description" : "Interval in milliseconds between retry attempts. Default: 1000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "medium"
     },
@@ -68,7 +68,7 @@
       "label" : "Encode headers in Base64",
       "description" : "Whether to encode custom header values in Base64. Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "short",
       "importance" : "low"
     },
@@ -82,7 +82,7 @@
       "label" : "Headers prefix",
       "description" : "Prefix to prepend to custom header names. Default: X-DEBEZIUM-",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "medium",
       "importance" : "low"
     },
@@ -96,7 +96,7 @@
       "label" : "Batch mode enabled",
       "description" : "Whether to send events in batches. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "width" : "short",
       "importance" : "medium"
     },
@@ -110,7 +110,7 @@
       "label" : "Batch maximum size",
       "description" : "Maximum number of events to include in a single batch. Default: 200",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 7,
       "width" : "short",
       "importance" : "medium"
     },
@@ -123,7 +123,7 @@
       "label" : "Authentication type",
       "description" : "Type of authentication to use. Valid values: 'jwt', 'oauth2', 'standard-webhooks'.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 8,
       "width" : "medium",
       "importance" : "high"
     },
@@ -136,7 +136,7 @@
       "label" : "JWT username",
       "description" : "Username for JWT authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 9,
       "width" : "medium",
       "importance" : "high"
     },
@@ -149,7 +149,7 @@
       "label" : "JWT password",
       "description" : "Password for JWT authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 10,
       "width" : "medium",
       "importance" : "high"
     },
@@ -162,7 +162,7 @@
       "label" : "JWT authentication URL",
       "description" : "Base URL for JWT authentication service.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 11,
       "width" : "long",
       "importance" : "high"
     },
@@ -176,7 +176,7 @@
       "label" : "JWT token expiration (minutes)",
       "description" : "JWT token expiration time in minutes. Default: 60",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "medium"
     },
@@ -190,7 +190,7 @@
       "label" : "JWT refresh token expiration (minutes)",
       "description" : "JWT refresh token expiration time in minutes. Default: 1440",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 13,
       "width" : "short",
       "importance" : "medium"
     },
@@ -203,7 +203,7 @@
       "label" : "OAuth2 client ID",
       "description" : "Client ID for OAuth2 authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 14,
       "width" : "medium",
       "importance" : "high"
     },
@@ -216,7 +216,7 @@
       "label" : "OAuth2 client secret",
       "description" : "Client secret for OAuth2 authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 15,
       "width" : "medium",
       "importance" : "high"
     },
@@ -229,7 +229,7 @@
       "label" : "OAuth2 token URL",
       "description" : "Token endpoint URL for OAuth2 authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 16,
       "width" : "long",
       "importance" : "high"
     },
@@ -242,7 +242,7 @@
       "label" : "OAuth2 scope",
       "description" : "Scope for OAuth2 authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 17,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -255,7 +255,7 @@
       "label" : "Webhook secret",
       "description" : "Secret key for Standard Webhooks authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 18,
       "width" : "medium",
       "importance" : "high"
     },

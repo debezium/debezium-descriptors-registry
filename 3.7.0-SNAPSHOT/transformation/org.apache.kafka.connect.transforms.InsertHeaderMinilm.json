@@ -12,7 +12,7 @@
       "label" : "header",
       "description" : "The name of the header.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "high"
     },
     "validation" : [ ],
@@ -24,7 +24,7 @@
       "label" : "value.literal",
       "description" : "The literal value that is to be set as the header value on all records.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "importance" : "high"
     },
     "validation" : [ ],

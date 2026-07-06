@@ -13,7 +13,7 @@
       "label" : "Name of the record field which should be used as a Docling input.",
       "description" : "Name of the record field which should be used as a Docling input. Supports also nested fields.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "short",
       "importance" : "high"
     },
@@ -26,7 +26,7 @@
       "label" : "Name of the field which would contain Docling output.",
       "description" : "Name of the field which will be appended to the record and which would contain Docling document created from `field.source` field. Supports also nested fields, but the nested structure has to exists. If the field is not specified, records will be replaced by record containing only Docling document.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "high"
     },
@@ -40,7 +40,7 @@
       "label" : "URL of Docling Serve API.",
       "description" : "URL of Docling Serve API, a server this provides Docling as a service.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "high"
     },
@@ -55,7 +55,7 @@
       "label" : "Docling input source, either 'text' or 'link' value.",
       "description" : "Specifies how Docling should treat the source field - it can contain either directly the document to be transformed ('text' option) or a link to the document to be transformed ('link' option). Default: text",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "high"
     },
@@ -72,7 +72,7 @@
       "label" : "Docling input format.",
       "description" : "Format of the document to be transformed. Can be any option which Docling supports.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "short",
       "importance" : "high"
     },
@@ -86,7 +86,7 @@
       "label" : "Whether to include images.",
       "description" : "Specifies if the images should or shouldn't be included into the resulting document. Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "short",
       "importance" : "high"
     },
@@ -100,7 +100,7 @@
       "label" : "Docling output format.",
       "description" : "Format of the document provided by the Docling. Can be one of 'html', 'markdown' or 'text'. Default: text",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "width" : "short",
       "importance" : "high"
     },
@@ -117,7 +117,7 @@
       "label" : "Use simple schema lookup.",
       "description" : "Adding Docling field requires schema update. Debezium caches the schemas, but even cache lookup can be expensive. If the schema doesn't change over time, the schema lookup can be looked up in the cache by its name. Turn on only when you are sure the schema evolution is not happening during the Debezium run. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 7,
       "width" : "short",
       "importance" : "high"
     },

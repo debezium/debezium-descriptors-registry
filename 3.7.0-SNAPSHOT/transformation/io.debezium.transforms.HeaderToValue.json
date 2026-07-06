@@ -13,7 +13,7 @@
       "label" : "Header names list",
       "description" : "Header names in the record whose values are to be copied or moved to record value.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "high"
     },
     "validation" : [ ],
@@ -26,7 +26,7 @@
       "label" : "Field names list",
       "description" : "Field names, in the same order as the header names listed in the headers configuration property. Supports Struct nesting using dot notation.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "importance" : "high"
     },
     "validation" : [ ],
@@ -39,7 +39,7 @@
       "label" : "Operation: mover or copy",
       "description" : "Either <code>move</code> if the fields are to be moved to the value (removed from the headers), or <code>copy</code> if the fields are to be copied to the value (retained in the headers).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "importance" : "high"
     },
     "validation" : [ {

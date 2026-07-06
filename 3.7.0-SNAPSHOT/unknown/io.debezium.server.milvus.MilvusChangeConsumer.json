@@ -13,7 +13,7 @@
       "label" : "URI",
       "description" : "Milvus server URI. Default: http://localhost:19530",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
     },
@@ -27,7 +27,7 @@
       "label" : "Database",
       "description" : "Milvus database name. Default: default",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "high"
     },
@@ -41,7 +41,7 @@
       "label" : "Unwind JSON",
       "description" : "Unwind JSON fields. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "medium"
     },

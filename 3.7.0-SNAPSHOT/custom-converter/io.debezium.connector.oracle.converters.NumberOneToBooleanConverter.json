@@ -12,7 +12,7 @@
       "label" : "Column selector",
       "description" : "Comma-separated list of column selectors (regular expressions) to match NUMBER(1) columns that should be converted to boolean. Format: <table_name>.<column_name>. Example: 'inventory.products.is_active,orders.*.is_processed'",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
     },

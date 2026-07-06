@@ -12,7 +12,7 @@
     "display" : {
       "description" : " Default: 500",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -24,7 +24,7 @@
     "display" : {
       "description" : " Default: default",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -36,7 +36,7 @@
     "display" : {
       "description" : " Default: default",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -48,12 +48,12 @@
     "display" : {
       "description" : " Default: compact",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "importance" : "medium"
     },
     "validation" : [ {
       "type" : "enum",
-      "values" : [ "compact", "extended" ]
+      "values" : [ "extended", "compact" ]
     } ],
     "valueDependants" : [ ]
   }, {
@@ -63,7 +63,7 @@
     "display" : {
       "description" : " Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -75,7 +75,7 @@
     "display" : {
       "description" : "The url that will be used to access Redis",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -87,7 +87,7 @@
     "display" : {
       "description" : "The database index (0--15) that will be used to access Redis Default: 0",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "importance" : "medium"
     },
     "validation" : [ {
@@ -101,7 +101,7 @@
     "display" : {
       "description" : "The user that will be used to access Redis",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 7,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -112,7 +112,7 @@
     "display" : {
       "description" : "The password that will be used to access Redis",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 8,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -124,7 +124,7 @@
     "display" : {
       "description" : "Use SSL for Redis connection Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 9,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -136,7 +136,7 @@
     "display" : {
       "description" : "Enable hostname verification Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 10,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -148,7 +148,7 @@
     "display" : {
       "description" : "Path to the truststore file Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 11,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -160,7 +160,7 @@
     "display" : {
       "description" : "Password for the truststore Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 12,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -172,7 +172,7 @@
     "display" : {
       "description" : "Type of the truststore (e.g., JKS, PKCS12), defaults to JKS Default: JKS",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 13,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -184,7 +184,7 @@
     "display" : {
       "description" : "Path to the keystore file Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 14,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -196,7 +196,7 @@
     "display" : {
       "description" : "Password for the keystore Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 15,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -208,7 +208,7 @@
     "display" : {
       "description" : "Type of the keystore (e.g., JKS, PKCS12), defaults to JKS Default: JKS",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 16,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -220,7 +220,7 @@
     "display" : {
       "description" : "Connection timeout (in ms) Default: 2000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 17,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -232,7 +232,7 @@
     "display" : {
       "description" : "Socket timeout (in ms) Default: 2000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 18,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -244,7 +244,7 @@
     "display" : {
       "description" : "Initial retry delay (in ms) Default: 300",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 19,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -256,7 +256,7 @@
     "display" : {
       "description" : "Maximum retry delay (in ms) Default: 10000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 20,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -268,7 +268,7 @@
     "display" : {
       "description" : "Enables wait for replica. In case Redis is configured with a replica shard, this allows to verify that the data has been written to the replica. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 21,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -280,7 +280,7 @@
     "display" : {
       "description" : "Timeout when wait for replica Default: 1000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 22,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -292,7 +292,7 @@
     "display" : {
       "description" : "Enables retry on wait for replica failure Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 23,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -304,7 +304,7 @@
     "display" : {
       "description" : "Delay of retry on wait for replica failure Default: 1000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 24,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -316,7 +316,7 @@
     "display" : {
       "description" : "Enable Redis Cluster mode; when true, a JedisCluster client will be created. Single or comma-separated host:port addresses are accepted. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 25,
       "importance" : "medium"
     },
     "validation" : [ ],

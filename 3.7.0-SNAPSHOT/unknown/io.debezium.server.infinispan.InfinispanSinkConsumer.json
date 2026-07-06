@@ -12,7 +12,7 @@
       "label" : "Server Host",
       "description" : "Infinispan server host.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "high"
     },
@@ -26,7 +26,7 @@
       "label" : "Server Port",
       "description" : "Infinispan server port. Default: 11222",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "high"
     },
@@ -39,7 +39,7 @@
       "label" : "Cache Name",
       "description" : "Infinispan cache name.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "high"
     },
@@ -52,7 +52,7 @@
       "label" : "User",
       "description" : "Infinispan user.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -65,7 +65,7 @@
       "label" : "Password",
       "description" : "Infinispan password.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "medium"
     },

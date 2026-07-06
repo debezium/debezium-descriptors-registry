@@ -12,7 +12,7 @@
       "label" : "Delegate converter type",
       "description" : "Specifies the delegate converter class",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "low"
     },
     "validation" : [ ],

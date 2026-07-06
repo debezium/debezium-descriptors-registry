@@ -12,7 +12,7 @@
       "label" : "AWS Region",
       "description" : "AWS region for the SNS topic.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "high"
     },
@@ -25,7 +25,7 @@
       "label" : "SNS Endpoint Override",
       "description" : "Optional SNS endpoint override (for local testing with LocalStack).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "long",
       "importance" : "low"
     },
@@ -38,7 +38,7 @@
       "label" : "AWS Credentials Profile",
       "description" : "AWS credentials profile name to use for authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -51,7 +51,7 @@
       "label" : "Default Topic ARN",
       "description" : "Default SNS topic ARN to publish messages to.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "long",
       "importance" : "high"
     },
@@ -64,7 +64,7 @@
       "label" : "Topic ARN Prefix",
       "description" : "Prefix to prepend to the destination name to compose the full topic ARN.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "long",
       "importance" : "medium"
     },
@@ -78,7 +78,7 @@
       "label" : "Default Retries",
       "description" : "Maximum number of retry attempts for failed requests. Default: 5",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "short",
       "importance" : "medium"
     },
@@ -92,7 +92,7 @@
       "label" : "FIFO Message Group ID Header",
       "description" : "Header name to use as the MessageGroupId for FIFO topics. Default: aggregateId",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -105,7 +105,7 @@
       "label" : "FIFO Message Deduplication ID Header",
       "description" : "Header name to use as the MessageDeduplicationId for FIFO topics.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 7,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -119,7 +119,7 @@
       "label" : "FIFO Default Group ID",
       "description" : "Default MessageGroupId when no header value is found for FIFO topics. Default: default",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 8,
       "width" : "medium",
       "importance" : "low"
     },

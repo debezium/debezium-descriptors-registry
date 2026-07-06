@@ -12,7 +12,7 @@
       "label" : "topic.field",
       "description" : "Field name for Kafka topic. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -24,7 +24,7 @@
       "label" : "partition.field",
       "description" : "Field name for Kafka partition. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -36,7 +36,7 @@
       "label" : "offset.field",
       "description" : "Field name for Kafka offset - only applicable to sink connectors.<br/>Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -48,7 +48,7 @@
       "label" : "timestamp.field",
       "description" : "Field name for record timestamp. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -60,7 +60,7 @@
       "label" : "static.field",
       "description" : "Field name for static data field. Suffix with <code>!</code> to make this a required field, or <code>?</code> to keep it optional (the default).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -72,7 +72,7 @@
       "label" : "static.value",
       "description" : "Static field value, if field name configured.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -85,7 +85,7 @@
       "label" : "replace.null.with.default",
       "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "importance" : "medium"
     },
     "validation" : [ ],

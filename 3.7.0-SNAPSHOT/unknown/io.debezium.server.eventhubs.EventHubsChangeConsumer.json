@@ -12,7 +12,7 @@
       "label" : "Event Hubs Connection String",
       "description" : "Azure Event Hubs connection string (without EntityPath).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
     },
@@ -25,7 +25,7 @@
       "label" : "Event Hub Name",
       "description" : "Name of the Event Hub.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "high"
     },
@@ -39,7 +39,7 @@
       "label" : "Partition ID",
       "description" : "Specific partition ID to send all events to. Leave empty for dynamic routing. Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "medium"
     },
@@ -53,7 +53,7 @@
       "label" : "Partition Key",
       "description" : "Partition key to use for all events. Leave empty for dynamic routing. Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -67,7 +67,7 @@
       "label" : "Dynamic Partition Routing Strategy",
       "description" : "Dynamic partition routing strategy when no partition ID or key is configured. Default: DEFAULT",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -81,7 +81,7 @@
       "label" : "Max Batch Size (bytes)",
       "description" : "Maximum size in bytes for the batch of events. 0 means use default. Default: 0",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "short",
       "importance" : "medium"
     },
@@ -94,7 +94,7 @@
       "label" : "Hash Message Key Function",
       "description" : "Hash function to use for message key-based routing.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "width" : "medium",
       "importance" : "low"
     },

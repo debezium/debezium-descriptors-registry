@@ -12,7 +12,7 @@
       "label" : "Boolean column selector",
       "description" : "Comma-separated list of column selectors for BOOLEAN columns. These will be emitted as INT16 (true=1, false=0).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "medium"
     },
@@ -25,7 +25,7 @@
       "label" : "Real column selector",
       "description" : "Comma-separated list of column selectors for REAL columns. These will be emitted as FLOAT32 or FLOAT64 based on treat.real.as.double setting.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "long",
       "importance" : "medium"
     },
@@ -38,7 +38,7 @@
       "label" : "String column selector",
       "description" : "Comma-separated list of column selectors for string columns. These will include character set information in the schema.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "long",
       "importance" : "medium"
     },
@@ -52,7 +52,7 @@
       "label" : "Treat REAL as DOUBLE",
       "description" : "If true (MySQL default), REAL columns are emitted as FLOAT64. If false, they are emitted as FLOAT32. Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "low"
     },

@@ -12,7 +12,7 @@
       "label" : "fields",
       "description" : "Field names in the record whose values are to be copied or moved to headers.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "high"
     },
     "validation" : [ ],
@@ -24,7 +24,7 @@
       "label" : "headers",
       "description" : "Header names, in the same order as the field names listed in the fields configuration property.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "importance" : "high"
     },
     "validation" : [ ],
@@ -36,7 +36,7 @@
       "label" : "operation",
       "description" : "Either <code>move</code> if the fields are to be moved to the headers (removed from the key/value), or <code>copy</code> if the fields are to be copied to the headers (retained in the key/value).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "importance" : "high"
     },
     "validation" : [ ],
@@ -49,7 +49,7 @@
       "label" : "replace.null.with.default",
       "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "importance" : "medium"
     },
     "validation" : [ ],

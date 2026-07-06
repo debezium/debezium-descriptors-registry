@@ -13,7 +13,7 @@
       "label" : "Serialized tracing span context field",
       "description" : "The name of the field containing java.util.Properties representation of serialized span context. Defaults to 'tracingspancontext' Default: tracingspancontext",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "high"
     },
@@ -27,7 +27,7 @@
       "label" : "Tracing operation name",
       "description" : "The operation name representing Debezium processing span. Default is 'debezium-read' Default: debezium-read",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "high"
     },
@@ -41,7 +41,7 @@
       "label" : "Trace only events with context field present",
       "description" : "Set to `true` when only events that have serialized context field should be traced. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "high"
     },

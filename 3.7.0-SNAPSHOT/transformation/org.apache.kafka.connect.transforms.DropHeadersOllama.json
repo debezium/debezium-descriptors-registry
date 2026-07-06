@@ -12,7 +12,7 @@
       "label" : "headers",
       "description" : "The name of the headers to be removed.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "high"
     },
     "validation" : [ ],

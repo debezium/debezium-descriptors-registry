@@ -12,7 +12,7 @@
       "label" : "Taxonomy Base Path",
       "description" : "Base path for the InstructLab taxonomy directory.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
     },
@@ -25,7 +25,7 @@
       "label" : "Taxonomies",
       "description" : "Comma-separated list of taxonomy names to configure.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "long",
       "importance" : "high"
     },
@@ -38,7 +38,7 @@
       "label" : "Taxonomy Question Mapping",
       "description" : "Mapping for the question field. Use 'value:<field>' for a value field, 'header:<name>' for a header, or a constant string.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "high"
     },
@@ -51,7 +51,7 @@
       "label" : "Taxonomy Answer Mapping",
       "description" : "Mapping for the answer field. Use 'value:<field>' for a value field, 'header:<name>' for a header, or a constant string.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "high"
     },
@@ -64,7 +64,7 @@
       "label" : "Taxonomy Context Mapping",
       "description" : "Optional mapping for the context field. Use 'value:<field>' for a value field, 'header:<name>' for a header, or a constant string.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -78,7 +78,7 @@
       "label" : "Taxonomy Topic Pattern",
       "description" : "Regular expression pattern to filter events by topic for this taxonomy. Default: .*",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -91,7 +91,7 @@
       "label" : "Taxonomy Domain",
       "description" : "Domain path for the taxonomy (e.g., 'knowledge/database/postgresql').",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "width" : "medium",
       "importance" : "high"
     },

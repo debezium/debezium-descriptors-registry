@@ -13,7 +13,7 @@
       "label" : "Controller URI",
       "description" : "Pravega controller URI. Default: tcp://localhost:9090",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
     },
@@ -26,7 +26,7 @@
       "label" : "Scope",
       "description" : "Pravega scope.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "high"
     },
@@ -40,7 +40,7 @@
       "label" : "Transaction",
       "description" : "Enable transaction support. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "medium"
     },

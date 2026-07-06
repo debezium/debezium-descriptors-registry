@@ -13,7 +13,7 @@
       "label" : "Exchange",
       "description" : "RabbitMQ exchange name. Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -27,7 +27,7 @@
       "label" : "Routing Key",
       "description" : "RabbitMQ routing key. Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -41,7 +41,7 @@
       "label" : "Auto Create Routing Key",
       "description" : "Automatically create routing key if it doesn't exist. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "low"
     },
@@ -55,7 +55,7 @@
       "label" : "Routing Key Durable",
       "description" : "Make routing key durable. Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "low"
     },
@@ -69,7 +69,7 @@
       "label" : "Routing Key Source",
       "description" : "Source for routing key value. Default: static",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -83,7 +83,7 @@
       "label" : "Routing Key From Topic Name",
       "description" : "Use topic name as routing key. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "short",
       "importance" : "low"
     },
@@ -97,7 +97,7 @@
       "label" : "Delivery Mode",
       "description" : "Message delivery mode (1=non-persistent, 2=persistent). Default: 2",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "width" : "short",
       "importance" : "medium"
     },
@@ -111,7 +111,7 @@
       "label" : "Ack Timeout (ms)",
       "description" : "Acknowledgment timeout in milliseconds. Default: 30000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 7,
       "width" : "short",
       "importance" : "medium"
     },
@@ -125,7 +125,7 @@
       "label" : "Null Value",
       "description" : "Value to use when record value is null. Default: default",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 8,
       "width" : "short",
       "importance" : "low"
     },

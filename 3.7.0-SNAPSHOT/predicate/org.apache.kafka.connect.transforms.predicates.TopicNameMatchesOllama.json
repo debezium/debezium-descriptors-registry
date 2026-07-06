@@ -12,7 +12,7 @@
       "label" : "pattern",
       "description" : "A Java regular expression for matching against the name of a record's topic.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "medium"
     },
     "validation" : [ ],

@@ -12,7 +12,7 @@
       "label" : "Column selector",
       "description" : "Comma-separated list of column selectors (regular expressions) to match TINYINT(1) columns that should be converted to boolean. Format: <table_name>.<column_name>. Example: 'inventory.products.is_active,orders.*.is_processed'",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
     },
@@ -26,7 +26,7 @@
       "label" : "Enable length checking",
       "description" : "If true, only TINYINT columns with length 1 will be converted to boolean. Set to false for MySQL 8+ where SHOW CREATE TABLE doesn't show length for TINYINT UNSIGNED. Default: true",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "medium"
     },

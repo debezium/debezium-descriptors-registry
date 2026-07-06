@@ -12,7 +12,7 @@
       "label" : "Bootstrap Servers",
       "description" : "Comma-separated list of Fluss coordinator server addresses (host:port).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "long",
       "importance" : "high"
     },
@@ -25,7 +25,7 @@
       "label" : "Default Database",
       "description" : "Default Fluss database used when resolving table paths from event destinations.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "medium",
       "importance" : "high"
     },
@@ -39,7 +39,7 @@
       "label" : "Auto-create Tables",
       "description" : "When true, automatically create Fluss tables if they do not exist, deriving the schema from the Debezium event schema. Requires the JSON converter with schemas.enable=true. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "medium"
     },
@@ -53,7 +53,7 @@
       "label" : "Maximum Retries",
       "description" : "Maximum number of retry attempts on transient write failures. Default: 5",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "medium"
     },
@@ -67,7 +67,7 @@
       "label" : "Retry Interval",
       "description" : "The initial retry interval in milliseconds. Default: 1000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "short",
       "importance" : "medium"
     },
@@ -81,7 +81,7 @@
       "label" : "Retry Maximum Interval",
       "description" : "The maximum retry interval in milliseconds. Default: 60000",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "short",
       "importance" : "medium"
     },
@@ -95,7 +95,7 @@
       "label" : "Retry Backoff Multiplier",
       "description" : "Backoff multiplier for retry intervals. Default: 2.0",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 6,
       "width" : "short",
       "importance" : "medium"
     },

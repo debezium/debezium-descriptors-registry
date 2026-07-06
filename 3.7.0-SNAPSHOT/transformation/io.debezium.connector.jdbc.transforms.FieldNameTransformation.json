@@ -13,7 +13,7 @@
       "label" : "Column Name Prefix",
       "description" : "Optional prefix to add to column names. Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "importance" : "low"
     },
     "validation" : [ ],
@@ -26,7 +26,7 @@
       "label" : "Column Name Suffix",
       "description" : "Optional suffix to add to column names. Default: ",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "importance" : "low"
     },
     "validation" : [ ],
@@ -39,7 +39,7 @@
       "label" : "Column Naming Style",
       "description" : "The style of column naming: UPPERCASE, lowercase, snake_case, camelCase, kebab-case. Default: default",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "importance" : "low"
     },
     "validation" : [ {

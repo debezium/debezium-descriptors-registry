@@ -12,7 +12,7 @@
       "label" : "AWS Region",
       "description" : "AWS region for the Kinesis stream.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "high"
     },
@@ -25,7 +25,7 @@
       "label" : "Kinesis Endpoint Override",
       "description" : "Optional Kinesis endpoint override (for local testing with LocalStack).",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 1,
       "width" : "long",
       "importance" : "low"
     },
@@ -38,7 +38,7 @@
       "label" : "AWS Credentials Profile",
       "description" : "AWS credentials profile name to use for authentication.",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -52,7 +52,7 @@
       "label" : "Batch Size",
       "description" : "Maximum number of records to send in a single batch (max 500). Default: 500",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "medium"
     },
@@ -66,7 +66,7 @@
       "label" : "Default Retries",
       "description" : "Maximum number of retry attempts for failed requests. Default: 5",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 4,
       "width" : "short",
       "importance" : "medium"
     },
@@ -80,7 +80,7 @@
       "label" : "Null Key Value",
       "description" : "Partition key to use when the record key is null. Default: default",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 5,
       "width" : "short",
       "importance" : "low"
     },

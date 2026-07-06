@@ -13,7 +13,7 @@
       "label" : "Target Format",
       "description" : "The target Geometry format to convert to. Options are 'wkb' and 'ewkb' Default: wkb",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "low"
     },

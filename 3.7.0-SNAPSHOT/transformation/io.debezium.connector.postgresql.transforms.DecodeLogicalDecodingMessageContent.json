@@ -13,7 +13,7 @@
       "label" : "Defines whether to include fields with null values to the decoded structure",
       "description" : "Defines whether to include fields with null values to the decoded structure Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9999,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "medium"
     },
