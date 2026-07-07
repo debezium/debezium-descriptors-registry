@@ -1480,6 +1480,20 @@
     } ],
     "valueDependants" : [ ]
   }, {
+    "name" : "resolve.create.table.like.schema",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Resolve CREATE TABLE LIKE reference schema",
+      "description" : "When a CREATE TABLE ... LIKE statement reference a table whose schema is not in the internal cache(e.g., excluded by table filters), automatically fetch the reference table's schema via SHOW CREATE TABLE and retry DDL parsing. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 28,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "heartbeat.interval.ms",
     "type" : "number",
     "default" : "0",
