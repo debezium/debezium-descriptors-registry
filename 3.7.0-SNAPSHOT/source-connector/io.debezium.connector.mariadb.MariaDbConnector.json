@@ -6,20 +6,6 @@
     "description" : "Captures row-level changes from a MariaDB database in near real-time."
   },
   "properties" : [ {
-    "name" : "topic.prefix",
-    "type" : "string",
-    "required" : true,
-    "display" : {
-      "label" : "Topic prefix",
-      "description" : "Topic prefix that identifies and provides a namespace for the particular database server/cluster is capturing changes. The topic prefix should be unique across all other connectors, since it is used as a prefix for all Kafka topic names that receive events emitted by this connector. Only alphanumeric characters, hyphens, dots and underscores must be accepted.",
-      "group" : "Connection",
-      "groupOrder" : 0,
-      "width" : "medium",
-      "importance" : "high"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
     "name" : "database.hostname",
     "type" : "string",
     "required" : true,
@@ -27,7 +13,7 @@
       "label" : "Hostname",
       "description" : "Resolvable hostname or IP address of the database server.",
       "group" : "Connection",
-      "groupOrder" : 1,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "high"
     },
@@ -41,7 +27,7 @@
       "label" : "Port",
       "description" : "Port of the database server. Default: 3306",
       "group" : "Connection",
-      "groupOrder" : 2,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "high"
     },
@@ -55,7 +41,7 @@
       "label" : "User",
       "description" : "Name of the database user to be used when connecting to the database.",
       "group" : "Connection",
-      "groupOrder" : 3,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "high"
     },
@@ -68,7 +54,7 @@
       "label" : "Password",
       "description" : "Password of the database user to be used when connecting to the database.",
       "group" : "Connection",
-      "groupOrder" : 4,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "high"
     },
@@ -82,7 +68,7 @@
       "label" : "Query timeout",
       "description" : "Time to wait for a query to execute, given in milliseconds. Defaults to 600 seconds (600,000 ms); zero means there is no limit. Default: 600000",
       "group" : "Connection",
-      "groupOrder" : 5,
+      "groupOrder" : 4,
       "importance" : "low"
     },
     "validation" : [ ],
@@ -95,7 +81,7 @@
       "label" : "Cluster ID",
       "description" : "A numeric ID of this database client, which must be unique across all currently-running database processes in the cluster. This connector joins the database cluster as another server (with this unique ID) so it can read the binlog.",
       "group" : "Connection",
-      "groupOrder" : 6,
+      "groupOrder" : 5,
       "width" : "long",
       "importance" : "high"
     },
@@ -227,6 +213,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "topic.prefix",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Topic prefix",
+      "description" : "Topic prefix that identifies and provides a namespace for the particular database server/cluster is capturing changes. The topic prefix should be unique across all other connectors, since it is used as a prefix for all Kafka topic names that receive events emitted by this connector. Only alphanumeric characters, hyphens, dots and underscores must be accepted.",
+      "group" : "Connector",
+      "groupOrder" : 0,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "tombstones.on.delete",
     "type" : "boolean",
     "default" : "true",
@@ -234,7 +234,7 @@
       "label" : "Change the behaviour of Debezium with regards to delete operations",
       "description" : "Whether delete operations should be represented by a delete event and a subsequent tombstone event (true) or only by a delete event (false). Emitting the tombstone event (the default behavior) allows Kafka to completely delete all events pertaining to the given key once the source record got deleted. Default: true",
       "group" : "Connector",
-      "groupOrder" : 0,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "medium"
     },
@@ -248,7 +248,7 @@
       "label" : "Binary Handling",
       "description" : "Specify how binary (blob, binary, etc.) columns should be represented in change events, including: 'bytes' represents binary data as byte array (default); 'base64' represents binary data as base64-encoded string; 'base64-url-safe' represents binary data as base64-url-safe-encoded string; 'hex' represents binary data as hex-encoded (base16) string Default: bytes",
       "group" : "Connector",
-      "groupOrder" : 1,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "low"
     },
@@ -265,7 +265,7 @@
       "label" : "Schema Name Adjustment",
       "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 2,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "low"
     },
@@ -282,7 +282,7 @@
       "label" : "Field Name Adjustment",
       "description" : "Specify how field names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 3,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "low"
     },
@@ -299,7 +299,7 @@
       "label" : "Event converting failure handling mode",
       "description" : "Specify how failures during converting of event should be handled, including: 'fail' throw an exception that the column of event conversion is failed with unmatched schema type, causing the connector to be stopped. it could need schema recovery to covert successfully; 'warn' (the default) the value of column of event that conversion failed will be null and be logged with warn level; 'skip' the value of column of event that conversion failed will be null and be logged with debug level. Default: warn",
       "group" : "Connector",
-      "groupOrder" : 4,
+      "groupOrder" : 5,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -316,7 +316,7 @@
       "label" : "Topic naming strategy class",
       "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc. Default: io.debezium.schema.SchemaTopicNamingStrategy",
       "group" : "Connector",
-      "groupOrder" : 5,
+      "groupOrder" : 6,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -329,7 +329,7 @@
       "label" : "Notification topic name",
       "description" : "The name of the topic for the notifications. This is required in case 'sink' is in the list of enabled channels",
       "group" : "Connector",
-      "groupOrder" : 6,
+      "groupOrder" : 7,
       "width" : "long",
       "importance" : "high"
     },
@@ -342,7 +342,7 @@
       "label" : "Customize metric tags",
       "description" : "The custom metric tags will accept key-value pairs to customize the MBean object name which should be appended the end of regular name, each key would represent a tag for the MBean object name, and the corresponding value would be the value of that tag the key is. For example: k1=v1,k2=v2",
       "group" : "Connector",
-      "groupOrder" : 7,
+      "groupOrder" : 8,
       "width" : "medium",
       "importance" : "low"
     },
@@ -356,7 +356,7 @@
       "label" : "Decimal Handling",
       "description" : "Specify how DECIMAL and NUMERIC columns should be represented in change events, including: 'precise' (the default) uses java.math.BigDecimal to represent values, which are encoded in the change events using a binary representation and Kafka Connect's 'org.apache.kafka.connect.data.Decimal' type; 'string' uses string to represent values; 'double' represents values using Java's 'double', which may not offer the precision but will be far easier to use in consumers. Default: precise",
       "group" : "Connector",
-      "groupOrder" : 8,
+      "groupOrder" : 9,
       "width" : "short",
       "importance" : "medium"
     },
@@ -373,7 +373,7 @@
       "label" : "Include database schema changes",
       "description" : "Whether the connector should publish changes in the database schema to a Kafka topic with the same name as the database server ID. Each schema change will be recorded using a key that contains the database name and whose value include logical description of the new schema and optionally the DDL statement(s). The  This is independent of how the connector internally records database schema history. Default: true",
       "group" : "Connector",
-      "groupOrder" : 9,
+      "groupOrder" : 10,
       "width" : "short",
       "importance" : "medium"
     },
@@ -387,7 +387,7 @@
       "label" : "Include Table and Column Comments",
       "description" : "Whether the connector parse table and column's comment to metadata object. Note: Enable this option will bring the implications on memory usage. The number and size of ColumnImpl objects is what largely impacts how much memory is consumed by the Debezium connectors, and adding a String to each of them can potentially be quite heavy. The Default: false",
       "group" : "Connector",
-      "groupOrder" : 10,
+      "groupOrder" : 11,
       "width" : "short",
       "importance" : "medium"
     },
@@ -401,7 +401,7 @@
       "label" : "The mode for handling bigint-unsigned values",
       "description" : "Specify how BIGINT UNSIGNED columns should be represented in change events, including: 'precise' uses java.math.BigDecimal to represent values, which are encoded in the change events using a binary representation and Kafka Connect's 'org.apache.kafka.connect.data.Decimal' type; 'long' (the default) represents values using Java's 'long', which may not offer the precision but will be far easier to use in consumers. Default: long",
       "group" : "Connector",
-      "groupOrder" : 11,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "medium"
     },
@@ -418,7 +418,7 @@
       "label" : "The time precision mode to be used",
       "description" : "Time, date and timestamps can be represented with different kinds of precisions, including: 'adaptive_time_microseconds': the precision of date and timestamp values is based the database column's precision; but time fields always use microseconds precision; 'connect': always represents time, date and timestamp values using Kafka Connect's built-in representations for Time, Date, and Timestamp, which uses millisecond precision regardless of the database columns' precision. Default: adaptive_time_microseconds",
       "group" : "Connector",
-      "groupOrder" : 12,
+      "groupOrder" : 13,
       "width" : "short",
       "importance" : "medium"
     },
@@ -435,7 +435,7 @@
       "label" : "Enable Time Adjuster",
       "description" : "The database allows the user to insert year value as either 2-digit or 4-digit. In case of two digit the value is automatically mapped into 1970 - 2069.false - delegates the implicit conversion to the database; true - (the default) Debezium makes the conversion Default: true",
       "group" : "Connector",
-      "groupOrder" : 13,
+      "groupOrder" : 14,
       "width" : "short",
       "importance" : "low"
     },
@@ -449,7 +449,7 @@
       "label" : "Filter DML events",
       "description" : "When set to true, only produce DML events for transactions that were written on the server with matching GTIDs defined by the `gtid.source.includes` or `gtid.source.excludes`, if they were specified. Default: true",
       "group" : "Connector",
-      "groupOrder" : 14,
+      "groupOrder" : 15,
       "width" : "short",
       "importance" : "medium"
     },
@@ -463,7 +463,7 @@
       "label" : "Source info struct maker class",
       "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.mariadb.MariaDbSourceInfoStructMaker",
       "group" : "Connector",
-      "groupOrder" : 15,
+      "groupOrder" : 16,
       "width" : "medium",
       "importance" : "low"
     },

@@ -6,20 +6,6 @@
     "description" : "Captures row-level changes from an Oracle database in near real-time."
   },
   "properties" : [ {
-    "name" : "topic.prefix",
-    "type" : "string",
-    "required" : true,
-    "display" : {
-      "label" : "Topic prefix",
-      "description" : "Topic prefix that identifies and provides a namespace for the particular database server/cluster is capturing changes. The topic prefix should be unique across all other connectors, since it is used as a prefix for all Kafka topic names that receive events emitted by this connector. Only alphanumeric characters, hyphens, dots and underscores must be accepted.",
-      "group" : "Connection",
-      "groupOrder" : 0,
-      "width" : "medium",
-      "importance" : "high"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
     "name" : "database.hostname",
     "type" : "string",
     "required" : true,
@@ -27,7 +13,7 @@
       "label" : "Hostname",
       "description" : "Resolvable hostname or IP address of the database server.",
       "group" : "Connection",
-      "groupOrder" : 1,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "high"
     },
@@ -41,7 +27,7 @@
       "label" : "Port",
       "description" : "Port of the database server. Default: 1528",
       "group" : "Connection",
-      "groupOrder" : 2,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "high"
     },
@@ -55,7 +41,7 @@
       "label" : "User",
       "description" : "Name of the database user to be used when connecting to the database.",
       "group" : "Connection",
-      "groupOrder" : 3,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "high"
     },
@@ -68,7 +54,7 @@
       "label" : "Password",
       "description" : "Password of the database user to be used when connecting to the database.",
       "group" : "Connection",
-      "groupOrder" : 4,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "high"
     },
@@ -82,7 +68,7 @@
       "label" : "Database",
       "description" : "The name of the database from which the connector should capture changes",
       "group" : "Connection",
-      "groupOrder" : 5,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "high"
     },
@@ -96,7 +82,7 @@
       "label" : "Query timeout",
       "description" : "Time to wait for a query to execute, given in milliseconds. Defaults to 600 seconds (600,000 ms); zero means there is no limit. Default: 600000",
       "group" : "Connection",
-      "groupOrder" : 6,
+      "groupOrder" : 5,
       "importance" : "low"
     },
     "validation" : [ ],
@@ -108,7 +94,7 @@
       "label" : "PDB name",
       "description" : "Name of the pluggable database when working with a multi-tenant set-up. The CDB name must be given via database.dbname in this case.",
       "group" : "Connection",
-      "groupOrder" : 7,
+      "groupOrder" : 6,
       "width" : "medium",
       "importance" : "high"
     },
@@ -122,7 +108,7 @@
       "label" : "XStream outbound server name",
       "description" : "Name of the XStream Outbound server to connect to.",
       "group" : "Connection",
-      "groupOrder" : 8,
+      "groupOrder" : 7,
       "width" : "medium",
       "importance" : "high"
     },
@@ -135,7 +121,7 @@
       "label" : "Oracle RAC nodes",
       "description" : "A comma-separated list of RAC node hostnames or ip addresses",
       "group" : "Connection",
-      "groupOrder" : 9,
+      "groupOrder" : 8,
       "width" : "short",
       "importance" : "high"
     },
@@ -148,7 +134,7 @@
       "label" : "Complete JDBC URL",
       "description" : "Complete JDBC URL as an alternative to specifying hostname, port and database provided as a way to support alternative connection scenarios.",
       "group" : "Connection",
-      "groupOrder" : 10,
+      "groupOrder" : 9,
       "width" : "long",
       "importance" : "high"
     },
@@ -161,7 +147,7 @@
       "label" : "The secondary Oracle instance database name",
       "description" : "The secondary Oracle instance database name, if different from primary",
       "group" : "Connection",
-      "groupOrder" : 11,
+      "groupOrder" : 10,
       "width" : "medium",
       "importance" : "low"
     },
@@ -174,7 +160,7 @@
       "label" : "The secondary Oracle instance host name",
       "description" : "The secondary Oracle instance where changes will be streamed",
       "group" : "Connection",
-      "groupOrder" : 12,
+      "groupOrder" : 11,
       "width" : "medium",
       "importance" : "low"
     },
@@ -188,7 +174,7 @@
       "label" : "The secondary Oracle instance port",
       "description" : "The secondary Oracle instance port where changes will be streamed Default: 1528",
       "group" : "Connection",
-      "groupOrder" : 13,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "low"
     },
@@ -201,7 +187,7 @@
       "label" : "The secondary Oracle instance connection string",
       "description" : "The secondary Oracle instance connection string URL where changes will be streamed",
       "group" : "Connection",
-      "groupOrder" : 14,
+      "groupOrder" : 13,
       "width" : "long",
       "importance" : "low"
     },
@@ -1042,6 +1028,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "topic.prefix",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Topic prefix",
+      "description" : "Topic prefix that identifies and provides a namespace for the particular database server/cluster is capturing changes. The topic prefix should be unique across all other connectors, since it is used as a prefix for all Kafka topic names that receive events emitted by this connector. Only alphanumeric characters, hyphens, dots and underscores must be accepted.",
+      "group" : "Connector",
+      "groupOrder" : 0,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "tombstones.on.delete",
     "type" : "boolean",
     "default" : "true",
@@ -1049,7 +1049,7 @@
       "label" : "Change the behaviour of Debezium with regards to delete operations",
       "description" : "Whether delete operations should be represented by a delete event and a subsequent tombstone event (true) or only by a delete event (false). Emitting the tombstone event (the default behavior) allows Kafka to completely delete all events pertaining to the given key once the source record got deleted. Default: true",
       "group" : "Connector",
-      "groupOrder" : 0,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "medium"
     },
@@ -1063,7 +1063,7 @@
       "label" : "Binary Handling",
       "description" : "Specify how binary (blob, binary, etc.) columns should be represented in change events, including: 'bytes' represents binary data as byte array (default); 'base64' represents binary data as base64-encoded string; 'base64-url-safe' represents binary data as base64-url-safe-encoded string; 'hex' represents binary data as hex-encoded (base16) string Default: bytes",
       "group" : "Connector",
-      "groupOrder" : 1,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "low"
     },
@@ -1080,7 +1080,7 @@
       "label" : "Schema Name Adjustment",
       "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 2,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "low"
     },
@@ -1097,7 +1097,7 @@
       "label" : "Field Name Adjustment",
       "description" : "Specify how field names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 3,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "low"
     },
@@ -1114,7 +1114,7 @@
       "label" : "Event converting failure handling mode",
       "description" : "Specify how failures during converting of event should be handled, including: 'fail' throw an exception that the column of event conversion is failed with unmatched schema type, causing the connector to be stopped. it could need schema recovery to covert successfully; 'warn' (the default) the value of column of event that conversion failed will be null and be logged with warn level; 'skip' the value of column of event that conversion failed will be null and be logged with debug level. Default: warn",
       "group" : "Connector",
-      "groupOrder" : 4,
+      "groupOrder" : 5,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -1131,7 +1131,7 @@
       "label" : "Topic naming strategy class",
       "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc. Default: io.debezium.schema.SchemaTopicNamingStrategy",
       "group" : "Connector",
-      "groupOrder" : 5,
+      "groupOrder" : 6,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -1144,7 +1144,7 @@
       "label" : "Notification topic name",
       "description" : "The name of the topic for the notifications. This is required in case 'sink' is in the list of enabled channels",
       "group" : "Connector",
-      "groupOrder" : 6,
+      "groupOrder" : 7,
       "width" : "long",
       "importance" : "high"
     },
@@ -1157,7 +1157,7 @@
       "label" : "Customize metric tags",
       "description" : "The custom metric tags will accept key-value pairs to customize the MBean object name which should be appended the end of regular name, each key would represent a tag for the MBean object name, and the corresponding value would be the value of that tag the key is. For example: k1=v1,k2=v2",
       "group" : "Connector",
-      "groupOrder" : 7,
+      "groupOrder" : 8,
       "width" : "medium",
       "importance" : "low"
     },
@@ -1171,7 +1171,7 @@
       "label" : "Decimal Handling",
       "description" : "Specify how DECIMAL and NUMERIC columns should be represented in change events, including: 'precise' (the default) uses java.math.BigDecimal to represent values, which are encoded in the change events using a binary representation and Kafka Connect's 'org.apache.kafka.connect.data.Decimal' type; 'string' uses string to represent values; 'double' represents values using Java's 'double', which may not offer the precision but will be far easier to use in consumers. Default: precise",
       "group" : "Connector",
-      "groupOrder" : 8,
+      "groupOrder" : 9,
       "width" : "short",
       "importance" : "medium"
     },
@@ -1188,7 +1188,7 @@
       "label" : "Time Precision",
       "description" : "Time, date, and timestamps can be represented with different kinds of precisions, including: 'adaptive' (the default) bases the precision of time, date, and timestamp values on the database column's precision; 'adaptive_time_microseconds' like 'adaptive' mode, but TIME fields always use microseconds precision; 'connect' always represents time, date, and timestamp values using Kafka Connect's built-in representations for Time, Date, and Timestamp, which uses millisecond precision regardless of the database columns' precision; 'isostring' represents time, date, and timestamp values as ISO-8601 formatted strings at the UTC time zone; 'microseconds' always represents time, date, and timestamp values using microsecond precision; 'nanoseconds' always represents time, date, and timestamp values using nanosecond precision. Default: adaptive",
       "group" : "Connector",
-      "groupOrder" : 9,
+      "groupOrder" : 10,
       "width" : "short",
       "importance" : "medium"
     },
@@ -1205,7 +1205,7 @@
       "label" : "Include database schema changes",
       "description" : "Whether the connector should publish changes in the database schema to a Kafka topic with the same name as the database server ID. Each schema change will be recorded using a key that contains the database name and whose value include logical description of the new schema and optionally the DDL statement(s). The  This is independent of how the connector internally records database schema history. Default: true",
       "group" : "Connector",
-      "groupOrder" : 10,
+      "groupOrder" : 11,
       "width" : "short",
       "importance" : "medium"
     },
@@ -1219,7 +1219,7 @@
       "label" : "Include Table and Column Comments",
       "description" : "Whether the connector parse table and column's comment to metadata object. Note: Enable this option will bring the implications on memory usage. The number and size of ColumnImpl objects is what largely impacts how much memory is consumed by the Debezium connectors, and adding a String to each of them can potentially be quite heavy. The Default: false",
       "group" : "Connector",
-      "groupOrder" : 11,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "medium"
     },
@@ -1233,7 +1233,7 @@
       "label" : "Interval Handling",
       "description" : "Specify how INTERVAL columns should be represented in change events, including: 'string' represents values as an exact ISO formatted string; 'numeric' (default) represents values using the inexact conversion into microseconds Default: numeric",
       "group" : "Connector",
-      "groupOrder" : 12,
+      "groupOrder" : 13,
       "width" : "medium",
       "importance" : "low"
     },
@@ -1250,7 +1250,7 @@
       "label" : "Unavailable value placeholder",
       "description" : "Specify the constant that will be provided by Debezium to indicate that the original value is unavailable and not provided by the database. Default: __debezium_unavailable_value",
       "group" : "Connector",
-      "groupOrder" : 13,
+      "groupOrder" : 14,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -1264,7 +1264,7 @@
       "label" : "Use legacy decimal handling strategy",
       "description" : "Uses the legacy decimal handling behavior before DBZ-7882 Default: false",
       "group" : "Connector",
-      "groupOrder" : 14,
+      "groupOrder" : 15,
       "width" : "short",
       "importance" : "low"
     },
@@ -1278,7 +1278,7 @@
       "label" : "Source info struct maker class",
       "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.oracle.OracleSourceInfoStructMaker",
       "group" : "Connector",
-      "groupOrder" : 15,
+      "groupOrder" : 16,
       "width" : "medium",
       "importance" : "low"
     },
@@ -1291,7 +1291,7 @@
       "label" : "Signaling data collection",
       "description" : "The name of the data collection that is used to send signals/commands to Debezium. For multi-partition mode connectors, multiple signal data collections can be specified as a comma-separated list. Signaling is disabled when not set.",
       "group" : "Connector",
-      "groupOrder" : 16,
+      "groupOrder" : 17,
       "width" : "medium",
       "importance" : "medium"
     },

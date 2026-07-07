@@ -6,27 +6,13 @@
     "description" : "Captures document changes from a MongoDB database in near real-time."
   },
   "properties" : [ {
-    "name" : "topic.prefix",
-    "type" : "string",
-    "required" : true,
-    "display" : {
-      "label" : "Topic prefix",
-      "description" : "Topic prefix that identifies and provides a namespace for the particular database server/cluster is capturing changes. The topic prefix should be unique across all other connectors, since it is used as a prefix for all Kafka topic names that receive events emitted by this connector. Only alphanumeric characters, hyphens, dots and underscores must be accepted.",
-      "group" : "Connection",
-      "groupOrder" : 0,
-      "width" : "medium",
-      "importance" : "high"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
     "name" : "mongodb.connection.string",
     "type" : "string",
     "display" : {
       "label" : "Connection String",
       "description" : "Database connection string.",
       "group" : "Connection",
-      "groupOrder" : 1,
+      "groupOrder" : 0,
       "width" : "medium",
       "importance" : "high"
     },
@@ -39,7 +25,7 @@
       "label" : "User",
       "description" : "Database user for connecting to MongoDB, if necessary.",
       "group" : "Connection",
-      "groupOrder" : 3,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "high"
     },
@@ -52,7 +38,7 @@
       "label" : "Password",
       "description" : "Password to be used when connecting to MongoDB, if necessary.",
       "group" : "Connection",
-      "groupOrder" : 4,
+      "groupOrder" : 3,
       "width" : "short",
       "importance" : "high"
     },
@@ -66,7 +52,7 @@
       "label" : "Credentials Database",
       "description" : "Database containing user credentials. Default: admin",
       "group" : "Connection",
-      "groupOrder" : 5,
+      "groupOrder" : 4,
       "width" : "short",
       "importance" : "medium"
     },
@@ -80,7 +66,7 @@
       "label" : "Connect Timeout MS",
       "description" : "The connection timeout, given in milliseconds. Defaults to 10 seconds (10,000 ms). Default: 10000",
       "group" : "Connection",
-      "groupOrder" : 6,
+      "groupOrder" : 5,
       "width" : "short",
       "importance" : "low"
     },
@@ -94,7 +80,7 @@
       "label" : "Heartbeat frequency ms",
       "description" : "The frequency that the cluster monitor attempts to reach each server. Defaults to 10 seconds (10,000 ms). Default: 10000",
       "group" : "Connection",
-      "groupOrder" : 7,
+      "groupOrder" : 6,
       "width" : "short",
       "importance" : "low"
     },
@@ -108,7 +94,7 @@
       "label" : "Socket timeout MS",
       "description" : "The socket timeout, given in milliseconds. Defaults to 0 ms. Default: 0",
       "group" : "Connection",
-      "groupOrder" : 8,
+      "groupOrder" : 7,
       "width" : "short",
       "importance" : "low"
     },
@@ -122,7 +108,7 @@
       "label" : "Server selection timeout MS",
       "description" : "The server selection timeout, given in milliseconds. Defaults to 10 seconds (10,000 ms). Default: 30000",
       "group" : "Connection",
-      "groupOrder" : 9,
+      "groupOrder" : 8,
       "width" : "short",
       "importance" : "low"
     },
@@ -136,7 +122,7 @@
       "label" : "Replica membership poll interval (ms)",
       "description" : "Interval for looking for new, removed, or changed replica sets, given in milliseconds. Defaults to 30 seconds (30,000 ms). Default: 30000",
       "group" : "Connection",
-      "groupOrder" : 10,
+      "groupOrder" : 9,
       "width" : "short",
       "importance" : "medium"
     },
@@ -150,7 +136,7 @@
       "label" : "Enable SSL connection to MongoDB",
       "description" : "Should connector use SSL to connect to MongoDB instances Default: false",
       "group" : "Connection",
-      "groupOrder" : 11,
+      "groupOrder" : 10,
       "width" : "short",
       "importance" : "medium"
     },
@@ -164,7 +150,7 @@
       "label" : "Allow invalid hostnames for SSL connection",
       "description" : "Whether invalid host names are allowed when using SSL. If true the connection will not prevent man-in-the-middle attacks Default: false",
       "group" : "Connection",
-      "groupOrder" : 12,
+      "groupOrder" : 11,
       "width" : "short",
       "importance" : "medium"
     },
@@ -177,7 +163,7 @@
       "label" : "Server's oplog streaming cursor max await time",
       "description" : "The maximum processing time in milliseconds to wait for the oplog cursor to process a single poll request",
       "group" : "Connection",
-      "groupOrder" : 13,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "low"
     },
@@ -198,6 +184,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "topic.prefix",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Topic prefix",
+      "description" : "Topic prefix that identifies and provides a namespace for the particular database server/cluster is capturing changes. The topic prefix should be unique across all other connectors, since it is used as a prefix for all Kafka topic names that receive events emitted by this connector. Only alphanumeric characters, hyphens, dots and underscores must be accepted.",
+      "group" : "Connector",
+      "groupOrder" : 0,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "tombstones.on.delete",
     "type" : "boolean",
     "default" : "true",
@@ -205,7 +205,7 @@
       "label" : "Change the behaviour of Debezium with regards to delete operations",
       "description" : "Whether delete operations should be represented by a delete event and a subsequent tombstone event (true) or only by a delete event (false). Emitting the tombstone event (the default behavior) allows Kafka to completely delete all events pertaining to the given key once the source record got deleted. Default: true",
       "group" : "Connector",
-      "groupOrder" : 0,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "medium"
     },
@@ -219,7 +219,7 @@
       "label" : "Binary Handling",
       "description" : "Specify how binary (blob, binary, etc.) columns should be represented in change events, including: 'bytes' represents binary data as byte array (default); 'base64' represents binary data as base64-encoded string; 'base64-url-safe' represents binary data as base64-url-safe-encoded string; 'hex' represents binary data as hex-encoded (base16) string Default: bytes",
       "group" : "Connector",
-      "groupOrder" : 1,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "low"
     },
@@ -236,7 +236,7 @@
       "label" : "Schema Name Adjustment",
       "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 2,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "low"
     },
@@ -253,7 +253,7 @@
       "label" : "Field Name Adjustment",
       "description" : "Specify how field names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 3,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "low"
     },
@@ -270,7 +270,7 @@
       "label" : "Event converting failure handling mode",
       "description" : "Specify how failures during converting of event should be handled, including: 'fail' throw an exception that the column of event conversion is failed with unmatched schema type, causing the connector to be stopped. it could need schema recovery to covert successfully; 'warn' (the default) the value of column of event that conversion failed will be null and be logged with warn level; 'skip' the value of column of event that conversion failed will be null and be logged with debug level. Default: warn",
       "group" : "Connector",
-      "groupOrder" : 4,
+      "groupOrder" : 5,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -287,7 +287,7 @@
       "label" : "Topic naming strategy class",
       "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc. Default: io.debezium.schema.SchemaTopicNamingStrategy",
       "group" : "Connector",
-      "groupOrder" : 5,
+      "groupOrder" : 6,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -300,7 +300,7 @@
       "label" : "Notification topic name",
       "description" : "The name of the topic for the notifications. This is required in case 'sink' is in the list of enabled channels",
       "group" : "Connector",
-      "groupOrder" : 6,
+      "groupOrder" : 7,
       "width" : "long",
       "importance" : "high"
     },
@@ -313,7 +313,7 @@
       "label" : "Customize metric tags",
       "description" : "The custom metric tags will accept key-value pairs to customize the MBean object name which should be appended the end of regular name, each key would represent a tag for the MBean object name, and the corresponding value would be the value of that tag the key is. For example: k1=v1,k2=v2",
       "group" : "Connector",
-      "groupOrder" : 7,
+      "groupOrder" : 8,
       "width" : "medium",
       "importance" : "low"
     },
@@ -327,7 +327,7 @@
       "label" : "Snapshot mode",
       "description" : "The criteria for running a snapshot upon startup of the connector. Select one of the following snapshot options: 'initial' (default):  If the connector does not detect any offsets for the logical server name, it runs a snapshot that captures the current full state of the configured tables. After the snapshot completes, the connector begins to stream changes from the oplog. 'never': The connector does not run a snapshot. Upon first startup, the connector immediately begins reading from the beginning of the oplog. Default: initial",
       "group" : "Connector",
-      "groupOrder" : 8,
+      "groupOrder" : 9,
       "width" : "short",
       "importance" : "low"
     },
@@ -344,7 +344,7 @@
       "label" : "Capture mode",
       "description" : "The method used to capture changes from MongoDB server. Options include: 'change_streams' to capture changes via MongoDB Change Streams, update events do not contain full documents; 'change_streams_update_full' (the default) to capture changes via MongoDB Change Streams, update events contain full documents Default: change_streams_update_full",
       "group" : "Connector",
-      "groupOrder" : 9,
+      "groupOrder" : 10,
       "width" : "short",
       "importance" : "medium"
     },
@@ -361,7 +361,7 @@
       "label" : "Source info struct maker class",
       "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.mongodb.MongoDbSourceInfoStructMaker",
       "group" : "Connector",
-      "groupOrder" : 10,
+      "groupOrder" : 11,
       "width" : "medium",
       "importance" : "low"
     },
