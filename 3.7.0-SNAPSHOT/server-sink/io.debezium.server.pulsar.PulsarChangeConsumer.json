@@ -1,6 +1,6 @@
 {
-  "name" : "Debezium Pulsar Change Consumer",
-  "type" : "unknown",
+  "name" : "Debezium Pulsar Server Sink",
+  "type" : "server-sink",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""

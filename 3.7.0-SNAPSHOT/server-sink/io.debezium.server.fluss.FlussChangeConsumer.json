@@ -1,6 +1,6 @@
 {
-  "name" : "Debezium Fluss Change Consumer",
-  "type" : "unknown",
+  "name" : "Debezium Fluss Server Sink",
+  "type" : "server-sink",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""

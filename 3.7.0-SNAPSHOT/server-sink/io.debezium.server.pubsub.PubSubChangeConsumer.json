@@ -1,6 +1,6 @@
 {
-  "name" : "Debezium PubSub Change Consumer",
-  "type" : "unknown",
+  "name" : "Debezium PubSub Server Sink",
+  "type" : "server-sink",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""

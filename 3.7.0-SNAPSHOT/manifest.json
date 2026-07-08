@@ -2,9 +2,9 @@
     "schemaVersion": "1.0",
     "build": {
         "version": "3.7.0-SNAPSHOT",
-        "timestamp": "2026-07-07T14:27:56Z",
+        "timestamp": "2026-07-08T14:30:30Z",
         "sourceRepository": "debezium/debezium",
-        "sourceCommit": "d658dba830",
+        "sourceCommit": "cb95a6d8c9",
         "sourceBranch": "main"
     },
     "components": {
@@ -264,6 +264,140 @@
                 "name": "Kafka Topic Name Matches",
                 "description": "",
                 "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.TopicNameMatchesVoyageAi.json"
+            }
+        ],
+        "server-sink": [
+            {
+                "class": "io.debezium.server.eventhubs.EventHubsChangeConsumer",
+                "name": "Debezium Event Hubs Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.eventhubs.EventHubsChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.fluss.FlussChangeConsumer",
+                "name": "Debezium Fluss Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.fluss.FlussChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.http.HttpChangeConsumer",
+                "name": "Debezium HTTP Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.http.HttpChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.infinispan.InfinispanSinkConsumer",
+                "name": "Debezium Infinispan Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.infinispan.InfinispanSinkConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.instructlab.InstructLabSinkConsumer",
+                "name": "Debezium InstructLab Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.instructlab.InstructLabSinkConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.jdbc.JdbcChangeConsumer",
+                "name": "Debezium JDBC Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.jdbc.JdbcChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.kafka.KafkaChangeConsumer",
+                "name": "Debezium Kafka Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.kafka.KafkaChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.kinesis.KinesisChangeConsumer",
+                "name": "Debezium Kinesis Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.kinesis.KinesisChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.milvus.MilvusChangeConsumer",
+                "name": "Debezium Milvus Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.milvus.MilvusChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer",
+                "name": "Debezium NATS JetStream Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.nats.streaming.NatsStreamingChangeConsumer",
+                "name": "Debezium NATS Streaming Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.nats.streaming.NatsStreamingChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.pravega.PravegaChangeConsumer",
+                "name": "Debezium Pravega Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.pravega.PravegaChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.pubsub.PubSubChangeConsumer",
+                "name": "Debezium PubSub Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.pubsub.PubSubChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.pubsub.PubSubLiteChangeConsumer",
+                "name": "Debezium PubSub Lite Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.pubsub.PubSubLiteChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.pulsar.PulsarChangeConsumer",
+                "name": "Debezium Pulsar Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.pulsar.PulsarChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.qdrant.QdrantChangeConsumer",
+                "name": "Debezium Qdrant Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.qdrant.QdrantChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer",
+                "name": "Debezium RabbitMQ Stream Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer",
+                "name": "Debezium RabbitMQ Stream Native Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.redis.RedisStreamChangeConsumer",
+                "name": "Debezium Redis Stream Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.redis.RedisStreamChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.rocketmq.RocketMqChangeConsumer",
+                "name": "Debezium RocketMQ Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.rocketmq.RocketMqChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.sns.SnsChangeConsumer",
+                "name": "Debezium SNS Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.sns.SnsChangeConsumer.json"
+            },
+            {
+                "class": "io.debezium.server.sqs.SqsChangeConsumer",
+                "name": "Debezium SQS Server Sink",
+                "description": "",
+                "descriptor": "server-sink/io.debezium.server.sqs.SqsChangeConsumer.json"
             }
         ],
         "sink-connector": [
@@ -1266,140 +1400,6 @@
                 "name": "Kafka Value To Key",
                 "description": "",
                 "descriptor": "transformation/org.apache.kafka.connect.transforms.ValueToKeyVoyageAi.json"
-            }
-        ],
-        "unknown": [
-            {
-                "class": "io.debezium.server.eventhubs.EventHubsChangeConsumer",
-                "name": "Debezium Event Hubs Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.eventhubs.EventHubsChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.fluss.FlussChangeConsumer",
-                "name": "Debezium Fluss Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.fluss.FlussChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.http.HttpChangeConsumer",
-                "name": "Debezium HTTP Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.http.HttpChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.infinispan.InfinispanSinkConsumer",
-                "name": "Debezium Infinispan Sink Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.infinispan.InfinispanSinkConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.instructlab.InstructLabSinkConsumer",
-                "name": "Debezium InstructLab Sink Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.instructlab.InstructLabSinkConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.jdbc.JdbcChangeConsumer",
-                "name": "Debezium JDBC Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.jdbc.JdbcChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.kafka.KafkaChangeConsumer",
-                "name": "Debezium Kafka Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.kafka.KafkaChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.kinesis.KinesisChangeConsumer",
-                "name": "Debezium Kinesis Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.kinesis.KinesisChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.milvus.MilvusChangeConsumer",
-                "name": "Debezium Milvus Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.milvus.MilvusChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer",
-                "name": "Debezium NATS JetStream Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.nats.streaming.NatsStreamingChangeConsumer",
-                "name": "Debezium NATS Streaming Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.nats.streaming.NatsStreamingChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.pravega.PravegaChangeConsumer",
-                "name": "Debezium Pravega Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.pravega.PravegaChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.pubsub.PubSubChangeConsumer",
-                "name": "Debezium PubSub Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.pubsub.PubSubChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.pubsub.PubSubLiteChangeConsumer",
-                "name": "Debezium PubSub Lite Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.pubsub.PubSubLiteChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.pulsar.PulsarChangeConsumer",
-                "name": "Debezium Pulsar Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.pulsar.PulsarChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.qdrant.QdrantChangeConsumer",
-                "name": "Debezium Qdrant Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.qdrant.QdrantChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer",
-                "name": "Debezium RabbitMQ Stream Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer",
-                "name": "Debezium RabbitMQ Stream Native Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.redis.RedisStreamChangeConsumer",
-                "name": "Debezium Redis Stream Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.redis.RedisStreamChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.rocketmq.RocketMqChangeConsumer",
-                "name": "Debezium RocketMQ Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.rocketmq.RocketMqChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.sns.SnsChangeConsumer",
-                "name": "Debezium SNS Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.sns.SnsChangeConsumer.json"
-            },
-            {
-                "class": "io.debezium.server.sqs.SqsChangeConsumer",
-                "name": "Debezium SQS Change Consumer",
-                "description": "",
-                "descriptor": "unknown/io.debezium.server.sqs.SqsChangeConsumer.json"
             }
         ]
     }

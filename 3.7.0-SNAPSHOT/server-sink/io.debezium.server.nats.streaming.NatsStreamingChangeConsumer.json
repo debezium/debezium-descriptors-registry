@@ -1,17 +1,16 @@
 {
-  "name" : "Debezium Milvus Change Consumer",
-  "type" : "unknown",
+  "name" : "Debezium NATS Streaming Server Sink",
+  "type" : "server-sink",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""
   },
   "properties" : [ {
-    "name" : "uri",
+    "name" : "url",
     "type" : "string",
-    "default" : "http://localhost:19530",
     "display" : {
-      "label" : "URI",
-      "description" : "Milvus server URI. Default: http://localhost:19530",
+      "label" : "URL",
+      "description" : "NATS server URL.",
       "group" : "Advanced",
       "groupOrder" : 0,
       "width" : "long",
@@ -20,12 +19,11 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "database",
+    "name" : "cluster.id",
     "type" : "string",
-    "default" : "default",
     "display" : {
-      "label" : "Database",
-      "description" : "Milvus database name. Default: default",
+      "label" : "Cluster ID",
+      "description" : "NATS Streaming cluster ID.",
       "group" : "Advanced",
       "groupOrder" : 1,
       "width" : "medium",
@@ -34,16 +32,15 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "unwind.json",
-    "type" : "boolean",
-    "default" : "false",
+    "name" : "client.id",
+    "type" : "string",
     "display" : {
-      "label" : "Unwind JSON",
-      "description" : "Unwind JSON fields. Default: false",
+      "label" : "Client ID",
+      "description" : "NATS Streaming client ID.",
       "group" : "Advanced",
       "groupOrder" : 2,
-      "width" : "short",
-      "importance" : "medium"
+      "width" : "medium",
+      "importance" : "high"
     },
     "validation" : [ ],
     "valueDependants" : [ ]

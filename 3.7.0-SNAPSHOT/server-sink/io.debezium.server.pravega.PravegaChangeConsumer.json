@@ -1,6 +1,6 @@
 {
-  "name" : "Debezium Pravega Change Consumer",
-  "type" : "unknown",
+  "name" : "Debezium Pravega Server Sink",
+  "type" : "server-sink",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""

@@ -983,6 +983,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "legacy.snapshot.max.threads",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Enforces using a single thread per table regardless of table size",
+      "description" : "When enabled, uses the legacy table-per-thread parallel snapshot algorithm. When set to false (the default), tables are split into chunks and processed across all snapshot threads, allowing for higher concurrency for snapshots. Default: false",
+      "group" : "Connector Snapshot",
+      "groupOrder" : 11,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "streaming.delay.ms",
     "type" : "number",
     "default" : "0",

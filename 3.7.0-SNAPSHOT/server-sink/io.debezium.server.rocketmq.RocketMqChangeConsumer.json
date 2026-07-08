@@ -1,6 +1,6 @@
 {
-  "name" : "Debezium RocketMQ Change Consumer",
-  "type" : "unknown",
+  "name" : "Debezium RocketMQ Server Sink",
+  "type" : "server-sink",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""

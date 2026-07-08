@@ -1,6 +1,6 @@
 {
-  "name" : "Debezium NATS JetStream Change Consumer",
-  "type" : "unknown",
+  "name" : "Debezium NATS JetStream Server Sink",
+  "type" : "server-sink",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {
     "description" : ""
