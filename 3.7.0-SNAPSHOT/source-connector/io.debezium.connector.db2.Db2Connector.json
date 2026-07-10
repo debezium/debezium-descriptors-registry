@@ -563,6 +563,23 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "schema.history.internal.memory.optimization",
+    "type" : "string",
+    "default" : "off",
+    "display" : {
+      "label" : "Memory optimization mode for schema history",
+      "description" : "Controls how Debezium deduplicates identical schema objects (tables, columns, attributes) in memory using an interner. Default: off",
+      "group" : "Connector Advanced",
+      "groupOrder" : 19,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "shared", "off", "on" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "cdc.control.schema",
     "type" : "string",
     "default" : "ASNCDC",
@@ -570,7 +587,7 @@
       "label" : "CDC control schema",
       "description" : "The name of the schema where CDC control structures are located; defaults to 'ASNCDC' Default: ASNCDC",
       "group" : "Connector Advanced",
-      "groupOrder" : 19,
+      "groupOrder" : 20,
       "width" : "medium",
       "importance" : "low"
     },
@@ -584,7 +601,7 @@
       "label" : "CDC change tables schema",
       "description" : "The name of the schema where CDC change tables are located; defaults to 'ASNCDC' Default: ASNCDC",
       "group" : "Connector Advanced",
-      "groupOrder" : 20,
+      "groupOrder" : 21,
       "width" : "medium",
       "importance" : "low"
     },
@@ -598,7 +615,7 @@
       "label" : "Db2 platform",
       "description" : "Informs connector which Db2 implementation platform it is connected to. The  Using a value of 'Z' ensures that the Db2 for z/OS specific SQL statements are used. Default: LUW",
       "group" : "Connector Advanced",
-      "groupOrder" : 21,
+      "groupOrder" : 22,
       "width" : "short",
       "importance" : "low"
     },
@@ -615,7 +632,7 @@
       "label" : "z/OS ignore stop LSN",
       "description" : "If true, causes the connector to ignore the stop LSN value from the IBMSNAP_REGISTER.CD_OLD_SYNCHPOINT column when polling. Apply this if events are getting dropped due to the stop LSN being smaller than the current range of LSNs. Only applies to z/OS platform. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 22,
+      "groupOrder" : 23,
       "width" : "short",
       "importance" : "low"
     },
@@ -628,7 +645,7 @@
     "display" : {
       "description" : "The maximum number of seconds for a streaming query to include that query's result set, starting from the earliest row in this query.  Used to limit the size of queries when the change table is large to avoid excessive resource usage. If 0, no timespan limit will apply. Default: 0",
       "group" : "Connector Advanced",
-      "groupOrder" : 23,
+      "groupOrder" : 24,
       "width" : "short",
       "importance" : "low"
     },
@@ -641,7 +658,7 @@
     "display" : {
       "description" : "A switch to control if the connector instance is responsible for updating the prune table (usually done by IBM Apply agent) which will cause the IBM Capture agent to prune read data from the change tables. default false. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 24,
+      "groupOrder" : 25,
       "width" : "short",
       "importance" : "medium"
     },
@@ -653,7 +670,7 @@
     "display" : {
       "description" : "If set to update the prune table, this will identify the prune set name that should be used when updating the table for this instance.",
       "group" : "Connector Advanced",
-      "groupOrder" : 25,
+      "groupOrder" : 26,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -666,7 +683,7 @@
     "display" : {
       "description" : "The minimum number of milliseconds between the connector instance's update of the prune point for the subscription set. Default: 10000",
       "group" : "Connector Advanced",
-      "groupOrder" : 26,
+      "groupOrder" : 27,
       "width" : "short",
       "importance" : "low"
     },
@@ -679,7 +696,7 @@
     "display" : {
       "description" : "An switch to decrement the prune lsn/syncpoint by one to avoid allowing the last lsn processed to get pruned to avoid the risk of an unnecessary snapshot due to the last processed lsn not being present in the change table. Default: true",
       "group" : "Connector Advanced",
-      "groupOrder" : 27,
+      "groupOrder" : 28,
       "width" : "medium",
       "importance" : "low"
     },
@@ -691,7 +708,7 @@
     "display" : {
       "description" : "The apply_qual name that represents the apply agent (this instance) to the subscription set.",
       "group" : "Connector Advanced",
-      "groupOrder" : 28,
+      "groupOrder" : 29,
       "width" : "medium",
       "importance" : "low"
     },
@@ -703,7 +720,7 @@
     "display" : {
       "description" : "The target_server name that represents the apply agent's target (where the data is going) for the subscription set.",
       "group" : "Connector Advanced",
-      "groupOrder" : 29,
+      "groupOrder" : 30,
       "width" : "medium",
       "importance" : "low"
     },
@@ -715,7 +732,7 @@
     "display" : {
       "description" : "The name of a prepared statement in the database that will be used instead of direct sql to allow for DBA control of the update code where needed.",
       "group" : "Connector Advanced",
-      "groupOrder" : 30,
+      "groupOrder" : 31,
       "width" : "long",
       "importance" : "low"
     },
@@ -1045,7 +1062,7 @@
     "default" : "500",
     "display" : {
       "label" : "Poll interval (ms)",
-      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms. Default: 500",
+      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms. Values will be capped at 5000 ms. Default: 500",
       "group" : "Advanced",
       "groupOrder" : 3,
       "width" : "short",

@@ -722,6 +722,23 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "schema.history.internal.memory.optimization",
+    "type" : "string",
+    "default" : "off",
+    "display" : {
+      "label" : "Memory optimization mode for schema history",
+      "description" : "Controls how Debezium deduplicates identical schema objects (tables, columns, attributes) in memory using an interner. Default: off",
+      "group" : "Connector Advanced",
+      "groupOrder" : 19,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "shared", "off", "on" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "min.row.count.to.stream.results",
     "type" : "number",
     "default" : "1000",
@@ -729,7 +746,7 @@
       "label" : "Stream result set of size",
       "description" : "The number of rows a table must contain to stream results rather than pull all into memory during snapshots. Defaults to 1,000. Use 0 to stream all results and completely avoid checking the size of each table. Default: 1000",
       "group" : "Connector Advanced",
-      "groupOrder" : 19,
+      "groupOrder" : 20,
       "width" : "medium",
       "importance" : "low"
     },
@@ -743,7 +760,7 @@
       "label" : "Binlog reader buffer size",
       "description" : "The size of a look-ahead buffer used by the binlog reader to decide whether the transaction in progress is going to be committed or rolled back. Use 0 to disable look-ahead buffering. Defaults to 0 (i.e. buffering is disabled. Default: 0",
       "group" : "Connector Advanced",
-      "groupOrder" : 20,
+      "groupOrder" : 21,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -757,7 +774,7 @@
       "label" : "Include original SQL query with in change events",
       "description" : "Whether the connector should include the original SQL query that generated the change event. Note: This option requires the database to be configured using the server option binlog_rows_query_log_events (MySQL) or binlog_annotate_row_events (MariaDB) set to ON.Query will not be present for events generated from snapshot. WARNING: Enabling this option may expose tables or fields explicitly excluded or masked by including the original SQL statement in the change event. For this reason the Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 21,
+      "groupOrder" : 22,
       "width" : "short",
       "importance" : "medium"
     },
@@ -771,7 +788,7 @@
       "label" : "Ignore GTID on recovery",
       "description" : "Whether the connector should ignore GTID during recovery and restart from the binlog file and position instead. GTID mode on the server remains enabled, and GTID tracking resumes normally after recovery. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 22,
+      "groupOrder" : 23,
       "width" : "short",
       "importance" : "low"
     },
@@ -1169,7 +1186,7 @@
     "default" : "500",
     "display" : {
       "label" : "Poll interval (ms)",
-      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms. Default: 500",
+      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms. Values will be capped at 5000 ms. Default: 500",
       "group" : "Advanced",
       "groupOrder" : 3,
       "width" : "short",

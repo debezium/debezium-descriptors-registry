@@ -747,7 +747,7 @@
     "default" : "500",
     "display" : {
       "label" : "Poll interval (ms)",
-      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms. Default: 500",
+      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms. Values will be capped at 5000 ms. Default: 500",
       "group" : "Advanced",
       "groupOrder" : 3,
       "width" : "short",

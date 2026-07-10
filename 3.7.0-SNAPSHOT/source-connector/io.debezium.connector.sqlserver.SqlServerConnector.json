@@ -593,6 +593,23 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "schema.history.internal.memory.optimization",
+    "type" : "string",
+    "default" : "off",
+    "display" : {
+      "label" : "Memory optimization mode for schema history",
+      "description" : "Controls how Debezium deduplicates identical schema objects (tables, columns, attributes) in memory using an interner. Default: off",
+      "group" : "Connector Advanced",
+      "groupOrder" : 19,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "shared", "off", "on" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "max.iteration.transactions",
     "type" : "number",
     "default" : "500",
@@ -600,7 +617,7 @@
       "label" : "Max transactions per iteration",
       "description" : "This property can be used to reduce the connector memory usage footprint when changes are streamed from multiple tables per database. Default: 500",
       "group" : "Connector Advanced",
-      "groupOrder" : 19,
+      "groupOrder" : 20,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -613,7 +630,7 @@
       "label" : "Query fetch size",
       "description" : "The maximum number of records that should be loaded into memory while streaming. A value of '0' uses the default JDBC fetch size. The Default: 10000",
       "group" : "Connector Advanced",
-      "groupOrder" : 20,
+      "groupOrder" : 21,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -627,7 +644,7 @@
       "label" : "Streaming fetch size",
       "description" : "Specifies the maximum number of rows that should be read in one go from each table while streaming. The connector will read the table contents in multiple batches of this size. Defaults to 0 which means no limit. Default: 0",
       "group" : "Connector Advanced",
-      "groupOrder" : 21,
+      "groupOrder" : 22,
       "importance" : "low"
     },
     "validation" : [ ],
@@ -994,7 +1011,7 @@
     "default" : "500",
     "display" : {
       "label" : "Poll interval (ms)",
-      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms. Default: 500",
+      "description" : "Time to wait for new change events to appear after receiving no events, given in milliseconds. Defaults to 500 ms. Values will be capped at 5000 ms. Default: 500",
       "group" : "Advanced",
       "groupOrder" : 3,
       "width" : "short",
