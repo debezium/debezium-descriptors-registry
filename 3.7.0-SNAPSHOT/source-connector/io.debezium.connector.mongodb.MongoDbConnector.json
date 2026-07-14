@@ -354,6 +354,23 @@
     } ],
     "valueDependants" : [ ]
   }, {
+    "name" : "json.serialization.mode",
+    "type" : "string",
+    "default" : "legacy",
+    "display" : {
+      "label" : "JSON serialization mode",
+      "description" : "Controls the Extended JSON serialization mode used for MongoDB event payload fields. Options include: 'legacy' (the default) uses MongoDB Extended JSON v1 strict mode for full document fields and MongoDB Extended JSON v2 relaxed mode for update fields. 'strict' uses MongoDB Extended JSON v1 strict mode. 'extended' uses MongoDB Extended JSON v2 canonical mode. 'relaxed' uses MongoDB Extended JSON v2 relaxed mode. Default: legacy",
+      "group" : "Connector",
+      "groupOrder" : 11,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "relaxed", "legacy", "strict", "extended" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "sourceinfo.struct.maker",
     "type" : "string",
     "default" : "io.debezium.connector.mongodb.MongoDbSourceInfoStructMaker",
@@ -361,7 +378,7 @@
       "label" : "Source info struct maker class",
       "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.mongodb.MongoDbSourceInfoStructMaker",
       "group" : "Connector",
-      "groupOrder" : 11,
+      "groupOrder" : 12,
       "width" : "medium",
       "importance" : "low"
     },
