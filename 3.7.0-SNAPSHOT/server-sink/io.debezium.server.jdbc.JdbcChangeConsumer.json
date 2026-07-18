@@ -307,6 +307,19 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "dialect.starrocks.catalog.name",
+    "type" : "string",
+    "display" : {
+      "label" : "Name of the StarRocks catalog the connector writes into",
+      "description" : "Name of the StarRocks catalog the connector writes into. When set, 'SET CATALOG <name>' is executed on every new connection before any session work. The StarRocks JDBC driver also supports specifying the catalog directly in the connection URL.",
+      "group" : "Connector",
+      "groupOrder" : 15,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "batch.size",
     "type" : "number",
     "default" : "500",
@@ -314,11 +327,28 @@
       "label" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration.",
       "description" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration. Default: 500",
       "group" : "Connector",
-      "groupOrder" : 15,
+      "groupOrder" : 16,
       "width" : "short",
       "importance" : "medium"
     },
     "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "keyed.message.batch.mode",
+    "type" : "string",
+    "default" : "deduplication",
+    "display" : {
+      "label" : "Keyed message batch mode",
+      "description" : "Controls how keyed records are batched. 'deduplication' (default) deduplicates records by key within a batch (last-write-wins). 'passthrough' preserves all events and splits batches at duplicate-key boundaries. Default: deduplication",
+      "group" : "Connector",
+      "groupOrder" : 17,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "passthrough", "deduplication" ]
+    } ],
     "valueDependants" : [ ]
   }, {
     "name" : "field.include.list",
@@ -327,7 +357,7 @@
       "label" : "Include Fields",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of fields that should be included in change events. The field names must be delimited by the format <topic>:<field> ",
       "group" : "Connector",
-      "groupOrder" : 16,
+      "groupOrder" : 18,
       "width" : "long",
       "importance" : "medium"
     },
@@ -340,7 +370,7 @@
       "label" : "Exclude Fields",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of fields that should be excluded from change events. The field names must be delimited by the format <topic>:<field> ",
       "group" : "Connector",
-      "groupOrder" : 17,
+      "groupOrder" : 19,
       "width" : "long",
       "importance" : "medium"
     },
@@ -354,7 +384,7 @@
       "label" : "Max retry count",
       "description" : "Max retry count when fail to flush. In case of retriable exceptions, the flush will be retried for the defined max retry count. Default: 5",
       "group" : "Connector",
-      "groupOrder" : 18,
+      "groupOrder" : 20,
       "width" : "short",
       "importance" : "low"
     },
@@ -368,7 +398,7 @@
       "label" : "Delay to retry flush",
       "description" : "Delay to retry when fail to flush Default: 1000",
       "group" : "Connector",
-      "groupOrder" : 19,
+      "groupOrder" : 21,
       "width" : "short",
       "importance" : "low"
     },
@@ -382,7 +412,7 @@
       "label" : "Restart connection on errors",
       "description" : "Specifies whether the connector should attempt to restart the connection automatically upon connection-related errors. Defaults to false. In environments where the sink database uses asynchronous replication, enabling this option may risk data loss or inconsistencies during failover if the replica has not fully caught up with the primary. Default: false",
       "group" : "Connector",
-      "groupOrder" : 20,
+      "groupOrder" : 22,
       "width" : "short",
       "importance" : "low"
     },
@@ -396,7 +426,7 @@
       "label" : "CloudEvents messages schema name pattern",
       "description" : "Regular expression pattern to identify CloudEvents messages by matching the schema name with this pattern. Default: .*CloudEvents\\.Envelope$",
       "group" : "Connector",
-      "groupOrder" : 21,
+      "groupOrder" : 23,
       "width" : "long",
       "importance" : "low"
     },
