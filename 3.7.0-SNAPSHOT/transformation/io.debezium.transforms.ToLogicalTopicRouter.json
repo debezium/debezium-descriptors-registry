@@ -1,5 +1,5 @@
 {
-  "name" : "Debezium By Logical Table Router",
+  "name" : "Debezium To Logical Topic Router",
   "type" : "transformation",
   "version" : "3.7.0-SNAPSHOT",
   "metadata" : {

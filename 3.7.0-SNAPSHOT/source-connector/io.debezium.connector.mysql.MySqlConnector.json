@@ -368,7 +368,7 @@
     "type" : "list",
     "display" : {
       "label" : "Customize metric tags",
-      "description" : "The custom metric tags will accept key-value pairs to customize the MBean object name which should be appended the end of regular name, each key would represent a tag for the MBean object name, and the corresponding value would be the value of that tag the key is. For example: k1=v1,k2=v2",
+      "description" : "A comma-separated list of key-value pairs that are appended to the MBean object name. Keys must be valid JMX ObjectName property keys. For example: k1=v1,k2=v2",
       "group" : "Connector",
       "groupOrder" : 8,
       "width" : "medium",

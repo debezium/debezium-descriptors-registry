@@ -2,9 +2,9 @@
     "schemaVersion": "1.0",
     "build": {
         "version": "3.7.0-SNAPSHOT",
-        "timestamp": "2026-07-20T02:23:35Z",
+        "timestamp": "2026-07-22T02:41:50Z",
         "sourceRepository": "debezium/debezium",
-        "sourceCommit": "1dcab65b80",
+        "sourceCommit": "a28aefedb6",
         "sourceBranch": "main"
     },
     "components": {
@@ -590,6 +590,12 @@
                 "name": "Debezium Timezone Converter",
                 "description": "",
                 "descriptor": "transformation/io.debezium.transforms.TimezoneConverter.json"
+            },
+            {
+                "class": "io.debezium.transforms.ToLogicalTopicRouter",
+                "name": "Debezium To Logical Topic Router",
+                "description": "",
+                "descriptor": "transformation/io.debezium.transforms.ToLogicalTopicRouter.json"
             },
             {
                 "class": "io.debezium.transforms.VectorToJsonConverter",
