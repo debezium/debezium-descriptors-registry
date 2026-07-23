@@ -191,7 +191,7 @@
     },
     "validation" : [ {
       "type" : "enum",
-      "values" : [ "none", "basic" ]
+      "values" : [ "validate-only", "none", "basic" ]
     } ],
     "valueDependants" : [ ]
   }, {
