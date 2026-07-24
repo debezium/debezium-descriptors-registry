@@ -85,15 +85,43 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "fifo.message.group.id.header",
+    "name" : "message.group.id.header",
     "type" : "string",
     "default" : "aggregateId",
     "display" : {
-      "label" : "FIFO Message Group ID Header",
-      "description" : "Header name to use as the MessageGroupId for FIFO topics. Default: aggregateId",
+      "label" : "Message Group ID Header",
+      "description" : "Header name to use as the MessageGroupId. Applies to FIFO topics, and to standard topics when 'message.group.id.enabled' is true. Default: aggregateId",
       "group" : "Advanced",
       "groupOrder" : 6,
       "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "message.group.id.default",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "label" : "Default Message Group ID",
+      "description" : "Default MessageGroupId when neither a header value nor a record key is found. Applies to FIFO topics, and to standard topics when 'message.group.id.enabled' is true. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 7,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "message.group.id.enabled",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Message Group ID Enabled",
+      "description" : "When true, set MessageGroupId on standard (non-FIFO) topics as well, to enable Amazon SQS fair queues on subscribed standard queues. On standard topics MessageGroupId is a tenant identifier for fairness and does not enforce ordering. The value is resolved the same way as for FIFO topics: from the header configured by 'message.group.id.header', falling back to the record key, then 'message.group.id.default'. FIFO topics are unaffected. Defaults to false, preserving existing behavior. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 8,
+      "width" : "short",
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -105,23 +133,9 @@
       "label" : "FIFO Message Deduplication ID Header",
       "description" : "Header name to use as the MessageDeduplicationId for FIFO topics.",
       "group" : "Advanced",
-      "groupOrder" : 7,
+      "groupOrder" : 9,
       "width" : "medium",
       "importance" : "medium"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "fifo.default.group.id",
-    "type" : "string",
-    "default" : "default",
-    "display" : {
-      "label" : "FIFO Default Group ID",
-      "description" : "Default MessageGroupId when no header value is found for FIFO topics. Default: default",
-      "group" : "Advanced",
-      "groupOrder" : 8,
-      "width" : "medium",
-      "importance" : "low"
     },
     "validation" : [ ],
     "valueDependants" : [ ]
