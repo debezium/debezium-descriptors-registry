@@ -1,0 +1,148 @@
+{
+  "name" : "Debezium SNS Server Sink",
+  "type" : "server-sink",
+  "version" : "3.7.0.Alpha1",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "region",
+    "type" : "string",
+    "display" : {
+      "label" : "AWS Region",
+      "description" : "AWS region for the SNS topic.",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "width" : "medium",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "endpoint",
+    "type" : "string",
+    "display" : {
+      "label" : "SNS Endpoint Override",
+      "description" : "Optional SNS endpoint override (for local testing with LocalStack).",
+      "group" : "Advanced",
+      "groupOrder" : 1,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "credentials.profile",
+    "type" : "string",
+    "display" : {
+      "label" : "AWS Credentials Profile",
+      "description" : "AWS credentials profile name to use for authentication.",
+      "group" : "Advanced",
+      "groupOrder" : 2,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "topic.arn",
+    "type" : "string",
+    "display" : {
+      "label" : "Default Topic ARN",
+      "description" : "Default SNS topic ARN to publish messages to.",
+      "group" : "Advanced",
+      "groupOrder" : 3,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "topic.arn.prefix",
+    "type" : "string",
+    "display" : {
+      "label" : "Topic ARN Prefix",
+      "description" : "Prefix to prepend to the destination name to compose the full topic ARN.",
+      "group" : "Advanced",
+      "groupOrder" : 4,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "default.retries",
+    "type" : "number",
+    "default" : "5",
+    "display" : {
+      "label" : "Default Retries",
+      "description" : "Maximum number of retry attempts for failed requests. Default: 5",
+      "group" : "Advanced",
+      "groupOrder" : 5,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "message.group.id.header",
+    "type" : "string",
+    "default" : "aggregateId",
+    "display" : {
+      "label" : "Message Group ID Header",
+      "description" : "Header name to use as the MessageGroupId. Applies to FIFO topics, and to standard topics when 'message.group.id.enabled' is true. Default: aggregateId",
+      "group" : "Advanced",
+      "groupOrder" : 6,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "message.group.id.default",
+    "type" : "string",
+    "default" : "default",
+    "display" : {
+      "label" : "Default Message Group ID",
+      "description" : "Default MessageGroupId when neither a header value nor a record key is found. Applies to FIFO topics, and to standard topics when 'message.group.id.enabled' is true. Default: default",
+      "group" : "Advanced",
+      "groupOrder" : 7,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "message.group.id.enabled",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Message Group ID Enabled",
+      "description" : "When true, set MessageGroupId on standard (non-FIFO) topics as well, to enable Amazon SQS fair queues on subscribed standard queues. On standard topics MessageGroupId is a tenant identifier for fairness and does not enforce ordering. The value is resolved the same way as for FIFO topics: from the header configured by 'message.group.id.header', falling back to the record key, then 'message.group.id.default'. FIFO topics are unaffected. Defaults to false, preserving existing behavior. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 8,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "fifo.message.dedup.id.header",
+    "type" : "string",
+    "display" : {
+      "label" : "FIFO Message Deduplication ID Header",
+      "description" : "Header name to use as the MessageDeduplicationId for FIFO topics.",
+      "group" : "Advanced",
+      "groupOrder" : 9,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

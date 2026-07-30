@@ -1,0 +1,40 @@
+{
+  "name" : "Kafka Timestamp Router",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "topic.format",
+    "type" : "string",
+    "default" : "${topic}-${timestamp}",
+    "display" : {
+      "label" : "topic.format",
+      "description" : "Format string which can contain <code>${topic}</code> and <code>${timestamp}</code> as placeholders for the topic and timestamp, respectively. Default: ${topic}-${timestamp}",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "timestamp.format",
+    "type" : "string",
+    "default" : "yyyyMMdd",
+    "display" : {
+      "label" : "timestamp.format",
+      "description" : "Format string for the timestamp that is compatible with <code>java.text.SimpleDateFormat</code>. Default: yyyyMMdd",
+      "group" : "Advanced",
+      "groupOrder" : 1,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
