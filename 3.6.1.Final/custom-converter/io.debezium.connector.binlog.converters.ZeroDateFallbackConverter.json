@@ -1,0 +1,81 @@
+{
+  "name" : "Debezium Zero Date Fallback Custom Converter",
+  "type" : "custom-converter",
+  "version" : "3.6.1.Final",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "target.types",
+    "type" : "string",
+    "default" : "DATE,DATETIME,TIMESTAMP",
+    "display" : {
+      "label" : "Target JDBC types",
+      "description" : "Comma-separated list of JDBC temporal types this converter applies to. Allowed tokens: DATE, DATETIME, TIMESTAMP. Default: DATE,DATETIME,TIMESTAMP",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "fallback.date",
+    "type" : "string",
+    "display" : {
+      "label" : "DATE zero-date fallback",
+      "description" : "Replacement value emitted for MySQL/MariaDB DATE zero-date rows (0000-00-00). Use 'NULL' (or leave unset) to emit null and promote the column schema to optional. Otherwise specify an ISO-8601 date literal (yyyy-MM-dd).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "fallback.datetime",
+    "type" : "string",
+    "display" : {
+      "label" : "DATETIME zero-date fallback",
+      "description" : "Replacement value emitted for MySQL/MariaDB DATETIME zero-date rows (0000-00-00 00:00:00). Use 'NULL' (or leave unset) to emit null and promote the column schema to optional. Otherwise specify a UTC datetime literal (yyyy-MM-dd HH:mm:ss).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "fallback.timestamp",
+    "type" : "string",
+    "display" : {
+      "label" : "TIMESTAMP zero-date fallback",
+      "description" : "Replacement value emitted for MySQL/MariaDB TIMESTAMP zero-date rows. Use 'NULL' (or leave unset) to emit null and promote the column schema to optional. Otherwise specify an ISO-8601 offset datetime literal (e.g. 1970-01-01T00:00:00Z).",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "selector",
+    "type" : "string",
+    "default" : ".*",
+    "display" : {
+      "label" : "Column selector",
+      "description" : "Comma-separated list of regex patterns matched against <database>.<table>.<column>. Only matching columns have this converter applied. Default '.*' matches every column whose JDBC type is in target.types. Default: .*",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

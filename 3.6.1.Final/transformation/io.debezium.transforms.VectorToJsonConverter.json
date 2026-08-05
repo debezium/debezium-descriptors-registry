@@ -1,0 +1,10 @@
+{
+  "name" : "Debezium Vector To JSON Converter",
+  "type" : "transformation",
+  "version" : "3.6.1.Final",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ ],
+  "groups" : [ ]
+}
