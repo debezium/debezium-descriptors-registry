@@ -1,0 +1,10 @@
+{
+  "name" : "Debezium Open Lineage",
+  "type" : "transformation",
+  "version" : "3.6.1.Final",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ ],
+  "groups" : [ ]
+}
