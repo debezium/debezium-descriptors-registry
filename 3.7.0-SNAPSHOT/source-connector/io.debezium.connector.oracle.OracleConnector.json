@@ -225,10 +225,10 @@
     } ],
     "valueDependants" : [ {
       "values" : [ "logminer" ],
-      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.batch.size.default", "log.mining.batch.size.increment", "log.mining.batch.size.max", "log.mining.batch.size.min", "log.mining.buffer.deferred.transaction.retention.ms", "log.mining.buffer.deferred.transaction.start", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.client_id", "log.mining.buffer.track.commit_timestamp", "log.mining.buffer.track.rs_id", "log.mining.buffer.track.start_timestamp", "log.mining.buffer.track.username", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.read.only", "log.mining.restart.connection", "log.mining.scn.gap.detection.gap.size.min", "log.mining.scn.gap.detection.time.interval.max.ms", "log.mining.session.max.ms", "log.mining.sleep.time.default.ms", "log.mining.sleep.time.increment.ms", "log.mining.sleep.time.max.ms", "log.mining.sleep.time.min.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
+      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.batch.size.default", "log.mining.batch.size.increment", "log.mining.batch.size.max", "log.mining.batch.size.min", "log.mining.buffer.deferred.transaction.retention.ms", "log.mining.buffer.deferred.transaction.start", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.client_id", "log.mining.buffer.track.commit_timestamp", "log.mining.buffer.track.rs_id", "log.mining.buffer.track.start_timestamp", "log.mining.buffer.track.username", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.read.only", "log.mining.restart.connection", "log.mining.scn.gap.detection.gap.size.min", "log.mining.scn.gap.detection.time.interval.max.ms", "log.mining.session.max.ms", "log.mining.sleep.time.default.ms", "log.mining.sleep.time.increment.ms", "log.mining.sleep.time.max.ms", "log.mining.sleep.time.min.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
     }, {
       "values" : [ "logminer_unbuffered" ],
-      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.batch.size.default", "log.mining.batch.size.increment", "log.mining.batch.size.max", "log.mining.batch.size.min", "log.mining.buffer.deferred.transaction.retention.ms", "log.mining.buffer.deferred.transaction.start", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.client_id", "log.mining.buffer.track.commit_timestamp", "log.mining.buffer.track.rs_id", "log.mining.buffer.track.start_timestamp", "log.mining.buffer.track.username", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.continuous.mine", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.read.only", "log.mining.restart.connection", "log.mining.scn.gap.detection.gap.size.min", "log.mining.scn.gap.detection.time.interval.max.ms", "log.mining.session.max.ms", "log.mining.sleep.time.default.ms", "log.mining.sleep.time.increment.ms", "log.mining.sleep.time.max.ms", "log.mining.sleep.time.min.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
+      "dependants" : [ "database.url", "log.mining.archive.log.only.mode", "log.mining.archive.log.only.scn.poll.interval.ms", "log.mining.batch.size.default", "log.mining.batch.size.increment", "log.mining.batch.size.max", "log.mining.batch.size.min", "log.mining.buffer.deferred.transaction.retention.ms", "log.mining.buffer.deferred.transaction.start", "log.mining.buffer.drop.on.stop", "log.mining.buffer.ehcache.events.config", "log.mining.buffer.ehcache.global.config", "log.mining.buffer.ehcache.processedtransactions.config", "log.mining.buffer.ehcache.rollbacks.config", "log.mining.buffer.ehcache.schemachanges.config", "log.mining.buffer.ehcache.transactions.config", "log.mining.buffer.infinispan.cache.events", "log.mining.buffer.infinispan.cache.global", "log.mining.buffer.infinispan.cache.processed_transactions", "log.mining.buffer.infinispan.cache.rollbacks", "log.mining.buffer.infinispan.cache.schema_changes", "log.mining.buffer.infinispan.cache.transactions", "log.mining.buffer.track.client_id", "log.mining.buffer.track.commit_timestamp", "log.mining.buffer.track.rs_id", "log.mining.buffer.track.start_timestamp", "log.mining.buffer.track.username", "log.mining.buffer.transaction.events.threshold", "log.mining.buffer.type", "log.mining.clientid.exclude.list", "log.mining.clientid.include.list", "log.mining.flush.table.name", "log.mining.include.redo.sql", "log.mining.log.count.min", "log.mining.path.dictionary", "log.mining.query.filter.mode", "log.mining.read.only", "log.mining.restart.connection", "log.mining.scn.gap.detection.gap.size.min", "log.mining.scn.gap.detection.time.interval.max.ms", "log.mining.session.max.ms", "log.mining.sleep.time.default.ms", "log.mining.sleep.time.increment.ms", "log.mining.sleep.time.max.ms", "log.mining.sleep.time.min.ms", "log.mining.strategy", "log.mining.transaction.retention.ms", "log.mining.username.exclude.list", "log.mining.username.include.list", "log.mining.window.max.ms", "rac.nodes" ]
     }, {
       "values" : [ "xstream" ],
       "dependants" : [ "xstream.out.server.name" ]
@@ -855,27 +855,13 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "log.mining.continuous.mine",
-    "type" : "boolean",
-    "default" : "false",
-    "display" : {
-      "label" : "Should log mining session configured with CONTINUOUS_MINE setting?",
-      "description" : "(Deprecated) if true, CONTINUOUS_MINE option will be added to the log mining session. This will manage log files switches seamlessly. Default: false",
-      "group" : "Connection Advanced",
-      "groupOrder" : 52,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
     "name" : "log.mining.buffer.ehcache.global.config",
     "type" : "string",
     "display" : {
       "label" : "Defines any global configuration for the Ehcache transaction buffer",
       "description" : "Specifies any Ehcache global configurations such as services or persistence. This cannot include <cache/> nor <default-serializers/> tags as these are managed by Debezium.",
       "group" : "Connection Advanced",
-      "groupOrder" : 53,
+      "groupOrder" : 52,
       "width" : "long",
       "importance" : "low"
     },
@@ -888,7 +874,7 @@
       "label" : "Defines the partial ehcache configuration for the transaction cache",
       "description" : "Specifies the inner body the Ehcache <cache/> tag for the transaction cache, but should not include the <key-type/> nor the <value-type/> attributes as these are managed by Debezium.",
       "group" : "Connection Advanced",
-      "groupOrder" : 54,
+      "groupOrder" : 53,
       "width" : "long",
       "importance" : "low"
     },
@@ -901,7 +887,7 @@
       "label" : "Defines the partial ehcache configuration for the processed transaction cache",
       "description" : "Specifies the inner body the Ehcache <cache/> tag for the processed transaction cache, but should not include the <key-type/> nor the <value-type/> attributes as these are managed by Debezium.",
       "group" : "Connection Advanced",
-      "groupOrder" : 55,
+      "groupOrder" : 54,
       "width" : "long",
       "importance" : "low"
     },
@@ -914,7 +900,7 @@
       "label" : "Defines the partial ehcache configuration for the schema changes cache",
       "description" : "Specifies the inner body the Ehcache <cache/> tag for the schema changes cache, but should not include the <key-type/> nor the <value-type/> attributes as these are managed by Debezium.",
       "group" : "Connection Advanced",
-      "groupOrder" : 56,
+      "groupOrder" : 55,
       "width" : "long",
       "importance" : "low"
     },
@@ -927,7 +913,7 @@
       "label" : "Defines the partial ehcache configuration for the events cache",
       "description" : "Specifies the inner body the Ehcache <cache/> tag for the events cache, but should not include the <key-type/> nor the <value-type/> attributes as these are managed by Debezium.",
       "group" : "Connection Advanced",
-      "groupOrder" : 57,
+      "groupOrder" : 56,
       "width" : "long",
       "importance" : "low"
     },
@@ -940,7 +926,7 @@
       "label" : "Defines the partial ehcache configuration for the rollbacks cache",
       "description" : "Specifies the inner body the Ehcache <cache/> tag for the rollbacks cache, but should not include the <key-type/> nor the <value-type/> attributes as these are managed by Debezium.",
       "group" : "Connection Advanced",
-      "groupOrder" : 58,
+      "groupOrder" : 57,
       "width" : "long",
       "importance" : "low"
     },
@@ -953,7 +939,7 @@
       "label" : "List of client ids to include from LogMiner query",
       "description" : "Comma separated list of client ids to include from LogMiner query.",
       "group" : "Connection Advanced",
-      "groupOrder" : 60,
+      "groupOrder" : 59,
       "width" : "short",
       "importance" : "low"
     },
@@ -966,7 +952,7 @@
       "label" : "List of client ids to exclude from LogMiner query",
       "description" : "Comma separated list of client ids to exclude from LogMiner query.",
       "group" : "Connection Advanced",
-      "groupOrder" : 61,
+      "groupOrder" : 60,
       "width" : "short",
       "importance" : "low"
     },
@@ -980,7 +966,7 @@
       "label" : "Use deferred transaction start behavior",
       "description" : "Controls whether transaction start events are deferred when using buffered LogMiner. When enabled, transaction start events are stored in a lightweight metadata map. Transactions are only promoted to the transaction cache when a DML event is observed. The mining window is not pinned by transactions, allowing a block-by-block sliding window. Default: false",
       "group" : "Connection Advanced",
-      "groupOrder" : 63,
+      "groupOrder" : 62,
       "width" : "short",
       "importance" : "low"
     },
@@ -994,7 +980,7 @@
       "label" : "Deferred transaction retention",
       "description" : "Duration in milliseconds to retain deferred transaction metadata for transactions that never emit a DML event. By default, deferred transaction metadata is retained for 24 hours. This is independent of log.mining.transaction.retention.ms which governs cached transactions with events. Default: 86400000",
       "group" : "Connection Advanced",
-      "groupOrder" : 64,
+      "groupOrder" : 63,
       "width" : "short",
       "importance" : "medium"
     },
@@ -1007,7 +993,7 @@
       "label" : "Defines the dictionary path for the mining session",
       "description" : "This is required when using the connector against a read-only database replica.",
       "group" : "Connection Advanced",
-      "groupOrder" : 65,
+      "groupOrder" : 64,
       "width" : "long",
       "importance" : "low"
     },
@@ -1021,7 +1007,7 @@
       "label" : "Minimum number of logs per redo thread to mine",
       "description" : "Specifies the minimum number of logs to mine per redo thread. Setting this to 0 disables the cap, and all available logs are mined in a single pass. Default: 2",
       "group" : "Connection Advanced",
-      "groupOrder" : 70,
+      "groupOrder" : 69,
       "width" : "short",
       "importance" : "medium"
     },

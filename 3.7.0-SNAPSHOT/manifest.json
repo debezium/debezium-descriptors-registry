@@ -1,6 +1,6 @@
 {
-  "debezium_commit": "08999ad",
+  "debezium_commit": "f5220b2",
   "debezium_branch": "main",
-  "build_timestamp": "2026-08-10T14:03:53Z",
+  "build_timestamp": "2026-08-11T01:40:13Z",
   "snapshot_version": "3.7.0-SNAPSHOT"
 }
