@@ -419,6 +419,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "timestamp.clamp.out.of.range.values",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Clamp out-of-range timestamp values",
+      "description" : "Specifies whether temporal values that cannot be represented by the target database, for example BC-era timestamps emitted by an Oracle source, are clamped to the target database's minimum or maximum supported timestamp, mirroring how explicit infinity markers are handled. When set to false (the default), out-of-range values are passed to the target database unchanged and may cause the write to fail. Default: false",
+      "group" : "Connector",
+      "groupOrder" : 23,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "cloud.events.schema.name.pattern",
     "type" : "string",
     "default" : ".*CloudEvents\\.Envelope$",
@@ -426,7 +440,7 @@
       "label" : "CloudEvents messages schema name pattern",
       "description" : "Regular expression pattern to identify CloudEvents messages by matching the schema name with this pattern. Default: .*CloudEvents\\.Envelope$",
       "group" : "Connector",
-      "groupOrder" : 23,
+      "groupOrder" : 24,
       "width" : "long",
       "importance" : "low"
     },
