@@ -1,0 +1,53 @@
+{
+  "name" : "Debezium Enforce Record Size",
+  "type" : "transformation",
+  "version" : "3.7.0.Beta1",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "max.bytes",
+    "type" : "number",
+    "required" : true,
+    "display" : {
+      "label" : "Maximum record size",
+      "description" : "The maximum record size in bytes. Records exceeding this size will have their string and bytes columns truncated proportionally to fit within this limit.",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "compression.ratio",
+    "type" : "number",
+    "default" : "1.0",
+    "display" : {
+      "label" : "Compression ratio",
+      "description" : "Ratio to account for record serialization differences. The estimated record size is multiplied by this ratio before comparing to the max size. For example, if your serialization compresses raw record size by 50%, set this to 0.5. Downstream systems typically provide metrics to discover the effective ratio, e.g. Kafka exposes kafka.producer:type=producer-metrics,client-id=<id>/compression-rate-avg. 0 (no adjustment). Default: 1.0",
+      "group" : "Advanced",
+      "groupOrder" : 1,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "min.field.size",
+    "type" : "number",
+    "default" : "25000",
+    "display" : {
+      "label" : "Minimum field size",
+      "description" : "Fields with a size at or below this value (in bytes) will not be truncated. Only fields larger than this threshold are eligible for proportional truncation. Default: 25000",
+      "group" : "Advanced",
+      "groupOrder" : 2,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

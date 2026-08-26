@@ -1,0 +1,26 @@
+{
+  "name" : "Debezium Binary Data Converter",
+  "type" : "converter",
+  "version" : "3.7.0.Beta1",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "delegate.converter.type",
+    "type" : "string",
+    "display" : {
+      "label" : "Delegate converter type",
+      "description" : "Specifies the delegate converter class",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
