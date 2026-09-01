@@ -1,0 +1,43 @@
+{
+  "name" : "Debezium Neo4j Cud Converter",
+  "type" : "transformation",
+  "version" : "3.7.0-SNAPSHOT",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "output.mode",
+    "type" : "string",
+    "default" : "array",
+    "display" : {
+      "label" : "Output mode",
+      "description" : "'array' packs all CUD events into a JSON array; 'single' produces one CUD event per record. Default: array",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "importance" : "high"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "single", "array" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tombstones.enabled",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Tombstones enabled",
+      "description" : "Whether to pass through tombstone records. Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 1,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

@@ -2,9 +2,9 @@
   "schemaVersion": "1.0",
   "build": {
     "version": "3.7.0-SNAPSHOT",
-    "timestamp": "2026-08-31T14:27:56Z",
+    "timestamp": "2026-09-01T02:31:27Z",
     "sourceRepository": "debezium/debezium",
-    "sourceCommit": "a1d62d8",
+    "sourceCommit": "38cbaa9",
     "sourceBranch": "main"
   },
   "components": {
@@ -572,6 +572,12 @@
         "name": "Debezium Header To Value",
         "description": "",
         "descriptor": "transformation/io.debezium.transforms.HeaderToValue.json"
+      },
+      {
+        "class": "io.debezium.transforms.Neo4jCudConverter",
+        "name": "Debezium Neo4j Cud Converter",
+        "description": "",
+        "descriptor": "transformation/io.debezium.transforms.Neo4jCudConverter.json"
       },
       {
         "class": "io.debezium.transforms.SchemaChangeEventFilter",
