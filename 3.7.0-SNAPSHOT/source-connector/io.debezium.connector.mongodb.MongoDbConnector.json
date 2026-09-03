@@ -354,6 +354,36 @@
     } ],
     "valueDependants" : [ ]
   }, {
+    "name" : "capture.scope",
+    "type" : "string",
+    "default" : "deployment",
+    "display" : {
+      "label" : "Capture scope",
+      "description" : "The scope of captured changes. Options include: 'deployment' (the default) to capture changes from the entire MongoDB deployment; 'database' to capture changes from a specific MongoDB database'collection' to capture changes from a specific MongoDB collection Default: deployment",
+      "group" : "Connector",
+      "groupOrder" : 11,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "database", "collection", "deployment" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "capture.target",
+    "type" : "string",
+    "display" : {
+      "label" : "Capture target",
+      "description" : "The target to capture changes from. For 'database' scope, this is the database name. For 'collection' scope, this is the collection name as <databaseName>.<collectionName>.",
+      "group" : "Connector",
+      "groupOrder" : 12,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "json.serialization.mode",
     "type" : "string",
     "default" : "legacy",
@@ -361,7 +391,7 @@
       "label" : "JSON serialization mode",
       "description" : "Controls the Extended JSON serialization mode used for MongoDB event payload fields. Options include: 'legacy' (the default) uses MongoDB Extended JSON v1 strict mode for full document fields and MongoDB Extended JSON v2 relaxed mode for update fields. 'strict' uses MongoDB Extended JSON v1 strict mode. 'extended' uses MongoDB Extended JSON v2 canonical mode. 'relaxed' uses MongoDB Extended JSON v2 relaxed mode. Default: legacy",
       "group" : "Connector",
-      "groupOrder" : 11,
+      "groupOrder" : 13,
       "width" : "short",
       "importance" : "medium"
     },
@@ -378,7 +408,7 @@
       "label" : "Source info struct maker class",
       "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.mongodb.MongoDbSourceInfoStructMaker",
       "group" : "Connector",
-      "groupOrder" : 12,
+      "groupOrder" : 14,
       "width" : "medium",
       "importance" : "low"
     },

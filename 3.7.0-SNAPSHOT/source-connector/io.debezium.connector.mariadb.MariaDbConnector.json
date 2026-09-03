@@ -171,6 +171,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "connect.keep.alive.max.reconnect.attempts",
+    "type" : "number",
+    "default" : "0",
+    "display" : {
+      "label" : "Keep alive maximum reconnect attempts",
+      "description" : "Number of consecutive attempts the keep alive thread makes to restore a lost binlog connection before the connector fails. A connection that can never be restored otherwise leaves the connector running without emitting any change events. Defaults to 0, meaning the keep alive thread retries indefinitely. Default: 0",
+      "group" : "Connection Advanced",
+      "groupOrder" : 6,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "use.nongraceful.disconnect",
     "type" : "boolean",
     "default" : "false",
@@ -178,7 +192,7 @@
       "label" : "Use Non-graceful Disconnect",
       "description" : "Whether to use `socket.setSoLinger(true, 0)` when BinaryLogClient keepalive thread triggers a disconnect for a stale connection. Default: false",
       "group" : "Connection Advanced",
-      "groupOrder" : 6,
+      "groupOrder" : 7,
       "width" : "short",
       "importance" : "medium"
     },
@@ -192,7 +206,7 @@
       "label" : "Binlog Net Write Timeout",
       "description" : "The number of seconds to wait for a write to the binlog connection to complete before the server times out. A value of 0 means use the MySQL server default. May need to be increased when large data volumes cause EOFException during streaming. Default: 0",
       "group" : "Connection Advanced",
-      "groupOrder" : 7,
+      "groupOrder" : 8,
       "width" : "short",
       "importance" : "medium"
     },
@@ -206,7 +220,7 @@
       "label" : "Binlog Net Read Timeout",
       "description" : "The number of seconds to wait for a read from the binlog connection to complete before the server times out. A value of 0 means use the MySQL server default. May need to be increased in high-latency network environments to prevent EOFException during streaming. Default: 0",
       "group" : "Connection Advanced",
-      "groupOrder" : 8,
+      "groupOrder" : 9,
       "width" : "short",
       "importance" : "medium"
     },
