@@ -116,15 +116,120 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "tls.serverName",
+    "name" : "tls.keyStore.type",
     "type" : "string",
     "display" : {
-      "label" : "TLS Server Name",
-      "description" : "TLS server name for SNI.",
+      "label" : "Key Store Type",
+      "description" : "Type of the client key store: PEM, PKCS12, or JKS. Required for mTLS.",
       "group" : "Advanced",
       "groupOrder" : 8,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tls.keyStore.certificateFilePath",
+    "type" : "string",
+    "display" : {
+      "label" : "Key Store Certificate File Path",
+      "description" : "Path to the client certificate PEM file. Required together with tls.keyStore.keyFilePath when tls.keyStore.type is PEM.",
+      "group" : "Advanced",
+      "groupOrder" : 9,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tls.keyStore.keyFilePath",
+    "type" : "string",
+    "display" : {
+      "label" : "Key Store Key File Path",
+      "description" : "Path to the client private key PEM file. Required together with tls.keyStore.certificateFilePath when tls.keyStore.type is PEM.",
+      "group" : "Advanced",
+      "groupOrder" : 10,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tls.keyStore.filePath",
+    "type" : "string",
+    "display" : {
+      "label" : "Key Store File Path",
+      "description" : "Path to the client key store file. Required when tls.keyStore.type is PKCS12 or JKS.",
+      "group" : "Advanced",
+      "groupOrder" : 11,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tls.keyStore.password",
+    "type" : "string",
+    "display" : {
+      "label" : "Key Store Password",
+      "description" : "Password for the key store (PKCS12/JKS), or passphrase for the private key file (PEM), if any.",
+      "group" : "Advanced",
+      "groupOrder" : 12,
       "width" : "medium",
-      "importance" : "low"
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tls.trustStore.type",
+    "type" : "string",
+    "display" : {
+      "label" : "Trust Store Type",
+      "description" : "Type of the trust store: PEM, PKCS12, or JKS. Required to trust a private/internal CA.",
+      "group" : "Advanced",
+      "groupOrder" : 13,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tls.trustStore.filePath",
+    "type" : "string",
+    "display" : {
+      "label" : "Trust Store File Path",
+      "description" : "Path to the trust store file (a CA bundle for PEM, or a key store file for PKCS12/JKS). Required when tls.trustStore.type is set.",
+      "group" : "Advanced",
+      "groupOrder" : 14,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tls.trustStore.password",
+    "type" : "string",
+    "display" : {
+      "label" : "Trust Store Password",
+      "description" : "Password for the trust store. Only relevant when tls.trustStore.type is PKCS12 or JKS.",
+      "group" : "Advanced",
+      "groupOrder" : 15,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tls.verify.hostname",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "TLS Verify Hostname",
+      "description" : "Verify that the server's certificate matches the host being connected to. Defaults to false to preserve prior behavior. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 16,
+      "width" : "short",
+      "importance" : "medium"
     },
     "validation" : [ ],
     "valueDependants" : [ ]
@@ -136,7 +241,7 @@
       "label" : "RPC Timeout (seconds)",
       "description" : "RPC timeout in seconds. Default: 10",
       "group" : "Advanced",
-      "groupOrder" : 9,
+      "groupOrder" : 17,
       "width" : "short",
       "importance" : "medium"
     },
@@ -150,7 +255,7 @@
       "label" : "Max Producers By Connection",
       "description" : "Maximum number of producers per connection. Default: 256",
       "group" : "Advanced",
-      "groupOrder" : 10,
+      "groupOrder" : 18,
       "width" : "short",
       "importance" : "medium"
     },
@@ -164,7 +269,7 @@
       "label" : "Max Tracking Consumers By Connection",
       "description" : "Maximum number of tracking consumers per connection. Default: 50",
       "group" : "Advanced",
-      "groupOrder" : 11,
+      "groupOrder" : 19,
       "width" : "short",
       "importance" : "medium"
     },
@@ -178,7 +283,7 @@
       "label" : "Max Consumers By Connection",
       "description" : "Maximum number of consumers per connection. Default: 256",
       "group" : "Advanced",
-      "groupOrder" : 12,
+      "groupOrder" : 20,
       "width" : "short",
       "importance" : "medium"
     },
@@ -192,7 +297,7 @@
       "label" : "Requested Heartbeat (seconds)",
       "description" : "Requested heartbeat interval in seconds. Default: 60",
       "group" : "Advanced",
-      "groupOrder" : 13,
+      "groupOrder" : 21,
       "width" : "short",
       "importance" : "medium"
     },
@@ -206,7 +311,7 @@
       "label" : "Requested Max Frame Size",
       "description" : "Requested maximum frame size. Default: 0",
       "group" : "Advanced",
-      "groupOrder" : 14,
+      "groupOrder" : 22,
       "width" : "short",
       "importance" : "medium"
     },
@@ -220,7 +325,7 @@
       "label" : "ID",
       "description" : "Client ID. Default: rabbitmq-stream",
       "group" : "Advanced",
-      "groupOrder" : 15,
+      "groupOrder" : 23,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -233,7 +338,7 @@
       "label" : "Stream",
       "description" : "Stream name.",
       "group" : "Advanced",
-      "groupOrder" : 16,
+      "groupOrder" : 24,
       "width" : "medium",
       "importance" : "high"
     },
@@ -246,7 +351,7 @@
       "label" : "Stream Max Age",
       "description" : "Maximum age for stream messages.",
       "group" : "Advanced",
-      "groupOrder" : 17,
+      "groupOrder" : 25,
       "width" : "medium",
       "importance" : "low"
     },
@@ -259,7 +364,7 @@
       "label" : "Stream Max Length",
       "description" : "Maximum length for stream in bytes.",
       "group" : "Advanced",
-      "groupOrder" : 18,
+      "groupOrder" : 26,
       "width" : "medium",
       "importance" : "low"
     },
@@ -272,7 +377,7 @@
       "label" : "Stream Max Segment Size",
       "description" : "Maximum segment size for stream in bytes.",
       "group" : "Advanced",
-      "groupOrder" : 19,
+      "groupOrder" : 27,
       "width" : "medium",
       "importance" : "low"
     },
@@ -286,7 +391,7 @@
       "label" : "Super Stream Enable",
       "description" : "Enable super stream. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 20,
+      "groupOrder" : 28,
       "width" : "short",
       "importance" : "medium"
     },
@@ -300,7 +405,7 @@
       "label" : "Super Stream Partitions",
       "description" : "Number of partitions for super stream. Default: 3",
       "group" : "Advanced",
-      "groupOrder" : 21,
+      "groupOrder" : 29,
       "width" : "short",
       "importance" : "medium"
     },
@@ -313,7 +418,7 @@
       "label" : "Super Stream Binding Keys",
       "description" : "Binding keys for super stream.",
       "group" : "Advanced",
-      "groupOrder" : 22,
+      "groupOrder" : 30,
       "width" : "long",
       "importance" : "low"
     },
@@ -326,7 +431,7 @@
       "label" : "Producer Name",
       "description" : "Producer name.",
       "group" : "Advanced",
-      "groupOrder" : 23,
+      "groupOrder" : 31,
       "width" : "medium",
       "importance" : "low"
     },
@@ -339,7 +444,7 @@
       "label" : "Producer Filter Value",
       "description" : "Producer filter value.",
       "group" : "Advanced",
-      "groupOrder" : 24,
+      "groupOrder" : 32,
       "width" : "medium",
       "importance" : "low"
     },
@@ -353,7 +458,7 @@
       "label" : "Producer Batch Size",
       "description" : "Producer batch size. Default: 100",
       "group" : "Advanced",
-      "groupOrder" : 25,
+      "groupOrder" : 33,
       "width" : "short",
       "importance" : "medium"
     },
@@ -367,7 +472,7 @@
       "label" : "Producer Sub Entry Size",
       "description" : "Producer sub-entry size. Default: 1",
       "group" : "Advanced",
-      "groupOrder" : 26,
+      "groupOrder" : 34,
       "width" : "short",
       "importance" : "low"
     },
@@ -381,7 +486,7 @@
       "label" : "Producer Max Unconfirmed Messages",
       "description" : "Maximum number of unconfirmed messages. Default: 10000",
       "group" : "Advanced",
-      "groupOrder" : 27,
+      "groupOrder" : 35,
       "width" : "short",
       "importance" : "medium"
     },
@@ -395,7 +500,7 @@
       "label" : "Producer Batch Publishing Delay (ms)",
       "description" : "Producer batch publishing delay in milliseconds. Default: 100",
       "group" : "Advanced",
-      "groupOrder" : 28,
+      "groupOrder" : 36,
       "width" : "short",
       "importance" : "medium"
     },
@@ -409,7 +514,7 @@
       "label" : "Producer Confirm Timeout (seconds)",
       "description" : "Producer confirm timeout in seconds. Default: 30",
       "group" : "Advanced",
-      "groupOrder" : 29,
+      "groupOrder" : 37,
       "width" : "short",
       "importance" : "medium"
     },
@@ -423,7 +528,7 @@
       "label" : "Producer Enqueue Timeout (seconds)",
       "description" : "Producer enqueue timeout in seconds. Default: 10",
       "group" : "Advanced",
-      "groupOrder" : 30,
+      "groupOrder" : 38,
       "width" : "short",
       "importance" : "medium"
     },
@@ -437,7 +542,7 @@
       "label" : "Batch Confirm Timeout (seconds)",
       "description" : "Batch confirm timeout in seconds. Default: 30",
       "group" : "Advanced",
-      "groupOrder" : 31,
+      "groupOrder" : 39,
       "width" : "short",
       "importance" : "medium"
     },
@@ -451,7 +556,7 @@
       "label" : "Null Value",
       "description" : "Value to use when record value is null. Default: default",
       "group" : "Advanced",
-      "groupOrder" : 32,
+      "groupOrder" : 40,
       "width" : "short",
       "importance" : "low"
     },
