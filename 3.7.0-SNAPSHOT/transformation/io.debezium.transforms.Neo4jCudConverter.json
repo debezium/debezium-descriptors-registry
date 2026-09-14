@@ -34,6 +34,22 @@
     },
     "validation" : [ ],
     "valueDependants" : [ ]
+  }, {
+    "name" : "field.missing.behavior",
+    "type" : "string",
+    "default" : "warn",
+    "display" : {
+      "label" : "Missing field behavior",
+      "description" : "How to react when a change event is missing a column that the mapping needs to build a CUD event (an id property, a foreign key, or the before/after image): 'fail' throws so the record is routed by the connector's error handling; 'warn' logs and skips the affected event (or the whole record when nothing can be built); 'ignore' skips silently. A node whose entire id key resolves to empty is never emitted regardless of this setting, because an unkeyed MERGE would collapse every row into a single node. Default: warn",
+      "group" : "Advanced",
+      "groupOrder" : 2,
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "fail", "warn", "ignore" ]
+    } ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Advanced",
