@@ -2,9 +2,9 @@
   "schemaVersion": "1.0",
   "build": {
     "version": "3.7.0-SNAPSHOT",
-    "timestamp": "2026-09-14T14:32:17Z",
+    "timestamp": "2026-09-15T02:07:43Z",
     "sourceRepository": "debezium/debezium",
-    "sourceCommit": "2ab2697",
+    "sourceCommit": "c7d0541",
     "sourceBranch": "main"
   },
   "components": {
@@ -100,6 +100,12 @@
         "descriptor": "converter/org.apache.kafka.connect.storage.SimpleHeaderConverterOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.storage.SimpleHeaderConverterOpenAi",
+        "name": "Kafka Simple Header Converter",
+        "description": "",
+        "descriptor": "converter/org.apache.kafka.connect.storage.SimpleHeaderConverterOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.storage.SimpleHeaderConverterVoyageAi",
         "name": "Kafka Simple Header Converter",
         "description": "",
@@ -128,6 +134,12 @@
         "name": "Kafka String Converter",
         "description": "",
         "descriptor": "converter/org.apache.kafka.connect.storage.StringConverterOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.storage.StringConverterOpenAi",
+        "name": "Kafka String Converter",
+        "description": "",
+        "descriptor": "converter/org.apache.kafka.connect.storage.StringConverterOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.storage.StringConverterVoyageAi",
@@ -200,6 +212,12 @@
         "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.HasHeaderKeyOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.predicates.HasHeaderKeyOpenAi",
+        "name": "Kafka Has Header Key",
+        "description": "",
+        "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.HasHeaderKeyOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.predicates.HasHeaderKeyVoyageAi",
         "name": "Kafka Has Header Key",
         "description": "",
@@ -230,6 +248,12 @@
         "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneOpenAi",
+        "name": "Kafka Record Is Tombstone",
+        "description": "",
+        "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.predicates.RecordIsTombstoneVoyageAi",
         "name": "Kafka Record Is Tombstone",
         "description": "",
@@ -258,6 +282,12 @@
         "name": "Kafka Topic Name Matches",
         "description": "",
         "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.TopicNameMatchesOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.predicates.TopicNameMatchesOpenAi",
+        "name": "Kafka Topic Name Matches",
+        "description": "",
+        "descriptor": "predicate/org.apache.kafka.connect.transforms.predicates.TopicNameMatchesOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.predicates.TopicNameMatchesVoyageAi",
@@ -484,6 +514,12 @@
         "descriptor": "transformation/io.debezium.ai.embeddings.FieldToEmbeddingOllama.json"
       },
       {
+        "class": "io.debezium.ai.embeddings.FieldToEmbeddingOpenAi",
+        "name": "Debezium Field To Embedding",
+        "description": "",
+        "descriptor": "transformation/io.debezium.ai.embeddings.FieldToEmbeddingOpenAi.json"
+      },
+      {
         "class": "io.debezium.ai.embeddings.FieldToEmbeddingVoyageAi",
         "name": "Debezium Field To Embedding",
         "description": "",
@@ -658,6 +694,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$KeyOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.Cast$KeyOpenAi",
+        "name": "Kafka Cast (Key)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$KeyOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.Cast$KeyVoyageAi",
         "name": "Kafka Cast (Key)",
         "description": "",
@@ -686,6 +728,12 @@
         "name": "Kafka Cast (Value)",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$ValueOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.Cast$ValueOpenAi",
+        "name": "Kafka Cast (Value)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.Cast$ValueOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.Cast$ValueVoyageAi",
@@ -718,6 +766,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.DropHeadersOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.DropHeadersOpenAi",
+        "name": "Kafka Drop Headers",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.DropHeadersOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.DropHeadersVoyageAi",
         "name": "Kafka Drop Headers",
         "description": "",
@@ -746,6 +800,12 @@
         "name": "Kafka Extract Field (Key)",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$KeyOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.ExtractField$KeyOpenAi",
+        "name": "Kafka Extract Field (Key)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$KeyOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.ExtractField$KeyVoyageAi",
@@ -778,6 +838,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$ValueOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.ExtractField$ValueOpenAi",
+        "name": "Kafka Extract Field (Value)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.ExtractField$ValueOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.ExtractField$ValueVoyageAi",
         "name": "Kafka Extract Field (Value)",
         "description": "",
@@ -806,6 +872,12 @@
         "name": "Kafka Filter",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.FilterOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.FilterOpenAi",
+        "name": "Kafka Filter",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.FilterOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.FilterVoyageAi",
@@ -838,6 +910,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$KeyOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.Flatten$KeyOpenAi",
+        "name": "Kafka Flatten (Key)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$KeyOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.Flatten$KeyVoyageAi",
         "name": "Kafka Flatten (Key)",
         "description": "",
@@ -866,6 +944,12 @@
         "name": "Kafka Flatten (Value)",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$ValueOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.Flatten$ValueOpenAi",
+        "name": "Kafka Flatten (Value)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.Flatten$ValueOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.Flatten$ValueVoyageAi",
@@ -898,6 +982,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$KeyOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.HeaderFrom$KeyOpenAi",
+        "name": "Kafka Header From (Key)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$KeyOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.HeaderFrom$KeyVoyageAi",
         "name": "Kafka Header From (Key)",
         "description": "",
@@ -926,6 +1016,12 @@
         "name": "Kafka Header From (Value)",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$ValueOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.HeaderFrom$ValueOpenAi",
+        "name": "Kafka Header From (Value)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.HeaderFrom$ValueOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.HeaderFrom$ValueVoyageAi",
@@ -958,6 +1054,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$KeyOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.HoistField$KeyOpenAi",
+        "name": "Kafka Hoist Field (Key)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$KeyOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.HoistField$KeyVoyageAi",
         "name": "Kafka Hoist Field (Key)",
         "description": "",
@@ -986,6 +1088,12 @@
         "name": "Kafka Hoist Field (Value)",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$ValueOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.HoistField$ValueOpenAi",
+        "name": "Kafka Hoist Field (Value)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.HoistField$ValueOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.HoistField$ValueVoyageAi",
@@ -1018,6 +1126,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$KeyOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.InsertField$KeyOpenAi",
+        "name": "Kafka Insert Field (Key)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$KeyOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.InsertField$KeyVoyageAi",
         "name": "Kafka Insert Field (Key)",
         "description": "",
@@ -1046,6 +1160,12 @@
         "name": "Kafka Insert Field (Value)",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$ValueOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.InsertField$ValueOpenAi",
+        "name": "Kafka Insert Field (Value)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertField$ValueOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.InsertField$ValueVoyageAi",
@@ -1078,6 +1198,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertHeaderOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.InsertHeaderOpenAi",
+        "name": "Kafka Insert Header",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.InsertHeaderOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.InsertHeaderVoyageAi",
         "name": "Kafka Insert Header",
         "description": "",
@@ -1106,6 +1232,12 @@
         "name": "Kafka Mask Field (Key)",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$KeyOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.MaskField$KeyOpenAi",
+        "name": "Kafka Mask Field (Key)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$KeyOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.MaskField$KeyVoyageAi",
@@ -1138,6 +1270,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$ValueOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.MaskField$ValueOpenAi",
+        "name": "Kafka Mask Field (Value)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.MaskField$ValueOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.MaskField$ValueVoyageAi",
         "name": "Kafka Mask Field (Value)",
         "description": "",
@@ -1166,6 +1304,12 @@
         "name": "Kafka Regex Router",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.RegexRouterOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.RegexRouterOpenAi",
+        "name": "Kafka Regex Router",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.RegexRouterOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.RegexRouterVoyageAi",
@@ -1198,6 +1342,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$KeyOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.ReplaceField$KeyOpenAi",
+        "name": "Kafka Replace Field (Key)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$KeyOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.ReplaceField$KeyVoyageAi",
         "name": "Kafka Replace Field (Key)",
         "description": "",
@@ -1226,6 +1376,12 @@
         "name": "Kafka Replace Field (Value)",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$ValueOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.ReplaceField$ValueOpenAi",
+        "name": "Kafka Replace Field (Value)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.ReplaceField$ValueOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.ReplaceField$ValueVoyageAi",
@@ -1258,6 +1414,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyOpenAi",
+        "name": "Kafka Set Schema Metadata (Key)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$KeyVoyageAi",
         "name": "Kafka Set Schema Metadata (Key)",
         "description": "",
@@ -1286,6 +1448,12 @@
         "name": "Kafka Set Schema Metadata (Value)",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueOpenAi",
+        "name": "Kafka Set Schema Metadata (Value)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.SetSchemaMetadata$ValueVoyageAi",
@@ -1318,6 +1486,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$KeyOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.TimestampConverter$KeyOpenAi",
+        "name": "Kafka Timestamp Converter (Key)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$KeyOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.TimestampConverter$KeyVoyageAi",
         "name": "Kafka Timestamp Converter (Key)",
         "description": "",
@@ -1346,6 +1520,12 @@
         "name": "Kafka Timestamp Converter (Value)",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$ValueOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.TimestampConverter$ValueOpenAi",
+        "name": "Kafka Timestamp Converter (Value)",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampConverter$ValueOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.TimestampConverter$ValueVoyageAi",
@@ -1378,6 +1558,12 @@
         "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampRouterOllama.json"
       },
       {
+        "class": "org.apache.kafka.connect.transforms.TimestampRouterOpenAi",
+        "name": "Kafka Timestamp Router",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.TimestampRouterOpenAi.json"
+      },
+      {
         "class": "org.apache.kafka.connect.transforms.TimestampRouterVoyageAi",
         "name": "Kafka Timestamp Router",
         "description": "",
@@ -1406,6 +1592,12 @@
         "name": "Kafka Value To Key",
         "description": "",
         "descriptor": "transformation/org.apache.kafka.connect.transforms.ValueToKeyOllama.json"
+      },
+      {
+        "class": "org.apache.kafka.connect.transforms.ValueToKeyOpenAi",
+        "name": "Kafka Value To Key",
+        "description": "",
+        "descriptor": "transformation/org.apache.kafka.connect.transforms.ValueToKeyOpenAi.json"
       },
       {
         "class": "org.apache.kafka.connect.transforms.ValueToKeyVoyageAi",
