@@ -100,6 +100,34 @@
     },
     "validation" : [ ],
     "valueDependants" : [ ]
+  }, {
+    "name" : "openai.log.requests",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Log OpenAI requests.",
+      "description" : "Whether to log requests sent to OpenAI API. Should be used with caution in production as it may expose sensitive data. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 7,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "openai.log.responses",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Log OpenAI responses.",
+      "description" : "Whether to log responses received from OpenAI API. Should be used with caution in production as it may expose sensitive data. Default: false",
+      "group" : "Advanced",
+      "groupOrder" : 8,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Advanced",
