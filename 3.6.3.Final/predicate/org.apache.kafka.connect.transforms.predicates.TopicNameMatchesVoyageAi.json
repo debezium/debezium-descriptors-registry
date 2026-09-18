@@ -1,0 +1,26 @@
+{
+  "name" : "Kafka Topic Name Matches",
+  "type" : "predicate",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "pattern",
+    "type" : "string",
+    "display" : {
+      "label" : "pattern",
+      "description" : "A Java regular expression for matching against the name of a record's topic.",
+      "group" : "Advanced",
+      "groupOrder" : 9999,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
