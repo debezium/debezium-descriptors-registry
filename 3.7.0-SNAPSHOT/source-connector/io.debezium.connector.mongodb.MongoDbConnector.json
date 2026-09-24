@@ -198,6 +198,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "topic.naming.strategy",
+    "type" : "string",
+    "default" : "io.debezium.schema.SchemaTopicNamingStrategy",
+    "display" : {
+      "label" : "Topic naming strategy class",
+      "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc. Default: io.debezium.schema.SchemaTopicNamingStrategy",
+      "group" : "Connector",
+      "groupOrder" : 1,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "tombstones.on.delete",
     "type" : "boolean",
     "default" : "true",
@@ -205,7 +219,7 @@
       "label" : "Change the behaviour of Debezium with regards to delete operations",
       "description" : "Whether delete operations should be represented by a delete event and a subsequent tombstone event (true) or only by a delete event (false). Emitting the tombstone event (the default behavior) allows Kafka to completely delete all events pertaining to the given key once the source record got deleted. Default: true",
       "group" : "Connector",
-      "groupOrder" : 1,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "medium"
     },
@@ -219,7 +233,7 @@
       "label" : "Binary Handling",
       "description" : "Specify how binary (blob, binary, etc.) columns should be represented in change events, including: 'bytes' represents binary data as byte array (default); 'base64' represents binary data as base64-encoded string; 'base64-url-safe' represents binary data as base64-url-safe-encoded string; 'hex' represents binary data as hex-encoded (base16) string Default: bytes",
       "group" : "Connector",
-      "groupOrder" : 2,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "low"
     },
@@ -236,7 +250,7 @@
       "label" : "Schema Name Adjustment",
       "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 3,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "low"
     },
@@ -253,7 +267,7 @@
       "label" : "Field Name Adjustment",
       "description" : "Specify how field names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 4,
+      "groupOrder" : 5,
       "width" : "medium",
       "importance" : "low"
     },
@@ -270,7 +284,7 @@
       "label" : "Event converting failure handling mode",
       "description" : "Specify how failures during converting of event should be handled, including: 'fail' throw an exception that the column of event conversion is failed with unmatched schema type, causing the connector to be stopped. it could need schema recovery to covert successfully; 'warn' (the default) the value of column of event that conversion failed will be null and be logged with warn level; 'skip' the value of column of event that conversion failed will be null and be logged with debug level. Default: warn",
       "group" : "Connector",
-      "groupOrder" : 5,
+      "groupOrder" : 6,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -280,46 +294,6 @@
     } ],
     "valueDependants" : [ ]
   }, {
-    "name" : "topic.naming.strategy",
-    "type" : "string",
-    "default" : "io.debezium.schema.SchemaTopicNamingStrategy",
-    "display" : {
-      "label" : "Topic naming strategy class",
-      "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc. Default: io.debezium.schema.SchemaTopicNamingStrategy",
-      "group" : "Connector",
-      "groupOrder" : 6,
-      "width" : "medium",
-      "importance" : "medium"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "notification.sink.topic.name",
-    "type" : "string",
-    "display" : {
-      "label" : "Notification topic name",
-      "description" : "The name of the topic for the notifications. This is required in case 'sink' is in the list of enabled channels",
-      "group" : "Connector",
-      "groupOrder" : 7,
-      "width" : "long",
-      "importance" : "high"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "custom.metric.tags",
-    "type" : "list",
-    "display" : {
-      "label" : "Customize metric tags",
-      "description" : "A comma-separated list of key-value pairs that are appended to the MBean object name. Keys must be valid JMX ObjectName property keys. For example: k1=v1,k2=v2",
-      "group" : "Connector",
-      "groupOrder" : 8,
-      "width" : "medium",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
     "name" : "snapshot.mode",
     "type" : "string",
     "default" : "initial",
@@ -327,7 +301,7 @@
       "label" : "Snapshot mode",
       "description" : "The criteria for running a snapshot upon startup of the connector. Select one of the following snapshot options: 'initial' (default):  If the connector does not detect any offsets for the logical server name, it runs a snapshot that captures the current full state of the configured tables. After the snapshot completes, the connector begins to stream changes from the oplog. 'never': The connector does not run a snapshot. Upon first startup, the connector immediately begins reading from the beginning of the oplog. Default: initial",
       "group" : "Connector",
-      "groupOrder" : 9,
+      "groupOrder" : 7,
       "width" : "short",
       "importance" : "low"
     },
@@ -344,7 +318,7 @@
       "label" : "Capture mode",
       "description" : "The method used to capture changes from MongoDB server. Options include: 'change_streams' to capture changes via MongoDB Change Streams, update events do not contain full documents; 'change_streams_update_full' (the default) to capture changes via MongoDB Change Streams, update events contain full documents Default: change_streams_update_full",
       "group" : "Connector",
-      "groupOrder" : 10,
+      "groupOrder" : 8,
       "width" : "short",
       "importance" : "medium"
     },
@@ -361,7 +335,7 @@
       "label" : "Capture scope",
       "description" : "The scope of captured changes. Options include: 'deployment' (the default) to capture changes from the entire MongoDB deployment; 'database' to capture changes from a specific MongoDB database'collection' to capture changes from a specific MongoDB collection Default: deployment",
       "group" : "Connector",
-      "groupOrder" : 11,
+      "groupOrder" : 9,
       "width" : "short",
       "importance" : "medium"
     },
@@ -377,7 +351,7 @@
       "label" : "Capture target",
       "description" : "The target to capture changes from. For 'database' scope, this is the database name. For 'collection' scope, this is the collection name as <databaseName>.<collectionName>.",
       "group" : "Connector",
-      "groupOrder" : 12,
+      "groupOrder" : 10,
       "width" : "short",
       "importance" : "medium"
     },
@@ -391,7 +365,7 @@
       "label" : "JSON serialization mode",
       "description" : "Controls the Extended JSON serialization mode used for MongoDB event payload fields. Options include: 'legacy' (the default) uses MongoDB Extended JSON v1 strict mode for full document fields and MongoDB Extended JSON v2 relaxed mode for update fields. 'strict' uses MongoDB Extended JSON v1 strict mode. 'extended' uses MongoDB Extended JSON v2 canonical mode. 'relaxed' uses MongoDB Extended JSON v2 relaxed mode. Default: legacy",
       "group" : "Connector",
-      "groupOrder" : 13,
+      "groupOrder" : 11,
       "width" : "short",
       "importance" : "medium"
     },
@@ -408,7 +382,7 @@
       "label" : "Source info struct maker class",
       "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.mongodb.MongoDbSourceInfoStructMaker",
       "group" : "Connector",
-      "groupOrder" : 14,
+      "groupOrder" : 12,
       "width" : "medium",
       "importance" : "low"
     },
@@ -523,6 +497,74 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "notification.sink.topic.name",
+    "type" : "string",
+    "display" : {
+      "label" : "Notification topic name",
+      "description" : "The name of the topic for the notifications. This is required in case 'sink' is in the list of enabled channels",
+      "group" : "Connector Advanced",
+      "groupOrder" : 8,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "notification.http.url",
+    "type" : "string",
+    "display" : {
+      "label" : "HTTP notification endpoint URL",
+      "description" : "The URL to which notifications are POSTed as JSON. Required when 'http' is in the list of enabled channels.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 9,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "notification.http.timeout.ms",
+    "type" : "number",
+    "default" : "5000",
+    "display" : {
+      "label" : "HTTP notification timeout (ms)",
+      "description" : "Connect and read timeout, in milliseconds, for HTTP notification delivery. Default: 5000",
+      "group" : "Connector Advanced",
+      "groupOrder" : 10,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "notification.http.retries",
+    "type" : "number",
+    "default" : "2",
+    "display" : {
+      "label" : "HTTP notification retries",
+      "description" : "Number of retries after the first failed HTTP notification delivery attempt. Terminal notifications (COMPLETED/ABORTED/SKIPPED) are always retried at least 3 times. Default: 2",
+      "group" : "Connector Advanced",
+      "groupOrder" : 11,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "notification.http.allow.private.networks",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Allow private network notification targets",
+      "description" : "When true, the SSRF guard permits notification URLs that resolve to loopback, site-local or link-local addresses (e.g. an in-cluster Service). Defaults to false so only public addresses are allowed. Default: false",
+      "group" : "Connector Advanced",
+      "groupOrder" : 12,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "transaction.metadata.factory",
     "type" : "string",
     "default" : "io.debezium.pipeline.txmetadata.DefaultTransactionMetadataFactory",
@@ -530,7 +572,7 @@
       "label" : "Factory class to create transaction context & transaction struct maker classes",
       "description" : "Class to make transaction context & transaction struct/schemas Default: io.debezium.pipeline.txmetadata.DefaultTransactionMetadataFactory",
       "group" : "Connector Advanced",
-      "groupOrder" : 8,
+      "groupOrder" : 13,
       "width" : "medium",
       "importance" : "low"
     },
@@ -1081,6 +1123,19 @@
       "groupOrder" : 25,
       "width" : "short",
       "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "custom.metric.tags",
+    "type" : "list",
+    "display" : {
+      "label" : "Customize metric tags",
+      "description" : "A comma-separated list of key-value pairs that are appended to the MBean object name. Keys must be valid JMX ObjectName property keys. For example: k1=v1,k2=v2",
+      "group" : "Advanced",
+      "groupOrder" : 27,
+      "width" : "medium",
+      "importance" : "low"
     },
     "validation" : [ ],
     "valueDependants" : [ ]

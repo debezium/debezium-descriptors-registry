@@ -269,6 +269,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "topic.naming.strategy",
+    "type" : "string",
+    "default" : "io.debezium.schema.SchemaTopicNamingStrategy",
+    "display" : {
+      "label" : "Topic naming strategy class",
+      "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc. Default: io.debezium.schema.SchemaTopicNamingStrategy",
+      "group" : "Connector",
+      "groupOrder" : 1,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "tombstones.on.delete",
     "type" : "boolean",
     "default" : "true",
@@ -276,7 +290,7 @@
       "label" : "Change the behaviour of Debezium with regards to delete operations",
       "description" : "Whether delete operations should be represented by a delete event and a subsequent tombstone event (true) or only by a delete event (false). Emitting the tombstone event (the default behavior) allows Kafka to completely delete all events pertaining to the given key once the source record got deleted. Default: true",
       "group" : "Connector",
-      "groupOrder" : 1,
+      "groupOrder" : 2,
       "width" : "short",
       "importance" : "medium"
     },
@@ -290,7 +304,7 @@
       "label" : "Binary Handling",
       "description" : "Specify how binary (blob, binary, etc.) columns should be represented in change events, including: 'bytes' represents binary data as byte array (default); 'base64' represents binary data as base64-encoded string; 'base64-url-safe' represents binary data as base64-url-safe-encoded string; 'hex' represents binary data as hex-encoded (base16) string Default: bytes",
       "group" : "Connector",
-      "groupOrder" : 2,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "low"
     },
@@ -307,7 +321,7 @@
       "label" : "Schema Name Adjustment",
       "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 3,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "low"
     },
@@ -324,7 +338,7 @@
       "label" : "Field Name Adjustment",
       "description" : "Specify how field names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 4,
+      "groupOrder" : 5,
       "width" : "medium",
       "importance" : "low"
     },
@@ -341,7 +355,7 @@
       "label" : "Event converting failure handling mode",
       "description" : "Specify how failures during converting of event should be handled, including: 'fail' throw an exception that the column of event conversion is failed with unmatched schema type, causing the connector to be stopped. it could need schema recovery to covert successfully; 'warn' (the default) the value of column of event that conversion failed will be null and be logged with warn level; 'skip' the value of column of event that conversion failed will be null and be logged with debug level. Default: warn",
       "group" : "Connector",
-      "groupOrder" : 5,
+      "groupOrder" : 6,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -351,46 +365,6 @@
     } ],
     "valueDependants" : [ ]
   }, {
-    "name" : "topic.naming.strategy",
-    "type" : "string",
-    "default" : "io.debezium.schema.SchemaTopicNamingStrategy",
-    "display" : {
-      "label" : "Topic naming strategy class",
-      "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc. Default: io.debezium.schema.SchemaTopicNamingStrategy",
-      "group" : "Connector",
-      "groupOrder" : 6,
-      "width" : "medium",
-      "importance" : "medium"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "notification.sink.topic.name",
-    "type" : "string",
-    "display" : {
-      "label" : "Notification topic name",
-      "description" : "The name of the topic for the notifications. This is required in case 'sink' is in the list of enabled channels",
-      "group" : "Connector",
-      "groupOrder" : 7,
-      "width" : "long",
-      "importance" : "high"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "custom.metric.tags",
-    "type" : "list",
-    "display" : {
-      "label" : "Customize metric tags",
-      "description" : "A comma-separated list of key-value pairs that are appended to the MBean object name. Keys must be valid JMX ObjectName property keys. For example: k1=v1,k2=v2",
-      "group" : "Connector",
-      "groupOrder" : 8,
-      "width" : "medium",
-      "importance" : "low"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
     "name" : "decimal.handling.mode",
     "type" : "string",
     "default" : "precise",
@@ -398,7 +372,7 @@
       "label" : "Decimal Handling",
       "description" : "Specify how DECIMAL and NUMERIC columns should be represented in change events, including: 'precise' (the default) uses java.math.BigDecimal to represent values, which are encoded in the change events using a binary representation and Kafka Connect's 'org.apache.kafka.connect.data.Decimal' type; 'string' uses string to represent values; 'double' represents values using Java's 'double', which may not offer the precision but will be far easier to use in consumers. Default: precise",
       "group" : "Connector",
-      "groupOrder" : 9,
+      "groupOrder" : 7,
       "width" : "short",
       "importance" : "medium"
     },
@@ -415,7 +389,7 @@
       "label" : "Include database schema changes",
       "description" : "Whether the connector should publish changes in the database schema to a Kafka topic with the same name as the database server ID. Each schema change will be recorded using a key that contains the database name and whose value include logical description of the new schema and optionally the DDL statement(s). The  This is independent of how the connector internally records database schema history. Default: true",
       "group" : "Connector",
-      "groupOrder" : 10,
+      "groupOrder" : 8,
       "width" : "short",
       "importance" : "medium"
     },
@@ -429,7 +403,7 @@
       "label" : "Include Table and Column Comments",
       "description" : "Whether the connector parse table and column's comment to metadata object. Note: Enable this option will bring the implications on memory usage. The number and size of ColumnImpl objects is what largely impacts how much memory is consumed by the Debezium connectors, and adding a String to each of them can potentially be quite heavy. The Default: false",
       "group" : "Connector",
-      "groupOrder" : 11,
+      "groupOrder" : 9,
       "width" : "short",
       "importance" : "medium"
     },
@@ -443,7 +417,7 @@
       "label" : "The mode for handling bigint-unsigned values",
       "description" : "Specify how BIGINT UNSIGNED columns should be represented in change events, including: 'precise' uses java.math.BigDecimal to represent values, which are encoded in the change events using a binary representation and Kafka Connect's 'org.apache.kafka.connect.data.Decimal' type; 'long' (the default) represents values using Java's 'long', which may not offer the precision but will be far easier to use in consumers. Default: long",
       "group" : "Connector",
-      "groupOrder" : 12,
+      "groupOrder" : 10,
       "width" : "short",
       "importance" : "medium"
     },
@@ -460,7 +434,7 @@
       "label" : "The time precision mode to be used",
       "description" : "Time, date and timestamps can be represented with different kinds of precisions, including: 'adaptive_time_microseconds': the precision of date and timestamp values is based the database column's precision; but time fields always use microseconds precision; 'connect': always represents time, date and timestamp values using Kafka Connect's built-in representations for Time, Date, and Timestamp, which uses millisecond precision regardless of the database columns' precision; 'isostring': represents time, date, and datetime values as ISO-8601 formatted strings at the UTC time zone; 'structured': represents time, date, timestamp, and datetime values as Kafka Connect structs with separate calendar and clock components. Default: adaptive_time_microseconds",
       "group" : "Connector",
-      "groupOrder" : 13,
+      "groupOrder" : 11,
       "width" : "short",
       "importance" : "medium"
     },
@@ -477,7 +451,7 @@
       "label" : "Enable Time Adjuster",
       "description" : "The database allows the user to insert year value as either 2-digit or 4-digit. In case of two digit the value is automatically mapped into 1970 - 2069.false - delegates the implicit conversion to the database; true - (the default) Debezium makes the conversion Default: true",
       "group" : "Connector",
-      "groupOrder" : 14,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "low"
     },
@@ -491,7 +465,7 @@
       "label" : "Filter DML events",
       "description" : "When set to true, only produce DML events for transactions that were written on the server with matching GTIDs defined by the `gtid.source.includes` or `gtid.source.excludes`, if they were specified. Default: true",
       "group" : "Connector",
-      "groupOrder" : 15,
+      "groupOrder" : 13,
       "width" : "short",
       "importance" : "medium"
     },
@@ -504,7 +478,7 @@
       "label" : "Include GTID sources",
       "description" : "The source UUIDs used to include GTID ranges when determine the starting position in the MySQL server's binlog.",
       "group" : "Connector",
-      "groupOrder" : 16,
+      "groupOrder" : 14,
       "width" : "long",
       "importance" : "high"
     },
@@ -517,7 +491,7 @@
       "label" : "Exclude GTID sources",
       "description" : "The source UUIDs used to exclude GTID ranges when determine the starting position in the MySQL server's binlog.",
       "group" : "Connector",
-      "groupOrder" : 17,
+      "groupOrder" : 15,
       "width" : "long",
       "importance" : "medium"
     },
@@ -531,7 +505,7 @@
       "label" : "Source info struct maker class",
       "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.mysql.MySqlSourceInfoStructMaker",
       "group" : "Connector",
-      "groupOrder" : 18,
+      "groupOrder" : 16,
       "width" : "medium",
       "importance" : "low"
     },
@@ -618,6 +592,74 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "notification.sink.topic.name",
+    "type" : "string",
+    "display" : {
+      "label" : "Notification topic name",
+      "description" : "The name of the topic for the notifications. This is required in case 'sink' is in the list of enabled channels",
+      "group" : "Connector Advanced",
+      "groupOrder" : 6,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "notification.http.url",
+    "type" : "string",
+    "display" : {
+      "label" : "HTTP notification endpoint URL",
+      "description" : "The URL to which notifications are POSTed as JSON. Required when 'http' is in the list of enabled channels.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 7,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "notification.http.timeout.ms",
+    "type" : "number",
+    "default" : "5000",
+    "display" : {
+      "label" : "HTTP notification timeout (ms)",
+      "description" : "Connect and read timeout, in milliseconds, for HTTP notification delivery. Default: 5000",
+      "group" : "Connector Advanced",
+      "groupOrder" : 8,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "notification.http.retries",
+    "type" : "number",
+    "default" : "2",
+    "display" : {
+      "label" : "HTTP notification retries",
+      "description" : "Number of retries after the first failed HTTP notification delivery attempt. Terminal notifications (COMPLETED/ABORTED/SKIPPED) are always retried at least 3 times. Default: 2",
+      "group" : "Connector Advanced",
+      "groupOrder" : 9,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "notification.http.allow.private.networks",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Allow private network notification targets",
+      "description" : "When true, the SSRF guard permits notification URLs that resolve to loopback, site-local or link-local addresses (e.g. an in-cluster Service). Defaults to false so only public addresses are allowed. Default: false",
+      "group" : "Connector Advanced",
+      "groupOrder" : 10,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "transaction.metadata.factory",
     "type" : "string",
     "default" : "io.debezium.pipeline.txmetadata.DefaultTransactionMetadataFactory",
@@ -625,7 +667,7 @@
       "label" : "Factory class to create transaction context & transaction struct maker classes",
       "description" : "Class to make transaction context & transaction struct/schemas Default: io.debezium.pipeline.txmetadata.DefaultTransactionMetadataFactory",
       "group" : "Connector Advanced",
-      "groupOrder" : 6,
+      "groupOrder" : 11,
       "width" : "medium",
       "importance" : "low"
     },
@@ -638,7 +680,7 @@
       "label" : "Columns PK mapping",
       "description" : "A semicolon-separated list of expressions that match fully-qualified tables and column(s) to be used as message key. Each expression must match the pattern '<fully-qualified table name>:<key columns>', where the table names could be defined as (DB_NAME.TABLE_NAME) or (SCHEMA_NAME.TABLE_NAME), depending on the specific connector, and the key columns are a comma-separated list of columns representing the custom key. For any table without an explicit key configuration the table's primary key column(s) will be used as message key. Example: dbserver1.inventory.orderlines:orderId,orderLineId;dbserver1.inventory.orders:id",
       "group" : "Connector Advanced",
-      "groupOrder" : 7,
+      "groupOrder" : 12,
       "width" : "long",
       "importance" : "medium"
     },
@@ -651,7 +693,7 @@
       "label" : "Mask Columns Using Hash and Salt",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be masked by hashing the input. Using the specified hash algorithms and salt.",
       "group" : "Connector Advanced",
-      "groupOrder" : 8,
+      "groupOrder" : 13,
       "width" : "long",
       "importance" : "medium"
     },
@@ -664,7 +706,7 @@
       "label" : "Mask Columns With n Asterisks",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be masked with configured amount of asterisk ('*') characters.",
       "group" : "Connector Advanced",
-      "groupOrder" : 9,
+      "groupOrder" : 14,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -676,7 +718,7 @@
       "label" : "Truncate Columns To n Characters",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be truncated to the configured amount of characters.",
       "group" : "Connector Advanced",
-      "groupOrder" : 10,
+      "groupOrder" : 15,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -688,7 +730,7 @@
       "label" : "Propagate Source Types by Columns",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that adds the column’s original type and original length as parameters to the corresponding field schemas in the emitted change records.",
       "group" : "Connector Advanced",
-      "groupOrder" : 11,
+      "groupOrder" : 16,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -700,7 +742,7 @@
       "label" : "Propagate Source Types by Data Type",
       "description" : "A comma-separated list of regular expressions matching the database-specific data type names that adds the data type's original type and original length as parameters to the corresponding field schemas in the emitted change records.",
       "group" : "Connector Advanced",
-      "groupOrder" : 12,
+      "groupOrder" : 17,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -713,7 +755,7 @@
       "label" : "Schema storage class",
       "description" : "The fully-qualified class name of the storage implementation for schema metadata. The class must implement io.debezium.relational.TableMappingStorage<io.debezium.relational.TableSchema>. Defaults to io.debezium.relational.ConcurrentMapTableMappingStorage for in-memory storage. Default: io.debezium.relational.ConcurrentMapTableMappingStorage",
       "group" : "Connector Advanced",
-      "groupOrder" : 13,
+      "groupOrder" : 18,
       "width" : "long",
       "importance" : "low"
     },
@@ -727,7 +769,7 @@
       "label" : "Table storage class",
       "description" : "The fully-qualified class name of the storage implementation for table metadata. The class must implement io.debezium.relational.TableMappingStorage<io.debezium.relational.Table>. Defaults to io.debezium.relational.ConcurrentMapTableMappingStorage for in-memory storage. Default: io.debezium.relational.ConcurrentMapTableMappingStorage",
       "group" : "Connector Advanced",
-      "groupOrder" : 14,
+      "groupOrder" : 19,
       "width" : "long",
       "importance" : "low"
     },
@@ -741,7 +783,7 @@
       "label" : "Database schema history class",
       "description" : "The name of the SchemaHistory class that should be used to store and recover database schema changes. The configuration properties for the history are prefixed with the 'schema.history.internal.' string. Default: io.debezium.storage.kafka.history.KafkaSchemaHistory",
       "group" : "Connector Advanced",
-      "groupOrder" : 15,
+      "groupOrder" : 20,
       "width" : "long",
       "importance" : "low"
     },
@@ -755,7 +797,7 @@
       "label" : "Skip DDL statements that cannot be parsed",
       "description" : "Controls the action Debezium will take when it meets a DDL statement in binlog, that it cannot parse.By default the connector will stop operating but by changing the setting it can ignore the statements which it cannot parse. If skipping is enabled then Debezium can miss metadata changes. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 16,
+      "groupOrder" : 21,
       "width" : "short",
       "importance" : "low"
     },
@@ -769,7 +811,7 @@
       "label" : "Store only DDL that modifies tables that are captured based on include/exclude lists",
       "description" : "Controls what DDL will Debezium store in database schema history. By default (false) Debezium will store all incoming DDL statements. If set to true, then only DDL that manipulates a captured table will be stored. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 17,
+      "groupOrder" : 22,
       "width" : "short",
       "importance" : "low"
     },
@@ -783,7 +825,7 @@
       "label" : "Store only DDL that modifies tables of databases that are captured based on include/exclude lists",
       "description" : "Controls what DDL will Debezium store in database schema history. By default (false) Debezium will store all incoming DDL statements. If set to true, then only DDL that manipulates a table from captured schema/database will be stored. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 18,
+      "groupOrder" : 23,
       "width" : "short",
       "importance" : "low"
     },
@@ -797,7 +839,7 @@
       "label" : "Memory optimization mode for schema history",
       "description" : "Controls how Debezium deduplicates identical schema objects (tables, columns, attributes) in memory using an interner. Default: off",
       "group" : "Connector Advanced",
-      "groupOrder" : 19,
+      "groupOrder" : 24,
       "width" : "short",
       "importance" : "low"
     },
@@ -814,7 +856,7 @@
       "label" : "Stream result set of size",
       "description" : "The number of rows a table must contain to stream results rather than pull all into memory during snapshots. Defaults to 1,000. Use 0 to stream all results and completely avoid checking the size of each table. Default: 1000",
       "group" : "Connector Advanced",
-      "groupOrder" : 20,
+      "groupOrder" : 25,
       "width" : "medium",
       "importance" : "low"
     },
@@ -828,7 +870,7 @@
       "label" : "Binlog reader buffer size",
       "description" : "The size of a look-ahead buffer used by the binlog reader to decide whether the transaction in progress is going to be committed or rolled back. Use 0 to disable look-ahead buffering. Defaults to 0 (i.e. buffering is disabled. Default: 0",
       "group" : "Connector Advanced",
-      "groupOrder" : 21,
+      "groupOrder" : 26,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -842,7 +884,7 @@
       "label" : "Include original SQL query with in change events",
       "description" : "Whether the connector should include the original SQL query that generated the change event. Note: This option requires the database to be configured using the server option binlog_rows_query_log_events (MySQL) or binlog_annotate_row_events (MariaDB) set to ON.Query will not be present for events generated from snapshot. WARNING: Enabling this option may expose tables or fields explicitly excluded or masked by including the original SQL statement in the change event. For this reason the Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 22,
+      "groupOrder" : 27,
       "width" : "short",
       "importance" : "medium"
     },
@@ -856,7 +898,7 @@
       "label" : "Ignore GTID on recovery",
       "description" : "Whether the connector should ignore GTID during recovery and restart from the binlog file and position instead. GTID mode on the server remains enabled, and GTID tracking resumes normally after recovery. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 23,
+      "groupOrder" : 28,
       "width" : "short",
       "importance" : "low"
     },
@@ -1546,6 +1588,19 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "custom.metric.tags",
+    "type" : "list",
+    "display" : {
+      "label" : "Customize metric tags",
+      "description" : "A comma-separated list of key-value pairs that are appended to the MBean object name. Keys must be valid JMX ObjectName property keys. For example: k1=v1,k2=v2",
+      "group" : "Advanced",
+      "groupOrder" : 27,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "event.deserialization.failure.handling.mode",
     "type" : "string",
     "default" : "fail",
@@ -1553,7 +1608,7 @@
       "label" : "Event deserialization failure handling",
       "description" : "Specify how failures during deserialization of binlog events (i.e. when encountering a corrupted event) should be handled, including: 'fail' (the default) an exception indicating the problematic event and its binlog position is raised, causing the connector to be stopped; 'warn' the problematic event and its binlog position will be logged and the event will be skipped; 'ignore' the problematic event will be skipped. Default: fail",
       "group" : "Advanced",
-      "groupOrder" : 28,
+      "groupOrder" : 29,
       "width" : "short",
       "importance" : "medium"
     },
@@ -1570,7 +1625,7 @@
       "label" : "Inconsistent schema failure handling",
       "description" : "Specify how binlog events that belong to a table missing from internal schema representation (i.e. internal representation is not consistent with database) should be handled, including: 'fail' (the default) an exception indicating the problematic event and its binlog position is raised, causing the connector to be stopped; 'warn' the problematic event and its binlog position will be logged and the event will be skipped; 'skip' the problematic event will be skipped. Default: fail",
       "group" : "Advanced",
-      "groupOrder" : 29,
+      "groupOrder" : 30,
       "width" : "short",
       "importance" : "medium"
     },
@@ -1587,7 +1642,7 @@
       "label" : "Resolve CREATE TABLE LIKE reference schema",
       "description" : "When a CREATE TABLE ... LIKE statement reference a table whose schema is not in the internal cache(e.g., excluded by table filters), automatically fetch the reference table's schema via SHOW CREATE TABLE and retry DDL parsing. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 30,
+      "groupOrder" : 31,
       "width" : "short",
       "importance" : "medium"
     },
