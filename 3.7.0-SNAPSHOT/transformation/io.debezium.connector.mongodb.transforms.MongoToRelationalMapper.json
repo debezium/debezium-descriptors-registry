@@ -1,0 +1,31 @@
+{
+  "name" : "Debezium Mongo To Relational Mapper",
+  "type" : "transformation",
+  "version" : "3.7.0-SNAPSHOT",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "json.output.mode",
+    "type" : "string",
+    "default" : "input",
+    "display" : {
+      "label" : "JSON output mode",
+      "description" : "How collection mappings serialize io.debezium.data.Json fields. 'input' (the default) preserves the incoming JSON representation. 'canonical' serializes all mapped JSON values, including the whole document, as canonical Extended JSON. Default: input",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "input", "canonical" ]
+    } ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
