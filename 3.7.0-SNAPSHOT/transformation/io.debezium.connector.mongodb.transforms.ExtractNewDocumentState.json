@@ -110,6 +110,23 @@
     } ],
     "valueDependants" : [ ]
   }, {
+    "name" : "bson.timestamp.handling.mode",
+    "type" : "string",
+    "default" : "connect",
+    "display" : {
+      "label" : "BSON timestamp handling mode",
+      "description" : "How BSON Timestamp values are represented. 'connect' (the default) converts the value to a Kafka Connect Timestamp, discarding the BSON increment component. 'struct' emits a struct with 'time' and 'increment' fields, preserving both components of the BSON value. Default: connect",
+      "group" : "Advanced",
+      "groupOrder" : 7,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "struct", "connect" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "flatten.struct",
     "type" : "boolean",
     "default" : "false",
@@ -117,7 +134,7 @@
       "label" : "Flatten struct",
       "description" : "Flattening structs by concatenating the fields into plain properties, using a (configurable) delimiter. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 7,
+      "groupOrder" : 8,
       "width" : "short",
       "importance" : "low"
     },
@@ -131,7 +148,7 @@
       "label" : "Delimiter for flattened struct",
       "description" : "Delimiter to concat between field names from the input record when generating field names for theoutput record. Default: _",
       "group" : "Advanced",
-      "groupOrder" : 8,
+      "groupOrder" : 9,
       "width" : "short",
       "importance" : "low"
     },
@@ -145,7 +162,7 @@
       "label" : "Rewrite delete records with id field",
       "description" : "When set to true and \"delete.tombstone.handling.mode\" is rewrite, extracts the \"id\" from the deleted record's key and includes it as \"_id\" in the event payload. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 9,
+      "groupOrder" : 10,
       "width" : "short",
       "importance" : "low"
     },
