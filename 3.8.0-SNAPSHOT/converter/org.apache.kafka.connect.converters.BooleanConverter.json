@@ -1,0 +1,26 @@
+{
+  "name" : "Kafka Boolean Converter",
+  "type" : "converter",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "converter.type",
+    "type" : "string",
+    "display" : {
+      "label" : "converter.type",
+      "description" : "How this converter will be used.",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
