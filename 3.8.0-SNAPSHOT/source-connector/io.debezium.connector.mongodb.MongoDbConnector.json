@@ -389,6 +389,33 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "capture.start.op.time",
+    "type" : "number",
+    "default" : "-1",
+    "display" : {
+      "label" : "Capture from operation time",
+      "description" : "If no existing offset is detected, Debezium will start streaming from the given packed BSON timestamp. Cannot be used with capture.start.timestamp unless set to -1 (disabled). Default: -1",
+      "group" : "Connector",
+      "groupOrder" : 13,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "capture.start.timestamp",
+    "type" : "string",
+    "display" : {
+      "label" : "Capture from timestamp",
+      "description" : "If no existing offset is detected, Debezium will start streaming from this timestamp. Accepts integer Unix seconds, ISO-8601 with a UTC offset and whole-second precision, or a BSON timestamp in Extended JSON format. Cannot be used with capture.start.op.time unless that property is set to -1 (disabled).",
+      "group" : "Connector",
+      "groupOrder" : 14,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "provide.transaction.metadata",
     "type" : "boolean",
     "default" : "false",
