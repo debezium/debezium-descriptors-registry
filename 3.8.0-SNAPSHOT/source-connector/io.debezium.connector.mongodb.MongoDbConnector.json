@@ -606,6 +606,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "query.fetch.size",
+    "type" : "number",
+    "default" : "0",
+    "display" : {
+      "label" : "Change stream cursor batch size",
+      "description" : "The maximum number of change stream documents returned in each batch from MongoDB. A value of '0' uses the server default batch size. Default: 0",
+      "group" : "Connector Advanced",
+      "groupOrder" : 14,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "snapshot.delay.ms",
     "type" : "number",
     "default" : "0",
@@ -785,20 +799,6 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "query.fetch.size",
-    "type" : "number",
-    "default" : "0",
-    "display" : {
-      "label" : "Query fetch size",
-      "description" : "The maximum number of records that should be loaded into memory while streaming. A value of '0' uses the default JDBC fetch size. Default: 0",
-      "group" : "Connector Snapshot",
-      "groupOrder" : 13,
-      "width" : "medium",
-      "importance" : "medium"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
     "name" : "incremental.snapshot.watermarking.strategy",
     "type" : "string",
     "default" : "INSERT_INSERT",
@@ -806,7 +806,7 @@
       "label" : "Incremental snapshot watermarking strategy",
       "description" : "Specify the strategy used for watermarking during an incremental snapshot: 'insert_insert' both open and close signal is written into signal data collection (default); 'insert_delete' only open signal is written on signal data collection, the close will delete the relative open signal; Default: INSERT_INSERT",
       "group" : "Connector Snapshot",
-      "groupOrder" : 14,
+      "groupOrder" : 13,
       "width" : "medium",
       "importance" : "low"
     },
