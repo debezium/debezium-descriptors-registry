@@ -1,0 +1,91 @@
+{
+  "name" : "Debezium Neo4j Debezium Converter",
+  "type" : "transformation",
+  "version" : "3.8.0-SNAPSHOT",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "table.naming",
+    "type" : "string",
+    "default" : "as_is",
+    "display" : {
+      "label" : "Table naming strategy",
+      "description" : "How a Neo4j label or relationship type becomes a target table name: 'as_is' keeps the Neo4j casing, 'snake_case' lowercases and snake-cases it. Default: as_is",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "as_is", "snake_case" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "column.naming",
+    "type" : "string",
+    "default" : "as_is",
+    "display" : {
+      "label" : "Column naming strategy",
+      "description" : "How a Neo4j property (and a composed foreign-key column name) becomes a relational column name: 'as_is' or 'snake_case'. Default: as_is",
+      "group" : "Advanced",
+      "groupOrder" : 1,
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "as_is", "snake_case" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "relationship.fk.naming",
+    "type" : "string",
+    "default" : "label_key",
+    "display" : {
+      "label" : "Foreign-key column naming pattern",
+      "description" : "The structure of a foreign-key / join-table endpoint column name before casing: 'label_key' joins the endpoint label and key property with an underscore (e.g. Order_id). The composed name is then cased by column.naming. Default: label_key",
+      "group" : "Advanced",
+      "groupOrder" : 2,
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "label_key" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "field.missing.behavior",
+    "type" : "string",
+    "default" : "warn",
+    "display" : {
+      "label" : "Missing field behavior",
+      "description" : "How to react when a Neo4j CDC event is missing something the mapping needs to build a Debezium envelope (an empty 'keys' map, no mapped owning label, an ambiguous multi-label node, a missing before/after image, or a primary-key value change): 'fail' throws so the record is routed by the connector's error handling; 'warn' logs and drops the record; 'ignore' drops it silently. Default: warn",
+      "group" : "Advanced",
+      "groupOrder" : 3,
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "fail", "warn", "ignore" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tombstones.enabled",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Tombstones enabled",
+      "description" : "Whether an incoming tombstone record (null value) is passed through unchanged (true) or dropped (false). Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 4,
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
