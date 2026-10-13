@@ -184,6 +184,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "mongodb.authentication.class",
+    "type" : "string",
+    "default" : "io.debezium.connector.mongodb.connection.DefaultMongoDbAuthProvider",
+    "display" : {
+      "label" : "Authentication Provider Custom Class",
+      "description" : "This class must implement the 'MongoDbAuthProvider' interface and is called on each app boot to provide the MongoDB credentials from the provided config. Default: io.debezium.connector.mongodb.connection.DefaultMongoDbAuthProvider",
+      "group" : "Connection Advanced",
+      "groupOrder" : 1,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "topic.prefix",
     "type" : "string",
     "required" : true,
@@ -198,20 +212,6 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "topic.naming.strategy",
-    "type" : "string",
-    "default" : "io.debezium.schema.SchemaTopicNamingStrategy",
-    "display" : {
-      "label" : "Topic naming strategy class",
-      "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc. Default: io.debezium.schema.SchemaTopicNamingStrategy",
-      "group" : "Connector",
-      "groupOrder" : 1,
-      "width" : "medium",
-      "importance" : "medium"
-    },
-    "validation" : [ ],
-    "valueDependants" : [ ]
-  }, {
     "name" : "tombstones.on.delete",
     "type" : "boolean",
     "default" : "true",
@@ -219,7 +219,7 @@
       "label" : "Change the behaviour of Debezium with regards to delete operations",
       "description" : "Whether delete operations should be represented by a delete event and a subsequent tombstone event (true) or only by a delete event (false). Emitting the tombstone event (the default behavior) allows Kafka to completely delete all events pertaining to the given key once the source record got deleted. Default: true",
       "group" : "Connector",
-      "groupOrder" : 2,
+      "groupOrder" : 1,
       "width" : "short",
       "importance" : "medium"
     },
@@ -233,7 +233,7 @@
       "label" : "Binary Handling",
       "description" : "Specify how binary (blob, binary, etc.) columns should be represented in change events, including: 'bytes' represents binary data as byte array (default); 'base64' represents binary data as base64-encoded string; 'base64-url-safe' represents binary data as base64-url-safe-encoded string; 'hex' represents binary data as hex-encoded (base16) string Default: bytes",
       "group" : "Connector",
-      "groupOrder" : 3,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "low"
     },
@@ -250,7 +250,7 @@
       "label" : "Schema Name Adjustment",
       "description" : "Specify how schema names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 4,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "low"
     },
@@ -267,7 +267,7 @@
       "label" : "Field Name Adjustment",
       "description" : "Specify how field names should be adjusted for compatibility with the message converter used by the connector, including: 'avro' replaces the characters that cannot be used in the Avro type name with underscore; 'avro_unicode' replaces the underscore or characters that cannot be used in the Avro type name with corresponding unicode like _uxxxx. Note: _ is an escape sequence like backslash in Java;'none' does not apply any adjustment (default) Default: none",
       "group" : "Connector",
-      "groupOrder" : 5,
+      "groupOrder" : 4,
       "width" : "medium",
       "importance" : "low"
     },
@@ -284,7 +284,7 @@
       "label" : "Event converting failure handling mode",
       "description" : "Specify how failures during converting of event should be handled, including: 'fail' throw an exception that the column of event conversion is failed with unmatched schema type, causing the connector to be stopped. it could need schema recovery to covert successfully; 'warn' (the default) the value of column of event that conversion failed will be null and be logged with warn level; 'skip' the value of column of event that conversion failed will be null and be logged with debug level. Default: warn",
       "group" : "Connector",
-      "groupOrder" : 6,
+      "groupOrder" : 5,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -292,6 +292,20 @@
       "type" : "enum",
       "values" : [ "warn", "fail", "skip" ]
     } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "topic.naming.strategy",
+    "type" : "string",
+    "default" : "io.debezium.schema.DefaultTopicNamingStrategy",
+    "display" : {
+      "label" : "Topic naming strategy class",
+      "description" : "The name of the TopicNamingStrategy class that should be used to determine the topic name for data change, schema change, transaction, heartbeat event etc. Default: io.debezium.schema.DefaultTopicNamingStrategy",
+      "group" : "Connector",
+      "groupOrder" : 6,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
     "valueDependants" : [ ]
   }, {
     "name" : "snapshot.mode",
@@ -618,6 +632,84 @@
       "importance" : "medium"
     },
     "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "cursor.pipeline",
+    "type" : "string",
+    "display" : {
+      "label" : "Pipeline stages applied to the change stream cursor",
+      "description" : "Applies processing to change events as part of the the standard MongoDB aggregation stream pipeline. A pipeline is a MongoDB aggregation pipeline composed of instructions to the database to filter or transform data. This can be used customize the data that the connector consumes. Note that this comes after the internal pipelines used to support the connector (e.g. filtering database and collection names).",
+      "group" : "Connector Advanced",
+      "groupOrder" : 15,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "cursor.pipeline.order",
+    "type" : "string",
+    "default" : "internal_first",
+    "display" : {
+      "label" : "Change stream cursor pipeline order",
+      "description" : "The order used to construct the effective MongoDB aggregation stream pipeline Options include: 'internal_first' (the default) Internal stages defined by the connector are applied first; 'user_first' Stages defined by the 'cursor.pipeline' property are applied first; 'user_only' Stages defined by the 'cursor.pipeline' property will replace internal stages defined by the connector; Default: internal_first",
+      "group" : "Connector Advanced",
+      "groupOrder" : 16,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "internal_first", "user_first", "user_only" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "cursor.oversize.handling.mode",
+    "type" : "string",
+    "default" : "fail",
+    "display" : {
+      "label" : "Oversize document handling mode",
+      "description" : "The strategy used to handle change events for documents exceeding specified BSON size. Options include: 'fail' (the default) the connector fails if the total size of change event exceed the maximum BSON size'skip' any change events for documents exceeding the maximum size will be ignored'split' change events exceeding the maximum BSON size will be split using the $changeStreamSplitLargeEvent aggregation Default: fail",
+      "group" : "Connector Advanced",
+      "groupOrder" : 17,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "fail", "split", "skip" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "cursor.oversize.skip.threshold",
+    "type" : "number",
+    "default" : "0",
+    "display" : {
+      "label" : "Oversize document skip threshold",
+      "description" : "The maximum allowed size of the stored document for which change events are processed. This includes both, the size before and after database operation, more specifically this limits the size of fullDocument and fullDocumentBeforeChange filed of MongoDB change events. Default: 0",
+      "group" : "Connector Advanced",
+      "groupOrder" : 18,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "capture.mode.full.update.type",
+    "type" : "string",
+    "default" : "lookup",
+    "display" : {
+      "label" : "Capture mode full update type",
+      "description" : "The method used to perform full update lookups. Options include: 'lookup' (the default) use separate lookup to get the updated document; 'post_image' use MongoDB post images (requires Mongo 6.0 or newer Default: lookup",
+      "group" : "Connector Advanced",
+      "groupOrder" : 19,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "lookup", "post_image" ]
+    } ],
     "valueDependants" : [ ]
   }, {
     "name" : "snapshot.delay.ms",
@@ -1209,6 +1301,86 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "mongodb.ssl.keystore",
+    "type" : "string",
+    "display" : {
+      "label" : "SSL Keystore",
+      "description" : "The location of the key store file. This is optional and can be used for two-way authentication between the client and the MongoDB Server.",
+      "group" : "Connection Advanced Ssl",
+      "groupOrder" : 0,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "mongodb.ssl.keystore.password",
+    "type" : "string",
+    "display" : {
+      "label" : "SSL Keystore Password",
+      "description" : "The password for the key store file. This is optional and only needed if 'mongodb.ssl.keystore' is configured.",
+      "group" : "Connection Advanced Ssl",
+      "groupOrder" : 1,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "mongodb.ssl.keystore.type",
+    "type" : "string",
+    "default" : "PKCS12",
+    "display" : {
+      "label" : "SSL Keystore Type",
+      "description" : "The type of key store file. This is optional and only needed if 'mongodb.ssl.keystore' is configured. Default: PKCS12",
+      "group" : "Connection Advanced Ssl",
+      "groupOrder" : 2,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "mongodb.ssl.truststore",
+    "type" : "string",
+    "display" : {
+      "label" : "SSL Truststore",
+      "description" : "The location of the trust store file for the server certificate verification.",
+      "group" : "Connection Advanced Ssl",
+      "groupOrder" : 3,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "mongodb.ssl.truststore.password",
+    "type" : "string",
+    "display" : {
+      "label" : "SSL Truststore Password",
+      "description" : "The password for the trust store file. Used to check the integrity of the truststore, and unlock the truststore.",
+      "group" : "Connection Advanced Ssl",
+      "groupOrder" : 4,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "mongodb.ssl.truststore.type",
+    "type" : "string",
+    "default" : "PKCS12",
+    "display" : {
+      "label" : "SSL Keystore Type",
+      "description" : "The type of trust store file. This is optional and only needed if 'mongodb.ssl.truststore' is configured. Default: PKCS12",
+      "group" : "Connection Advanced Ssl",
+      "groupOrder" : 5,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "database.include.list",
     "type" : "list",
     "display" : {
@@ -1297,11 +1469,32 @@
     },
     "validation" : [ ],
     "valueDependants" : [ ]
+  }, {
+    "name" : "filters.match.mode",
+    "type" : "string",
+    "default" : "regex",
+    "display" : {
+      "label" : "Database and collection include/exclude match mode",
+      "description" : "The mode used by the aggregation pipeline to match events based on included/excluded database and collection namesOptions include: 'regex' (the default) Database and collection includes/excludes are evaluated as regular expressions; 'literal' Database and collection includes/excludes are evaluated as comma-separated list of string literals; Default: regex",
+      "group" : "Filters",
+      "groupOrder" : 7,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "regex", "literal" ]
+    } ],
+    "valueDependants" : [ ]
   } ],
   "groups" : [ {
     "name" : "Connection",
     "order" : 0,
     "description" : "Connection configuration"
+  }, {
+    "name" : "Connection Advanced Ssl",
+    "order" : 1,
+    "description" : "Advanced SSL connection configuration"
   }, {
     "name" : "Connection Advanced",
     "order" : 2,
