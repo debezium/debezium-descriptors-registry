@@ -1,0 +1,72 @@
+{
+  "name" : "Debezium Field Value Matches",
+  "type" : "predicate",
+  "version" : "3.8.0-SNAPSHOT",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "field",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Value field to match",
+      "description" : "The value field to test, addressed with dot notation. A bare name targets a top-level field; a dotted name such as 'after.status' descends into nested structs.",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "pattern",
+    "type" : "string",
+    "required" : true,
+    "display" : {
+      "label" : "Match pattern",
+      "description" : "A Java regular expression tested against the field's string value.",
+      "group" : "Advanced",
+      "groupOrder" : 1,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "match.mode",
+    "type" : "string",
+    "default" : "full",
+    "display" : {
+      "label" : "Pattern match mode",
+      "description" : "How the pattern is applied: 'full' requires the whole value to match, 'partial' matches when the pattern is found anywhere in the value. Default: full",
+      "group" : "Advanced",
+      "groupOrder" : 2,
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "partial", "full" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "unevaluable.value",
+    "type" : "string",
+    "default" : "ignore",
+    "display" : {
+      "label" : "Behavior when the value cannot be evaluated",
+      "description" : "What to do when the pattern cannot be evaluated against the field (value not a struct, path absent, intermediate not a struct, field null, or field not a textual scalar): 'ignore' treats the record as not matching, 'fail' halts the stream. Default: ignore",
+      "group" : "Advanced",
+      "groupOrder" : 3,
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "fail", "ignore" ]
+    } ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

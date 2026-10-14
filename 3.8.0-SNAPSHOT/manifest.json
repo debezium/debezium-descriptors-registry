@@ -2,9 +2,9 @@
   "schemaVersion": "1.0",
   "build": {
     "version": "3.8.0-SNAPSHOT",
-    "timestamp": "2026-10-13T14:26:15Z",
+    "timestamp": "2026-10-14T14:45:50Z",
     "sourceRepository": "debezium/debezium",
-    "sourceCommit": "d9e8eeb",
+    "sourceCommit": "3ddb6ed",
     "sourceBranch": "main"
   },
   "components": {
@@ -187,6 +187,12 @@
       }
     ],
     "predicate": [
+      {
+        "class": "io.debezium.transforms.predicates.FieldValueMatches",
+        "name": "Debezium Field Value Matches",
+        "description": "",
+        "descriptor": "predicate/io.debezium.transforms.predicates.FieldValueMatches.json"
+      },
       {
         "class": "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
         "name": "Kafka Has Header Key",
