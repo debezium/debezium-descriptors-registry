@@ -1733,7 +1733,7 @@
     "default" : "shared",
     "display" : {
       "label" : "Snapshot locking mode",
-      "description" : "Controls how the connector holds locks on tables while performing the schema snapshot. The  The remaining work in a snapshot involves selecting all rows from each table, and this is done using a flashback query that requires no locks. However, in some cases it may be desirable to avoid locks entirely which can be done by specifying 'none'. This mode is only safe to use if no schema changes are happening while the snapshot is taken. Default: shared",
+      "description" : "Controls how the connector holds locks on tables while performing the snapshot. The  The lock allows other sessions to read and write the table and prevents most DDL on it; however, Oracle non-blocking DDL such as ALTER TABLE ADD COLUMN is still permitted and would invalidate the flashback query used to read the table data (ORA-01466). Specifying 'extended' holds a SHARE table lock instead, which prevents all DDL but also blocks writes to the table for the duration of the snapshot. In some cases it may be desirable to avoid locks entirely which can be done by specifying 'none'. This mode is only safe to use if no schema changes are happening while the snapshot is taken. Default: shared",
       "group" : "Connector Snapshot",
       "groupOrder" : 20,
       "width" : "short",
@@ -1741,22 +1741,8 @@
     },
     "validation" : [ {
       "type" : "enum",
-      "values" : [ "shared", "custom", "none" ]
+      "values" : [ "shared", "custom", "none", "extended" ]
     } ],
-    "valueDependants" : [ ]
-  }, {
-    "name" : "snapshot.database.errors.max.retries",
-    "type" : "number",
-    "default" : "0",
-    "display" : {
-      "label" : "The maximum number of retries before snapshot database errors are not retried",
-      "description" : "The number of attempts to retry database errors during snapshots before failing. Default: 0",
-      "group" : "Connector Snapshot",
-      "groupOrder" : 21,
-      "width" : "short",
-      "importance" : "low"
-    },
-    "validation" : [ ],
     "valueDependants" : [ ]
   }, {
     "name" : "retriable.restart.connector.wait.ms",
