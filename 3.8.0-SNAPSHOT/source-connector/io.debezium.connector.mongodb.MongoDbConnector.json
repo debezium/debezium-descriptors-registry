@@ -330,7 +330,7 @@
     "default" : "change_streams_update_full",
     "display" : {
       "label" : "Capture mode",
-      "description" : "The method used to capture changes from MongoDB server. Options include: 'change_streams' to capture changes via MongoDB Change Streams, update events do not contain full documents; 'change_streams_update_full' (the default) to capture changes via MongoDB Change Streams, update events contain full documents Default: change_streams_update_full",
+      "description" : "Deprecated. Use capture.mode.pre.image and capture.mode.post.image instead. The method used to capture changes from MongoDB server. Options include: 'change_streams' to capture changes via MongoDB Change Streams, update events do not contain full documents; 'change_streams_update_full' (the default) to capture changes via MongoDB Change Streams, update events contain full documents Default: change_streams_update_full",
       "group" : "Connector",
       "groupOrder" : 8,
       "width" : "short",
@@ -342,6 +342,40 @@
     } ],
     "valueDependants" : [ ]
   }, {
+    "name" : "capture.mode.post.image",
+    "type" : "string",
+    "default" : "lookup",
+    "display" : {
+      "label" : "Capture mode post-image policy",
+      "description" : "Controls how to retrieve the full document after an update. 'off' does not request the updated document; 'lookup' (the default) uses a separate lookup; 'post_image' requests MongoDB post-images when available; 'post_image_required' fails if a post-image is unavailable. Post-images require MongoDB 6.0 or newer and must be enabled on the collection. With regex filters and deployment or database capture scope, required images can be needed for events from excluded collections. When explicitly set, this property takes precedence over capture.mode and capture.mode.full.update.type. Default: lookup",
+      "group" : "Connector",
+      "groupOrder" : 9,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "lookup", "post_image", "post_image_required", "off" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "capture.mode.pre.image",
+    "type" : "string",
+    "default" : "off",
+    "display" : {
+      "label" : "Capture mode pre-image policy",
+      "description" : "Controls how to retrieve the document before a change. 'off' (the default) does not request pre-images; 'when_available' requests MongoDB pre-images when available; 'required' fails if a pre-image is unavailable. Pre-images require MongoDB 6.0 or newer and must be enabled on the collection. With regex filters and deployment or database capture scope, required images can be needed for events from excluded collections. When explicitly set, this property takes precedence over capture.mode. Default: off",
+      "group" : "Connector",
+      "groupOrder" : 10,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "when_available", "off", "required" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "capture.scope",
     "type" : "string",
     "default" : "deployment",
@@ -349,7 +383,7 @@
       "label" : "Capture scope",
       "description" : "The scope of captured changes. Options include: 'deployment' (the default) to capture changes from the entire MongoDB deployment; 'database' to capture changes from a specific MongoDB database'collection' to capture changes from a specific MongoDB collection Default: deployment",
       "group" : "Connector",
-      "groupOrder" : 9,
+      "groupOrder" : 11,
       "width" : "short",
       "importance" : "medium"
     },
@@ -365,7 +399,7 @@
       "label" : "Capture target",
       "description" : "The target to capture changes from. For 'database' scope, this is the database name. For 'collection' scope, this is the collection name as <databaseName>.<collectionName>.",
       "group" : "Connector",
-      "groupOrder" : 10,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "medium"
     },
@@ -379,7 +413,7 @@
       "label" : "JSON serialization mode",
       "description" : "Controls the Extended JSON serialization mode used for MongoDB event payload fields. Options include: 'legacy' (the default) uses MongoDB Extended JSON v1 strict mode for full document fields and MongoDB Extended JSON v2 relaxed mode for update fields. 'strict' uses MongoDB Extended JSON v1 strict mode. 'extended' uses MongoDB Extended JSON v2 canonical mode. 'relaxed' uses MongoDB Extended JSON v2 relaxed mode. Default: legacy",
       "group" : "Connector",
-      "groupOrder" : 11,
+      "groupOrder" : 13,
       "width" : "short",
       "importance" : "medium"
     },
@@ -396,7 +430,7 @@
       "label" : "Source info struct maker class",
       "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.mongodb.MongoDbSourceInfoStructMaker",
       "group" : "Connector",
-      "groupOrder" : 12,
+      "groupOrder" : 14,
       "width" : "medium",
       "importance" : "low"
     },
@@ -410,7 +444,7 @@
       "label" : "Capture from operation time",
       "description" : "If no existing offset is detected, Debezium will start streaming from the given packed BSON timestamp. Cannot be used with capture.start.timestamp unless set to -1 (disabled). Default: -1",
       "group" : "Connector",
-      "groupOrder" : 13,
+      "groupOrder" : 15,
       "width" : "short",
       "importance" : "low"
     },
@@ -423,7 +457,7 @@
       "label" : "Capture from timestamp",
       "description" : "If no existing offset is detected, Debezium will start streaming from this timestamp. Accepts integer Unix seconds, ISO-8601 with a UTC offset and whole-second precision, or a BSON timestamp in Extended JSON format. Cannot be used with capture.start.op.time unless that property is set to -1 (disabled).",
       "group" : "Connector",
-      "groupOrder" : 14,
+      "groupOrder" : 16,
       "width" : "long",
       "importance" : "low"
     },
@@ -700,7 +734,7 @@
     "default" : "lookup",
     "display" : {
       "label" : "Capture mode full update type",
-      "description" : "The method used to perform full update lookups. Options include: 'lookup' (the default) use separate lookup to get the updated document; 'post_image' use MongoDB post images (requires Mongo 6.0 or newer Default: lookup",
+      "description" : "Deprecated. Use capture.mode.post.image instead. The method used to perform full update lookups. Options include: 'lookup' (the default) use separate lookup to get the updated document; 'post_image' use MongoDB post images when available; 'post_image_required' require MongoDB post images and fail if unavailable. Post images require MongoDB 6.0 or newer and must be enabled on the collection. With regex filters and deployment or database capture scope, required images can be needed for events from excluded collections. Default: lookup",
       "group" : "Connector Advanced",
       "groupOrder" : 19,
       "width" : "short",
@@ -708,7 +742,7 @@
     },
     "validation" : [ {
       "type" : "enum",
-      "values" : [ "lookup", "post_image" ]
+      "values" : [ "lookup", "post_image", "post_image_required" ]
     } ],
     "valueDependants" : [ ]
   }, {
