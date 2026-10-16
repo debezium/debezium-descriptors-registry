@@ -399,6 +399,23 @@
     } ],
     "valueDependants" : [ ]
   }, {
+    "name" : "real.handling.mode",
+    "type" : "string",
+    "default" : "double",
+    "display" : {
+      "label" : "The mode for handling REAL values",
+      "description" : "Specify how REAL columns should be represented in change events, including: 'float' represents values using single-precision (32-bit) floating-point values; 'double' (the default) represents values using double-precision (64-bit) floating-point values. Default: double",
+      "group" : "Connector",
+      "groupOrder" : 11,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "double", "float" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "time.precision.mode",
     "type" : "string",
     "default" : "adaptive_time_microseconds",
@@ -406,7 +423,7 @@
       "label" : "The time precision mode to be used",
       "description" : "Time, date and timestamps can be represented with different kinds of precisions, including: 'adaptive_time_microseconds': the precision of date and timestamp values is based the database column's precision; but time fields always use microseconds precision; 'connect': always represents time, date and timestamp values using Kafka Connect's built-in representations for Time, Date, and Timestamp, which uses millisecond precision regardless of the database columns' precision; 'isostring': represents time, date, and datetime values as ISO-8601 formatted strings at the UTC time zone; 'structured': represents time, date, timestamp, and datetime values as Kafka Connect structs with separate calendar and clock components. Default: adaptive_time_microseconds",
       "group" : "Connector",
-      "groupOrder" : 11,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "medium"
     },
@@ -423,7 +440,7 @@
       "label" : "Enable Time Adjuster",
       "description" : "The database allows the user to insert year value as either 2-digit or 4-digit. In case of two digit the value is automatically mapped into 1970 - 2069.false - delegates the implicit conversion to the database; true - (the default) Debezium makes the conversion Default: true",
       "group" : "Connector",
-      "groupOrder" : 12,
+      "groupOrder" : 13,
       "width" : "short",
       "importance" : "low"
     },
@@ -437,7 +454,7 @@
       "label" : "Filter DML events",
       "description" : "When set to true, only produce DML events for transactions that were written on the server with matching GTIDs defined by the `gtid.source.includes` or `gtid.source.excludes`, if they were specified. Default: true",
       "group" : "Connector",
-      "groupOrder" : 13,
+      "groupOrder" : 14,
       "width" : "short",
       "importance" : "medium"
     },
@@ -451,7 +468,7 @@
       "label" : "Source info struct maker class",
       "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.mariadb.MariaDbSourceInfoStructMaker",
       "group" : "Connector",
-      "groupOrder" : 14,
+      "groupOrder" : 15,
       "width" : "medium",
       "importance" : "low"
     },
