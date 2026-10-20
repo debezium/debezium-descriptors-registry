@@ -2,9 +2,9 @@
   "schemaVersion": "1.0",
   "build": {
     "version": "3.8.0-SNAPSHOT",
-    "timestamp": "2026-10-20T02:32:45Z",
+    "timestamp": "2026-10-20T14:50:09Z",
     "sourceRepository": "debezium/debezium",
-    "sourceCommit": "3505e35",
+    "sourceCommit": "e2145a8",
     "sourceBranch": "main"
   },
   "components": {
@@ -437,6 +437,12 @@
       }
     ],
     "sink-connector": [
+      {
+        "class": "io.debezium.connector.elasticsearch.ElasticsearchSinkConnector",
+        "name": "Debezium Elasticsearch Sink Connector",
+        "description": "Writes change events to Elasticsearch indices.",
+        "descriptor": "sink-connector/io.debezium.connector.elasticsearch.ElasticsearchSinkConnector.json"
+      },
       {
         "class": "io.debezium.connector.jdbc.JdbcSinkConnector",
         "name": "Debezium JDBC Sink Connector",
