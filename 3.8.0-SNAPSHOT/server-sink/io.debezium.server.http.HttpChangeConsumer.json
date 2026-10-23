@@ -197,7 +197,7 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "authentication.oauth2.client-id",
+    "name" : "authentication.oauth2.client_id",
     "type" : "string",
     "display" : {
       "label" : "OAuth2 client ID",
@@ -210,7 +210,7 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "authentication.oauth2.client-secret",
+    "name" : "authentication.oauth2.client_secret",
     "type" : "string",
     "display" : {
       "label" : "OAuth2 client secret",
@@ -223,7 +223,7 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "authentication.oauth2.token-url",
+    "name" : "authentication.oauth2.token_url",
     "type" : "string",
     "display" : {
       "label" : "OAuth2 token URL",
@@ -236,13 +236,41 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "authentication.oauth2.client_auth_method",
+    "type" : "string",
+    "default" : "client_secret_basic",
+    "display" : {
+      "label" : "OAuth2 client auth method",
+      "description" : "How client credentials are sent to the token endpoint. Valid values: 'client_secret_basic', 'client_secret_post'. Default: client_secret_basic",
+      "group" : "Advanced",
+      "groupOrder" : 17,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "authentication.oauth2.token_url.http_method",
+    "type" : "string",
+    "default" : "POST",
+    "display" : {
+      "label" : "OAuth2 token HTTP method",
+      "description" : "HTTP method for the token request. Valid values: 'POST', 'GET'. Default: POST",
+      "group" : "Advanced",
+      "groupOrder" : 18,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "authentication.oauth2.scope",
     "type" : "string",
     "display" : {
       "label" : "OAuth2 scope",
       "description" : "Scope for OAuth2 authentication.",
       "group" : "Advanced",
-      "groupOrder" : 17,
+      "groupOrder" : 19,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -255,7 +283,7 @@
       "label" : "Webhook secret",
       "description" : "Secret key for Standard Webhooks authentication.",
       "group" : "Advanced",
-      "groupOrder" : 18,
+      "groupOrder" : 20,
       "width" : "medium",
       "importance" : "high"
     },

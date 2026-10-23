@@ -2,9 +2,9 @@
   "schemaVersion": "1.0",
   "build": {
     "version": "3.8.0-SNAPSHOT",
-    "timestamp": "2026-10-21T03:01:10Z",
+    "timestamp": "2026-10-23T02:12:10Z",
     "sourceRepository": "debezium/debezium",
-    "sourceCommit": "8d6ccc1",
+    "sourceCommit": "ec0790d",
     "sourceBranch": "main"
   },
   "components": {
@@ -303,6 +303,12 @@
       }
     ],
     "server-sink": [
+      {
+        "class": "io.debezium.server.elasticsearch.ElasticsearchChangeConsumer",
+        "name": "Debezium Elasticsearch Server Sink",
+        "description": "",
+        "descriptor": "server-sink/io.debezium.server.elasticsearch.ElasticsearchChangeConsumer.json"
+      },
       {
         "class": "io.debezium.server.eventhubs.EventHubsChangeConsumer",
         "name": "Debezium Event Hubs Server Sink",

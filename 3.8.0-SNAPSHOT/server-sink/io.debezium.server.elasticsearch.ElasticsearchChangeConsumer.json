@@ -1,0 +1,1475 @@
+{
+  "name" : "Debezium Elasticsearch Server Sink",
+  "type" : "server-sink",
+  "version" : "3.8.0-SNAPSHOT",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "connection.url",
+    "type" : "list",
+    "display" : {
+      "label" : "Elasticsearch connection URLs",
+      "description" : "Comma-separated list of Elasticsearch cluster URLs, e.g. 'https://es1:9200,https://es2:9200'. A context path is honored, e.g. 'https://gateway.internal/es'. Mutually exclusive with 'connection.cloud.id'.",
+      "group" : "Connection",
+      "groupOrder" : 0,
+      "width" : "long",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.cloud.id",
+    "type" : "string",
+    "display" : {
+      "label" : "Elastic Cloud ID",
+      "description" : "Elastic Cloud deployment identifier. Mutually exclusive with 'connection.url'.",
+      "group" : "Connection",
+      "groupOrder" : 1,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.auth.mode",
+    "type" : "string",
+    "display" : {
+      "label" : "Authentication mode",
+      "description" : "How the connector authenticates: 'none', 'basic', 'api_key', 'bearer', 'kerberos', or 'custom'. Defaults to 'basic' when username/password are present, otherwise 'none'. A mode that does not match the supplied credentials is a startup error, never a silent fall-through to unauthenticated.",
+      "group" : "Connection",
+      "groupOrder" : 2,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "api_key", "custom", "bearer", "none", "kerberos", "basic" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.username",
+    "type" : "string",
+    "display" : {
+      "label" : "Username",
+      "description" : "Username for basic authentication.",
+      "group" : "Connection",
+      "groupOrder" : 3,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.password",
+    "type" : "string",
+    "display" : {
+      "label" : "Password",
+      "description" : "Password for basic authentication.",
+      "group" : "Connection",
+      "groupOrder" : 4,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.api.key",
+    "type" : "string",
+    "display" : {
+      "label" : "API key",
+      "description" : "Base64-encoded Elasticsearch API key ('id:api_key') used when 'connection.auth.mode' is 'api_key'.",
+      "group" : "Connection",
+      "groupOrder" : 5,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.bearer.token",
+    "type" : "string",
+    "display" : {
+      "label" : "Bearer token",
+      "description" : "Bearer token used when 'connection.auth.mode' is 'bearer'.",
+      "group" : "Connection",
+      "groupOrder" : 6,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.kerberos.principal",
+    "type" : "string",
+    "display" : {
+      "label" : "Kerberos principal",
+      "description" : "Kerberos user principal used when 'connection.auth.mode' is 'kerberos'.",
+      "group" : "Connection",
+      "groupOrder" : 7,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.kerberos.keytab",
+    "type" : "string",
+    "display" : {
+      "label" : "Kerberos keytab path",
+      "description" : "Path to the Kerberos keytab file used when 'connection.auth.mode' is 'kerberos'.",
+      "group" : "Connection",
+      "groupOrder" : 8,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.credentials.provider.class",
+    "type" : "string",
+    "display" : {
+      "label" : "Custom credentials provider class",
+      "description" : "Fully-qualified class name of a ConnectionCredentialsProvider implementation used when 'connection.auth.mode' is 'custom', e.g. for AWS SigV4 or other cloud-vendor schemes.",
+      "group" : "Connection",
+      "groupOrder" : 9,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.headers",
+    "type" : "list",
+    "display" : {
+      "label" : "Static HTTP headers",
+      "description" : "Comma-separated list of static HTTP headers in 'Name:Value' form, e.g. for a gateway.",
+      "group" : "Connection",
+      "groupOrder" : 10,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.compression",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Request compression",
+      "description" : "Whether to GZip-compress request bodies. Requires 'http.compression' on the cluster. Default: false",
+      "group" : "Connection",
+      "groupOrder" : 11,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.timeout.ms",
+    "type" : "number",
+    "default" : "5000",
+    "display" : {
+      "label" : "Connect timeout (ms)",
+      "description" : "TCP connect timeout in milliseconds. The Default: 5000",
+      "group" : "Connection",
+      "groupOrder" : 12,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.read.timeout.ms",
+    "type" : "number",
+    "default" : "60000",
+    "display" : {
+      "label" : "Socket read timeout (ms)",
+      "description" : "Socket read timeout in milliseconds. The Default: 60000",
+      "group" : "Connection",
+      "groupOrder" : 13,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.idle.timeout.ms",
+    "type" : "number",
+    "default" : "60000",
+    "display" : {
+      "label" : "Idle connection timeout (ms)",
+      "description" : "Drop idle pooled connections before the server does, in milliseconds. Default: 60000",
+      "group" : "Connection",
+      "groupOrder" : 14,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.sniff.enabled",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Node sniffing",
+      "description" : "Whether to periodically discover cluster nodes and add them to the client's round-robin set. Default: false",
+      "group" : "Connection",
+      "groupOrder" : 15,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.api.compatibility.mode",
+    "type" : "string",
+    "default" : "auto",
+    "display" : {
+      "label" : "REST API compatibility mode",
+      "description" : "Controls REST API compatibility headers toward a newer-major cluster: 'auto' (default) sets them when the startup handshake reports a cluster major greater than the client's, 'enabled' and 'disabled' force the choice. The supported-version handshake runs in every mode. Default: auto",
+      "group" : "Connection",
+      "groupOrder" : 16,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "auto", "disabled", "enabled" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.tls.keystore.location",
+    "type" : "string",
+    "display" : {
+      "label" : "TLS keystore location",
+      "description" : "Path to the keystore holding the client certificate for mutual TLS.",
+      "group" : "Connection",
+      "groupOrder" : 17,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.tls.keystore.password",
+    "type" : "string",
+    "display" : {
+      "label" : "TLS keystore password",
+      "description" : "Password of the TLS keystore.",
+      "group" : "Connection",
+      "groupOrder" : 18,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.tls.keystore.type",
+    "type" : "string",
+    "default" : "PKCS12",
+    "display" : {
+      "label" : "TLS keystore type",
+      "description" : "Type of the TLS keystore, e.g. 'PKCS12' or 'JKS'. Default: PKCS12",
+      "group" : "Connection",
+      "groupOrder" : 19,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.tls.key.password",
+    "type" : "string",
+    "display" : {
+      "label" : "TLS key password",
+      "description" : "Password of the private key within the TLS keystore, when different from the keystore password.",
+      "group" : "Connection",
+      "groupOrder" : 20,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.tls.truststore.location",
+    "type" : "string",
+    "display" : {
+      "label" : "TLS truststore location",
+      "description" : "Path to the truststore holding the cluster CA certificate.",
+      "group" : "Connection",
+      "groupOrder" : 21,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.tls.truststore.password",
+    "type" : "string",
+    "display" : {
+      "label" : "TLS truststore password",
+      "description" : "Password of the TLS truststore.",
+      "group" : "Connection",
+      "groupOrder" : 22,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.tls.truststore.type",
+    "type" : "string",
+    "default" : "PKCS12",
+    "display" : {
+      "label" : "TLS truststore type",
+      "description" : "Type of the TLS truststore, e.g. 'PKCS12' or 'JKS'. Default: PKCS12",
+      "group" : "Connection",
+      "groupOrder" : 23,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.tls.protocols",
+    "type" : "list",
+    "display" : {
+      "label" : "Enabled TLS protocols",
+      "description" : "Comma-separated list of enabled TLS protocol versions, e.g. 'TLSv1.3'.",
+      "group" : "Connection",
+      "groupOrder" : 24,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.tls.cipher.suites",
+    "type" : "list",
+    "display" : {
+      "label" : "Enabled TLS cipher suites",
+      "description" : "Comma-separated list of enabled TLS cipher suites.",
+      "group" : "Connection",
+      "groupOrder" : 25,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.tls.ca.fingerprint",
+    "type" : "string",
+    "display" : {
+      "label" : "CA certificate SHA-256 fingerprint",
+      "description" : "SHA-256 fingerprint of the cluster's self-signed CA, as printed by Elasticsearch at first start. The supported way to trust a self-signed cluster without abandoning verification.",
+      "group" : "Connection",
+      "groupOrder" : 26,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.tls.verification.mode",
+    "type" : "string",
+    "default" : "full",
+    "display" : {
+      "label" : "TLS verification mode",
+      "description" : "TLS verification, using Elastic's own vocabulary: 'full' (default) verifies the certificate chain and hostname; 'certificate' verifies the chain but not the hostname; 'none' performs no verification at all, which defeats TLS against an active attacker - prefer 'connection.tls.ca.fingerprint' for self-signed clusters. Default: full",
+      "group" : "Connection",
+      "groupOrder" : 27,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "certificate", "none", "full" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.proxy.host",
+    "type" : "string",
+    "display" : {
+      "label" : "Proxy host",
+      "description" : "HTTP proxy host.",
+      "group" : "Connection",
+      "groupOrder" : 28,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.proxy.port",
+    "type" : "number",
+    "display" : {
+      "label" : "Proxy port",
+      "description" : "HTTP proxy port.",
+      "group" : "Connection",
+      "groupOrder" : 29,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.proxy.username",
+    "type" : "string",
+    "display" : {
+      "label" : "Proxy username",
+      "description" : "HTTP proxy username.",
+      "group" : "Connection",
+      "groupOrder" : 30,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "connection.proxy.password",
+    "type" : "string",
+    "display" : {
+      "label" : "Proxy password",
+      "description" : "HTTP proxy password.",
+      "group" : "Connection",
+      "groupOrder" : 31,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "event.format",
+    "type" : "string",
+    "default" : "auto",
+    "display" : {
+      "label" : "Input event format",
+      "description" : "Input contract: 'auto' (default) detects per record between a Debezium envelope, a flattened Debezium record, and a plain record; 'debezium' requires a Debezium shape and treats plain records as record-level errors; 'plain' treats every value as an opaque document body. Default: auto",
+      "group" : "Connector",
+      "groupOrder" : 0,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "auto", "debezium", "plain" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "tombstone.mode",
+    "type" : "string",
+    "default" : "auto",
+    "display" : {
+      "label" : "Tombstone handling",
+      "description" : "What a null-valued record means: 'auto' (default) resolves to 'delete' on every input contract, because batch deduplication can collapse a 'd' event and its tombstone into just the tombstone, so acting on the tombstone is what keeps the delete; 'ignore', 'delete', and 'fail' apply uniformly. Default: auto",
+      "group" : "Connector",
+      "groupOrder" : 1,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "fail", "auto", "ignore", "delete" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "primary.key.mode",
+    "type" : "string",
+    "default" : "record_key",
+    "display" : {
+      "label" : "Primary key mode",
+      "description" : "How the document '_id' is derived: 'record_key' (default), 'record_value', 'record_header', 'kafka' (topic+partition+offset), or 'none' (Elasticsearch generates an id; forfeits idempotent redelivery, so a redelivered record becomes a duplicate document). Default: record_key",
+      "group" : "Connector",
+      "groupOrder" : 2,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "record_key", "record_value", "kafka", "record_header", "none" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "primary.key.fields",
+    "type" : "string",
+    "display" : {
+      "label" : "Comma-separated list of primary key field names",
+      "description" : "A comma-separated list of primary key field names. This is interpreted differently depending on primary.key.mode.",
+      "group" : "Connector",
+      "groupOrder" : 3,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "document.id.separator",
+    "type" : "string",
+    "default" : ":",
+    "display" : {
+      "label" : "Composite id separator",
+      "description" : "Separator joining composite key fields into '_id', in the order given by 'primary.key.fields' or schema field order when unset. The order is fixed: reordering silently changes every '_id' in the index. Default: :",
+      "group" : "Connector",
+      "groupOrder" : 4,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "document.id.non.key.ordering",
+    "type" : "string",
+    "display" : {
+      "label" : "Ordering decision for non-key document ids",
+      "description" : "Required, with no default, when '_id' is derived from the record value or a header ('record_value', 'record_header'): events for one document then span partitions Kafka never ordered relative to each other. 'version' enforces ordering through 'version.strategy'; 'last_write_wins' acknowledges arbitrary resolution.",
+      "group" : "Connector",
+      "groupOrder" : 5,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "last_write_wins", "version" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "document.metadata.fields",
+    "type" : "list",
+    "display" : {
+      "label" : "Kafka metadata projected into the document",
+      "description" : "Which of 'key', 'topic', 'partition', 'offset', 'timestamp' to project into the document body. Empty by default. Applied after field include/exclude filtering so an exclusion list written for source columns cannot strip them.",
+      "group" : "Connector",
+      "groupOrder" : 6,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "document.metadata.prefix",
+    "type" : "string",
+    "default" : "_kafka_",
+    "display" : {
+      "label" : "Metadata field prefix",
+      "description" : "Prefix namespacing projected Kafka metadata fields away from source columns. Default: _kafka_",
+      "group" : "Connector",
+      "groupOrder" : 7,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "collection.name.format",
+    "type" : "string",
+    "default" : "${topic}",
+    "display" : {
+      "label" : "A format string for the collection name",
+      "description" : "A format string for the table, which may contain '${topic}' as a placeholder for the original topic name. Default: ${topic}",
+      "group" : "Connector",
+      "groupOrder" : 8,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "collection.naming.strategy",
+    "type" : "string",
+    "default" : "io.debezium.connector.elasticsearch.naming.ElasticsearchCollectionNamingStrategy",
+    "display" : {
+      "label" : "CollectionNamingStrategy class",
+      "description" : "Name of the strategy class that defines the collection name from the topic name. It implements the CollectionNamingStrategy interface. Default: io.debezium.connector.elasticsearch.naming.ElasticsearchCollectionNamingStrategy",
+      "group" : "Connector",
+      "groupOrder" : 9,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "resource.name.timezone",
+    "type" : "string",
+    "default" : "UTC",
+    "display" : {
+      "label" : "Timezone for ${date:...} placeholders",
+      "description" : "Timezone in which '${date:pattern}' naming placeholders format the event timestamp. Default: UTC",
+      "group" : "Connector",
+      "groupOrder" : 10,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "resource.name.invalid.handling",
+    "type" : "string",
+    "default" : "fail",
+    "display" : {
+      "label" : "Invalid resource name handling",
+      "description" : "What to do with a resolved name Elasticsearch cannot accept: 'fail' (default) rejects it loudly, naming the rule it broke; 'sanitize' lowercases and replaces disallowed characters with 'resource.name.replacement', logging each distinct transformation once (opt-in, because a silent rename can merge two logically distinct sources into one index); 'error_handler' routes the record to the DLQ. Default: fail",
+      "group" : "Connector",
+      "groupOrder" : 11,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "fail", "error_handler", "sanitize" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "resource.name.replacement",
+    "type" : "string",
+    "default" : "_",
+    "display" : {
+      "label" : "Replacement for disallowed name characters",
+      "description" : "Replacement character used by 'resource.name.invalid.handling=sanitize'. Default: _",
+      "group" : "Connector",
+      "groupOrder" : 12,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "resource.type",
+    "type" : "string",
+    "default" : "index",
+    "display" : {
+      "label" : "Target resource type",
+      "description" : "Kind of Elasticsearch resource written to: 'index' (default), 'alias_index', 'data_stream', or 'alias_data_stream'. Data streams accept only 'create' operations and cannot propagate deletes or truncates. Default: index",
+      "group" : "Connector",
+      "groupOrder" : 13,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "data_stream", "alias_index", "index", "alias_data_stream" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "resource.auto.create",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Auto-create resources",
+      "description" : "When true, the connector creates the index or data stream and applies the generated mapping as one step, skipping both if the resource exists. When false, no existence call is made at all: the setting asserts the resource exists, and if it does not the first write fails with the Elasticsearch error. Default: true",
+      "group" : "Connector",
+      "groupOrder" : 14,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "topic.to.resource.mapping",
+    "type" : "list",
+    "display" : {
+      "label" : "Explicit topic-to-resource overrides",
+      "description" : "Comma-separated 'topic:resource' pairs consulted before 'collection.name.format', unconditionally. Unlike Confluent V2, this is an override of the naming strategy, not only a way to address pre-created resources.",
+      "group" : "Connector",
+      "groupOrder" : 15,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "data.stream.type",
+    "type" : "string",
+    "default" : "logs",
+    "display" : {
+      "label" : "Data stream type",
+      "description" : "First component of the composed data stream name '{type}-{dataset}-{namespace}', e.g. 'logs' or 'metrics'. Default: logs",
+      "group" : "Connector",
+      "groupOrder" : 16,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "data.stream.dataset",
+    "type" : "string",
+    "display" : {
+      "label" : "Data stream dataset",
+      "description" : "Second component of the composed data stream name '{type}-{dataset}-{namespace}'.",
+      "group" : "Connector",
+      "groupOrder" : 17,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "data.stream.namespace",
+    "type" : "string",
+    "default" : "${topic}",
+    "display" : {
+      "label" : "Data stream namespace",
+      "description" : "Third component of the composed data stream name '{type}-{dataset}-{namespace}'. Default: ${topic}",
+      "group" : "Connector",
+      "groupOrder" : 18,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "data.stream.timestamp.field",
+    "type" : "list",
+    "display" : {
+      "label" : "Data stream @timestamp source field(s)",
+      "description" : "Field(s) mapped onto '@timestamp'; the first present in the record wins. When unset, the Kafka record timestamp is used.",
+      "group" : "Connector",
+      "groupOrder" : 19,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "index.routing.field",
+    "type" : "string",
+    "display" : {
+      "label" : "Routing field",
+      "description" : "Dotted path of a document field whose value becomes '_routing'. A record missing the field is a record-level error: routing silently defaulting to '_id' puts documents on the wrong shard, which is unrecoverable without a reindex.",
+      "group" : "Connector",
+      "groupOrder" : 20,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "ingest.pipeline",
+    "type" : "string",
+    "display" : {
+      "label" : "Ingest pipeline",
+      "description" : "Static ingest pipeline name or a placeholder expression using the naming vocabulary, e.g. 'pipeline-${source.table}'.",
+      "group" : "Connector",
+      "groupOrder" : 21,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "ingest.pipeline.validate",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Validate ingest pipelines at startup",
+      "description" : "Verify at startup that each statically-known ingest pipeline exists. Default: true",
+      "group" : "Connector",
+      "groupOrder" : 22,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "write.method",
+    "type" : "string",
+    "default" : "upsert",
+    "display" : {
+      "label" : "Write method",
+      "description" : "Bulk action used for writes: 'upsert' (default; update with doc_as_upsert, creates or merges), 'index' (full replacement), 'create' (fails if the document exists; required for data streams), or 'update' (fails if the document does not exist). Default: upsert",
+      "group" : "Connector",
+      "groupOrder" : 23,
+      "width" : "short",
+      "importance" : "high"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "upsert", "index", "create", "update" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "write.method.per.operation",
+    "type" : "list",
+    "display" : {
+      "label" : "Write method per operation",
+      "description" : "Optional per-operation override map, e.g. 'c:create,u:upsert', for patterns where creates must not overwrite. Keys are the envelope operation codes 'c', 'r', 'u'.",
+      "group" : "Connector",
+      "groupOrder" : 24,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "delete.enabled",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "Controls whether records can be deleted by the connector",
+      "description" : "Whether delete events are propagated. Defaults to 'true' here, unlike other Debezium sinks: a CDC sink that silently drops deletes is precisely the failure this connector exists to eliminate. Set to 'false' explicitly for an append-only index. Default: true",
+      "group" : "Connector",
+      "groupOrder" : 25,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "truncate.enabled",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Controls whether tables can be truncated by the connector",
+      "description" : "Whether to process debezium event `t` as truncate statement. Default: false",
+      "group" : "Connector",
+      "groupOrder" : 26,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "truncate.mode",
+    "type" : "string",
+    "default" : "ignore",
+    "display" : {
+      "label" : "Truncate handling",
+      "description" : "What a truncate ('t') event does: 'ignore' (default) discards it; 'delete_by_query' empties the resolved resource; 'recreate' deletes the index and rebuilds it from the generated template; 'fail' stops the task. The shared 'truncate.enabled' is derived from this property and must not contradict it. The destructive modes require 'truncate.allowed.resources'. Default: ignore",
+      "group" : "Connector",
+      "groupOrder" : 27,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "fail", "delete_by_query", "ignore", "recreate" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "truncate.allowed.resources",
+    "type" : "list",
+    "display" : {
+      "label" : "Resources a truncate may destroy",
+      "description" : "Comma-separated exact names or glob patterns matched against the resolved resource name (not the topic). Required, with no default, whenever 'truncate.mode' is destructive: a truncate can destroy data this connector did not write, and the acknowledgement must state the blast radius.",
+      "group" : "Connector",
+      "groupOrder" : 28,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "truncate.allow.wildcard",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Allow a match-everything truncate pattern",
+      "description" : "Required for a bare '*' (or equivalent) in 'truncate.allowed.resources'. Default: false",
+      "group" : "Connector",
+      "groupOrder" : 29,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "version.strategy",
+    "type" : "string",
+    "default" : "none",
+    "display" : {
+      "label" : "External version strategy",
+      "description" : "Where the ordering key for external versioning comes from: 'none' (default; ordering holds by construction), 'source_lsn' (the source commit position, any source position type), 'source_ts_ms', 'record_header', or 'kafka_offset' (comparable only within a partition; offered for migration parity). Default: none",
+      "group" : "Connector",
+      "groupOrder" : 30,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "kafka_offset", "source_lsn", "record_header", "none", "source_ts_ms" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "version.enforcement",
+    "type" : "string",
+    "default" : "auto",
+    "display" : {
+      "label" : "Version enforcement mechanism",
+      "description" : "How versioned writes are made conditional: 'auto' (default) chooses native external versioning when the key is a single long and the write method is 'index' or 'create', and the scripted guard otherwise; 'external' and 'script' force the choice. Default: auto",
+      "group" : "Connector",
+      "groupOrder" : 31,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "auto", "external", "script" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "version.conflict.mode",
+    "type" : "string",
+    "default" : "skip",
+    "display" : {
+      "label" : "Version conflict handling",
+      "description" : "What a rejected stale write does beyond the 'version_conflicts' metric: 'skip', 'warn', or 'fail'. Default: skip",
+      "group" : "Connector",
+      "groupOrder" : 32,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "warn", "fail", "skip" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "batch.size",
+    "type" : "number",
+    "default" : "500",
+    "display" : {
+      "label" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration.",
+      "description" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration. Default: 500",
+      "group" : "Connector",
+      "groupOrder" : 33,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "keyed.message.batch.mode",
+    "type" : "string",
+    "default" : "deduplication",
+    "display" : {
+      "label" : "Keyed message batch mode",
+      "description" : "Controls how keyed records are batched. 'deduplication' (default) deduplicates records by key within a batch (last-write-wins). 'passthrough' preserves all events and splits batches at duplicate-key boundaries. Default: deduplication",
+      "group" : "Connector",
+      "groupOrder" : 34,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "passthrough", "deduplication" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "bulk.size.bytes",
+    "type" : "number",
+    "default" : "5242880",
+    "display" : {
+      "label" : "Maximum bulk request size (bytes)",
+      "description" : "Upper bound on the serialized size of one bulk request, so a batch of large documents cannot exceed the cluster's 'http.max_content_length'. -1 disables the bound. Default: 5242880",
+      "group" : "Connector",
+      "groupOrder" : 35,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "linger.ms",
+    "type" : "number",
+    "default" : "0",
+    "display" : {
+      "label" : "Partial batch linger (ms)",
+      "description" : "How long to accumulate a partial batch under low throughput before writing it. 0 (default) writes partial batches immediately. Confluent V1's equivalent property defaults to 1. Default: 0",
+      "group" : "Connector",
+      "groupOrder" : 36,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "flush.timeout.ms",
+    "type" : "number",
+    "default" : "180000",
+    "display" : {
+      "label" : "Flush timeout (ms)",
+      "description" : "Upper bound on one flush cycle. Exceeding it pauses consumption rather than failing the task; a task dies only when it cannot make progress at all (see 'progress.stall.timeout.ms'). Default: 180000",
+      "group" : "Connector",
+      "groupOrder" : 37,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "max.retries",
+    "type" : "number",
+    "default" : "5",
+    "display" : {
+      "label" : "Maximum retries",
+      "description" : "Retry budget for transient failures. Backpressure signals (429 rejections) are throttled, not counted against this budget: counting backpressure as failure converts a busy cluster into a dead task. Default: 5",
+      "group" : "Connector",
+      "groupOrder" : 38,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retry.backoff.ms",
+    "type" : "number",
+    "default" : "100",
+    "display" : {
+      "label" : "Initial retry backoff (ms)",
+      "description" : "Initial backoff between retries; doubles up to 'retry.backoff.max.ms'. Default: 100",
+      "group" : "Connector",
+      "groupOrder" : 39,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "retry.backoff.max.ms",
+    "type" : "number",
+    "default" : "30000",
+    "display" : {
+      "label" : "Maximum retry backoff (ms)",
+      "description" : "Ceiling for the exponential retry backoff. Default: 30000",
+      "group" : "Connector",
+      "groupOrder" : 40,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "progress.stall.timeout.ms",
+    "type" : "number",
+    "default" : "300000",
+    "display" : {
+      "label" : "Progress stall timeout (ms)",
+      "description" : "A task that has made no observable progress within this window transitions to FAILED with the last Elasticsearch error attached, rather than reporting RUNNING while retrying forever. Thread liveness is not health. Default: 300000",
+      "group" : "Connector",
+      "groupOrder" : 41,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "max.requests.per.second",
+    "type" : "number",
+    "display" : {
+      "label" : "Proactive request rate ceiling",
+      "description" : "Optional ceiling on bulk requests per second, for clusters shared with other workloads. Unset means no ceiling. Composes with the adaptive throttle: the effective rate is the lower of the two.",
+      "group" : "Connector",
+      "groupOrder" : 42,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "max.bytes.per.second",
+    "type" : "number",
+    "display" : {
+      "label" : "Proactive byte rate ceiling",
+      "description" : "Optional ceiling on bytes written per second. Unset means no ceiling.",
+      "group" : "Connector",
+      "groupOrder" : 43,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "field.include.list",
+    "type" : "list",
+    "display" : {
+      "label" : "Include Fields",
+      "description" : "A comma-separated list of regular expressions matching fully-qualified names of fields that should be included in change events. The field names must be delimited by the format <topic>:<field> ",
+      "group" : "Connector",
+      "groupOrder" : 44,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "field.exclude.list",
+    "type" : "list",
+    "display" : {
+      "label" : "Exclude Fields",
+      "description" : "A comma-separated list of regular expressions matching fully-qualified names of fields that should be excluded from change events. The field names must be delimited by the format <topic>:<field> ",
+      "group" : "Connector",
+      "groupOrder" : 45,
+      "width" : "long",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "cloud.events.schema.name.pattern",
+    "type" : "string",
+    "default" : ".*CloudEvents\\.Envelope$",
+    "display" : {
+      "label" : "CloudEvents messages schema name pattern",
+      "description" : "Regular expression pattern to identify CloudEvents messages by matching the schema name with this pattern. Default: .*CloudEvents\\.Envelope$",
+      "group" : "Connector",
+      "groupOrder" : 46,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "decimal.output.mode",
+    "type" : "string",
+    "default" : "numeric",
+    "display" : {
+      "label" : "Decimal output",
+      "description" : "How Connect Decimal and VariableScaleDecimal values are written: 'numeric' (default; JSON number, string where the value exceeds IEEE-754 double precision), 'string', or 'double'. Default: numeric",
+      "group" : "Connector Advanced",
+      "groupOrder" : 0,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "string", "double", "numeric" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "temporal.output.mode",
+    "type" : "string",
+    "default" : "iso8601",
+    "display" : {
+      "label" : "Temporal output",
+      "description" : "How temporal logical types are written: 'iso8601' (default), 'epoch_millis', or 'epoch_nanos'. Default: iso8601",
+      "group" : "Connector Advanced",
+      "groupOrder" : 1,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "epoch_millis", "epoch_nanos", "iso8601" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "interval.output.mode",
+    "type" : "string",
+    "default" : "string",
+    "display" : {
+      "label" : "Interval output",
+      "description" : "How interval/duration logical types are written: 'string' (ISO-8601 duration, default) or 'numeric' (microseconds). Default: string",
+      "group" : "Connector Advanced",
+      "groupOrder" : 2,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "string", "numeric" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "json.output.mode",
+    "type" : "string",
+    "default" : "object",
+    "display" : {
+      "label" : "JSON column output",
+      "description" : "How io.debezium.data.Json values are written: 'object' (default; embedded JSON, not a quoted string) or 'string'. Default: object",
+      "group" : "Connector Advanced",
+      "groupOrder" : 3,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "string", "object" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "bits.output.mode",
+    "type" : "string",
+    "default" : "base64",
+    "display" : {
+      "label" : "Bits output",
+      "description" : "How io.debezium.data.Bits values are written: 'base64' (default), 'boolean_array', or 'integer' (bit width <= 64 only). Default: base64",
+      "group" : "Connector Advanced",
+      "groupOrder" : 4,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "base64", "integer", "boolean_array" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "binary.output.mode",
+    "type" : "string",
+    "default" : "base64",
+    "display" : {
+      "label" : "Binary output",
+      "description" : "How raw BYTES values are written: 'base64' (default) or 'hex'. Default: base64",
+      "group" : "Connector Advanced",
+      "groupOrder" : 5,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "base64", "hex" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "geometry.output.mode",
+    "type" : "string",
+    "default" : "geojson",
+    "display" : {
+      "label" : "Geometry output",
+      "description" : "How geometry logical types are written: 'geojson' (default; mapped geo_point/geo_shape) or 'wkb'. Default: geojson",
+      "group" : "Connector Advanced",
+      "groupOrder" : 6,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "geojson", "wkb" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "vector.output.mode",
+    "type" : "string",
+    "default" : "array",
+    "display" : {
+      "label" : "Vector output",
+      "description" : "How vector logical types are written: 'array' (default; JSON array of numbers, sparse vectors as an index-to-value object) or 'string'. Default: array",
+      "group" : "Connector Advanced",
+      "groupOrder" : 7,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "string", "array" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "map.output.mode",
+    "type" : "string",
+    "default" : "compact",
+    "display" : {
+      "label" : "Map output",
+      "description" : "How Connect MAP values with string keys are written: 'compact' (default; '{\"k\":\"v\"}') or 'entries' ('[{\"key\":..,\"value\":..}]'). Maps with non-string keys always use the entries form. Default: compact",
+      "group" : "Connector Advanced",
+      "groupOrder" : 8,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "entries", "compact" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "null.value.handling",
+    "type" : "string",
+    "default" : "omit",
+    "display" : {
+      "label" : "Null field handling",
+      "description" : "Whether null-valued fields appear in documents: 'omit' (default) keeps upserts from clobbering fields the source did not send; 'write_null' is for sources whose 'after' block is always complete and where an explicit null must overwrite. Default: omit",
+      "group" : "Connector Advanced",
+      "groupOrder" : 9,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "write_null", "omit" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "field.name.adjustment.mode",
+    "type" : "string",
+    "default" : "none",
+    "display" : {
+      "label" : "Field name adjustment",
+      "description" : "Field name sanitization: 'none' (default), 'avro', 'avro_unicode', or 'elasticsearch', which replaces '.' with 'field.name.separator.replacement' to avoid implicit object nesting from dotted column names. Default: none",
+      "group" : "Connector Advanced",
+      "groupOrder" : 10,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "elasticsearch", "none", "avro_unicode", "avro" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "field.name.separator.replacement",
+    "type" : "string",
+    "default" : "_",
+    "display" : {
+      "label" : "Dot replacement in field names",
+      "description" : "Replacement for '.' under 'field.name.adjustment.mode=elasticsearch'. Default: _",
+      "group" : "Connector Advanced",
+      "groupOrder" : 11,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "mapping.mode",
+    "type" : "string",
+    "default" : "create_if_absent",
+    "display" : {
+      "label" : "Mapping management",
+      "description" : "Whether the connector derives the index mapping from the Connect schema: 'create_if_absent' (default) generates and applies it before first write at template priority 0, so any user-authored template wins by priority; 'overwrite' always applies it (a template change does not retroactively alter existing indices); 'none' leaves mapping entirely to Elasticsearch - a first-class escape hatch for users who have already modeled their index. Default: create_if_absent",
+      "group" : "Connector Advanced",
+      "groupOrder" : 12,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "create_if_absent", "none", "overwrite" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "mapping.dynamic",
+    "type" : "string",
+    "default" : "strict_but_dlq",
+    "display" : {
+      "label" : "Dynamic mapping behavior",
+      "description" : "The 'dynamic' setting of the generated mapping: 'strict_but_dlq' (default) sets 'strict' so an unmapped field is rejected rather than silently typed, and the connector routes the record to the error handler naming the field; 'true', 'false', and 'runtime' are passed through. Default: strict_but_dlq",
+      "group" : "Connector Advanced",
+      "groupOrder" : 13,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "true", "false", "runtime", "strict_but_dlq" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "mapping.composed.of",
+    "type" : "list",
+    "display" : {
+      "label" : "User component templates",
+      "description" : "User-managed component template names composed into the generated index template ahead of the connector's own. This is how ILM and lifecycle policies are reached: author them once in Elasticsearch and name them here.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 14,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "mapping.settings",
+    "type" : "list",
+    "display" : {
+      "label" : "Index settings passthrough",
+      "description" : "Narrow 'key=value' passthrough for the few index settings that materially affect a sink: number_of_shards, number_of_replicas, refresh_interval, index.default_pipeline. Empty by default.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 15,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "string.mapping.mode",
+    "type" : "string",
+    "default" : "text_with_keyword",
+    "display" : {
+      "label" : "String field mapping",
+      "description" : "How STRING fields are mapped: 'text_with_keyword' (default), 'text', or 'keyword'. Default: text_with_keyword",
+      "group" : "Connector Advanced",
+      "groupOrder" : 16,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "text_with_keyword", "text", "keyword" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "struct.mapping.mode",
+    "type" : "string",
+    "default" : "object",
+    "display" : {
+      "label" : "Struct field mapping",
+      "description" : "How STRUCT fields are mapped: 'object' (default) or 'nested'. Default: object",
+      "group" : "Connector Advanced",
+      "groupOrder" : 17,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "nested", "object" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "json.mapping.mode",
+    "type" : "string",
+    "default" : "object",
+    "display" : {
+      "label" : "JSON field mapping",
+      "description" : "How io.debezium.data.Json fields are mapped: 'object' (default) or 'flattened'. Default: object",
+      "group" : "Connector Advanced",
+      "groupOrder" : 18,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "flattened", "object" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "error.classification.overrides",
+    "type" : "list",
+    "display" : {
+      "label" : "Error classification overrides",
+      "description" : "Comma-separated '<es-error-type>:<bucket>' pairs moving a specific Elasticsearch error type between classification buckets ('transient', 'record', 'resource_fatal', 'task_fatal') without waiting for a release, e.g. 'circuit_breaking_exception:record'. 'success' is deliberately not assignable: reclassifying a failure as success is how a document is lost silently.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 19,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "log.sensitive.data",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Log document bodies on failure",
+      "description" : "Whether document bodies may appear in error logs. When false (default), failures log record coordinates, '_id', index, and the Elasticsearch error, but never the payload. Default: false",
+      "group" : "Connector Advanced",
+      "groupOrder" : 20,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Connection",
+    "order" : 0,
+    "description" : "Connection configuration"
+  }, {
+    "name" : "Connector",
+    "order" : 7,
+    "description" : "Connector configuration"
+  }, {
+    "name" : "Connector Advanced",
+    "order" : 9,
+    "description" : "Advanced connector configuration"
+  } ]
+}
