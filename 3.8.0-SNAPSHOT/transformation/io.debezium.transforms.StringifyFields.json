@@ -1,0 +1,27 @@
+{
+  "name" : "Debezium Stringify Fields",
+  "type" : "transformation",
+  "version" : "3.8.0-SNAPSHOT",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "fields",
+    "type" : "list",
+    "required" : true,
+    "display" : {
+      "label" : "Fields to serialize",
+      "description" : "Comma-separated list of value field names to serialize to a JSON string. Use dot notation, such as 'after.payload', to target a nested field.",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

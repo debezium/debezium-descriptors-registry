@@ -320,6 +320,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "dialect.singlestore.geometry.repair.enabled",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Repair SingleStore polygons at eight-decimal precision",
+      "description" : "When enabled, rounds SingleStore GEOGRAPHY polygon coordinates to eight decimal places and uses JTS GeometryFixer to repair invalid polygonal geometry. SingleStore validates the resulting polygon on insertion. Default: false",
+      "group" : "Connector",
+      "groupOrder" : 16,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "batch.size",
     "type" : "number",
     "default" : "500",
@@ -327,7 +341,7 @@
       "label" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration.",
       "description" : "Specifies how many records to attempt to batch together into the destination table, when possible. You can also configure the connector’s underlying consumer’s max.poll.records using consumer.override.max.poll.records in the connector configuration. Default: 500",
       "group" : "Connector",
-      "groupOrder" : 16,
+      "groupOrder" : 17,
       "width" : "short",
       "importance" : "medium"
     },
@@ -341,7 +355,7 @@
       "label" : "Keyed message batch mode",
       "description" : "Controls how keyed records are batched. 'deduplication' (default) deduplicates records by key within a batch (last-write-wins). 'passthrough' preserves all events and splits batches at duplicate-key boundaries. Default: deduplication",
       "group" : "Connector",
-      "groupOrder" : 17,
+      "groupOrder" : 18,
       "width" : "short",
       "importance" : "medium"
     },
@@ -357,7 +371,7 @@
       "label" : "Include Fields",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of fields that should be included in change events. The field names must be delimited by the format <topic>:<field> ",
       "group" : "Connector",
-      "groupOrder" : 18,
+      "groupOrder" : 19,
       "width" : "long",
       "importance" : "medium"
     },
@@ -370,7 +384,7 @@
       "label" : "Exclude Fields",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of fields that should be excluded from change events. The field names must be delimited by the format <topic>:<field> ",
       "group" : "Connector",
-      "groupOrder" : 19,
+      "groupOrder" : 20,
       "width" : "long",
       "importance" : "medium"
     },
@@ -384,7 +398,7 @@
       "label" : "Max retry count",
       "description" : "Max retry count when fail to flush. In case of retriable exceptions, the flush will be retried for the defined max retry count. Default: 5",
       "group" : "Connector",
-      "groupOrder" : 20,
+      "groupOrder" : 21,
       "width" : "short",
       "importance" : "low"
     },
@@ -398,7 +412,7 @@
       "label" : "Delay to retry flush",
       "description" : "Delay to retry when fail to flush Default: 1000",
       "group" : "Connector",
-      "groupOrder" : 21,
+      "groupOrder" : 22,
       "width" : "short",
       "importance" : "low"
     },
@@ -412,7 +426,7 @@
       "label" : "Restart connection on errors",
       "description" : "Specifies whether the connector should attempt to restart the connection automatically upon connection-related errors. Defaults to false. In environments where the sink database uses asynchronous replication, enabling this option may risk data loss or inconsistencies during failover if the replica has not fully caught up with the primary. Default: false",
       "group" : "Connector",
-      "groupOrder" : 22,
+      "groupOrder" : 23,
       "width" : "short",
       "importance" : "low"
     },
@@ -426,7 +440,7 @@
       "label" : "Clamp out-of-range timestamp values",
       "description" : "Specifies whether temporal values that cannot be represented by the target database, for example BC-era timestamps emitted by an Oracle source, are clamped to the target database's minimum or maximum supported timestamp, mirroring how explicit infinity markers are handled. When set to false (the default), out-of-range values are passed to the target database unchanged and may cause the write to fail. Default: false",
       "group" : "Connector",
-      "groupOrder" : 23,
+      "groupOrder" : 24,
       "width" : "short",
       "importance" : "low"
     },
@@ -440,7 +454,7 @@
       "label" : "CloudEvents messages schema name pattern",
       "description" : "Regular expression pattern to identify CloudEvents messages by matching the schema name with this pattern. Default: .*CloudEvents\\.Envelope$",
       "group" : "Connector",
-      "groupOrder" : 24,
+      "groupOrder" : 25,
       "width" : "long",
       "importance" : "low"
     },
