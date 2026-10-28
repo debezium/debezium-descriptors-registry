@@ -939,12 +939,12 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
-    "name" : "keyed.message.batch.mode",
+    "name" : "buffer.mode",
     "type" : "string",
     "default" : "deduplication",
     "display" : {
-      "label" : "Keyed message batch mode",
-      "description" : "Controls how keyed records are batched. 'deduplication' (default) deduplicates records by key within a batch (last-write-wins). 'passthrough' preserves all events and splits batches at duplicate-key boundaries. Default: deduplication",
+      "label" : "Buffer mode",
+      "description" : "Controls how keyed records are handled by the buffer. 'deduplication' (default) deduplicates records by key within a batch (last-write-wins). 'passthrough' preserves all events and splits batches at duplicate-key boundaries. Default: deduplication",
       "group" : "Connector",
       "groupOrder" : 34,
       "width" : "short",
