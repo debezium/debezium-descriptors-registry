@@ -486,6 +486,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "signal.data.collection.validation.enabled",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Signal data collection validation enabled",
+      "description" : "Enables validation of 'signal.data.collection': existence, accepted shape, and (where applicable) column count and sizing. Default: false",
+      "group" : "Connector Advanced",
+      "groupOrder" : 5,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "signal.enabled.channels",
     "type" : "list",
     "default" : "source",
@@ -493,7 +507,7 @@
       "label" : "Enabled channels names",
       "description" : "List of channels names that are enabled. Source channel is enabled by default Default: source",
       "group" : "Connector Advanced",
-      "groupOrder" : 5,
+      "groupOrder" : 6,
       "width" : "long",
       "importance" : "medium"
     },
@@ -506,7 +520,7 @@
       "label" : "Enabled notification channels names",
       "description" : "List of notification channels names that are enabled.",
       "group" : "Connector Advanced",
-      "groupOrder" : 6,
+      "groupOrder" : 7,
       "width" : "long",
       "importance" : "medium"
     },
@@ -519,7 +533,7 @@
       "label" : "Notification topic name",
       "description" : "The name of the topic for the notifications. This is required in case 'sink' is in the list of enabled channels",
       "group" : "Connector Advanced",
-      "groupOrder" : 7,
+      "groupOrder" : 8,
       "width" : "long",
       "importance" : "high"
     },
@@ -532,7 +546,7 @@
       "label" : "HTTP notification endpoint URL",
       "description" : "The URL to which notifications are POSTed as JSON. Required when 'http' is in the list of enabled channels.",
       "group" : "Connector Advanced",
-      "groupOrder" : 8,
+      "groupOrder" : 9,
       "width" : "long",
       "importance" : "high"
     },
@@ -546,7 +560,7 @@
       "label" : "HTTP notification timeout (ms)",
       "description" : "Connect and read timeout, in milliseconds, for HTTP notification delivery. Default: 5000",
       "group" : "Connector Advanced",
-      "groupOrder" : 9,
+      "groupOrder" : 10,
       "width" : "short",
       "importance" : "low"
     },
@@ -560,7 +574,7 @@
       "label" : "HTTP notification retries",
       "description" : "Number of retries after the first failed HTTP notification delivery attempt. Terminal notifications (COMPLETED/ABORTED/SKIPPED) are always retried at least 3 times. Default: 2",
       "group" : "Connector Advanced",
-      "groupOrder" : 10,
+      "groupOrder" : 11,
       "width" : "short",
       "importance" : "low"
     },
@@ -574,7 +588,7 @@
       "label" : "Allow private network notification targets",
       "description" : "When true, the SSRF guard permits notification URLs that resolve to loopback, site-local or link-local addresses (e.g. an in-cluster Service). Defaults to false so only public addresses are allowed. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 11,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "low"
     },
@@ -588,7 +602,7 @@
       "label" : "Factory class to create transaction context & transaction struct maker classes",
       "description" : "Class to make transaction context & transaction struct/schemas Default: io.debezium.pipeline.txmetadata.DefaultTransactionMetadataFactory",
       "group" : "Connector Advanced",
-      "groupOrder" : 12,
+      "groupOrder" : 13,
       "width" : "medium",
       "importance" : "low"
     },
@@ -601,7 +615,7 @@
       "label" : "Columns PK mapping",
       "description" : "A semicolon-separated list of expressions that match fully-qualified tables and column(s) to be used as message key. Each expression must match the pattern '<fully-qualified table name>:<key columns>', where the table names could be defined as (DB_NAME.TABLE_NAME) or (SCHEMA_NAME.TABLE_NAME), depending on the specific connector, and the key columns are a comma-separated list of columns representing the custom key. For any table without an explicit key configuration the table's primary key column(s) will be used as message key. Example: dbserver1.inventory.orderlines:orderId,orderLineId;dbserver1.inventory.orders:id",
       "group" : "Connector Advanced",
-      "groupOrder" : 13,
+      "groupOrder" : 14,
       "width" : "long",
       "importance" : "medium"
     },
@@ -614,7 +628,7 @@
       "label" : "Mask Columns Using Hash and Salt",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be masked by hashing the input. Using the specified hash algorithms and salt.",
       "group" : "Connector Advanced",
-      "groupOrder" : 14,
+      "groupOrder" : 15,
       "width" : "long",
       "importance" : "medium"
     },
@@ -627,7 +641,7 @@
       "label" : "Mask Columns With n Asterisks",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be masked with configured amount of asterisk ('*') characters.",
       "group" : "Connector Advanced",
-      "groupOrder" : 15,
+      "groupOrder" : 16,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -639,7 +653,7 @@
       "label" : "Truncate Columns To n Characters",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be truncated to the configured amount of characters.",
       "group" : "Connector Advanced",
-      "groupOrder" : 16,
+      "groupOrder" : 17,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -651,7 +665,7 @@
       "label" : "Propagate Source Types by Columns",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that adds the column’s original type and original length as parameters to the corresponding field schemas in the emitted change records.",
       "group" : "Connector Advanced",
-      "groupOrder" : 17,
+      "groupOrder" : 18,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -663,7 +677,7 @@
       "label" : "Propagate Source Types by Data Type",
       "description" : "A comma-separated list of regular expressions matching the database-specific data type names that adds the data type's original type and original length as parameters to the corresponding field schemas in the emitted change records.",
       "group" : "Connector Advanced",
-      "groupOrder" : 18,
+      "groupOrder" : 19,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -676,7 +690,7 @@
       "label" : "Schema storage class",
       "description" : "The fully-qualified class name of the storage implementation for schema metadata. The class must implement io.debezium.relational.TableMappingStorage<io.debezium.relational.TableSchema>. Defaults to io.debezium.relational.ConcurrentMapTableMappingStorage for in-memory storage. Default: io.debezium.relational.ConcurrentMapTableMappingStorage",
       "group" : "Connector Advanced",
-      "groupOrder" : 19,
+      "groupOrder" : 20,
       "width" : "long",
       "importance" : "low"
     },
@@ -690,7 +704,7 @@
       "label" : "Table storage class",
       "description" : "The fully-qualified class name of the storage implementation for table metadata. The class must implement io.debezium.relational.TableMappingStorage<io.debezium.relational.Table>. Defaults to io.debezium.relational.ConcurrentMapTableMappingStorage for in-memory storage. Default: io.debezium.relational.ConcurrentMapTableMappingStorage",
       "group" : "Connector Advanced",
-      "groupOrder" : 20,
+      "groupOrder" : 21,
       "width" : "long",
       "importance" : "low"
     },
@@ -704,7 +718,7 @@
       "label" : "Schema refresh mode",
       "description" : "Specify the conditions that trigger a refresh of the in-memory schema for a table. 'columns_diff' (the default) is the safest mode, ensuring the in-memory schema stays in-sync with the database table's schema at all times. 'columns_diff_exclude_unchanged_toast' instructs the connector to refresh the in-memory schema cache if there is a discrepancy between it and the schema derived from the incoming message, unless unchanged TOASTable data fully accounts for the discrepancy. This setting can improve connector performance significantly if there are frequently-updated tables that have TOASTed data that are rarely part of these updates. However, it is possible for the in-memory schema to become outdated if TOASTable columns are dropped from the table. Default: columns_diff",
       "group" : "Connector Advanced",
-      "groupOrder" : 21,
+      "groupOrder" : 22,
       "width" : "short",
       "importance" : "medium"
     },
@@ -721,7 +735,7 @@
       "label" : "Include unknown datatypes",
       "description" : "Specify whether the fields of data type not supported by Debezium should be processed: 'false' (the default) omits the fields; 'true' converts the field into an implementation dependent binary representation. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 22,
+      "groupOrder" : 23,
       "width" : "short",
       "importance" : "medium"
     },
@@ -735,7 +749,7 @@
       "label" : "Source info struct maker class",
       "description" : "The name of the SourceInfoStructMaker class that returns SourceInfo schema and struct. Default: io.debezium.connector.postgresql.PostgresSourceInfoStructMaker",
       "group" : "Connector Advanced",
-      "groupOrder" : 23,
+      "groupOrder" : 24,
       "width" : "medium",
       "importance" : "low"
     },

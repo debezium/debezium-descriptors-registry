@@ -545,6 +545,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "signal.data.collection.validation.enabled",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Signal data collection validation enabled",
+      "description" : "Enables validation of 'signal.data.collection': existence, accepted shape, and (where applicable) column count and sizing. Default: false",
+      "group" : "Connector Advanced",
+      "groupOrder" : 6,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "signal.enabled.channels",
     "type" : "list",
     "default" : "source",
@@ -552,7 +566,7 @@
       "label" : "Enabled channels names",
       "description" : "List of channels names that are enabled. Source channel is enabled by default Default: source",
       "group" : "Connector Advanced",
-      "groupOrder" : 6,
+      "groupOrder" : 7,
       "width" : "long",
       "importance" : "medium"
     },
@@ -565,7 +579,7 @@
       "label" : "Enabled notification channels names",
       "description" : "List of notification channels names that are enabled.",
       "group" : "Connector Advanced",
-      "groupOrder" : 7,
+      "groupOrder" : 8,
       "width" : "long",
       "importance" : "medium"
     },
@@ -578,7 +592,7 @@
       "label" : "Notification topic name",
       "description" : "The name of the topic for the notifications. This is required in case 'sink' is in the list of enabled channels",
       "group" : "Connector Advanced",
-      "groupOrder" : 8,
+      "groupOrder" : 9,
       "width" : "long",
       "importance" : "high"
     },
@@ -591,7 +605,7 @@
       "label" : "HTTP notification endpoint URL",
       "description" : "The URL to which notifications are POSTed as JSON. Required when 'http' is in the list of enabled channels.",
       "group" : "Connector Advanced",
-      "groupOrder" : 9,
+      "groupOrder" : 10,
       "width" : "long",
       "importance" : "high"
     },
@@ -605,7 +619,7 @@
       "label" : "HTTP notification timeout (ms)",
       "description" : "Connect and read timeout, in milliseconds, for HTTP notification delivery. Default: 5000",
       "group" : "Connector Advanced",
-      "groupOrder" : 10,
+      "groupOrder" : 11,
       "width" : "short",
       "importance" : "low"
     },
@@ -619,7 +633,7 @@
       "label" : "HTTP notification retries",
       "description" : "Number of retries after the first failed HTTP notification delivery attempt. Terminal notifications (COMPLETED/ABORTED/SKIPPED) are always retried at least 3 times. Default: 2",
       "group" : "Connector Advanced",
-      "groupOrder" : 11,
+      "groupOrder" : 12,
       "width" : "short",
       "importance" : "low"
     },
@@ -633,7 +647,7 @@
       "label" : "Allow private network notification targets",
       "description" : "When true, the SSRF guard permits notification URLs that resolve to loopback, site-local or link-local addresses (e.g. an in-cluster Service). Defaults to false so only public addresses are allowed. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 12,
+      "groupOrder" : 13,
       "width" : "short",
       "importance" : "low"
     },
@@ -647,7 +661,7 @@
       "label" : "Factory class to create transaction context & transaction struct maker classes",
       "description" : "Class to make transaction context & transaction struct/schemas Default: io.debezium.pipeline.txmetadata.DefaultTransactionMetadataFactory",
       "group" : "Connector Advanced",
-      "groupOrder" : 13,
+      "groupOrder" : 14,
       "width" : "medium",
       "importance" : "low"
     },
@@ -661,7 +675,7 @@
       "label" : "Change stream cursor batch size",
       "description" : "The maximum number of change stream documents returned in each batch from MongoDB. A value of '0' uses the server default batch size. Default: 0",
       "group" : "Connector Advanced",
-      "groupOrder" : 14,
+      "groupOrder" : 15,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -674,7 +688,7 @@
       "label" : "Pipeline stages applied to the change stream cursor",
       "description" : "Applies processing to change events as part of the the standard MongoDB aggregation stream pipeline. A pipeline is a MongoDB aggregation pipeline composed of instructions to the database to filter or transform data. This can be used customize the data that the connector consumes. Note that this comes after the internal pipelines used to support the connector (e.g. filtering database and collection names).",
       "group" : "Connector Advanced",
-      "groupOrder" : 15,
+      "groupOrder" : 16,
       "width" : "short",
       "importance" : "low"
     },
@@ -688,7 +702,7 @@
       "label" : "Change stream cursor pipeline order",
       "description" : "The order used to construct the effective MongoDB aggregation stream pipeline Options include: 'internal_first' (the default) Internal stages defined by the connector are applied first; 'user_first' Stages defined by the 'cursor.pipeline' property are applied first; 'user_only' Stages defined by the 'cursor.pipeline' property will replace internal stages defined by the connector; Default: internal_first",
       "group" : "Connector Advanced",
-      "groupOrder" : 16,
+      "groupOrder" : 17,
       "width" : "short",
       "importance" : "medium"
     },
@@ -705,7 +719,7 @@
       "label" : "Oversize document handling mode",
       "description" : "The strategy used to handle change events for documents exceeding specified BSON size. Options include: 'fail' (the default) the connector fails if the total size of change event exceed the maximum BSON size'skip' any change events for documents exceeding the maximum size will be ignored'split' change events exceeding the maximum BSON size will be split using the $changeStreamSplitLargeEvent aggregation Default: fail",
       "group" : "Connector Advanced",
-      "groupOrder" : 17,
+      "groupOrder" : 18,
       "width" : "short",
       "importance" : "low"
     },
@@ -722,7 +736,7 @@
       "label" : "Oversize document skip threshold",
       "description" : "The maximum allowed size of the stored document for which change events are processed. This includes both, the size before and after database operation, more specifically this limits the size of fullDocument and fullDocumentBeforeChange filed of MongoDB change events. Default: 0",
       "group" : "Connector Advanced",
-      "groupOrder" : 18,
+      "groupOrder" : 19,
       "width" : "short",
       "importance" : "low"
     },
@@ -736,7 +750,7 @@
       "label" : "Capture mode full update type",
       "description" : "Deprecated. Use capture.mode.post.image instead. The method used to perform full update lookups. Options include: 'lookup' (the default) use separate lookup to get the updated document; 'post_image' use MongoDB post images when available; 'post_image_required' require MongoDB post images and fail if unavailable. Post images require MongoDB 6.0 or newer and must be enabled on the collection. With regex filters and deployment or database capture scope, required images can be needed for events from excluded collections. Default: lookup",
       "group" : "Connector Advanced",
-      "groupOrder" : 19,
+      "groupOrder" : 20,
       "width" : "short",
       "importance" : "medium"
     },

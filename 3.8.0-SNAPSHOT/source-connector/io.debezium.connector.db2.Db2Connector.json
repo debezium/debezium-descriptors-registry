@@ -338,6 +338,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "signal.data.collection.validation.enabled",
+    "type" : "boolean",
+    "default" : "false",
+    "display" : {
+      "label" : "Signal data collection validation enabled",
+      "description" : "Enables validation of 'signal.data.collection': existence, accepted shape, and (where applicable) column count and sizing. Default: false",
+      "group" : "Connector Advanced",
+      "groupOrder" : 4,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "signal.enabled.channels",
     "type" : "list",
     "default" : "source",
@@ -345,7 +359,7 @@
       "label" : "Enabled channels names",
       "description" : "List of channels names that are enabled. Source channel is enabled by default Default: source",
       "group" : "Connector Advanced",
-      "groupOrder" : 4,
+      "groupOrder" : 5,
       "width" : "long",
       "importance" : "medium"
     },
@@ -358,7 +372,7 @@
       "label" : "Enabled notification channels names",
       "description" : "List of notification channels names that are enabled.",
       "group" : "Connector Advanced",
-      "groupOrder" : 5,
+      "groupOrder" : 6,
       "width" : "long",
       "importance" : "medium"
     },
@@ -371,7 +385,7 @@
       "label" : "Notification topic name",
       "description" : "The name of the topic for the notifications. This is required in case 'sink' is in the list of enabled channels",
       "group" : "Connector Advanced",
-      "groupOrder" : 6,
+      "groupOrder" : 7,
       "width" : "long",
       "importance" : "high"
     },
@@ -384,7 +398,7 @@
       "label" : "HTTP notification endpoint URL",
       "description" : "The URL to which notifications are POSTed as JSON. Required when 'http' is in the list of enabled channels.",
       "group" : "Connector Advanced",
-      "groupOrder" : 7,
+      "groupOrder" : 8,
       "width" : "long",
       "importance" : "high"
     },
@@ -398,7 +412,7 @@
       "label" : "HTTP notification timeout (ms)",
       "description" : "Connect and read timeout, in milliseconds, for HTTP notification delivery. Default: 5000",
       "group" : "Connector Advanced",
-      "groupOrder" : 8,
+      "groupOrder" : 9,
       "width" : "short",
       "importance" : "low"
     },
@@ -412,7 +426,7 @@
       "label" : "HTTP notification retries",
       "description" : "Number of retries after the first failed HTTP notification delivery attempt. Terminal notifications (COMPLETED/ABORTED/SKIPPED) are always retried at least 3 times. Default: 2",
       "group" : "Connector Advanced",
-      "groupOrder" : 9,
+      "groupOrder" : 10,
       "width" : "short",
       "importance" : "low"
     },
@@ -426,7 +440,7 @@
       "label" : "Allow private network notification targets",
       "description" : "When true, the SSRF guard permits notification URLs that resolve to loopback, site-local or link-local addresses (e.g. an in-cluster Service). Defaults to false so only public addresses are allowed. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 10,
+      "groupOrder" : 11,
       "width" : "short",
       "importance" : "low"
     },
@@ -440,7 +454,7 @@
       "label" : "Factory class to create transaction context & transaction struct maker classes",
       "description" : "Class to make transaction context & transaction struct/schemas Default: io.debezium.pipeline.txmetadata.DefaultTransactionMetadataFactory",
       "group" : "Connector Advanced",
-      "groupOrder" : 11,
+      "groupOrder" : 12,
       "width" : "medium",
       "importance" : "low"
     },
@@ -453,7 +467,7 @@
       "label" : "Columns PK mapping",
       "description" : "A semicolon-separated list of expressions that match fully-qualified tables and column(s) to be used as message key. Each expression must match the pattern '<fully-qualified table name>:<key columns>', where the table names could be defined as (DB_NAME.TABLE_NAME) or (SCHEMA_NAME.TABLE_NAME), depending on the specific connector, and the key columns are a comma-separated list of columns representing the custom key. For any table without an explicit key configuration the table's primary key column(s) will be used as message key. Example: dbserver1.inventory.orderlines:orderId,orderLineId;dbserver1.inventory.orders:id",
       "group" : "Connector Advanced",
-      "groupOrder" : 12,
+      "groupOrder" : 13,
       "width" : "long",
       "importance" : "medium"
     },
@@ -466,7 +480,7 @@
       "label" : "Mask Columns Using Hash and Salt",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be masked by hashing the input. Using the specified hash algorithms and salt.",
       "group" : "Connector Advanced",
-      "groupOrder" : 13,
+      "groupOrder" : 14,
       "width" : "long",
       "importance" : "medium"
     },
@@ -479,7 +493,7 @@
       "label" : "Mask Columns With n Asterisks",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be masked with configured amount of asterisk ('*') characters.",
       "group" : "Connector Advanced",
-      "groupOrder" : 14,
+      "groupOrder" : 15,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -491,7 +505,7 @@
       "label" : "Truncate Columns To n Characters",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be truncated to the configured amount of characters.",
       "group" : "Connector Advanced",
-      "groupOrder" : 15,
+      "groupOrder" : 16,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -503,7 +517,7 @@
       "label" : "Propagate Source Types by Columns",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that adds the column’s original type and original length as parameters to the corresponding field schemas in the emitted change records.",
       "group" : "Connector Advanced",
-      "groupOrder" : 16,
+      "groupOrder" : 17,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -515,7 +529,7 @@
       "label" : "Propagate Source Types by Data Type",
       "description" : "A comma-separated list of regular expressions matching the database-specific data type names that adds the data type's original type and original length as parameters to the corresponding field schemas in the emitted change records.",
       "group" : "Connector Advanced",
-      "groupOrder" : 17,
+      "groupOrder" : 18,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -528,7 +542,7 @@
       "label" : "Schema storage class",
       "description" : "The fully-qualified class name of the storage implementation for schema metadata. The class must implement io.debezium.relational.TableMappingStorage<io.debezium.relational.TableSchema>. Defaults to io.debezium.relational.ConcurrentMapTableMappingStorage for in-memory storage. Default: io.debezium.relational.ConcurrentMapTableMappingStorage",
       "group" : "Connector Advanced",
-      "groupOrder" : 18,
+      "groupOrder" : 19,
       "width" : "long",
       "importance" : "low"
     },
@@ -542,7 +556,7 @@
       "label" : "Table storage class",
       "description" : "The fully-qualified class name of the storage implementation for table metadata. The class must implement io.debezium.relational.TableMappingStorage<io.debezium.relational.Table>. Defaults to io.debezium.relational.ConcurrentMapTableMappingStorage for in-memory storage. Default: io.debezium.relational.ConcurrentMapTableMappingStorage",
       "group" : "Connector Advanced",
-      "groupOrder" : 19,
+      "groupOrder" : 20,
       "width" : "long",
       "importance" : "low"
     },
@@ -556,7 +570,7 @@
       "label" : "Database schema history class",
       "description" : "The name of the SchemaHistory class that should be used to store and recover database schema changes. The configuration properties for the history are prefixed with the 'schema.history.internal.' string. Default: io.debezium.storage.kafka.history.KafkaSchemaHistory",
       "group" : "Connector Advanced",
-      "groupOrder" : 20,
+      "groupOrder" : 21,
       "width" : "long",
       "importance" : "low"
     },
@@ -570,7 +584,7 @@
       "label" : "Skip DDL statements that cannot be parsed",
       "description" : "Controls the action Debezium will take when it meets a DDL statement in binlog, that it cannot parse.By default the connector will stop operating but by changing the setting it can ignore the statements which it cannot parse. If skipping is enabled then Debezium can miss metadata changes. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 21,
+      "groupOrder" : 22,
       "width" : "short",
       "importance" : "low"
     },
@@ -584,7 +598,7 @@
       "label" : "Store only DDL that modifies tables that are captured based on include/exclude lists",
       "description" : "Controls what DDL will Debezium store in database schema history. By default (false) Debezium will store all incoming DDL statements. If set to true, then only DDL that manipulates a captured table will be stored. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 22,
+      "groupOrder" : 23,
       "width" : "short",
       "importance" : "low"
     },
@@ -598,7 +612,7 @@
       "label" : "Store only DDL that modifies tables of databases that are captured based on include/exclude lists",
       "description" : "Controls what DDL will Debezium store in database schema history. By default (false) Debezium will store all incoming DDL statements. If set to true, then only DDL that manipulates a table from captured schema/database will be stored. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 23,
+      "groupOrder" : 24,
       "width" : "short",
       "importance" : "low"
     },
@@ -612,7 +626,7 @@
       "label" : "Memory optimization mode for schema history",
       "description" : "Controls how Debezium deduplicates identical schema objects (tables, columns, attributes) in memory using an interner. Default: off",
       "group" : "Connector Advanced",
-      "groupOrder" : 24,
+      "groupOrder" : 25,
       "width" : "short",
       "importance" : "low"
     },
@@ -629,7 +643,7 @@
       "label" : "CDC control schema",
       "description" : "The name of the schema where CDC control structures are located; defaults to 'ASNCDC' Default: ASNCDC",
       "group" : "Connector Advanced",
-      "groupOrder" : 25,
+      "groupOrder" : 26,
       "width" : "medium",
       "importance" : "low"
     },
@@ -643,7 +657,7 @@
       "label" : "CDC change tables schema",
       "description" : "The name of the schema where CDC change tables are located; defaults to 'ASNCDC' Default: ASNCDC",
       "group" : "Connector Advanced",
-      "groupOrder" : 26,
+      "groupOrder" : 27,
       "width" : "medium",
       "importance" : "low"
     },
@@ -657,7 +671,7 @@
       "label" : "Db2 platform",
       "description" : "Informs connector which Db2 implementation platform it is connected to. The  Using a value of 'Z' ensures that the Db2 for z/OS specific SQL statements are used. Default: LUW",
       "group" : "Connector Advanced",
-      "groupOrder" : 27,
+      "groupOrder" : 28,
       "width" : "short",
       "importance" : "low"
     },
@@ -674,7 +688,7 @@
       "label" : "z/OS ignore stop LSN",
       "description" : "If true, causes the connector to ignore the stop LSN value from the IBMSNAP_REGISTER.CD_OLD_SYNCHPOINT column when polling. Apply this if events are getting dropped due to the stop LSN being smaller than the current range of LSNs. Only applies to z/OS platform. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 28,
+      "groupOrder" : 29,
       "width" : "short",
       "importance" : "low"
     },
@@ -687,7 +701,7 @@
     "display" : {
       "description" : "The maximum number of seconds for a streaming query to include that query's result set, starting from the earliest row in this query.  Used to limit the size of queries when the change table is large to avoid excessive resource usage. If 0, no timespan limit will apply. Default: 0",
       "group" : "Connector Advanced",
-      "groupOrder" : 29,
+      "groupOrder" : 30,
       "width" : "short",
       "importance" : "low"
     },
@@ -700,7 +714,7 @@
     "display" : {
       "description" : "A switch to control if the connector instance is responsible for updating the prune table (usually done by IBM Apply agent) which will cause the IBM Capture agent to prune read data from the change tables. default false. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 30,
+      "groupOrder" : 31,
       "width" : "short",
       "importance" : "medium"
     },
@@ -712,7 +726,7 @@
     "display" : {
       "description" : "If set to update the prune table, this will identify the prune set name that should be used when updating the table for this instance.",
       "group" : "Connector Advanced",
-      "groupOrder" : 31,
+      "groupOrder" : 32,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -725,7 +739,7 @@
     "display" : {
       "description" : "The minimum number of milliseconds between the connector instance's update of the prune point for the subscription set. Default: 10000",
       "group" : "Connector Advanced",
-      "groupOrder" : 32,
+      "groupOrder" : 33,
       "width" : "short",
       "importance" : "low"
     },
@@ -738,7 +752,7 @@
     "display" : {
       "description" : "An switch to decrement the prune lsn/syncpoint by one to avoid allowing the last lsn processed to get pruned to avoid the risk of an unnecessary snapshot due to the last processed lsn not being present in the change table. Default: true",
       "group" : "Connector Advanced",
-      "groupOrder" : 33,
+      "groupOrder" : 34,
       "width" : "medium",
       "importance" : "low"
     },
@@ -750,7 +764,7 @@
     "display" : {
       "description" : "The apply_qual name that represents the apply agent (this instance) to the subscription set.",
       "group" : "Connector Advanced",
-      "groupOrder" : 34,
+      "groupOrder" : 35,
       "width" : "medium",
       "importance" : "low"
     },
@@ -762,7 +776,7 @@
     "display" : {
       "description" : "The target_server name that represents the apply agent's target (where the data is going) for the subscription set.",
       "group" : "Connector Advanced",
-      "groupOrder" : 35,
+      "groupOrder" : 36,
       "width" : "medium",
       "importance" : "low"
     },
@@ -774,7 +788,7 @@
     "display" : {
       "description" : "The name of a prepared statement in the database that will be used instead of direct sql to allow for DBA control of the update code where needed.",
       "group" : "Connector Advanced",
-      "groupOrder" : 36,
+      "groupOrder" : 37,
       "width" : "long",
       "importance" : "low"
     },
