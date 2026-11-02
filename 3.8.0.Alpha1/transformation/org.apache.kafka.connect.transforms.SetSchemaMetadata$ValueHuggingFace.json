@@ -1,0 +1,51 @@
+{
+  "name" : "Kafka Set Schema Metadata (Value)",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "schema.name",
+    "type" : "string",
+    "display" : {
+      "label" : "schema.name",
+      "description" : "Schema name to set.",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "schema.version",
+    "type" : "number",
+    "display" : {
+      "label" : "schema.version",
+      "description" : "Schema version to set.",
+      "group" : "Advanced",
+      "groupOrder" : 1,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "replace.null.with.default",
+    "type" : "boolean",
+    "default" : "true",
+    "display" : {
+      "label" : "replace.null.with.default",
+      "description" : "Whether to replace fields that have a default value and that are null to the default value. When set to true, the Default: true",
+      "group" : "Advanced",
+      "groupOrder" : 2,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}

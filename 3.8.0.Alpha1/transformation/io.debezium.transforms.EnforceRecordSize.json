@@ -1,0 +1,94 @@
+{
+  "name" : "Debezium Enforce Record Size",
+  "type" : "transformation",
+  "version" : "3.8.0.Alpha1",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "max.bytes",
+    "type" : "number",
+    "required" : true,
+    "display" : {
+      "label" : "Maximum record size",
+      "description" : "The maximum record size in bytes. Records exceeding this size will have their string and bytes columns truncated proportionally to fit within this limit.",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "compression.ratio",
+    "type" : "number",
+    "default" : "1.0",
+    "display" : {
+      "label" : "Compression ratio",
+      "description" : "Ratio to account for record serialization differences. The estimated record size is multiplied by this ratio before comparing to the max size. For example, if your serialization compresses raw record size by 50%, set this to 0.5. Downstream systems typically provide metrics to discover the effective ratio, e.g. Kafka exposes kafka.producer:type=producer-metrics,client-id=<id>/compression-rate-avg. 0 (no adjustment). Default: 1.0",
+      "group" : "Advanced",
+      "groupOrder" : 1,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "min.field.size",
+    "type" : "number",
+    "default" : "25000",
+    "display" : {
+      "label" : "Minimum field size",
+      "description" : "Fields with a size at or below this value (in bytes) will not be truncated. Only fields larger than this threshold are eligible for proportional truncation. Default: 25000",
+      "group" : "Advanced",
+      "groupOrder" : 2,
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "strategy",
+    "type" : "string",
+    "default" : "truncate",
+    "display" : {
+      "label" : "Record size enforcement strategy",
+      "description" : "Strategy used for records that exceed 'max.bytes'. The default 'truncate' strategy retains the existing proportional truncation behavior. The 'claim_check' strategy stores the complete record externally and emits durable references in configured columns. Default: truncate",
+      "group" : "Advanced",
+      "groupOrder" : 3,
+      "importance" : "high"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "truncate", "claim_check" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "claim.check.storage.class",
+    "type" : "string",
+    "display" : {
+      "label" : "Claim-check storage class",
+      "description" : "Fully-qualified OversizedRecordStorage implementation class. Required when strategy is 'claim_check'.",
+      "group" : "Advanced",
+      "groupOrder" : 4,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "claim.check.columns.include.list",
+    "type" : "list",
+    "default" : "",
+    "display" : {
+      "label" : "Claim-check columns include list",
+      "description" : "Comma-separated regular expressions that match columns to replace with claim-check markers. Each expression is evaluated against the column name and the topic-qualified column name. Required when strategy is 'claim_check'. Default: ",
+      "group" : "Advanced",
+      "groupOrder" : 5,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
