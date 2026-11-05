@@ -2,9 +2,9 @@
   "schemaVersion": "1.0",
   "build": {
     "version": "3.8.0-SNAPSHOT",
-    "timestamp": "2026-11-04T02:10:01Z",
+    "timestamp": "2026-11-05T02:19:00Z",
     "sourceRepository": "debezium/debezium",
-    "sourceCommit": "e0d7936",
+    "sourceCommit": "8de070e",
     "sourceBranch": "main"
   },
   "components": {
