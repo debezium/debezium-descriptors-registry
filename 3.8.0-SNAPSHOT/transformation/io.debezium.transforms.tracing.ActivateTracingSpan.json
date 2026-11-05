@@ -20,6 +20,23 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "tracing.span.context.format",
+    "type" : "string",
+    "default" : "properties",
+    "display" : {
+      "label" : "Serialized tracing span context format",
+      "description" : "The serialization format of the span context stored in the field configured by 'tracing.span.context.field'. Options include: 'properties' (the default) for a java.util.Properties representation; 'json' for a JSON object whose top-level string members are used as the propagated context, other members are ignored. Default: properties",
+      "group" : "Advanced",
+      "groupOrder" : 1,
+      "width" : "short",
+      "importance" : "medium"
+    },
+    "validation" : [ {
+      "type" : "enum",
+      "values" : [ "json", "properties" ]
+    } ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "tracing.operation.name",
     "type" : "string",
     "default" : "debezium-read",
@@ -27,7 +44,7 @@
       "label" : "Tracing operation name",
       "description" : "The operation name representing Debezium processing span. Default is 'debezium-read' Default: debezium-read",
       "group" : "Advanced",
-      "groupOrder" : 1,
+      "groupOrder" : 2,
       "width" : "medium",
       "importance" : "high"
     },
@@ -41,7 +58,7 @@
       "label" : "Trace only events with context field present",
       "description" : "Set to `true` when only events that have serialized context field should be traced. Default: false",
       "group" : "Advanced",
-      "groupOrder" : 2,
+      "groupOrder" : 3,
       "width" : "medium",
       "importance" : "high"
     },
