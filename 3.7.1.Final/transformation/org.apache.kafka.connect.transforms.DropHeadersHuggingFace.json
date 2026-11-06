@@ -1,0 +1,26 @@
+{
+  "name" : "Kafka Drop Headers",
+  "type" : "transformation",
+  "version" : "1.0.0",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "headers",
+    "type" : "list",
+    "display" : {
+      "label" : "headers",
+      "description" : "The name of the headers to be removed.",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "importance" : "high"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
