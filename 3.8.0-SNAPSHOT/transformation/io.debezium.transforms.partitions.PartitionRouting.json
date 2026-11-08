@@ -11,7 +11,7 @@
     "required" : true,
     "display" : {
       "label" : "List of payload fields to use for compute partition.",
-      "description" : "Payload fields to use to calculate the partition. Supports Struct nesting using dot notation.To access fields related to data collections, you can use: after, before or change, where 'change' is a special field that will automatically choose, based on operation, the 'after' or 'before'. If a field not exist for the current record it will simply not usede.g. after.name,source.table,change.name",
+      "description" : "Payload fields to use to calculate the partition. Supports Struct nesting using dot notation.To access fields related to data collections, you can use: after, before or change, where 'change' is a special field that will automatically choose, based on operation, the 'after' or 'before'. To read a field from the record key, use the 'key' prefix, e.g. key.id. If a field not exist for the current record it will simply not usede.g. after.name,source.table,change.name",
       "group" : "Advanced",
       "groupOrder" : 0,
       "importance" : "high"
