@@ -882,6 +882,20 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "unavailable.value.placeholder",
+    "type" : "string",
+    "default" : "__debezium_unavailable_value",
+    "display" : {
+      "label" : "Unavailable value placeholder",
+      "description" : "Specify the constant that will be provided by Debezium to indicate that the original value is unavailable and not provided by the database. If starts with 'hex:' prefix it is expected that the rest of the string represents hexadecimal encoded octets. Default: __debezium_unavailable_value",
+      "group" : "Connector Advanced",
+      "groupOrder" : 31,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "snapshot.delay.ms",
     "type" : "number",
     "default" : "0",
