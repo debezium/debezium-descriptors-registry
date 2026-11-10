@@ -53,7 +53,7 @@
     },
     "validation" : [ {
       "type" : "enum",
-      "values" : [ "extended", "compact" ]
+      "values" : [ "compact", "extended" ]
     } ],
     "valueDependants" : [ ]
   }, {
