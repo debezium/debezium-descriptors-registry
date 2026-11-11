@@ -1297,6 +1297,19 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "notification.http.authorization",
+    "type" : "string",
+    "display" : {
+      "label" : "HTTP notification authorization header",
+      "description" : "The complete value of the Authorization header sent with every HTTP notification request, e.g. 'Bearer <token>' or 'Basic <base64>'. Omitted when unset.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 13,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "transaction.metadata.factory",
     "type" : "string",
     "default" : "io.debezium.pipeline.txmetadata.DefaultTransactionMetadataFactory",
@@ -1304,7 +1317,7 @@
       "label" : "Factory class to create transaction context & transaction struct maker classes",
       "description" : "Class to make transaction context & transaction struct/schemas Default: io.debezium.pipeline.txmetadata.DefaultTransactionMetadataFactory",
       "group" : "Connector Advanced",
-      "groupOrder" : 13,
+      "groupOrder" : 14,
       "width" : "medium",
       "importance" : "low"
     },
@@ -1317,7 +1330,7 @@
       "label" : "Columns PK mapping",
       "description" : "A semicolon-separated list of expressions that match fully-qualified tables and column(s) to be used as message key. Each expression must match the pattern '<fully-qualified table name>:<key columns>', where the table names could be defined as (DB_NAME.TABLE_NAME) or (SCHEMA_NAME.TABLE_NAME), depending on the specific connector, and the key columns are a comma-separated list of columns representing the custom key. For any table without an explicit key configuration the table's primary key column(s) will be used as message key. Example: dbserver1.inventory.orderlines:orderId,orderLineId;dbserver1.inventory.orders:id",
       "group" : "Connector Advanced",
-      "groupOrder" : 14,
+      "groupOrder" : 15,
       "width" : "long",
       "importance" : "medium"
     },
@@ -1330,7 +1343,7 @@
       "label" : "Mask Columns Using Hash and Salt",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be masked by hashing the input. Using the specified hash algorithms and salt.",
       "group" : "Connector Advanced",
-      "groupOrder" : 15,
+      "groupOrder" : 16,
       "width" : "long",
       "importance" : "medium"
     },
@@ -1343,7 +1356,7 @@
       "label" : "Mask Columns With n Asterisks",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be masked with configured amount of asterisk ('*') characters.",
       "group" : "Connector Advanced",
-      "groupOrder" : 16,
+      "groupOrder" : 17,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -1355,7 +1368,7 @@
       "label" : "Truncate Columns To n Characters",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that should be truncated to the configured amount of characters.",
       "group" : "Connector Advanced",
-      "groupOrder" : 17,
+      "groupOrder" : 18,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -1367,7 +1380,7 @@
       "label" : "Propagate Source Types by Columns",
       "description" : "A comma-separated list of regular expressions matching fully-qualified names of columns that adds the column’s original type and original length as parameters to the corresponding field schemas in the emitted change records.",
       "group" : "Connector Advanced",
-      "groupOrder" : 18,
+      "groupOrder" : 19,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -1379,7 +1392,7 @@
       "label" : "Propagate Source Types by Data Type",
       "description" : "A comma-separated list of regular expressions matching the database-specific data type names that adds the data type's original type and original length as parameters to the corresponding field schemas in the emitted change records.",
       "group" : "Connector Advanced",
-      "groupOrder" : 19,
+      "groupOrder" : 20,
       "importance" : "medium"
     },
     "validation" : [ ],
@@ -1392,7 +1405,7 @@
       "label" : "Schema storage class",
       "description" : "The fully-qualified class name of the storage implementation for schema metadata. The class must implement io.debezium.relational.TableMappingStorage<io.debezium.relational.TableSchema>. Defaults to io.debezium.relational.ConcurrentMapTableMappingStorage for in-memory storage. Default: io.debezium.relational.ConcurrentMapTableMappingStorage",
       "group" : "Connector Advanced",
-      "groupOrder" : 20,
+      "groupOrder" : 21,
       "width" : "long",
       "importance" : "low"
     },
@@ -1406,7 +1419,7 @@
       "label" : "Table storage class",
       "description" : "The fully-qualified class name of the storage implementation for table metadata. The class must implement io.debezium.relational.TableMappingStorage<io.debezium.relational.Table>. Defaults to io.debezium.relational.ConcurrentMapTableMappingStorage for in-memory storage. Default: io.debezium.relational.ConcurrentMapTableMappingStorage",
       "group" : "Connector Advanced",
-      "groupOrder" : 21,
+      "groupOrder" : 22,
       "width" : "long",
       "importance" : "low"
     },
@@ -1420,7 +1433,7 @@
       "label" : "Database schema history class",
       "description" : "The name of the SchemaHistory class that should be used to store and recover database schema changes. The configuration properties for the history are prefixed with the 'schema.history.internal.' string. Default: io.debezium.storage.kafka.history.KafkaSchemaHistory",
       "group" : "Connector Advanced",
-      "groupOrder" : 22,
+      "groupOrder" : 23,
       "width" : "long",
       "importance" : "low"
     },
@@ -1434,7 +1447,7 @@
       "label" : "Skip DDL statements that cannot be parsed",
       "description" : "Controls the action Debezium will take when it meets a DDL statement in binlog, that it cannot parse.By default the connector will stop operating but by changing the setting it can ignore the statements which it cannot parse. If skipping is enabled then Debezium can miss metadata changes. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 23,
+      "groupOrder" : 24,
       "width" : "short",
       "importance" : "low"
     },
@@ -1448,7 +1461,7 @@
       "label" : "Store only DDL that modifies tables that are captured based on include/exclude lists",
       "description" : "Controls what DDL will Debezium store in database schema history. By default (false) Debezium will store all incoming DDL statements. If set to true, then only DDL that manipulates a captured table will be stored. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 24,
+      "groupOrder" : 25,
       "width" : "short",
       "importance" : "low"
     },
@@ -1462,7 +1475,7 @@
       "label" : "Store only DDL that modifies tables of databases that are captured based on include/exclude lists",
       "description" : "Controls what DDL will Debezium store in database schema history. By default (false) Debezium will store all incoming DDL statements. If set to true, then only DDL that manipulates a table from captured schema/database will be stored. Default: false",
       "group" : "Connector Advanced",
-      "groupOrder" : 25,
+      "groupOrder" : 26,
       "width" : "short",
       "importance" : "low"
     },
@@ -1476,7 +1489,7 @@
       "label" : "Memory optimization mode for schema history",
       "description" : "Controls how Debezium deduplicates identical schema objects (tables, columns, attributes) in memory using an interner. Default: off",
       "group" : "Connector Advanced",
-      "groupOrder" : 26,
+      "groupOrder" : 27,
       "width" : "short",
       "importance" : "low"
     },
@@ -1493,7 +1506,7 @@
       "label" : "Query fetch size",
       "description" : "The maximum number of records that should be loaded into memory while streaming. A value of '0' uses the default JDBC fetch size, defaults to '2000'. Default: 10000",
       "group" : "Connector Advanced",
-      "groupOrder" : 27,
+      "groupOrder" : 28,
       "width" : "medium",
       "importance" : "medium"
     },
@@ -2057,10 +2070,10 @@
   }, {
     "name" : "custom.sanitize.pattern",
     "type" : "string",
-    "default" : ".*secret$|.*password$|.*token$|.*sasl\\.jaas\\.config$|.*basic\\.auth\\.user\\.info|.*registry\\.auth\\.client-secret|.*credentials\\.json$|.*connectionstring$|.*connection\\.string$",
+    "default" : ".*secret$|.*password$|.*token$|.*sasl\\.jaas\\.config$|.*basic\\.auth\\.user\\.info|.*registry\\.auth\\.client-secret|.*credentials\\.json$|.*connectionstring$|.*connection\\.string$|.*authorization$",
     "display" : {
       "label" : "Custom pattern for masking sensitive configuration",
-      "description" : "Regular expression identifying configuration keys whose values should be masked. When set, this custom pattern replaces Debezium’s default password masking pattern. Default: .*secret$|.*password$|.*token$|.*sasl\\.jaas\\.config$|.*basic\\.auth\\.user\\.info|.*registry\\.auth\\.client-secret|.*credentials\\.json$|.*connectionstring$|.*connection\\.string$",
+      "description" : "Regular expression identifying configuration keys whose values should be masked. When set, this custom pattern replaces Debezium’s default password masking pattern. Default: .*secret$|.*password$|.*token$|.*sasl\\.jaas\\.config$|.*basic\\.auth\\.user\\.info|.*registry\\.auth\\.client-secret|.*credentials\\.json$|.*connectionstring$|.*connection\\.string$|.*authorization$",
       "group" : "Advanced",
       "groupOrder" : 22,
       "width" : "long",
