@@ -2,9 +2,9 @@
   "schemaVersion": "1.0",
   "build": {
     "version": "3.8.0-SNAPSHOT",
-    "timestamp": "2026-11-11T13:57:15Z",
+    "timestamp": "2026-11-17T12:37:03Z",
     "sourceRepository": "debezium/debezium",
-    "sourceCommit": "16a6c5c",
+    "sourceCommit": "8e97518",
     "sourceBranch": "main"
   },
   "components": {
@@ -184,6 +184,12 @@
         "name": "Debezium Raw To String Custom Converter",
         "description": "",
         "descriptor": "custom-converter/io.debezium.connector.oracle.converters.RawToStringConverter.json"
+      },
+      {
+        "class": "io.debezium.connector.oracle.converters.ZeroDateFallbackConverter",
+        "name": "Debezium Zero Date Fallback Custom Converter",
+        "description": "",
+        "descriptor": "custom-converter/io.debezium.connector.oracle.converters.ZeroDateFallbackConverter.json"
       }
     ],
     "predicate": [
@@ -466,7 +472,7 @@
       {
         "class": "io.debezium.connector.db2.Db2Connector",
         "name": "Debezium DB2 Connector",
-        "description": "",
+        "description": "Captures changes from IBM Db2 databases.",
         "descriptor": "source-connector/io.debezium.connector.db2.Db2Connector.json"
       },
       {

@@ -3,7 +3,7 @@
   "type" : "source-connector",
   "version" : "3.8.0-SNAPSHOT",
   "metadata" : {
-    "description" : ""
+    "description" : "Captures changes from IBM Db2 databases."
   },
   "properties" : [ {
     "name" : "database.hostname",
