@@ -1,0 +1,68 @@
+{
+  "name" : "Debezium Zero Date Fallback Custom Converter",
+  "type" : "custom-converter",
+  "version" : "3.8.0.Alpha2",
+  "metadata" : {
+    "description" : ""
+  },
+  "properties" : [ {
+    "name" : "target.types",
+    "type" : "string",
+    "default" : "DATE,TIMESTAMP",
+    "display" : {
+      "label" : "Target column types",
+      "description" : "Comma-separated list of Oracle column types this converter applies to. Allowed tokens: DATE, TIMESTAMP. Default: DATE,TIMESTAMP",
+      "group" : "Advanced",
+      "groupOrder" : 0,
+      "width" : "medium",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "fallback.date",
+    "type" : "string",
+    "display" : {
+      "label" : "DATE zero-date fallback",
+      "description" : "Replacement value emitted for Oracle DATE zero dates (0000-00-00 00:00:00) and absent values. Use 'NULL' (or leave unset) to emit null and make the column schema optional. Otherwise specify a UTC literal in the form yyyy-MM-dd or yyyy-MM-dd HH:mm:ss.",
+      "group" : "Advanced",
+      "groupOrder" : 1,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "fallback.timestamp",
+    "type" : "string",
+    "display" : {
+      "label" : "TIMESTAMP zero-date fallback",
+      "description" : "Replacement value emitted for Oracle TIMESTAMP zero dates and absent values. Use 'NULL' (or leave unset) to emit null and make the column schema optional. Otherwise specify a UTC literal in the form yyyy-MM-dd or yyyy-MM-dd HH:mm:ss[.fffffffff].",
+      "group" : "Advanced",
+      "groupOrder" : 2,
+      "width" : "medium",
+      "importance" : "medium"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "selector",
+    "type" : "string",
+    "default" : ".*",
+    "display" : {
+      "label" : "Column selector",
+      "description" : "Comma-separated list of regular expressions matched against <database>.<schema>.<table>.<column>. Only matching columns have this converter applied. Default '.*' matches every column whose type is in target.types. Default: .*",
+      "group" : "Advanced",
+      "groupOrder" : 3,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  } ],
+  "groups" : [ {
+    "name" : "Advanced",
+    "order" : 10,
+    "description" : "Advanced configuration"
+  } ]
+}
