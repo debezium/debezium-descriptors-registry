@@ -396,7 +396,7 @@
     "default" : "5",
     "display" : {
       "label" : "Max retry count",
-      "description" : "Max retry count when fail to flush. In case of retriable exceptions, the flush will be retried for the defined max retry count. Default: 5",
+      "description" : "Max retry count when fail to flush. In case of retriable exceptions, the flush will be retried for the defined max retry count. The same limit applies when a lock conflict, such as a deadlock with a concurrent task, aborts reading, creating, or altering a table during schema evolution. Default: 5",
       "group" : "Connector",
       "groupOrder" : 21,
       "width" : "short",

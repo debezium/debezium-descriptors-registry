@@ -756,6 +756,33 @@
     "validation" : [ ],
     "valueDependants" : [ ]
   }, {
+    "name" : "cursor.buffer.max.events",
+    "type" : "number",
+    "display" : {
+      "label" : "Change stream cursor buffer maximum events",
+      "description" : "The maximum number of change stream events that the connector prefetches from MongoDB and holds in memory before they are placed into the change event queue. Buffered events are fully decoded documents and are not counted by 'max.queue.size.in.bytes', so lowering this value limits memory usage when capturing large documents. If not set or set to '0', the value of 'max.batch.size' is used.",
+      "group" : "Connector Advanced",
+      "groupOrder" : 21,
+      "width" : "short",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
+    "name" : "cursor.buffer.max.bytes",
+    "type" : "number",
+    "default" : "0",
+    "display" : {
+      "label" : "Change stream cursor buffer maximum size in bytes",
+      "description" : "The maximum approximate size in bytes of the change stream events that the connector prefetches from MongoDB and holds in memory before they are placed into the change event queue. The size of each event is estimated from its decoded documents. This limit applies in addition to 'cursor.buffer.max.events'. Defaults to 0, which means the feature is not enabled. Default: 0",
+      "group" : "Connector Advanced",
+      "groupOrder" : 22,
+      "width" : "long",
+      "importance" : "low"
+    },
+    "validation" : [ ],
+    "valueDependants" : [ ]
+  }, {
     "name" : "capture.mode.full.update.type",
     "type" : "string",
     "default" : "lookup",
@@ -763,7 +790,7 @@
       "label" : "Capture mode full update type",
       "description" : "Deprecated. Use capture.mode.post.image instead. The method used to perform full update lookups. Options include: 'lookup' (the default) use separate lookup to get the updated document; 'post_image' use MongoDB post images when available; 'post_image_required' require MongoDB post images and fail if unavailable. Post images require MongoDB 6.0 or newer and must be enabled on the collection. With regex filters and deployment or database capture scope, required images can be needed for events from excluded collections. Default: lookup",
       "group" : "Connector Advanced",
-      "groupOrder" : 21,
+      "groupOrder" : 23,
       "width" : "short",
       "importance" : "medium"
     },
