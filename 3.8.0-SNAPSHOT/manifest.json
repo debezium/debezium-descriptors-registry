@@ -2,9 +2,9 @@
   "schemaVersion": "1.0",
   "build": {
     "version": "3.8.0-SNAPSHOT",
-    "timestamp": "2026-11-19T02:17:31Z",
+    "timestamp": "2026-11-21T01:47:18Z",
     "sourceRepository": "debezium/debezium",
-    "sourceCommit": "ed2ce1a",
+    "sourceCommit": "05d42e1",
     "sourceBranch": "main"
   },
   "components": {
@@ -312,139 +312,139 @@
       {
         "class": "io.debezium.server.elasticsearch.ElasticsearchChangeConsumer",
         "name": "Debezium Elasticsearch Server Sink",
-        "description": "",
+        "description": "Delivers change events to Elasticsearch.",
         "descriptor": "server-sink/io.debezium.server.elasticsearch.ElasticsearchChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.eventhubs.EventHubsChangeConsumer",
         "name": "Debezium Event Hubs Server Sink",
-        "description": "",
+        "description": "Delivers change events to Azure Event Hubs.",
         "descriptor": "server-sink/io.debezium.server.eventhubs.EventHubsChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.fluss.FlussChangeConsumer",
         "name": "Debezium Fluss Server Sink",
-        "description": "",
+        "description": "Delivers change events to Apache Fluss.",
         "descriptor": "server-sink/io.debezium.server.fluss.FlussChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.http.HttpChangeConsumer",
         "name": "Debezium HTTP Server Sink",
-        "description": "",
+        "description": "Delivers change events to an HTTP webhook destination.",
         "descriptor": "server-sink/io.debezium.server.http.HttpChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.infinispan.InfinispanSinkConsumer",
         "name": "Debezium Infinispan Server Sink",
-        "description": "",
+        "description": "Delivers change events to an Infinispan cache.",
         "descriptor": "server-sink/io.debezium.server.infinispan.InfinispanSinkConsumer.json"
       },
       {
         "class": "io.debezium.server.instructlab.InstructLabSinkConsumer",
         "name": "Debezium InstructLab Server Sink",
-        "description": "",
+        "description": "Delivers change events to InstructLab taxonomy files.",
         "descriptor": "server-sink/io.debezium.server.instructlab.InstructLabSinkConsumer.json"
       },
       {
         "class": "io.debezium.server.jdbc.JdbcChangeConsumer",
         "name": "Debezium JDBC Server Sink",
-        "description": "",
+        "description": "Delivers change events to a relational database.",
         "descriptor": "server-sink/io.debezium.server.jdbc.JdbcChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.kafka.KafkaChangeConsumer",
         "name": "Debezium Kafka Server Sink",
-        "description": "",
+        "description": "Delivers change events to Apache Kafka.",
         "descriptor": "server-sink/io.debezium.server.kafka.KafkaChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.kinesis.KinesisChangeConsumer",
         "name": "Debezium Kinesis Server Sink",
-        "description": "",
+        "description": "Delivers change events to Amazon Kinesis.",
         "descriptor": "server-sink/io.debezium.server.kinesis.KinesisChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.milvus.MilvusChangeConsumer",
         "name": "Debezium Milvus Server Sink",
-        "description": "",
+        "description": "Delivers change events to a Milvus vector database.",
         "descriptor": "server-sink/io.debezium.server.milvus.MilvusChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer",
         "name": "Debezium NATS JetStream Server Sink",
-        "description": "",
+        "description": "Delivers change events to NATS JetStream.",
         "descriptor": "server-sink/io.debezium.server.nats.jetstream.NatsJetStreamChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.nats.streaming.NatsStreamingChangeConsumer",
         "name": "Debezium NATS Streaming Server Sink",
-        "description": "",
+        "description": "Delivers change events to NATS Streaming.",
         "descriptor": "server-sink/io.debezium.server.nats.streaming.NatsStreamingChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.pravega.PravegaChangeConsumer",
         "name": "Debezium Pravega Server Sink",
-        "description": "",
+        "description": "Delivers change events to Pravega.",
         "descriptor": "server-sink/io.debezium.server.pravega.PravegaChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.pubsub.PubSubChangeConsumer",
         "name": "Debezium PubSub Server Sink",
-        "description": "",
+        "description": "Delivers change events to Google Cloud Pub/Sub.",
         "descriptor": "server-sink/io.debezium.server.pubsub.PubSubChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.pubsub.PubSubLiteChangeConsumer",
         "name": "Debezium PubSub Lite Server Sink",
-        "description": "",
+        "description": "Delivers change events to Google Cloud Pub/Sub Lite.",
         "descriptor": "server-sink/io.debezium.server.pubsub.PubSubLiteChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.pulsar.PulsarChangeConsumer",
         "name": "Debezium Pulsar Server Sink",
-        "description": "",
+        "description": "Delivers change events to Apache Pulsar.",
         "descriptor": "server-sink/io.debezium.server.pulsar.PulsarChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.qdrant.QdrantChangeConsumer",
         "name": "Debezium Qdrant Server Sink",
-        "description": "",
+        "description": "Delivers change events to a Qdrant vector database.",
         "descriptor": "server-sink/io.debezium.server.qdrant.QdrantChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer",
         "name": "Debezium RabbitMQ Stream Server Sink",
-        "description": "",
+        "description": "Delivers change events to RabbitMQ exchange using AMQP.",
         "descriptor": "server-sink/io.debezium.server.rabbitmq.RabbitMqStreamChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer",
         "name": "Debezium RabbitMQ Stream Native Server Sink",
-        "description": "",
+        "description": "Delivers change events to RabbitMQ Streams using the native stream protocol.",
         "descriptor": "server-sink/io.debezium.server.rabbitmq.RabbitMqStreamNativeChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.redis.RedisStreamChangeConsumer",
         "name": "Debezium Redis Stream Server Sink",
-        "description": "",
+        "description": "Delivers change events to Redis Streams.",
         "descriptor": "server-sink/io.debezium.server.redis.RedisStreamChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.rocketmq.RocketMqChangeConsumer",
         "name": "Debezium RocketMQ Server Sink",
-        "description": "",
+        "description": "Delivers change events to Apache RocketMQ.",
         "descriptor": "server-sink/io.debezium.server.rocketmq.RocketMqChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.sns.SnsChangeConsumer",
         "name": "Debezium SNS Server Sink",
-        "description": "",
+        "description": "Delivers change events to Amazon SNS.",
         "descriptor": "server-sink/io.debezium.server.sns.SnsChangeConsumer.json"
       },
       {
         "class": "io.debezium.server.sqs.SqsChangeConsumer",
         "name": "Debezium SQS Server Sink",
-        "description": "",
+        "description": "Delivers change events to Amazon SQS.",
         "descriptor": "server-sink/io.debezium.server.sqs.SqsChangeConsumer.json"
       }
     ],

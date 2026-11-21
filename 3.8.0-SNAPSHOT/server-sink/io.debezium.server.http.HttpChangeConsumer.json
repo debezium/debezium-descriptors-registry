@@ -3,7 +3,7 @@
   "type" : "server-sink",
   "version" : "3.8.0-SNAPSHOT",
   "metadata" : {
-    "description" : ""
+    "description" : "Delivers change events to an HTTP webhook destination."
   },
   "properties" : [ {
     "name" : "url",
